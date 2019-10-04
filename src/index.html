@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<title>Global Avia</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	
+</head>
+
+<body>
+	<div class="container pt-4">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand" href="#" style="color: rgba(255, 255, 255, 0.822)">Global Avia</a>
+			<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">ENG</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">SWITCH</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+							Account
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Профиль</a>
+							<a class="dropdown-item" href="#">Количество баллов</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Выход</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="justify-content-center text-center pt-5 mt-2">
+			<h1 class="display-4 mt-5 pt-5" style="font-style: normal; font-family: 'Montserrat', sans-serif; font-weight: 600; color: rgba(255, 255, 255, 0.863);">Поиск комфортных авиа билетов</h1>
+			<form class="mainform mt-5 pt-5 mb-5">
+				<div class="form-row">
+					<div class="col">
+						<input class="form-control" type="text" placeholder="Город вылета">
+					</div>
+					<div class="col">
+						<input class="form-control" type="text" placeholder="Город прибытия">
+					</div>
+					<div class="col">
+						<input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
+					</div>
+					<div class="col">
+						<select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+							<option selected>Пассажиры...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+				</div>
+			</form>
+			<a class="btn btn-primary btn-lg" href="#" role="button" style="width: 20%">Найти</a>
+		</div>
+	</div>
+
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+		<script>
+			$(function () {
+				$('input[name="calendar"]').daterangepicker({
+					"minYear": 2019,
+					"maxYear": 2020,
+					"startDate": "10/02/2019",
+					"endDate": "10/02/2019",
+					"minDate": "dd/mm/yyyy",
+					"maxDate": "dd/mm/yyyy"
+				}, function (start, end, label) {
+					console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+				});
+			});
+		</script>
+</body>
+
+</html>
