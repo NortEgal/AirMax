@@ -3,8 +3,31 @@ body {
   background: linear-gradient(to bottom,#065bc6 0%,#3c8bf4 25%,#7fb0fd 50%,#d2dbeb 75%,#c7def6 100%);
   height: 100vh;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
-
+.lang-switch {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+}
+.nav-icon.person {
+  font-size: 28px;
+  margin-top: -0.15rem;
+}
+.dropdown-toggle::after {
+  vertical-align: 0.5em;
+}
+.clouds {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: calc(100% - 16.6666666667rem);
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.cl-easy {
+  background: url("/img/easy.png");
+}
 // Bootstrap Sass Imports
 // node_modules/bootstrap/scss/_variables.scss
 @import "node_modules/bootstrap/scss/bootstrap";
