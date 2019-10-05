@@ -1,14 +1,14 @@
 {
-  "name": "GlobalAvia",
-  "version": "1.0.0",
-  "description": "",
+  "name": "globalavia",
+  "version": "1.0.1",
+  "description": "<b>\r   Global Avia Group (G.A.G)<br>\r   Main page\r </b>",
   "private": true,
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "N",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
@@ -18,7 +18,17 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "bootstrap-material-design": "^4.1.2",
     "jquery": "^3.4.1",
+    "mdbootstrap": "^4.8.10",
     "popper.js": "^1.15.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NortEgal/AirMax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NortEgal/AirMax/issues"
+  },
+  "homepage": "https://github.com/NortEgal/AirMax#readme"
 }
