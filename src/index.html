@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-	
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
 	<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" href="css/mdb.min.css">
@@ -103,14 +104,14 @@
 					</div>
 				</div>
 			</form>
-			<a class="btn btn-primary btn-lg" href="#" role="button" style="width: 20%">Найти</a>
+			<a class="btn btn-primary btn-lg" href="#" role="button" style="width: 20%; font-family: 'Raleway', sans-serif; font-weight: 600; color: rgba(255, 255, 255, 0.863)">Найти</a>
 		</div>
 		<div class="modal fade" id="SignINmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
 			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header text-center" style="border-bottom: none;">
-						<h5 class="modal-title" id="exampleModalLongTitle"style="margin-left: 3.75rem;">Вход на сайт</h5>
+						<h4 class="modal-title" id="exampleModalLongTitle"style="margin-left: 3.75rem;">Вход на сайт</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -141,7 +142,7 @@
 								</div>
 								<div>
 									<!-- Forgot password -->
-									<a href="">Забыли меня?</a>
+									<a href="">Забыли пароль?</a>
 								</div>
 							</div>
 						
@@ -150,12 +151,86 @@
 						
 							<!-- Register -->
 							<p>Нет аккаунта?
-								<a href="">Регистрация</a>
+								<a href="" data-target="#SignUPmodal" data-toggle="modal">Регистрация</a>
 							</p>
 						
 							<!-- Social login -->
 							<p>или через соц.сети:</p>
 							
+						
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="SignUPmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header text-center" style="border-bottom: none;">
+						<h4 class="modal-title" id="exampleModalLongTitle"style="margin-left: 3.75rem;">Регистрация</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
+						<form class="text-center" style="color: #757575;" action="#!">
+						
+							<div class="form-row">
+								<div class="col">
+									<!-- First name -->
+									<div class="md-form">
+										<input type="text" id="materialRegisterFormFirstName" class="form-control">
+										<label for="materialRegisterFormFirstName">Имя</label>
+									</div>
+								</div>
+								<div class="col">
+									<!-- Last name -->
+									<div class="md-form">
+										<input type="email" id="materialRegisterFormLastName" class="form-control">
+										<label for="materialRegisterFormLastName">Фамилия</label>
+									</div>
+								</div>
+							</div>
+						
+							<!-- E-mail -->
+							<div class="md-form mt-0">
+								<input type="email" id="materialRegisterFormEmail" class="form-control">
+								<label for="materialRegisterFormEmail">Э-почта</label>
+							</div>
+						
+							<!-- Password -->
+							<div class="md-form">
+								<input type="password" id="materialRegisterFormPassword" class="form-control"
+									aria-describedby="materialRegisterFormPasswordHelpBlock">
+								<label for="materialRegisterFormPassword">Пароль</label>
+								<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+									Не менее 8 символов и 1 цифры
+								</small>
+							</div>
+						
+							<!-- Phone number -->
+							<div class="md-form">
+								<input type="password" id="materialRegisterFormPhone" class="form-control"
+									aria-describedby="materialRegisterFormPhoneHelpBlock">
+								<label for="materialRegisterFormPhone">Номер телефона</label>
+								<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+									Вы сможете получать уведомление о рейсе
+								</small>
+							</div>
+												
+							<!-- Sign up button -->
+							<button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Продолжить</button>
+						
+							<!-- Social register -->
+							<p>или через соц.сети:</p>
+											
+							<hr>
+						
+							<!-- Terms of service -->
+							<p>При нажатии
+								<em>Продолжить</em> вы соглашаетесь на
+								<a href="" target="_blank">обработку персональных данных</a>
 						
 						</form>
 					</div>
