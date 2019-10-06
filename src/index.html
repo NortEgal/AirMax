@@ -14,9 +14,7 @@
 	<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" href="css/mdb.min.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-
-	
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -242,24 +240,25 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+	<script src="js/mdb.min.js"></script>
 	
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-		<script>
-			$(function () {
-				$('input[name="calendar"]').daterangepicker({
-					"minYear": 2019,
-					"maxYear": 2020,
-					"startDate": "10/02/2019",
-					"endDate": "10/02/2019",
-					"minDate": "dd/mm/yyyy",
-					"maxDate": "dd/mm/yyyy"
-				}, function (start, end, label) {
-					console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-				});
+
+	<script>
+		$(function () {
+			$('input[name="calendar"]').daterangepicker({
+				"minYear": 2019,
+				"maxYear": 2020,
+				"startDate": "10/02/2019",
+				"endDate": "10/02/2019",
+				"minDate": "dd/mm/yyyy",
+				"maxDate": "dd/mm/yyyy"
+			}, function (start, end, label) {
+				console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 			});
-		</script>
+		});
+	</script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "N",
+  "author": "Retard",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-material-design": "^4.1.2",
     "jquery": "^3.4.1",
     "mdbootstrap": "^4.8.10",
     "popper.js": "^1.15.0"
