@@ -16,7 +16,6 @@
 	<link rel="stylesheet" href="css/mdb.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-	
 </head>
 
 <body>
@@ -71,22 +70,7 @@
 			<form class="mainform mt-5 pt-5 mb-5">
 				<div class="form-row">
 					<div class="col">
-						<input class="form-control" type="text" 
-						style="
-							color: #495057;
-							background-color: #fff;
-							background-clip: padding-box;
-							border: 1px solid #ced4da;
-							border-radius: 0.25rem;
-							transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-							display: block;
-							width: 100%;
-							height: calc(1.5em + 0.75rem + 2px);
-							padding: 0.375rem 0.75rem;
-							font-size: 1rem;
-							font-weight: 400;
-							line-height: 1.5;" 
-							placeholder="Город вылета">
+						<input class="form-control" type="text" placeholder="Город вылета">
 					</div>
 					<div class="col">
 						<input class="form-control" type="text" placeholder="Город прибытия">
@@ -95,12 +79,33 @@
 						<input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
 					</div>
 					<div class="col">
-						<select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-							<option selected>Пассажиры...</option>
-							<option value="1">Один</option>
-							<option value="2">Два</option>
-							<option value="3">Three</option>
-						</select>
+						<div class="dropdown">
+							<span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Regular link</a>
+								<a class="dropdown-item" href="#">Active link</a>
+								<a class="dropdown-item" href="#">Another link</a>
+								<hr>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+									<label class="form-check-label" for="exampleRadios1">
+										Эконом
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+									<label class="form-check-label" for="exampleRadios2">
+										Оптимальный
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+									<label class="form-check-label" for="exampleRadios2">
+										Премиум
+									</label>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
