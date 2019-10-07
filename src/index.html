@@ -79,7 +79,7 @@
 						<input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
 					</div>
 					<div class="col">
-						<div class="dropdown">
+						<div class="dropdown-p">
 							<span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
 							<div class="dropdown-menu dropdown-menu-right">
 								<a class="dropdown-item" href="#">Взрослые</a>
@@ -87,21 +87,18 @@
 								<a class="dropdown-item" href="#">Младенцы</a>
 								<hr>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
 									<label class="form-check-label" for="exampleRadios1">
-										Эконом
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked> Эконом
 									</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
 									<label class="form-check-label" for="exampleRadios2">
-										Оптимальный
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"> Оптимальный
 									</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-									<label class="form-check-label" for="exampleRadios2">
-										Премиум
+									<label class="form-check-label" for="exampleRadios3">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3"> Премиум
 									</label>
 								</div>
 							</div>
@@ -263,6 +260,9 @@
 				console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 			});
 		});
+		$('.dropdown-p').on('click', '.dropdown-menu', function (e) {
+				e.stopPropagation();
+			});
 	</script>
 </body>
 
