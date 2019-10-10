@@ -48,11 +48,11 @@ body.modal-open {
   margin-left: 0;
   margin-top: 0.7rem; }
 
-.row .col-9 p {
+.row .col-auto p {
   margin-bottom: -0.5rem;
   margin-top: auto; }
 
-.row .col-9 {
+.row .col-auto {
   padding-left: 1.25rem;
   padding-right: 0rem; }
 
@@ -62,4 +62,5 @@ body.modal-open {
 
 .dropdown-menu .col-3 {
   padding-right: 0.3rem;
-  padding-left: 0; }
+  padding-left: 0;
+  margin-right: 0.6rem; }
