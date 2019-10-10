@@ -49,16 +49,20 @@ body.modal-open {
   margin-left: 0;
   margin-top: 0.7rem;
 }
-.row .col-7 p {
+.row .col-8 p {
   margin-bottom: -0.5rem;
   margin-top: auto;
 }
-.row .col-7 {
+.row .col-8 {
   padding-left: 1.25rem;
 }
-.col-5 a i {
+.col-4 a i {
   vertical-align: text-bottom;
   margin-top: 0.5rem;
+}
+.dropdown-menu .col-4 {
+  padding-right: 0;
+  padding-left: 0; 
 }
 // Bootstrap Sass Imports
 // node_modules/bootstrap/scss/_variables.scss
