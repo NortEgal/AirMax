@@ -64,3 +64,6 @@ body.modal-open {
   padding-right: 0.3rem;
   padding-left: 0;
   margin-right: 0.6rem; }
+
+.main {
+  background-color: white; }
