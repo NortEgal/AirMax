@@ -69,6 +69,49 @@ body.modal-open {
 .main {
   background-color: white;
 }
+.result-days {
+  text-align: center;
+  padding: 2rem;
+}
+.ticket-info, .ticket-price {
+  border: 1px black solid;
+}
+.ticket-time-fr, .ticket-time-to, .ticket-time, .ticket-id, .ticket-result {
+  padding: 1rem;
+  text-align: center;
+}
+.ticket-time-fr, .ticket-time-to {
+  font-weight: 800;
+  font-size: 20px; 
+}
+.ticket-time {
+  font-size: 14px;
+}
+.ticket-econom, .ticket-optim, .ticket-premium {
+  padding: 3rem;
+}
+.ticket-arrow {
+	position: relative;
+	width: 100%;
+	height: 1px;
+	background-color: #003594;
+}
+
+.ticket-arrow:before {
+	content: "";
+	position: absolute;
+	top: -4px;
+	right: 1px;
+	width: 8px;
+	height: 8px;
+	border-top: 1px solid #003594;
+	border-right: 1px solid #003594;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
 // Bootstrap Sass Imports
 // node_modules/bootstrap/scss/_variables.scss
 // @import "node_modules/bootstrap/scss/bootstrap"; 
