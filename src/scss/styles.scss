@@ -74,7 +74,8 @@ body.modal-open {
   padding: 2rem;
 }
 .ticket-info, .ticket-price {
-  border: 1px black solid;
+  //border: 1px black solid;
+  padding: 2rem;
 }
 .ticket-time-fr, .ticket-time-to, .ticket-time, .ticket-id, .ticket-result {
   padding: 1rem;
@@ -84,11 +85,20 @@ body.modal-open {
   font-weight: 800;
   font-size: 20px; 
 }
+.ticket-city {
+  font-weight: 500;
+  font-size: 18px;
+}
 .ticket-time {
   font-size: 14px;
 }
+.ticket-id {
+  font-style: italic;
+}
 .ticket-econom, .ticket-optim, .ticket-premium {
-  padding: 3rem;
+  padding: 1rem 3rem;
+  font-size: 18px;
+  font-weight: 700;
 }
 .ticket-arrow {
 	position: relative;
