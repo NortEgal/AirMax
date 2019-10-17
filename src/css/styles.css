@@ -118,3 +118,16 @@ body.modal-open {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg); }
+
+.trip {
+  display: flex; }
+
+.info-trip {
+  display: block; }
+
+.info-trip p {
+  line-height: 2; }
+
+.city-trip {
+  font-weight: 700;
+  font-size: 110%; }
