@@ -22,62 +22,64 @@
 
 <body>
   <div class="container pt-4">
-    <div class="clouds cl-easy">
-      <img src="img/big.png" style="transform: translateX(900px) translateY(550px)">
-    </div>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="box-shadow: none;">
-      <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
-
-      <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
-			-->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Иконки меню -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" title="Переключение языка">
-            <a class="nav-link lang-switch" href="#">ENG</a>
-          </li>
-          <li class="nav-item" title="Ночная тема">
-            <a class="nav-link" href="#">
-              <i class="material-icons nav-icon night-stay">
-                nights_stay
-              </i>
-            </a>
-          </li>
-          <li class="nav-item dropdown" title="Аккаунт">
-            <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
-              <i class="material-icons nav-icon person">
-                person
-              </i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Профиль</a>
-              <a class="dropdown-item" href="#">Количество баллов</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
-
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="clouds">
-      <img src="img/one.png" style="transform: translateY(450px) translateX(-390px);">
-    </div>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="box-shadow: none;">
+        <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
+      
+        <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
+      			-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Иконки меню -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" title="Переключение языка">
+              <a class="nav-link lang-switch" href="#">ENG</a>
+            </li>
+            <li class="nav-item" title="Ночная тема">
+              <a class="nav-link" href="#">
+                <i class="material-icons nav-icon night-stay">
+                  nights_stay
+                </i>
+              </a>
+            </li>
+            <li class="nav-item dropdown" title="Аккаунт">
+              <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
+                <i class="material-icons nav-icon person">
+                  person
+                </i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Профиль</a>
+                <a class="dropdown-item" href="#">Количество баллов</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
+      
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <hr style="margin-top: 0;">
-    <div class="main container-fluid">
-      <div class="row main-information">
-        <div class="col photo-profile">
+    <main class="main container-fluid">
+      <div class="clouds cl-easy">
+        <img src="img/big.png" style="transform: translateX(900px) translateY(550px)">
+      </div>
+      <div class="clouds">
+        <img src="img/one.png" style="transform: translateY(450px) translateX(-390px);">
+      </div>
+      <div class="row main-information justify-content-between">
+        <div class="col-3 photo-profile">
           <img src="https://icon-library.net/images/steam-question-mark-icon/steam-question-mark-icon-6.jpg">
         </div>
-        <div class="col about-profile">
+        <div class="col-5 about-profile">
           <h2>Имя профиля</h2>
         </div>
-        <div class="col status">
+        <div class="col-4 status">
           Cтатус
         </div>
       </div>
@@ -92,30 +94,32 @@
             </div>
             <div class="about-trip col-auto">
               <div class="row city-trip">
-                <span id="city-trip">
-                  Прага
-                </span>
+                <h3>
+                  <span id="city-trip">
+                    Прага
+                  </span>
+                </h3>
               </div>
               <div class="row info-trip">
                 <p>
-                <span id="date-trip">
-                  7 августа 2019 года
-                </span>
+                  <span id="date-trip">
+                    7 августа 2019 года
+                  </span>
                 </p>
                 <p>
-                <span id="id-flight">
-                  Номер рейса: 54bd
-                </span>
+                  <span id="id-flight">
+                    Номер рейса: 54bd
+                  </span>
                 </p>
                 <p>
-                <span id="airplane">
-                  Самолет: Boeng 777
-                </span>
+                  <span id="airplane">
+                    Самолет: Boeng 777
+                  </span>
                 </p>
                 <p>
-                <span id="price-trip">
-                  Цена: 12 567 руб
-                </span>
+                  <span id="price-trip">
+                    Цена: 12 567 руб
+                  </span>
                 </p>
               </div>
             </div>
@@ -125,14 +129,16 @@
               <span id="photo-trip">
                 <img
                   src="http://www.visit-petersburg.ru/media/uploads/landings/fd4f054069474dbcadb088518590fd41.jpeg.300x300_q95_crop_upscale.jpg"
-                style="max-width: 200px;">
+                  style="max-width: 200px;">
               </span>
             </div>
             <div class="about-trip col-auto">
               <div class="row city-trip">
-                <span id="city-trip">
-                  Санкт-Петербург
-                </span>
+                <h3>
+                  <span id="city-trip">
+                    Санкт-Петербург
+                  </span>
+                </h3>
               </div>
               <div class="row info-trip">
                 <p>
@@ -160,7 +166,98 @@
           </div>
         </div>
       </div>
-    </div>
+      <div class="contact-data">
+        <h3>
+          Контактные данные
+        </h3>
+        <div class="row">
+          <div class="col">
+            f
+          </div>
+          <div class="col">
+            f
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer font-small blue pt-4">
+      - Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+      
+        <!-- Grid row -->
+        <div class="row">
+      
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+      
+            <!-- Content -->
+            <h5 class="text-uppercase">Footer Content</h5>
+            <p>Here you can use rows and columns to organize your footer content.</p>
+      
+          </div>
+          <!-- Grid column -->
+      
+          <hr class="clearfix w-100 d-md-none pb-3">
+      
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+      
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+      
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+      
+          </div>
+          <!-- Grid column -->
+      
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+      
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+      
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+      
+          </div>
+          <!-- Grid column -->
+      
+        </div>
+        <!-- Grid row -->
+      
+      </div>
+      <!-- Footer Links -->
+      
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+      </div>
+    </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

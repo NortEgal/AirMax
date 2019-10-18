@@ -1,8 +1,15 @@
+html {
+  height: 100%;
+  min-height: 100%; }
+
 body {
-  background: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%);
-  height: 100vh;
-  background-repeat: no-repeat;
-  overflow: hidden; }
+  background: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat;
+  height: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  margin: 0; }
 
 .lang-switch {
   font-family: 'Rubik', sans-serif;
@@ -128,6 +135,11 @@ body.modal-open {
 .info-trip p {
   line-height: 2; }
 
-.city-trip {
-  font-weight: 700;
-  font-size: 110%; }
+.city-trip h3 {
+  font-weight: 550; }
+
+.photo-profile img {
+  border: #7777f5 3px solid; }
+
+.photo-profile, .about-profile, .status {
+  padding: 2.5rem; }
