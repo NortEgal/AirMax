@@ -22,354 +22,361 @@
 
 <body>
   <div class="container pt-4">
-    <div class="clouds cl-easy">
-      <img src="img/big.png" style="transform: translateX(900px) translateY(550px)">
-    </div>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="box-shadow: none;">
-      <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
-
-      <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
-			-->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Иконки меню -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" title="Переключение языка">
-            <a class="nav-link lang-switch" href="#">ENG</a>
-          </li>
-          <li class="nav-item" title="Ночная тема">
-            <a class="nav-link" href="#">
-              <i class="material-icons nav-icon night-stay">
-                nights_stay
-              </i>
-            </a>
-          </li>
-          <li class="nav-item dropdown" title="Аккаунт">
-            <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
-              <i class="material-icons nav-icon person">
-                person
-              </i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="profile.html">Профиль</a>
-              <a class="dropdown-item" href="#">Количество баллов</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
-
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark pl-4" style="box-shadow: none;">
+        <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
+    
+        <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
+              			-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Иконки меню -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" title="Переключение языка">
+              <a class="nav-link lang-switch" href="#">ENG</a>
+            </li>
+            <li class="nav-item" title="Ночная тема">
+              <a class="nav-link" href="#">
+                <i class="material-icons nav-icon night-stay">
+                  nights_stay
+                </i>
+              </a>
+            </li>
+            <li class="nav-item dropdown" title="Аккаунт">
+              <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
+                <i class="material-icons nav-icon person">
+                  person
+                </i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="profile.html">Профиль</a>
+                <a class="dropdown-item" href="#">Количество баллов</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
+    
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Clouds -->
     <div class="clouds">
       <img src="img/one.png" style="transform: translateY(450px) translateX(-390px);">
     </div>
-    <hr style="margin-top: 0;">
-    <form class="mainform">
-      <div class="form-row mb-3">
-        <!-- Город вылета -->
-        <div class="col">
-          <input class="form-control" type="text" placeholder="Город вылета">
-        </div>
-        <!-- Город прибытия -->
-        <div class="col">
-          <input class="form-control" type="text" placeholder="Город прибытия">
-        </div>
-        <!-- Календарь -->
-        <div class="col">
-          <input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
-        </div>
-        <!-- Пассажиры -->
-        <div class="col">
-          <div class="dropdown-p">
-            <span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
-            <div class="dropdown-menu dropdown-menu-right">
-              <div class="row justify-content-between">
-                <div class="col-auto">
-                  <p>
-                    <strong>
-                      Взрослые
-                    </strong>
-                  </p>
-                  <p>
-                    <small>
-                      Старше 12 лет
-                    </small>
-                  </p>
-                </div>
-                <div class="col-3">
-                  <a>
-                    <i class="material-icons">
-                      remove_circle
-                    </i>
-                  </a>
-                  <span>1</span>
-                  <a>
-                    <i class="material-icons">
-                      add_circle
-                    </i>
-                  </a>
-                </div>
-              </div>
-              <div class="row justify-content-between">
-                <div class="col-auto">
-                  <p>
-                    <strong>
-                      Дети
-                    </strong>
-                  </p>
-                  <p>
-                    <small>
-                      От 2 до 12 лет
-                    </small>
-                  </p>
-                </div>
-                <div class="col-3">
-                  <a>
-                    <i class="material-icons">
-                      remove_circle
-                    </i>
-                  </a>
-                  <span>0</span>
-                  <a>
-                    <i class="material-icons">
-                      add_circle
-                    </i>
-                  </a>
-                </div>
-              </div>
-              <div class="row justify-content-between">
-                <div class="col-auto">
-                  <p>
-                    <strong>
-                      Младенцы
-                    </strong>
-                  </p>
-                  <p>
-                    <small>
-                      До 12 лет, без места
-                    </small>
-                  </p>
-                </div>
-                <div class="col-3">
-                  <a>
-                    <i class="material-icons">
-                      remove_circle
-                    </i>
-                  </a>
-                  <span>0</span>
-                  <a>
-                    <i class="material-icons">
-                      add_circle
-                    </i>
-                  </a>
-                </div>
-              </div>
-              <hr>
-              <div class="form-check">
-                <label class="form-check-label" for="exampleRadios1">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
-                    checked> Эконом
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label" for="exampleRadios2">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Оптимальный
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label" for="exampleRadios3">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  Премиум
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Кнопка -->
-        <div class="col-auto">
-          <button class="btn btn-primary" type="submit" style="font-family: 'Raleway', sans-serif;
-                        font-weight: 600; color: rgba(255, 255, 255, 0.863); margin-top:0; padding: 0.56rem 2rem;">Найти</button>
-        </div>
-      </div>
-    </form>
-    <div class="btn-group" role="group">
-      <div class="btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-info ml-0 mr-0">
-          <input type="checkbox" checked autocomplete="off"> Без пересадок
-        </label>
-        <label class="btn btn-info">
-          <input type="checkbox" checked autocomplete="off"> С багажом
-        </label>
-      </div>
-      <div class="btn-group" role="group">
-        <button id="btnGroupDropLayover" type="button" class="btn btn-indigo dropdown-toggle" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Пересадки
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDropLayover" style="width: auto;">
-          <a class="dropdown-item" href="#">Одна</a>
-          <a class="dropdown-item" href="#">Две</a>
-        </div>
-      </div>
-      <div class="btn-group" role="group">
-        <button id="btnGroupDropAirport" type="button" class="btn btn-indigo dropdown-toggle" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Аэропорты
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDropAirport" style="width: auto;">
-          <a class="dropdown-item" href="#">Выпадающая ссылка</a>
-          <a class="dropdown-item" href="#">Выпадающая ссылка</a>
-        </div>
-      </div>
-      <div class="btn-group" role="group">
-        <button id="btnGroupDropDeparture" type="button" class="btn btn-indigo dropdown-toggle" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Вылет и прилет
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDropDeparture" style="width: auto;">
-          <a class="dropdown-item" href="#">Выпадающая ссылка</a>
-          <a class="dropdown-item" href="#">Выпадающая ссылка</a>
-        </div>
-      </div>
+    <div class="clouds cl-easy">
+      <img src="img/big.png" style="transform: translateX(900px) translateY(550px)">
     </div>
-    <!-- main block -->
-    <div class="main container mt-3">
-      <!-- Выбор дня билета -->
-      <div class="row result-days">
-        <div class="col">
-          Пред день
-          <span>
-            11/09/2019
-          </span>
-        </div>
-        <div class="col">
-          Выбранная дата
-          <span>
-            12/09/2019
-          </span>
-        </div>
-        <div class="col">
-            След день
-          <span>
-            13/09/2019
-          </span>
-        </div>
-      </div>
-      <div class="row justify-content-between">
-        <div class="btn-group col-auto" role="group">
-          <button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" title="по цене">
-            <i class="material-icons">
-              sort
-            </i>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
-            <a class="dropdown-item" href="#">По времени</a>
-            <a class="dropdown-item active" href="#">По цене</a>
+    <main>
+      <hr style="margin-top: 0;">
+      <form class="mainform">
+        <div class="form-row mb-3">
+          <!-- Город вылета -->
+          <div class="col">
+            <input class="form-control" type="text" placeholder="Город вылета">
           </div>
-        </div>
-        <div class="col-auto ticket-result">
-          <span class="ticket-result">Найденно: 5 вариантов</span>
-        </div>
-      </div>
-      <hr>
-      <div class="tickets">
-        <div class="ticket1">
-          <div class="row ticket-date">
-            <div class="col-auto">
-              Туда:
-            </div>
-            <div class="col">
-              <span>
-                12 сентября
-              </span>
-            </div>
+          <!-- Город прибытия -->
+          <div class="col">
+            <input class="form-control" type="text" placeholder="Город прибытия">
           </div>
-          <div class="row">
-            <!-- Информация о рейсе -->
-            <div class="col-5 ticket-info">
-              <div class="row justify-content-around">
-                <div class="col-3 ticket-time-fr">
-                  <!-- Время вылета -->
-                  <span>
-                    10:35
-                  </span>
-                  <!-- Откуда -->
-                  <span class="ticket-city">
-                    Пермь
-                  </span>
+          <!-- Календарь -->
+          <div class="col">
+            <input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
+          </div>
+          <!-- Пассажиры -->
+          <div class="col">
+            <div class="dropdown-p">
+              <span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="row justify-content-between">
+                  <div class="col-auto">
+                    <p>
+                      <strong>
+                        Взрослые
+                      </strong>
+                    </p>
+                    <p>
+                      <small>
+                        Старше 12 лет
+                      </small>
+                    </p>
+                  </div>
+                  <div class="col-3">
+                    <a>
+                      <i class="material-icons">
+                        remove_circle
+                      </i>
+                    </a>
+                    <span>1</span>
+                    <a>
+                      <i class="material-icons">
+                        add_circle
+                      </i>
+                    </a>
+                  </div>
                 </div>
-                <div class="col-auto" style="padding-left: 0">
-                  <div class="row ticket-time no-gutters">
-                    <!-- Время в пути -->
-                    <div class="col">
+                <div class="row justify-content-between">
+                  <div class="col-auto">
+                    <p>
+                      <strong>
+                        Дети
+                      </strong>
+                    </p>
+                    <p>
+                      <small>
+                        От 2 до 12 лет
+                      </small>
+                    </p>
+                  </div>
+                  <div class="col-3">
+                    <a>
+                      <i class="material-icons">
+                        remove_circle
+                      </i>
+                    </a>
+                    <span>0</span>
+                    <a>
+                      <i class="material-icons">
+                        add_circle
+                      </i>
+                    </a>
+                  </div>
+                </div>
+                <div class="row justify-content-between">
+                  <div class="col-auto">
+                    <p>
+                      <strong>
+                        Младенцы
+                      </strong>
+                    </p>
+                    <p>
+                      <small>
+                        До 12 лет, без места
+                      </small>
+                    </p>
+                  </div>
+                  <div class="col-3">
+                    <a>
+                      <i class="material-icons">
+                        remove_circle
+                      </i>
+                    </a>
+                    <span>0</span>
+                    <a>
+                      <i class="material-icons">
+                        add_circle
+                      </i>
+                    </a>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-check">
+                  <label class="form-check-label" for="exampleRadios1">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                      checked> Эконом
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    Оптимальный
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label" for="exampleRadios3">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                    Премиум
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Кнопка -->
+          <div class="col-auto">
+            <button class="btn btn-primary" type="submit"
+              style="font-family: 'Raleway', sans-serif;
+                              font-weight: 600; color: rgba(255, 255, 255, 0.863); margin-top:0; padding: 0.56rem 2rem;">Найти</button>
+          </div>
+        </div>
+      </form>
+      <div class="btn-group" role="group">
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-info ml-0 mr-0">
+            <input type="checkbox" checked autocomplete="off"> Без пересадок
+          </label>
+          <label class="btn btn-info">
+            <input type="checkbox" checked autocomplete="off"> С багажом
+          </label>
+        </div>
+        <div class="btn-group" role="group">
+          <button id="btnGroupDropLayover" type="button" class="btn btn-indigo dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Пересадки
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDropLayover" style="width: auto;">
+            <a class="dropdown-item" href="#">Одна</a>
+            <a class="dropdown-item" href="#">Две</a>
+          </div>
+        </div>
+        <div class="btn-group" role="group">
+          <button id="btnGroupDropAirport" type="button" class="btn btn-indigo dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Аэропорты
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDropAirport" style="width: auto;">
+            <a class="dropdown-item" href="#">Выпадающая ссылка</a>
+            <a class="dropdown-item" href="#">Выпадающая ссылка</a>
+          </div>
+        </div>
+        <div class="btn-group" role="group">
+          <button id="btnGroupDropDeparture" type="button" class="btn btn-indigo dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Вылет и прилет
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDropDeparture" style="width: auto;">
+            <a class="dropdown-item" href="#">Выпадающая ссылка</a>
+            <a class="dropdown-item" href="#">Выпадающая ссылка</a>
+          </div>
+        </div>
+      </div>
+      <!-- main block -->
+      <div class="main container mt-3">
+        <!-- Выбор дня билета -->
+        <div class="row result-days">
+          <div class="col">
+            Пред день
+            <span>
+              11/09/2019
+            </span>
+          </div>
+          <div class="col">
+            Выбранная дата
+            <span>
+              12/09/2019
+            </span>
+          </div>
+          <div class="col">
+            След день
+            <span>
+              13/09/2019
+            </span>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="btn-group col-auto" role="group">
+            <button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" title="по цене">
+              <i class="material-icons">
+                sort
+              </i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
+              <a class="dropdown-item" href="#">По времени</a>
+              <a class="dropdown-item active" href="#">По цене</a>
+            </div>
+          </div>
+          <div class="col-auto ticket-result">
+            <span class="ticket-result">Найденно: 5 вариантов</span>
+          </div>
+        </div>
+        <hr>
+        <div class="tickets">
+          <div class="ticket1">
+            <div class="row ticket-date">
+              <div class="col-auto">
+                Туда:
+              </div>
+              <div class="col">
+                <span>
+                  12 сентября
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Информация о рейсе -->
+              <div class="col-5 ticket-info">
+                <div class="row justify-content-around">
+                  <div class="col-3 ticket-time-fr">
+                    <!-- Время вылета -->
+                    <span>
+                      10:35
+                    </span>
+                    <!-- Откуда -->
+                    <span class="ticket-city">
+                      Пермь
+                    </span>
+                  </div>
+                  <div class="col-auto" style="padding-left: 0">
+                    <div class="row ticket-time no-gutters">
+                      <!-- Время в пути -->
+                      <div class="col">
+                        <span>
+                          1 ч 20 м
+                        </span>
+                        <!-- Тип рейса -->
+                        <span>
+                          Прямой рейс
+                        </span>
+                      </div>
+                    </div>
+                    <!-- Стрелка -->
+                    <div class="ticket-arrow">
+                    </div>
+                    <!-- id рейса -->
+                    <div class="row ticket-id">
                       <span>
-                        1 ч 20 м
-                      </span>
-                      <!-- Тип рейса -->
-                      <span>
-                        Прямой рейс
+                        GA369
                       </span>
                     </div>
                   </div>
-                  <!-- Стрелка -->
-                  <div class="ticket-arrow">
-                  </div>
-                  <!-- id рейса -->
-                  <div class="row ticket-id">
+                  <div class="col-3 ticket-time-to">
+                    <!-- Время прилета -->
                     <span>
-                      GA369
+                      11:55
+                    </span>
+                    <!-- Куда -->
+                    <span class="ticket-city">
+                      Москва
                     </span>
                   </div>
                 </div>
-                <div class="col-3 ticket-time-to">
-                  <!-- Время прилета -->
-                  <span>
-                    11:55
-                  </span>
-                  <!-- Куда -->
-                  <span class="ticket-city">
-                    Москва
-                  </span>
-                </div>
               </div>
-            </div>
-            <div class="col-7">
-              <!-- Цена рейса -->
-              <div class="row ticket-price">
-                <!-- Эконом -->
-                <div class="col ticket-econom">
-                  <h5>Эконом</h5>
-                  <span>
-                    3980 ₽
-                  </span>
-                </div>
-                <!-- Оптимальный -->
-                <div class="col ticket-optim">
-                  <h5>Оптимальный</h5>
-                  <span>
-                    5480 ₽
-                  </span>
-                </div>
-                <!-- Премиум -->
-                <div class="col ticket-premium">
-                  <h5>Премиум</h5>
-                  <span>
-                    8480 ₽
-                  </span>
+              <div class="col-7">
+                <!-- Цена рейса -->
+                <div class="row ticket-price">
+                  <!-- Эконом -->
+                  <div class="col ticket-econom">
+                    <h5>Эконом</h5>
+                    <span>
+                      3980 ₽
+                    </span>
+                  </div>
+                  <!-- Оптимальный -->
+                  <div class="col ticket-optim">
+                    <h5>Оптимальный</h5>
+                    <span>
+                      5480 ₽
+                    </span>
+                  </div>
+                  <!-- Премиум -->
+                  <div class="col ticket-premium">
+                    <h5>Премиум</h5>
+                    <span>
+                      8480 ₽
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+    
     <!-- Вход в акк -->
     <div class="modal fade" id="SignINmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
@@ -506,6 +513,28 @@
       </div>
     </div>
   </div>
+  <footer class="page-footer font-small pt-4">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row justify-content-around">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase">Контакты</h5>
+          <p>7 800 353-55-55</p>
+          <p>global-avia@hirez.club</p>
+          <p>г.Пермь, ул.Пушкина, д.56</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h7 class="text-uppercase">Powered By Uspeshnaya gruppa</h7>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="about.html"> Global Avia Group</a>
+    </div>
+  </footer>
+
+  
+
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

@@ -18,52 +18,57 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/mdb.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    html {
+    height: 175%;
+    }
+  </style>
 </head>
 
 <body>
+
   <div class="container pt-4">
     <!-- Navbar -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark" style="box-shadow: none;">
-        <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark px-auto" style="box-shadow: none;">
+          <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
       
-        <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
-      			-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
+              			-->
       
-        <!-- Иконки меню -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item" title="Переключение языка">
-              <a class="nav-link lang-switch" href="#">ENG</a>
-            </li>
-            <li class="nav-item" title="Ночная тема">
-              <a class="nav-link" href="#">
-                <i class="material-icons nav-icon night-stay">
-                  nights_stay
-                </i>
-              </a>
-            </li>
-            <li class="nav-item dropdown" title="Аккаунт">
-              <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
-                <i class="material-icons nav-icon person">
-                  person
-                </i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Профиль</a>
-                <a class="dropdown-item" href="#">Количество баллов</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
       
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+          <!-- Иконки меню -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" title="Переключение языка">
+                <a class="nav-link lang-switch" href="#">ENG</a>
+              </li>
+              <li class="nav-item" title="Ночная тема">
+                <a class="nav-link" href="#">
+                  <i class="material-icons nav-icon night-stay">
+                    nights_stay
+                  </i>
+                </a>
+              </li>
+              <li class="nav-item dropdown" title="Аккаунт">
+                <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
+                  <i class="material-icons nav-icon person">
+                    person
+                  </i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Профиль</a>
+                  <a class="dropdown-item" href="#">Количество баллов</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
+      
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
     <hr style="margin-top: 0;">
     <main class="main container-fluid">
       <div class="clouds cl-easy">
@@ -78,9 +83,11 @@
         </div>
         <div class="col-5 about-profile">
           <h2>Имя профиля</h2>
+          <h6>Пермь, Россия</h6>
+          <h7>ukrposhta@mans.club</h7>
         </div>
         <div class="col-4 status">
-          Cтатус
+          <h4>Cтатус</h4>
         </div>
       </div>
       <div class="MyTrip container">
@@ -96,7 +103,7 @@
               <div class="row city-trip">
                 <h3>
                   <span id="city-trip">
-                    Прага
+                    Пермь - Прага
                   </span>
                 </h3>
               </div>
@@ -136,7 +143,7 @@
               <div class="row city-trip">
                 <h3>
                   <span id="city-trip">
-                    Санкт-Петербург
+                    Пермь - Санкт-Петербург
                   </span>
                 </h3>
               </div>
@@ -166,102 +173,80 @@
           </div>
         </div>
       </div>
-      <div class="contact-data">
+      <div class="contact-data p-5">
         <h3>
           Контактные данные
         </h3>
-        <div class="row">
-          <div class="col">
-            f
+        <div class="row justify-content-around pt-3">
+          <div class="col-3">
+            <form>
+              <label for="formProfileEmail" class="grey-text font-weight-light">Почта</label>
+              <input type="text" id="formProfileEmail" placeholder="ukrposhta@mans.club" class="form-control">
+
+              <label for="formProfilePassword" class="grey-text font-weight-light mt-2">Пароль</label>
+              <input type="password" id="formProfilePassword" placeholder="Старый пароль" class="form-control">
+              <input type="password" id="formProfilePassword" placeholder="Новый пароль" class="form-control mt-2">
+
+              <label for="formProfileTelephone" class="grey-text font-weight-light mt-2">Номер телефона</label>
+              <input type="text" id="formProfileTelephone" placeholder="79545353556" class="form-control">
+
+              <label for="formProfilePassport" class="grey-text font-weight-light mt-2">Номер паспорта</label>
+              <input type="text" id="formProfilePassport" placeholder="5453136789" class="form-control">
+
+            </form>
           </div>
-          <div class="col">
-            f
+          <div class="col-3">
+            <form>
+              <label for="formProfileName" class="grey-text font-weight-light">Имя</label>
+              <input type="text" id="formProfileName" placeholder="Иван" class="form-control">
+              <label for="formProfilePatronymic" class="grey-text font-weight-light mt-2">Отчество</label>
+              <input type="text" id="formProfilePatronymic" placeholder="Владимирович" class="form-control">
+              <label for="formProfileLastname" class="grey-text font-weight-light mt-2">Фамилия</label>
+              <input type="text" id="formProfileLastname" placeholder="Криворучко" class="form-control">
+              <label for="formProfileCity" class="grey-text font-weight-light mt-2">Город</label>
+              <input type="text" id="formProfileCity" placeholder="Пермь" class="form-control">
+            </form>
           </div>
         </div>
       </div>
     </main>
-    <footer class="page-footer font-small blue pt-4">
-      - Footer Links -->
-      <div class="container-fluid text-center text-md-left">
-      
-        <!-- Grid row -->
-        <div class="row">
-      
-          <!-- Grid column -->
+  </div>
+  <footer class="page-footer font-small pt-4">  
+    <div class="container text-center text-md-left">
+        <div class="row justify-content-around">
           <div class="col-md-6 mt-md-0 mt-3">
-      
-            <!-- Content -->
-            <h5 class="text-uppercase">Footer Content</h5>
-            <p>Here you can use rows and columns to organize your footer content.</p>
-      
+            <h5 class="text-uppercase">Контакты</h5>
+            <p>7 800 353-55-55</p>
+            <p>global-avia@hirez.club</p>
+            <p>г.Пермь, ул.Пушкина, д.56</p>
           </div>
-          <!-- Grid column -->
-      
           <hr class="clearfix w-100 d-md-none pb-3">
-      
-          <!-- Grid column -->
           <div class="col-md-3 mb-md-0 mb-3">
-      
-            <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
-      
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-      
+            <h7 class="text-uppercase">Powered By Uspeshnaya gruppa</h7>
           </div>
-          <!-- Grid column -->
-      
-          <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
-      
-            <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
-      
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-      
-          </div>
-          <!-- Grid column -->
-      
         </div>
-        <!-- Grid row -->
-      
       </div>
-      <!-- Footer Links -->
-      
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="about.html"> Global Avia Group</a>
       </div>
     </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/mdb.min.js"></script>
-  </div>
+    <script>
+    /*  let $window = $(window);
+
+        $window.on('scroll', onScroll);
+
+        function onScroll() {
+          if ($window.scrollTop() >= ($(window).height()-500)) {
+            $("body").addClass("background-image");            
+          } else {
+            $("body").removeClass("background-image");
+          }
+        }
+    */
+    </script>
 </body>
 </html>

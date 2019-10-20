@@ -1,16 +1,16 @@
-html {
-  height: 100%;
-  min-height: 100%;
-}
 body {
-  background: linear-gradient(to bottom,#065bc6 0%,#3c8bf4 25%,#7fb0fd 50%,#d2dbeb 75%,#c7def6 100%) no-repeat;
-  height:100%;
-  min-height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-attachment: fixed;
-  margin: 0;
+  background: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,
+              linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y;
+  //background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
 }
+html {
+			position: relative;
+			min-height: 150%;
+		}
 .lang-switch {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
@@ -145,6 +145,14 @@ body.modal-open {
 }
 .photo-profile, .about-profile, .status {
   padding: 2.5rem;
+}
+.page-footer {
+  background: #002715;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 // Bootstrap Sass Imports
 // node_modules/bootstrap/scss/_variables.scss
