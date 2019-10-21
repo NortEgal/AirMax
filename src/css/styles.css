@@ -165,7 +165,7 @@ footer {
   color: rgba(255, 255, 255, 0.863); }
 
 .nav-image {
-  background: url(/img/log-df2.png) no-repeat 50% 50%;
+  background: url(../img/log-df2.png) no-repeat 50% 50%;
   background-size: 100%;
   min-width: 250.4px;
   min-height: 150px; }
