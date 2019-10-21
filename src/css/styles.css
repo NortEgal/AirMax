@@ -1,13 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1; }
+
 body {
   overflow-y: scroll;
   overflow-x: hidden;
   background: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat, linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y;
-  height: 100vh;
   width: 100vw; }
-
-html {
-  position: relative;
-  min-height: 150%; }
 
 .lang-switch {
   font-family: 'Rubik', sans-serif;
@@ -23,11 +24,12 @@ html {
 .clouds {
   display: block;
   position: absolute;
-  z-index: -1;
+  z-index: -999;
   height: calc(100% - 16.6666666667rem);
   width: 100%;
   left: 0;
-  top: 0; }
+  top: 0;
+  bottom: 0; }
 
 .cl-easy {
   background: url("../img/easy.png") no-repeat; }
@@ -146,8 +148,6 @@ body.modal-open {
   background: #002715; }
 
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%; }
 
 .cl-big {
@@ -169,3 +169,27 @@ footer {
   background-size: 100%;
   min-width: 250.4px;
   min-height: 150px; }
+
+.button-number-passengers {
+  background: transparent;
+  border: none; }
+
+.dropdown-menu {
+  min-width: 280px; }
+
+.input-number-passengers {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  max-width: 20px;
+  text-align: center;
+  border: none; }
+
+.input-number-passengers::-webkit-outer-spin-button,
+.input-number-passengers::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.input-number-passengers:hover,
+.input-number-passengers:focus {
+  -moz-appearance: number-input; }
