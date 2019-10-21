@@ -32,7 +32,7 @@ html {
   top: 0;
 }
 .cl-easy {
-  background: url("../img/easy.png");
+  background: url("../img/easy.png") no-repeat;
 }
 body.modal-open {
   overflow: hidden;
@@ -154,6 +154,27 @@ footer {
   bottom: 0;
   width: 100%;
 }
+.cl-big {
+  background: url(/img/big.png) no-repeat;
+  transform: translateX(900px) translateY(550px)
+}
+.cl-one {
+  background: url(/img/one.png) no-repeat;
+  transform: translateY(450px) translateX(-390px);
+}
+.zagalovok {
+  font-style: normal;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.863);
+}
+.nav-image {
+  background: url(/img/log-df2.png) no-repeat 50% 50%;
+  background-size: 100%;
+  min-width: 250.4px;
+  min-height: 150px;
+}
+
 // Bootstrap Sass Imports
 // node_modules/bootstrap/scss/_variables.scss
 // @import "node_modules/bootstrap/scss/bootstrap"; 
