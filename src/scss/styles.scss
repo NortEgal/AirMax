@@ -37,6 +37,14 @@ body {
 .cl-easy {
   background: url("../img/easy.png") no-repeat;
 }
+.cl-big {
+  background: url(../img/big.png) no-repeat;
+  transform: translateX(900px) translateY(550px)
+}
+.cl-one {
+  background: url(../img/one.png) no-repeat;
+  transform: translateY(450px) translateX(-390px);
+}
 body.modal-open {
   overflow: hidden;
 }
@@ -157,14 +165,7 @@ footer {
   //flex: 1 1 auto;
   width: 100%;
 }
-.cl-big {
-  background: url(/img/big.png) no-repeat;
-  transform: translateX(900px) translateY(550px)
-}
-.cl-one {
-  background: url(/img/one.png) no-repeat;
-  transform: translateY(450px) translateX(-390px);
-}
+
 .zagalovok {
   font-style: normal;
   font-family: 'Montserrat', sans-serif;
