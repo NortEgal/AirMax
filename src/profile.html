@@ -64,12 +64,13 @@
                     person
                   </i>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">Профиль</a>
-                  <a class="dropdown-item" href="#">Количество баллов</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
-      
+                <div class="dropdown-menu dropdown-menu-right" style="min-width: 150px;">
+                  <a class="dropdown-item text-center" href="#" data-target="#SignINmodal" data-toggle="modal">
+                    Выйти
+                    <i class="material-icons" style="vertical-align: middle;">
+                      exit_to_app
+                    </i>
+                  </a>
                 </div>
               </li>
             </ul>
@@ -95,7 +96,55 @@
           <a href="pay.html" title="Пополнить"> 40 гривен</a>
         </div>
       </div>
-      <div class="MyTrip container">
+      <div class="contact-data px-5">
+        <h3>
+          Контактные данные
+        </h3>
+      
+        <form>
+          <div class="form-row justify-content-around">
+            <div class="col-md-5">
+              <div class="md-form form-group">
+                <input type="text" id="formProfileEmail" value="ukrposhta@mans.club" class="form-control">
+                <label for="formProfileEmail" class="grey-text font-weight-light">Почта</label>
+              </div>
+              <div class="md-form form-group">
+                <input type="password" id="formProfilePassword" placeholder="Старый пароль" class="form-control">
+                <input type="password" id="formProfilePassword" placeholder="Новый пароль" class="form-control mt-2">
+                <label for="formProfilePassword" class="grey-text font-weight-light">Пароль</label>
+              </div>
+              <div class="md-form form-group">
+                <input type="text" id="formProfileTelephone" value="79545353556" class="form-control">
+                <label for="formProfileTelephone" class="grey-text font-weight-light">Номер телефона</label>
+              </div>
+              <div class="md-form form-group">
+                <input type="text" id="formProfilePassport" value="5453136789" class="form-control">
+                <label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="md-form form-group">
+                <label for="formProfileName" class="grey-text font-weight-light">Имя</label>
+                <input type="text" id="formProfileName" value="Иван" class="form-control">
+              </div>
+              <div class="md-form form-group">
+                <label for="formProfilePatronymic" class="grey-text font-weight-light">Отчество</label>
+                <input type="text" id="formProfilePatronymic" value="Владимирович" class="form-control">
+              </div>
+              <div class="md-form form-group">
+                <label for="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
+                <input type="text" id="formProfileLastname" value="Криворучко" class="form-control">
+              </div>
+              <div class="md-form form-group">
+                <label for="formProfileCity" class="grey-text font-weight-light">Город</label>
+                <input type="text" id="formProfileCity" value="Пермь" class="form-control">
+              </div>
+            </div>
+          </div>
+        </form>
+        <button type="button" class="btn btn-info"> Изменить </button>
+      </div>
+      <div class="MyTrip container p-5">
         <h2>Мои поездки</h2>
         <div class="list-group list-group-flush">
           <div class="trip row list-group-item list-group-item-action">
@@ -177,53 +226,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="contact-data p-5">
-        <h3>
-          Контактные данные
-        </h3>
-          
-        <form>
-          <div class="form-row">
-            <div class="col-md-6">
-              <div class="md-form form-group">
-                <input type="text" id="formProfileEmail" value="ukrposhta@mans.club" class="form-control">
-                <label for="formProfileEmail" class="grey-text font-weight-light">Почта</label>
-              </div>
-              <div class="md-form form-group">
-                <input type="password" id="formProfilePassword" placeholder="Старый пароль" class="form-control">
-                <input type="password" id="formProfilePassword" placeholder="Новый пароль" class="form-control mt-2">
-                <label for="formProfilePassword" class="grey-text font-weight-light">Пароль</label>
-              </div>
-              <div class="md-form form-group">
-                <input type="text" id="formProfileTelephone" value="79545353556" class="form-control">
-                <label for="formProfileTelephone" class="grey-text font-weight-light">Номер телефона</label>
-              </div>
-              <div class="md-form form-group">
-                <input type="text" id="formProfilePassport" value="5453136789" class="form-control">
-                <label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="md-form form-group">
-                <label for="formProfileName" class="grey-text font-weight-light">Имя</label>
-                <input type="text" id="formProfileName" value="Иван" class="form-control">
-              </div>
-              <div class="md-form form-group">
-                <label for="formProfilePatronymic" class="grey-text font-weight-light mt-2">Отчество</label>
-                <input type="text" id="formProfilePatronymic" value="Владимирович" class="form-control">
-              </div>
-              <div class="md-form form-group">
-                <label for="formProfileLastname" class="grey-text font-weight-light mt-2">Фамилия</label>
-                <input type="text" id="formProfileLastname" value="Криворучко" class="form-control">
-              </div>
-              <div class="md-form form-group">
-                <label for="formProfileCity" class="grey-text font-weight-light mt-2">Город</label>
-                <input type="text" id="formProfileCity" value="Пермь" class="form-control">
-              </div>
-            </div>
-          </div>
-        </form>
       </div>
     </main>
   </div>
