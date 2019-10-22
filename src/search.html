@@ -1,530 +1,343 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ru">
 
-<head>
-  <title>Global Avia</title>
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel='stylesheet'>
-
-
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/mdb.css">
-  <link rel="stylesheet" href="css/styles.css">
-
-  <style>
-    html,body {
-      min-height: 1400px;
-    }
-  </style>
-</head>
+<head></head>
 
 <body class="d-flex flex-column h-100">
-  <div class="container pt-4 flex-shrink-0">
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark" style="box-shadow: none;">
-        <a class="navbar-brand nav-image" href="index.html" title="На главную"></a>
-    
-        <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
-              			-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <!-- Иконки меню -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item" title="Переключение языка">
-              <a class="nav-link lang-switch" href="#">ENG</a>
-            </li>
-            <li class="nav-item" title="Ночная тема">
-              <a class="nav-link" href="#">
-                <i class="material-icons nav-icon night-stay">
-                  nights_stay
-                </i>
-              </a>
-            </li>
-            <li class="nav-item dropdown" title="Аккаунт">
-              <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
-                <i class="material-icons nav-icon person">
-                  person
-                </i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="profile.html">Профиль</a>
-                <a class="dropdown-item" href="#">Количество баллов</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
-    
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- Clouds -->
-    <div class="clouds">
-      <img src="img/one.png" style="transform: translateY(450px) translateX(-390px);">
-    </div>
-    <div class="clouds cl-easy">
-      <img src="img/big.png" style="transform: translateX(900px) translateY(550px)">
-    </div>
-    <main>
-      <hr style="margin-top: 0;">
-      <form class="mainform">
-        <div class="form-row mb-3">
-          <!-- Город вылета -->
-          <div class="col">
-            <input class="form-control" type="text" placeholder="Город вылета">
-          </div>
-          <!-- Город прибытия -->
-          <div class="col">
-            <input class="form-control" type="text" placeholder="Город прибытия">
-          </div>
-          <!-- Календарь -->
-          <div class="col">
-            <input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
-          </div>
-          <!-- Пассажиры -->
-          <div class="col">
-            <div class="dropdown-p">
-              <span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
-              <div class="dropdown-menu dropdown-menu-right">
-                <div class="row justify-content-between">
-                  <div class="col-auto">
-                    <p>
-                      <strong>
-                        Взрослые
-                      </strong>
-                    </p>
-                    <p>
-                      <small>
-                        Старше 12 лет
-                      </small>
-                    </p>
-                  </div>
-                  <div class="col-3">
-                    <a>
-                      <i class="material-icons">
-                        remove_circle
-                      </i>
-                    </a>
-                    <span>1</span>
-                    <a>
-                      <i class="material-icons">
-                        add_circle
-                      </i>
-                    </a>
-                  </div>
-                </div>
-                <div class="row justify-content-between">
-                  <div class="col-auto">
-                    <p>
-                      <strong>
-                        Дети
-                      </strong>
-                    </p>
-                    <p>
-                      <small>
-                        От 2 до 12 лет
-                      </small>
-                    </p>
-                  </div>
-                  <div class="col-3">
-                    <a>
-                      <i class="material-icons">
-                        remove_circle
-                      </i>
-                    </a>
-                    <span>0</span>
-                    <a>
-                      <i class="material-icons">
-                        add_circle
-                      </i>
-                    </a>
-                  </div>
-                </div>
-                <div class="row justify-content-between">
-                  <div class="col-auto">
-                    <p>
-                      <strong>
-                        Младенцы
-                      </strong>
-                    </p>
-                    <p>
-                      <small>
-                        До 12 лет, без места
-                      </small>
-                    </p>
-                  </div>
-                  <div class="col-3">
-                    <a>
-                      <i class="material-icons">
-                        remove_circle
-                      </i>
-                    </a>
-                    <span>0</span>
-                    <a>
-                      <i class="material-icons">
-                        add_circle
-                      </i>
-                    </a>
-                  </div>
-                </div>
-                <hr>
-                <div class="form-check">
-                  <label class="form-check-label" for="exampleRadios1">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
-                      checked> Эконом
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label" for="exampleRadios2">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    Оптимальный
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label" for="exampleRadios3">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                    Премиум
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Кнопка -->
-          <div class="col-auto">
-            <button class="btn btn-primary" type="submit"
-              style="font-family: 'Raleway', sans-serif;
-                              font-weight: 600; color: rgba(255, 255, 255, 0.863); margin-top:0; padding: 0.56rem 2rem;">Найти</button>
-          </div>
-        </div>
-      </form>
-      <div class="row result-days">
-        <div class="col">
-          Пред день
-          <span>
-            11/09/2019
-          </span>
-        </div>
-        <div class="col">
-          Выбранная дата
-          <span>
-            12/09/2019
-          </span>
-        </div>
-        <div class="col">
-          След день
-          <span>
-            13/09/2019
-          </span>
-        </div>
-      </div>
-      <!-- main block -->
-      <div class="main container mt-3">
-        <!-- Выбор дня билета -->
-        <div class="row justify-content-between">
-          <div class="btn-group col-auto" role="group">
-            <button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" title="по цене">
-              <i class="material-icons">
-                sort
-              </i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
-              <a class="dropdown-item" href="#">По времени</a>
-              <a class="dropdown-item active" href="#">По цене</a>
-            </div>
-          </div>
-          <div class="col-auto ticket-result">
-            <span class="ticket-result">Найденно: 5 вариантов</span>
-          </div>
-        </div>
-        <hr>
-        <div class="tickets">
-          <div class="ticket1">
-            <div class="row ticket-date">
-              <div class="col-auto">
-                Туда:
-              </div>
-              <div class="col">
-                <span>
-                  12 сентября
-                </span>
-              </div>
-            </div>
-            <div class="row">
-              <!-- Информация о рейсе -->
-              <div class="col-5 ticket-info">
-                <div class="row justify-content-around">
-                  <div class="col-3 ticket-time-fr">
-                    <!-- Время вылета -->
-                    <span>
-                      10:35
-                    </span>
-                    <!-- Откуда -->
-                    <span class="ticket-city">
-                      Пермь
-                    </span>
-                  </div>
-                  <div class="col-auto" style="padding-left: 0">
-                    <div class="row ticket-time no-gutters">
-                      <!-- Время в пути -->
-                      <div class="col">
-                        <span>
-                          1 ч 20 м
-                        </span>
-                        <!-- Тип рейса -->
-                        <span>
-                          Прямой рейс
-                        </span>
-                      </div>
-                    </div>
-                    <!-- Стрелка -->
-                    <div class="ticket-arrow">
-                    </div>
-                    <!-- id рейса -->
-                    <div class="row ticket-id">
-                      <span>
-                        GA369
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-3 ticket-time-to">
-                    <!-- Время прилета -->
-                    <span>
-                      11:55
-                    </span>
-                    <!-- Куда -->
-                    <span class="ticket-city">
-                      Москва
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-7">
-                <!-- Цена рейса -->
-                <div class="row ticket-price">
-                  <!-- Эконом -->
-                  <div class="col ticket-econom">
-                    <h5>Эконом</h5>
-                    <span>
-                      3980 ₽
-                    </span>
-                  </div>
-                  <!-- Оптимальный -->
-                  <div class="col ticket-optim">
-                    <h5>Оптимальный</h5>
-                    <span>
-                      5480 ₽
-                    </span>
-                  </div>
-                  <!-- Премиум -->
-                  <div class="col ticket-premium">
-                    <h5>Премиум</h5>
-                    <span>
-                      8480 ₽
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    
-    <!-- Вход в акк -->
-    <div class="modal fade" id="SignINmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header text-center" style="border-bottom: none;">
-            <h4 class="modal-title" id="exampleModalLongTitle" style="margin-left: 3.75rem;">Вход на сайт</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-    
-            <form class="text-center" style="color: #757575;" action="#!">
-    
-              <!-- Email -->
-              <div class="md-form">
-                <input type="email" id="materialLoginFormEmail" class="form-control">
-                <label for="materialLoginFormEmail">Э-почта</label>
-              </div>
-    
-              <!-- Password -->
-              <div class="md-form">
-                <input type="password" id="materialLoginFormPassword" class="form-control">
-                <label for="materialLoginFormPassword">Пароль</label>
-              </div>
-    
-              <div class="d-flex justify-content-around">
-                <div>
-                  <!-- Remember me -->
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-                    <label class="form-check-label" for="materialLoginFormRemember">Запомнить меня</label>
-                  </div>
-                </div>
-                <div>
-                  <!-- Forgot password -->
-                  <a href="">Забыли пароль?</a>
-                </div>
-              </div>
-    
-              <!-- Sign in button -->
-              <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                type="submit">Войти</button>
-    
-              <!-- Register -->
-              <p>Нет аккаунта?
-                <a href="" data-target="#SignUPmodal" data-toggle="modal">Регистрация</a>
-              </p>
-    
-              <!-- Social login -->
-              <p>или через соц.сети:</p>
-    
-    
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Регистрация -->
-    <div class="modal fade" id="SignUPmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header text-center" style="border-bottom: none;">
-            <h4 class="modal-title" id="exampleModalLongTitle" style="margin-left: 3.75rem;">Регистрация</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-            <form class="text-center" style="color: #757575;" action="#!">
-    
-              <div class="form-row">
-                <div class="col">
-                  <!-- First name -->
-                  <div class="md-form">
-                    <input type="text" id="materialRegisterFormFirstName" class="form-control">
-                    <label for="materialRegisterFormFirstName">Имя</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <!-- Last name -->
-                  <div class="md-form">
-                    <input type="email" id="materialRegisterFormLastName" class="form-control">
-                    <label for="materialRegisterFormLastName">Фамилия</label>
-                  </div>
-                </div>
-              </div>
-    
-              <!-- E-mail -->
-              <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" class="form-control">
-                <label for="materialRegisterFormEmail">Э-почта</label>
-              </div>
-    
-              <!-- Password -->
-              <div class="md-form">
-                <input type="password" id="materialRegisterFormPassword" class="form-control"
-                  aria-describedby="materialRegisterFormPasswordHelpBlock">
-                <label for="materialRegisterFormPassword">Пароль</label>
-                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                  Не менее 8 символов и 1 цифры
-                </small>
-              </div>
-    
-              <!-- Phone number -->
-              <div class="md-form">
-                <input type="password" id="materialRegisterFormPhone" class="form-control"
-                  aria-describedby="materialRegisterFormPhoneHelpBlock">
-                <label for="materialRegisterFormPhone">Номер телефона</label>
-                <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                  Вы сможете получать уведомление о рейсе
-                </small>
-              </div>
-    
-              <!-- Sign up button -->
-              <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                type="submit">Продолжить</button>
-    
-              <!-- Social register -->
-              <p>или через соц.сети:</p>
-    
-              <hr>
-    
-              <!-- Terms of service -->
-              <p>При нажатии
-                <em>Продолжить</em> вы соглашаетесь на
-                <a href="" target="_blank">обработку персональных данных</a>
-    
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer class="page-footer font-small pt-4 mt-auto">
-    <div class="container-fluid text-center text-md-left">
-      <div class="row justify-content-around">
-        <div class="col-md-6 mt-md-0 mt-3">
-          <h5 class="text-uppercase">Контакты</h5>
-          <p>7 800 353-55-55</p>
-          <p>global-avia@hirez.club</p>
-          <p>г.Пермь, ул.Пушкина, д.56</p>
-        </div>
-        <hr class="clearfix w-100 d-md-none pb-3">
-        <div class="col-md-3 mb-md-0 mb-3">
-          <h7 class="text-uppercase">Powered By Uspeshnaya gruppa</h7>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="about.html"> Global Avia Group</a>
-    </div>
-  </footer>
+	<div class="container pt-4 flex-shrink-0">
+	<header>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark" style="box-shadow: none;">
+		<a class="navbar-brand nav-image" href="index.html" title="На главную"></a>
+	
+		<!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
+							-->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	
+		<!-- Иконки меню -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+			<li class="nav-item" title="Переключение языка">
+				<a class="nav-link lang-switch" href="#">ENG</a>
+			</li>
+			<li class="nav-item" title="Ночная тема">
+				<a class="nav-link" href="#">
+				<i class="material-icons nav-icon night-stay">
+					nights_stay
+				</i>
+				</a>
+			</li>
+			<li class="nav-item dropdown" title="Аккаунт">
+				<a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
+				<i class="material-icons nav-icon person">
+					person
+				</i>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right">
+				<a class="dropdown-item" href="profile.html">Профиль</a>
+				<a class="dropdown-item" href="#">Количество баллов</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
+	
+				</div>
+			</li>
+			</ul>
+		</div>
+		</nav>
+	</header>
+	<!-- Clouds -->
+	<div class="clouds">
+		<img src="img/one.png" style="transform: translateY(450px) translateX(-390px);">
+	</div>
+	<div class="clouds cl-easy">
+		<img src="img/big.png" style="transform: translateX(900px) translateY(550px)">
+	</div>
+	<main>
+		<hr style="margin-top: 0;">
+		<form class="mainform">
+		<div class="form-row mb-3">
+			<!-- Город вылета -->
+			<div class="col">
+			<input class="form-control" type="text" placeholder="Город вылета">
+			</div>
+			<!-- Город прибытия -->
+			<div class="col">
+			<input class="form-control" type="text" placeholder="Город прибытия">
+			</div>
+			<!-- Календарь -->
+			<div class="col">
+			<input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
+			</div>
+			<!-- Пассажиры -->
+			<div class="col">
+			<div class="dropdown-p">
+				<span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
+				<div class="dropdown-menu dropdown-menu-right">
+				<div class="row justify-content-between">
+					<div class="col-auto">
+					<p>
+						<strong>
+						Взрослые
+						</strong>
+					</p>
+					<p>
+						<small>
+						Старше 12 лет
+						</small>
+					</p>
+					</div>
+					<div class="col-3">
+					<a>
+						<i class="material-icons">
+						remove_circle
+						</i>
+					</a>
+					<span>1</span>
+					<a>
+						<i class="material-icons">
+						add_circle
+						</i>
+					</a>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-auto">
+					<p>
+						<strong>
+						Дети
+						</strong>
+					</p>
+					<p>
+						<small>
+						От 2 до 12 лет
+						</small>
+					</p>
+					</div>
+					<div class="col-3">
+					<a>
+						<i class="material-icons">
+						remove_circle
+						</i>
+					</a>
+					<span>0</span>
+					<a>
+						<i class="material-icons">
+						add_circle
+						</i>
+					</a>
+					</div>
+				</div>
+				<div class="row justify-content-between">
+					<div class="col-auto">
+					<p>
+						<strong>
+						Младенцы
+						</strong>
+					</p>
+					<p>
+						<small>
+						До 12 лет, без места
+						</small>
+					</p>
+					</div>
+					<div class="col-3">
+					<a>
+						<i class="material-icons">
+						remove_circle
+						</i>
+					</a>
+					<span>0</span>
+					<a>
+						<i class="material-icons">
+						add_circle
+						</i>
+					</a>
+					</div>
+				</div>
+				<hr>
+				<div class="form-check">
+					<label class="form-check-label" for="exampleRadios1">
+					<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+						checked> Эконом
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label" for="exampleRadios2">
+					<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+					Оптимальный
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label" for="exampleRadios3">
+					<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+					Премиум
+					</label>
+				</div>
+				</div>
+			</div>
+			</div>
+			<!-- Кнопка -->
+			<div class="col-auto">
+			<button class="btn btn-primary" type="submit"
+				style="font-family: 'Raleway', sans-serif;
+								font-weight: 600; color: rgba(255, 255, 255, 0.863); margin-top:0; padding: 0.56rem 2rem;">Найти</button>
+			</div>
+		</div>
+		</form>
+		<div class="row result-days">
+		<div class="col">
+			Пред день
+			<span>
+			11/09/2019
+			</span>
+		</div>
+		<div class="col">
+			Выбранная дата
+			<span>
+			12/09/2019
+			</span>
+		</div>
+		<div class="col">
+			След день
+			<span>
+			13/09/2019
+			</span>
+		</div>
+		</div>
+		<!-- main block -->
+		<div class="main container mt-3">
+		<!-- Выбор дня билета -->
+		<div class="row justify-content-between">
+			<div class="btn-group col-auto" role="group">
+			<button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false" title="по цене">
+				<i class="material-icons">
+				sort
+				</i>
+			</button>
+			<div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
+				<a class="dropdown-item" href="#">По времени</a>
+				<a class="dropdown-item active" href="#">По цене</a>
+			</div>
+			</div>
+			<div class="col-auto ticket-result">
+			<span class="ticket-result">Найденно: 5 вариантов</span>
+			</div>
+		</div>
+		<hr>
+		<div class="tickets">
+			<div class="ticket1">
+			<div class="row ticket-date">
+				<div class="col-auto">
+				Туда:
+				</div>
+				<div class="col">
+				<span>
+					12 сентября
+				</span>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Информация о рейсе -->
+				<div class="col-5 ticket-info">
+				<div class="row justify-content-around">
+					<div class="col-3 ticket-time-fr">
+					<!-- Время вылета -->
+					<span>
+						10:35
+					</span>
+					<!-- Откуда -->
+					<span class="ticket-city">
+						Пермь
+					</span>
+					</div>
+					<div class="col-auto" style="padding-left: 0">
+					<div class="row ticket-time no-gutters">
+						<!-- Время в пути -->
+						<div class="col">
+						<span>
+							1 ч 20 м
+						</span>
+						<!-- Тип рейса -->
+						<span>
+							Прямой рейс
+						</span>
+						</div>
+					</div>
+					<!-- Стрелка -->
+					<div class="ticket-arrow">
+					</div>
+					<!-- id рейса -->
+					<div class="row ticket-id">
+						<span>
+						GA369
+						</span>
+					</div>
+					</div>
+					<div class="col-3 ticket-time-to">
+					<!-- Время прилета -->
+					<span>
+						11:55
+					</span>
+					<!-- Куда -->
+					<span class="ticket-city">
+						Москва
+					</span>
+					</div>
+				</div>
+				</div>
+				<div class="col-7">
+				<!-- Цена рейса -->
+				<div class="row ticket-price">
+					<!-- Эконом -->
+					<div class="col ticket-econom">
+					<h5>Эконом</h5>
+					<span>
+						3980 ₽
+					</span>
+					</div>
+					<!-- Оптимальный -->
+					<div class="col ticket-optim">
+					<h5>Оптимальный</h5>
+					<span>
+						5480 ₽
+					</span>
+					</div>
+					<!-- Премиум -->
+					<div class="col ticket-premium">
+					<h5>Премиум</h5>
+					<span>
+						8480 ₽
+					</span>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</main>
+	</div>
 
-  
+	<footer class="page-footer font-small pt-4 mt-auto"></footer>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/mdb.min.js"></script>
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/popper.min.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/libs/mdb.min.js"></script>
+	<script src="js/libs/moment.min.js"></script>
+	<script src="js/libs/daterangepicker.js"></script>
+	
+	<script src="js/load.js"></script>
+	<script src="js/search.js"></script>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
-  <script>
-    $(function () {
-        $('input[name="calendar"]').daterangepicker({
-          "minYear": 2019,
-          "maxYear": 2020,
-          "startDate": "10/02/2019",
-          "endDate": "10/02/2019",
-          "minDate": "dd/mm/yyyy",
-          "maxDate": "dd/mm/yyyy"
-        }, function (start, end, label) {
-          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-      });
-    $('.dropdown-p').on('click', '.dropdown-menu', function (e) {
-        e.stopPropagation();
-      });
-  </script>
+	<style>
+		html,
+		body {
+			min-height: 1400px;
+		}
+	</style>
 </body>
 </html>

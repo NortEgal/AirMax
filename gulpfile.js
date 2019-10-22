@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 gulp.task('sass', function () {
 	return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 
 					'node_modules/mdbootstrap/scss/mdb.scss',
+					'node_modules/daterangepicker/daterangepicker.css',
 					'src/scss/*.scss'])
 		.pipe(sass())
 		.pipe(gulp.dest("src/css"))
@@ -17,8 +18,10 @@ gulp.task('js', function () {
 	return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 
 					'node_modules/jquery/dist/jquery.min.js', 
 					'node_modules/popper.js/dist/umd/popper.min.js',
-					'node_modules/mdbootstrap/js/mdb.min.js'])
-		.pipe(gulp.dest("src/js"))
+					'node_modules/mdbootstrap/js/mdb.min.js',
+					'node_modules/daterangepicker/moment.min.js',
+					'node_modules/daterangepicker/daterangepicker.js'])
+		.pipe(gulp.dest("src/js/libs"))
 		.pipe(browserSync.stream());
 });
 

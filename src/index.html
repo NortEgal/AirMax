@@ -1,32 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ru">
 
-<head>
-	<title>Global Avia</title>
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
-	<link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel='stylesheet'>
-
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/mdb.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<style>
-		html, body {
-			min-height: 1200px;
-		}
-		.cl-big {
-			height: 60%;
-		}
-	</style>
-</head>
+<head></head>
 
 <body class="d-flex flex-column h-100">
 	<div class="container pt-4 flex-shrink-0">
@@ -65,7 +40,6 @@
 				</div>
 			</nav>
 		</header>
-		
 
 		<main class="justify-content-center text-center pt-5 mt-2">
 			<div class="clouds cl-easy"></div>
@@ -192,183 +166,29 @@
 			</form>
 			<a class="btn btn-primary btn-lg" href="search.html" role="button" style="width: 20%; font-family: 'Raleway', sans-serif; font-weight: 600; color: rgba(255, 255, 255, 0.863)">Найти</a>
 		</main>
-		<div class="modal fade" id="SignINmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header text-center" style="border-bottom: none;">
-						<h4 class="modal-title" id="exampleModalLongTitle"style="margin-left: 3.75rem;">Вход на сайт</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-					
-						<form class="text-center" style="color: #757575;" action="#!">
-						
-							<!-- Email -->
-							<div class="md-form">
-								<input type="email" id="materialLoginFormEmail" class="form-control">
-								<label for="materialLoginFormEmail">Э-почта</label>
-							</div>
-						
-							<!-- Password -->
-							<div class="md-form">
-								<input type="password" id="materialLoginFormPassword" class="form-control">
-								<label for="materialLoginFormPassword">Пароль</label>
-							</div>
-						
-							<div class="d-flex justify-content-around">
-								<div>
-									<!-- Remember me -->
-									<div class="form-check">
-										<input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-										<label class="form-check-label" for="materialLoginFormRemember">Запомнить меня</label>
-									</div>
-								</div>
-								<div>
-									<!-- Forgot password -->
-									<a href="">Забыли пароль?</a>
-								</div>
-							</div>
-						
-							<!-- Sign in button -->
-							<button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Войти</button>
-						
-							<!-- Register -->
-							<p>Нет аккаунта?
-								<a href="" data-target="#SignUPmodal" data-toggle="modal">Регистрация</a>
-							</p>
-						
-							<!-- Social login -->
-							<p>или через соц.сети:</p>
-							
-						
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="modal fade" id="SignUPmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header text-center" style="border-bottom: none;">
-						<h4 class="modal-title" id="exampleModalLongTitle"style="margin-left: 3.75rem;">Регистрация</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-						<form class="text-center" style="color: #757575;" action="#!">
-						
-							<div class="form-row">
-								<div class="col">
-									<!-- First name -->
-									<div class="md-form">
-										<input type="text" id="materialRegisterFormFirstName" class="form-control">
-										<label for="materialRegisterFormFirstName">Имя</label>
-									</div>
-								</div>
-								<div class="col">
-									<!-- Last name -->
-									<div class="md-form">
-										<input type="email" id="materialRegisterFormLastName" class="form-control">
-										<label for="materialRegisterFormLastName">Фамилия</label>
-									</div>
-								</div>
-							</div>
-						
-							<!-- E-mail -->
-							<div class="md-form mt-0">
-								<input type="email" id="materialRegisterFormEmail" class="form-control">
-								<label for="materialRegisterFormEmail">Э-почта</label>
-							</div>
-						
-							<!-- Password -->
-							<div class="md-form">
-								<input type="password" id="materialRegisterFormPassword" class="form-control"
-									aria-describedby="materialRegisterFormPasswordHelpBlock">
-								<label for="materialRegisterFormPassword">Пароль</label>
-								<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-									Не менее 8 символов и 1 цифры
-								</small>
-							</div>
-						
-							<!-- Phone number -->
-							<div class="md-form">
-								<input type="password" id="materialRegisterFormPhone" class="form-control"
-									aria-describedby="materialRegisterFormPhoneHelpBlock">
-								<label for="materialRegisterFormPhone">Номер телефона</label>
-								<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-									Вы сможете получать уведомление о рейсе
-								</small>
-							</div>
-												
-							<!-- Sign up button -->
-							<button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Продолжить</button>
-						
-							<!-- Social register -->
-							<p>или через соц.сети:</p>
-											
-							<hr>
-						
-							<!-- Terms of service -->
-							<p>При нажатии
-								<em>Продолжить</em> вы соглашаетесь на
-								<a href="" target="_blank">обработку персональных данных</a>
-						
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 
-	<footer id="footer" class="page-footer font-small pt-4 mt-auto">
-		<div class="container text-center text-md-left">
-			<div class="row justify-content-around">
-				<div class="col-md-6 mt-md-0 mt-3">
-					<h5 class="text-uppercase">Контакты</h5>
-					<p>7 800 353-55-55</p>
-					<p>global-avia@hirez.club</p>
-					<p>г.Пермь, ул.Пушкина, д.56</p>
-				</div>
-				<hr class="clearfix w-100 d-md-none pb-3">
-				<div class="col-md-3 mb-md-0 mb-3">
-					<h7 class="text-uppercase">Powered By Uspeshnaya gruppa</h7>
-				</div>
-			</div>
-		</div>
-		<div class="footer-copyright text-center py-3">© 2019 Copyright:
-			<a href="about.html"> Global Avia Group</a>
-		</div>
-	</footer>
+	<footer id="footer" class="page-footer font-small pt-4 mt-auto"></footer>
 
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/popper.min.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/libs/mdb.min.js"></script>
+	<script src="js/libs/moment.min.js"></script>
+	<script src="js/libs/daterangepicker.js"></script>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/mdb.min.js"></script>
+	<script src="js/load.js"></script>
+	<script src="js/index.js"></script>
+
+	<style>
+		html,
+		body {
+			min-height: 1200px;
+		}
 	
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
-	<script>
-		$(function () {
-			$('input[name="calendar"]').daterangepicker({
-				"minYear": 2019,
-				"maxYear": 2020,
-				"startDate": "10/02/2019",
-				"endDate": "10/02/2019",
-				"minDate": "dd/mm/yyyy",
-				"maxDate": "dd/mm/yyyy"
-			}, function (start, end, label) {
-				console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-			});
-		});
-		$('.dropdown-p').on('click', '.dropdown-menu', function (e) {
-				e.stopPropagation();
-			});
-	</script>
+		.cl-big {
+			height: 60%;
+		}
+	</style>
 </body>
-
 </html>
