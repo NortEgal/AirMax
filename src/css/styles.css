@@ -177,19 +177,18 @@ footer {
 .dropdown-menu {
   min-width: 280px; }
 
-.input-number-passengers {
+.input-number {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
-  max-width: 20px;
   text-align: center;
   border: none; }
 
-.input-number-passengers::-webkit-outer-spin-button,
-.input-number-passengers::-webkit-inner-spin-button {
+.input-number::-webkit-outer-spin-button,
+.input-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-.input-number-passengers:hover,
-.input-number-passengers:focus {
+.input-number:hover,
+.input-number:focus {
   -moz-appearance: number-input; }

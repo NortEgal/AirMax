@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <title>Global Avia</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel='stylesheet'>
+
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/mdb.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <div class="container pt-4 flex-shrink-0">
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark px-auto" style="box-shadow: none;">
+        <a class="navbar-brand" href="index.html" title="На главную"><img src="img/log-av.png" style="width: 40%;"></a>
+
+        <!--<img src="https://image.flaticon.com/icons/png/512/68/68380.png" style="width: 10%" class="navbar-brand">
+                    -->
+
+
+        <!-- Иконки меню -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" title="Переключение языка">
+              <a class="nav-link lang-switch" href="#">ENG</a>
+            </li>
+            <li class="nav-item" title="Ночная тема">
+              <a class="nav-link" href="#">
+                <i class="material-icons nav-icon night-stay">
+                  nights_stay
+                </i>
+              </a>
+            </li>
+            <li class="nav-item dropdown" title="Аккаунт">
+              <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown">
+                <i class="material-icons nav-icon person">
+                  person
+                </i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Профиль</a>
+                <a class="dropdown-item" href="#">Количество баллов</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <hr style="margin-top: 0;">
+    <main class="main container-fluid p-5 mb-4">
+      <ul class="nav md-pills pills-secondary">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab" style="color:black !important">Банковская карта</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#panel12" role="tab" style="color: black !important;">QIWI</a>
+        </li>
+      </ul>
+      
+      <div class="tab-content p-3">
+      
+        <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
+          <br>
+          <div class="row">
+            <div class="col-6">
+              <form>
+              
+                <div class="row">
+                  <div class="form-check-inline pl-3">
+                    <input type="radio" class="form-check-input" id="VISA" value="VISA" name="exampleRadios">
+                    <label class="form-check-label" for="VISA">VISA</label>
+                  </div>
+                  
+                  <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="Master-Card" value="Master" name="exampleRadios">
+                    <label class="form-check-label" for="Master-Card">Master Card</label>
+                  </div>
+                  
+                  <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" id="Maestro" value="Maestro" name="exampleRadios">
+                    <label class="form-check-label" for="Maestro">Maestro</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-10">
+                    <div class="md-form md-outline">
+                      <input type="number" id="number-card" onkeypress="this.value=this.value.substring(0,15);" name="number-card"
+                        class="form-control input-number">
+                      <label for="number-card" class="">Номер карты</label>
+                    </div>
+                  </div>
+                </div>
+                <label>Срок действия:</label>
+                <div class="row">
+                  <div class="col-auto pl-3">
+                    <select class="browser-default custom-select">
+                      <option value="1" selected>01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  <div class="col-auto">
+                    <select class="browser-default custom-select">
+                      <option value="1" selected>2019</option>
+                      <option value="2">2020</option>
+                      <option value="3">2021</option>
+                      <option value="4">2022</option>
+                      <option value="5">2023</option>
+                      <option value="6">2024</option>
+                      <option value="7">2025</option>
+                      <option value="8">2026</option>
+                      <option value="9">2027</option>
+                      <option value="10">2028</option>
+                      <option value="11">2029</option>
+                      <option value="12">2030</option>
+                    </select>
+                  </div>
+                  <div class="col-5">
+                    <div class="md-form md-outline mt-0">
+                      <input type="number" onkeypress="this.value=this.value.substring(0,2);" class="form-control input-number"
+                        id="card-code" placeholder="CVV/CVC">
+                      <label for="card-code">Код</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-10 pl-3">
+                    <div class="md-form md-outline">
+                      <input type="text" id="card-holder-name" class="form-control">
+                      <label for="card-holder-name">Владелец карты</label>
+                    </div>
+                  </div>
+                  
+                </div>
+              </form>
+            </div>
+            <div class="col-6">
+              <img src="../img/card.png" width="100%">
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="tab-pane fade" id="panel12" role="tabpanel">
+          <br>
+          <div class="row">
+            <div class="col">
+              f
+            </div>
+            <div class="col">
+              <img src="../img/qiwi.png" width="100%">
+            </div>
+          </div>
+        </div>      
+      </div>
+      <button type="button" class="btn btn-primary"> Оплатить </button>
+    </main>
+  </div>
+  <footer class="page-footer font-small pt-4 mt-auto">
+    <div class="container text-center text-md-left">
+      <div class="row justify-content-around">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase">Контакты</h5>
+          <p>7 800 353-55-55</p>
+          <p>global-avia@hirez.club</p>
+          <p>г.Пермь, ул.Пушкина, д.56</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h7 class="text-uppercase">Powered By Uspeshnaya gruppa</h7>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="about.html"> Global Avia Group</a>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/mdb.min.js"></script>
+</body>
+
+</html>
