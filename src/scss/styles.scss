@@ -187,6 +187,10 @@ footer {
 .dropdown-menu {
   min-width: 280px;
 }
+.nav-item .dropdown-menu {
+  padding: 1rem;
+  min-width: 200px;
+}
 .input-number {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;

@@ -53,11 +53,7 @@
                 </i>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Профиль</a>
-                <a class="dropdown-item" href="#">Количество баллов</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-target="#SignINmodal" data-toggle="modal">Войти</a>
-
+                <a class="dropdown-item" href="profile.html">Профиль</a>
               </div>
             </li>
           </ul>
@@ -83,8 +79,8 @@
             <div class="col-6">
               <form>
               
-                <div class="row">
-                  <div class="form-check-inline pl-3">
+                <div class="form-row">
+                  <div class="form-check-inline pl-2">
                     <input type="radio" class="form-check-input" id="VISA" value="VISA" name="exampleRadios">
                     <label class="form-check-label" for="VISA">VISA</label>
                   </div>
@@ -99,18 +95,18 @@
                     <label class="form-check-label" for="Maestro">Maestro</label>
                   </div>
                 </div>
-                <div class="row">
+                <div class="form-row">
                   <div class="col-10">
                     <div class="md-form md-outline">
                       <input type="number" id="number-card" onkeypress="this.value=this.value.substring(0,15);" name="number-card"
                         class="form-control input-number">
-                      <label for="number-card" class="">Номер карты</label>
+                      <label for="number-card">Номер карты</label>
                     </div>
                   </div>
                 </div>
                 <label>Срок действия:</label>
-                <div class="row">
-                  <div class="col-auto pl-3">
+                <div class="form-row">
+                  <div class="col-auto pl-1">
                     <select class="browser-default custom-select">
                       <option value="1" selected>01</option>
                       <option value="2">02</option>
@@ -150,8 +146,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-10 pl-3">
+                <div class="form-row">
+                  <div class="col-10 pl-1">
                     <div class="md-form md-outline">
                       <input type="text" id="card-holder-name" class="form-control">
                       <label for="card-holder-name">Владелец карты</label>
@@ -171,10 +167,16 @@
         <div class="tab-pane fade" id="panel12" role="tabpanel">
           <br>
           <div class="row">
-            <div class="col">
-              f
+            <div class="col-4">
+              <form>
+                <div class="md-form md-outline my-auto">
+                  <input type="number" id="number-qiwi" onkeypress="this.value=this.value.substring(0,10);" name="number-qiwi"
+                    class="form-control input-number">
+                  <label for="number-qiwi">Номер телефона</label>
+                </div>
+              </form>
             </div>
-            <div class="col">
+            <div class="col-6">
               <img src="../img/qiwi.png" width="100%">
             </div>
           </div>
