@@ -3,7 +3,7 @@
 
 <head>
 	<title>Global Avia</title>
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -43,121 +43,20 @@
 			<form class="mainform mt-5 pt-5 mb-5">
 				<div class="form-row">
 					<div class="col">
-						<input class="form-control" type="text" placeholder="Город вылета">
+						<input id='input_from' class="form-control" type="text" placeholder="Город вылета">
 					</div>
 					<div class="col">
-						<input class="form-control" type="text" placeholder="Город прибытия">
+						<input id='input_to' class="form-control" type="text" placeholder="Город прибытия">
 					</div>
 					<div class="col">
-						<input type="text" name="calendar" value="02/10/2019 - 12/10/2019" class="form-control" />
+						<input id='input_time' type="text" name="calendar" class="form-control" />
 					</div>
 					<div class="col">
-						<div class="dropdown-p">
-							<span class="form-control text-left" data-toggle="dropdown">Пассажиры</span>
-							<div class="dropdown-menu dropdown-menu-right">
-								<div class="row justify-content-between">
-									<div class="col-auto">
-										<p>
-											<strong>
-												Взрослые
-											</strong>
-										</p>
-										<p>
-											<small>
-												Старше 12 лет
-											</small>
-										</p>
-									</div>
-									<div class="col-auto mr-2">
-										<button type="button" class="button-number-passengers">
-											<i class="material-icons">
-												remove_circle
-											</i>
-										</button>
-										<input min="0" value="0" type="number" class="input-number" style="max-width: 20px;">
-										<button type="button" class="button-number-passengers">
-											<i class="material-icons">
-												add_circle
-											</i>
-										</button>
-									</div>
-								</div>
-								<div class="row justify-content-between">
-									<div class="col-auto">
-										<p>
-											<strong>
-												Дети
-											</strong>
-										</p>
-										<p>
-											<small>
-												От 2 до 12 лет
-											</small>
-										</p>
-									</div>
-									<div class="col-auto mr-2">
-										<button type="button" class="button-number-passengers">
-											<i class="material-icons">
-												remove_circle
-											</i>
-										</button>
-										<input min="0" value="0" type="number" class="input-number" style="max-width: 20px;">
-										<button type="button" class="button-number-passengers">
-											<i class="material-icons">
-												add_circle
-											</i>
-										</button>
-									</div>
-								</div>
-								<div class="row justify-content-between">
-									<div class="col-auto">
-										<p>
-											<strong>
-												Младенцы
-											</strong>
-										</p>
-										<p>
-											<small>
-												До 12 лет, без места
-											</small>
-										</p>
-									</div>
-									<div class="col-auto mr-2">
-										<button type="button" class="button-number-passengers">
-											<i class="material-icons">
-												remove_circle
-											</i>
-										</button>
-										<input min="0" value="0" type="number" class="input-number" style="max-width: 20px;">
-										<button type="button" class="button-number-passengers" name="quantity">
-											<i class="material-icons">
-												add_circle
-											</i>
-										</button>
-									</div>
-								</div>
-								<hr>
-								<div class="form-check">
-									<label class="form-check-label" for="exampleRadios1">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked> Эконом
-									</label>
-								</div>
-								<div class="form-check">
-									<label class="form-check-label" for="exampleRadios2">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"> Оптимальный
-									</label>
-								</div>
-								<div class="form-check">
-									<label class="form-check-label" for="exampleRadios3">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3"> Премиум
-									</label>
-								</div>
-							</div>
-						</div>
+						<input id='input_seats' class="form-control" type="text" placeholder="Количество пассажиров">
 					</div>
 				</div>
 			</form>
-			<a class="btn btn-primary btn-lg" href="search.html" role="button" style="width: 20%; font-family: 'Raleway', sans-serif; font-weight: 600; color: rgba(255, 255, 255, 0.863)">Найти</a>
+			<a id='search' class="btn btn-primary btn-lg" role="button" style="width: 20%; font-family: 'Raleway', sans-serif; font-weight: 600; color: rgba(255, 255, 255, 0.863)">Найти</a>
 		</main>
 	</div>
 

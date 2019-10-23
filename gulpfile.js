@@ -29,7 +29,8 @@ gulp.task('js', function () {
 gulp.task('serve', gulp.series('sass', function () {
 
 	browserSync.init({
-		server: "./src"
+		//server: "./src"
+		proxy: "localhost:80" //xampp
 	});
 
 	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], gulp.series('sass'));
