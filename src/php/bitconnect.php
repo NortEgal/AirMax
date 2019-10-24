@@ -3,6 +3,12 @@
 	define("DB_USER", "sokolovma2");
 	define("DB_PASS", "2140174Qq");
 	define("DB_NAME", "sokolovma2");
+
+	// define("DB_SERVER", "localhost");
+	// define("DB_USER", "allah");
+	// define("DB_PASS", "YV0QXuCo8pGRFtbCGrcX");
+	// define("DB_NAME", "Allah");
+
 	$connection = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 
 	if ($connection->connect_error) {

@@ -18,3 +18,17 @@ function UpdateInfo() {
 	});
 }
 UpdateInfo();
+
+/*
+formProfileEmail
+formProfilePasswordOld
+formProfilePasswordNew
+formProfileTelephone
+formProfilePassport
+formProfileName
+formProfilePatronymic
+formProfileLastname
+formProfileCity
+
+profile_button
+*/

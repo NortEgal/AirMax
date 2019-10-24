@@ -8,8 +8,8 @@ function urlGet(string) {
 	return url.get(string)
 }
 
-let account_id = localStorage.getItem("gag_account_id");
-account_hash = localStorage.getItem("gag_account_hash");
+let account_id = localStorage.getItem("gag_account_id"),
+	account_hash = localStorage.getItem("gag_account_hash");
 
 if (account_id != null) {
 	$.ajax({

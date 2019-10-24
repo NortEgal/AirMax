@@ -18,6 +18,7 @@
 		$query = "SELECT password FROM user WHERE id='$id'";
 		$result = mysqli_query($connection, $query);
 		$array = mysqli_fetch_row($result);
+
 		if(password_verify($array[0], $hash)) {
 			$query = "SELECT * FROM user WHERE id='$id'";
 			$result = mysqli_query($connection, $query);
