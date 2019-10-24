@@ -8,9 +8,6 @@ function urlGet(string) {
 	return url.get(string)
 }
 
-//localStorage.setItem("gag_account_id", "1");
-//localStorage.setItem("gag_account_hash", "$2y$10$/4S.bDTJ8Zpppy4g5cfp6e4sVCcswRCl9Tnt80s44/uf2DCcOzTXG");
-
 let account_id = localStorage.getItem("gag_account_id");
 account_hash = localStorage.getItem("gag_account_hash");
 
