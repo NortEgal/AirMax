@@ -196,3 +196,21 @@ footer {
 .input-number:hover,
 .input-number:focus {
   -moz-appearance: number-input; }
+
+.tickets div {
+  background-color: #f8f8f8; }
+
+.ticket-1:hover, .ticket-1:focus {
+  background-color: black; }
+
+.ticket-2:hover, .ticket-2:focus {
+  background-color: black; }
+
+.ticket-3:hover, .ticket-3:focus {
+  background-color: black; }
+
+.ticket-4:hover, .ticket-4:focus {
+  background-color: black; }
+
+.ticket-5:hover, .ticket-5:focus {
+  background-color: black; }

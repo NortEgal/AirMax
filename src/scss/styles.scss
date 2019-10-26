@@ -208,6 +208,16 @@ footer {
 .input-number:focus {
   -moz-appearance: number-input;
 }
+.tickets div {
+  background-color: #f8f8f8;
+}
+
+@for $i from 1 through 5 {
+  .ticket-#{$i}:hover,.ticket-#{$i}:focus {
+    background-color: black;
+  }
+}
+
 
 // Bootstrap Sass Imports
 // node_modules/bootstrap/scss/_variables.scss
