@@ -3,7 +3,7 @@
 
 <head>
 	<title>Global Avia</title>
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -31,16 +31,16 @@
       <div class="clouds cl-one"></div>
       <div class="row main-information justify-content-between">
         <div class="col-3 photo-profile">
-          <img class="ml-2" src="https://icon-library.net/images/steam-question-mark-icon/steam-question-mark-icon-6.jpg">
+          <img id='profile_image' class="ml-2" height="184" width="184" src="">
         </div>
         <div class="col-5 about-profile">
-          <h2>Имя профиля</h2>
-          <h6>Пермь, Россия</h6>
-          <h7>ukrposhta@mans.club</h7>
+          <h2 id='profile_name'>Имя профиля</h2>
+		  <h7 id='profile_mail'>Почта</h7>
+		  <br><h7 id='profile_phone'>Номер</h7>
         </div>
         <div class="col-4 status">
           <h4>Баланс</h4>
-          <a href="pay.html" title="Пополнить"> 40 гривен</a>
+          <a id='profile_money' href="pay.html" title="Пополнить"> 40 гривен</a>
         </div>
       </div>
       <div class="contact-data px-5">
@@ -56,8 +56,8 @@
                 <label for="formProfileEmail" class="grey-text font-weight-light">Почта</label>
               </div>
               <div class="md-form form-group">
-                <input type="password" id="formProfilePassword" placeholder="Старый пароль" class="form-control">
-                <input type="password" id="formProfilePassword" placeholder="Новый пароль" class="form-control mt-2">
+                <input type="password" id="formProfilePasswordOld" placeholder="Старый пароль" class="form-control">
+                <input type="password" id="formProfilePasswordNew" placeholder="Новый пароль" class="form-control mt-2">
                 <label for="formProfilePassword" class="grey-text font-weight-light">Пароль</label>
               </div>
               <div class="md-form form-group">
@@ -71,25 +71,25 @@
             </div>
             <div class="col-md-5">
               <div class="md-form form-group">
-                <label for="formProfileName" class="grey-text font-weight-light">Имя</label>
+                <label id="formProfileName" class="grey-text font-weight-light">Имя</label>
                 <input type="text" id="formProfileName" value="Иван" class="form-control">
               </div>
               <div class="md-form form-group">
-                <label for="formProfilePatronymic" class="grey-text font-weight-light">Отчество</label>
+                <label id="formProfileMiddleName" class="grey-text font-weight-light">Отчество</label>
                 <input type="text" id="formProfilePatronymic" value="Владимирович" class="form-control">
               </div>
               <div class="md-form form-group">
-                <label for="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
+                <label id="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
                 <input type="text" id="formProfileLastname" value="Криворучко" class="form-control">
               </div>
               <div class="md-form form-group">
-                <label for="formProfileCity" class="grey-text font-weight-light">Город</label>
+                <label id="formProfileCity" class="grey-text font-weight-light">Город</label>
                 <input type="text" id="formProfileCity" value="Пермь" class="form-control">
               </div>
             </div>
           </div>
         </form>
-        <button type="button" class="btn btn-info"> Изменить </button>
+        <button id='profile_button' type="button" class="btn btn-info"> Изменить </button>
       </div>
       <div class="MyTrip container p-5">
         <h2>Мои поездки</h2>
@@ -179,7 +179,12 @@
 
   	<footer class="page-footer font-small pt-4 mt-auto"></footer>
 
-	<script src="js/libs/jquery.min.js"></script>	
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/popper.min.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/libs/mdb.min.js"></script>
+	<script src="js/libs/moment.min.js"></script>
+	<script src="js/libs/daterangepicker.js"></script>
 	<script src="js/load.js"></script>
 	<script src="js/profile.js"></script>
 </body>
