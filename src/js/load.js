@@ -29,12 +29,13 @@ if (account_id != null) {
 	});
 } else {
 	//if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'profile.html') window.location.href = 'index.html';
+
 	$.ajax({
 		url: "html/login.html",
 		success: function (data) 
 		{ 
 			$('body').append(data); 
-		
+
 			$('#form_login').on('submit',function (e) {
 				$.ajax({
 					type: 'POST',
@@ -47,7 +48,7 @@ if (account_id != null) {
 						if(info != false) {
 							info = JSON.parse(info);
 							localStorage.setItem("gag_account_id", info.id);
-							localStorage.setItem("gag_account_hash", info.hash);
+							localStorage.setItem("gag_account_hash", info.password);
 							window.location.reload();
 						}else {
 							alert('Неправильно введена почта/пароль');
@@ -62,7 +63,42 @@ if (account_id != null) {
 
 	$.ajax({
 		url: "html/register.html",
-		success: function (data) { $('body').append(data); },
+		success: function (data) 
+		{ 
+			$('body').append(data);
+
+			$('#form_register').on('submit',function (e) {
+				$.ajax({
+					type: 'POST',
+					url: 'php/account.php?t=register',
+					data: {
+						mail: $('#materialRegisterFormEmail').val(),
+						password: $('#materialRegisterFormPassword').val(),
+						firstname: $('#materialRegisterFormFirstName').val(),
+						middlename: $('#materialRegisterFormMiddleName').val(),
+						lastname: $('#materialRegisterFormLastName').val(),
+						phone: $('#materialRegisterFormPhone').val(),
+						passport: $('#materialRegisterFormPassport').val()
+					},
+					success: function (info) {
+						console.log(info);
+						if(isNaN(info)) {
+							info = JSON.parse(info);
+							localStorage.setItem("gag_account_id", info.id);
+							localStorage.setItem("gag_account_hash", info.password);
+							//window.location.reload();
+						} 
+						if(info == 0){
+							alert('Эта почта уже зарегистрирована');
+						}
+						if(info == 1){
+							alert('Вы не указали почту/пароль');
+						}
+					}
+				});
+				e.preventDefault();
+			});
+		},
 		dataType: 'html'
 	});
 }

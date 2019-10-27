@@ -9,34 +9,17 @@
 				</button>
 			</div>
 			<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-				<form class="text-center" style="color: #757575;" action="#!">
-
-					<div class="form-row">
-						<div class="col">
-							<!-- First name -->
-							<div class="md-form">
-								<input type="text" id="materialRegisterFormFirstName" class="form-control">
-								<label for="materialRegisterFormFirstName">Имя</label>
-							</div>
-						</div>
-						<div class="col">
-							<!-- Last name -->
-							<div class="md-form">
-								<input type="email" id="materialRegisterFormLastName" class="form-control">
-								<label for="materialRegisterFormLastName">Фамилия</label>
-							</div>
-						</div>
-					</div>
+				<form id='form_register' class="text-center" style="color: #757575;" action="#!">
 
 					<!-- E-mail -->
 					<div class="md-form mt-0">
-						<input type="email" id="materialRegisterFormEmail" class="form-control">
+						<input type="email" id="materialRegisterFormEmail" class="form-control" required>
 						<label for="materialRegisterFormEmail">Э-почта</label>
 					</div>
 
 					<!-- Password -->
 					<div class="md-form">
-						<input type="password" id="materialRegisterFormPassword" class="form-control"
+						<input type="password" id="materialRegisterFormPassword" class="form-control" required
 							aria-describedby="materialRegisterFormPasswordHelpBlock">
 						<label for="materialRegisterFormPassword">Пароль</label>
 						<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
@@ -44,13 +27,46 @@
 						</small>
 					</div>
 
+					<div class="form-row">
+							<div class="col">
+								<!-- First name -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormFirstName" class="form-control">
+									<label for="materialRegisterFormFirstName">Имя</label>
+								</div>
+							</div>
+							<div class="col">
+								<!-- Last name -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormLastName" class="form-control">
+									<label for="materialRegisterFormLastName">Фамилия</label>
+								</div>
+							</div>
+							<div class="col">
+								<!-- Last name -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormMiddleName" class="form-control">
+									<label for="materialRegisterFormMiddleName">Отчество</label>
+								</div>
+							</div>
+						</div>
+
 					<!-- Phone number -->
 					<div class="md-form">
-						<input type="password" id="materialRegisterFormPhone" class="form-control"
+						<input type="text" id="materialRegisterFormPhone" class="form-control"
 							aria-describedby="materialRegisterFormPhoneHelpBlock">
 						<label for="materialRegisterFormPhone">Номер телефона</label>
 						<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 							Вы сможете получать уведомление о рейсе
+						</small>
+					</div>
+
+					<div class="md-form">
+						<input type="text" id="materialRegisterFormPassport" class="form-control"
+							aria-describedby="materialRegisterFormPassportHelpBlock">
+						<label for="materialRegisterFormPassport">Номер пасспорта</label>
+						<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
+							Для потверждения личности
 						</small>
 					</div>
 
