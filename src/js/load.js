@@ -20,9 +20,49 @@ if (account_id != null) {
 			hash: account_hash,
 		},
 		success: function (info) {
-			if (info == true) $('#header_dropdown').load('html/header_options.html');
+			if (!isNaN(info)) {
+				$('#header_dropdown').load('html/header_options_'+info+'.html');
+			}else {
+				window.location.href = 'logout.html';
+			}
 		}
 	});
 } else {
-	if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'profile.html') window.location.href = 'index.html';
+	//if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == 'profile.html') window.location.href = 'index.html';
+	$.ajax({
+		url: "html/login.html",
+		success: function (data) 
+		{ 
+			$('body').append(data); 
+		
+			$('#form_login').on('submit',function (e) {
+				$.ajax({
+					type: 'POST',
+					url: 'php/account.php?t=login',
+					data: {
+						mail: $('#materialLoginFormEmail').val(),
+						password: $('#materialLoginFormPassword').val()
+					},
+					success: function (info) {
+						if(info != false) {
+							info = JSON.parse(info);
+							localStorage.setItem("gag_account_id", info.id);
+							localStorage.setItem("gag_account_hash", info.hash);
+							window.location.reload();
+						}else {
+							alert('Неправильно введена почта/пароль');
+						}
+					}
+				});
+				e.preventDefault();
+			});
+		},
+		dataType: 'html'
+	});
+
+	$.ajax({
+		url: "html/register.html",
+		success: function (data) { $('body').append(data); },
+		dataType: 'html'
+	});
 }

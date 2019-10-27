@@ -1,3 +1,5 @@
+if (account_id == null) window.location.href = 'index.html';
+
 function UpdateInfo() {
 	$.ajax({
 		type: "POST",
