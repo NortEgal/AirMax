@@ -1,125 +1,141 @@
-<div class="modal fade" id="SignUPmodalPart1" tabindex="-1" role="dialog" 
-	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="SignUpLabel" aria-hidden="true">
+	<div class="modal-dialog cascading-modal" role="document">
 		<div class="modal-content">
-			<div class="modal-header text-center" style="border-bottom: none;">
-				<h3 class="modal-title" id="ModalLongTitle" style="margin-left: 3.75rem;">Регистрация</h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
+			
+			<div class="modal-c-tabs">
+				
+				<ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#SignUPmodalPart1">
+							<i class="fas fa-user mr-1">
+								Аккаунт
+							</i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#SignUPmodalPart2">
+							<i class="fas fa-address-card mr-1">
+								Контактная информация
+							</i>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#SignUPmodalPart3">
+							<i class="fas fa-flag-checkered mr-1">
+								Готово
+							</i>
+						</a>
+					</li>
+				</ul>
+
+				<div class="tab-content">
+
+					<div class="tab-pane fade in show active" id="SignUPmodalPart1" role="tabpanel">
+						<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
+							<form id='form_register_one' class="text-center" style="color: #757575;" action="#!">
+						
+						
+								<!-- E-mail -->
+								<div class="md-form mt-0">
+									<input type="email" id="materialRegisterFormEmail" class="form-control" required>
+									<label for="materialRegisterFormEmail">Э-почта</label>
+								</div>
+						
+								<!-- Password -->
+								<div class="md-form">
+									<input type="password" id="materialRegisterFormPassword" class="form-control" required
+										aria-describedby="materialRegisterFormPasswordHelpBlock">
+									<label for="materialRegisterFormPassword">Пароль</label>
+									<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+										Не менее 8 символов и 1 цифры
+									</small>
+								</div>
+						
+								<!-- Sign up button -->
+								<button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
+									data-target="#SignUPmodalPart2" data-toggle="tab">
+									Продолжить
+								</button>
+						
+								<hr>
+						
+								<!-- Terms of service -->
+								<p>При нажатии
+									<em>Продолжить</em> вы соглашаетесь на
+									<a href="" target="_blank">обработку персональных данных</a>
+						
+							</form>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="SignUPmodalPart2" role="tabpanel">
+						<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
+							<form id='form_register_two' class="text-center" style="color: #757575;" action="#!">
+								<!-- First name -->
+								<div class="md-form mt-2">
+									<input type="text" id="materialRegisterFormFirstName" class="form-control">
+									<label for="materialRegisterFormFirstName">Имя</label>
+								</div>
+						
+								<!-- Middle name -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormMiddleName" class="form-control">
+									<label for="materialRegisterFormMiddleName">Отчество</label>
+								</div>
+						
+								<!-- Last name -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormLastName" class="form-control">
+									<label for="materialRegisterFormLastName">Фамилия</label>
+								</div>
+						
+								<!-- Phone number -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormPhone" class="form-control"
+										aria-describedby="materialRegisterFormPhoneHelpBlock">
+									<label for="materialRegisterFormPhone">Номер телефона</label>
+									<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+										Вы сможете получать уведомление о рейсе
+									</small>
+								</div>
+						
+								<!-- Passport -->
+								<div class="md-form">
+									<input type="text" id="materialRegisterFormPassport" class="form-control"
+										aria-describedby="materialRegisterFormPassportHelpBlock">
+									<label for="materialRegisterFormPassport">Номер пасспорта</label>
+									<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
+										Для потверждения личности
+									</small>
+								</div>
+						
+								<!-- Sign up button -->
+								<button class="btn btn-outline-info btn-rounded btn-block my-4 
+												waves-effect z-depth-0" type="submit" data-toggle="tab" data-target="#SignUPmodalPart3">
+									Зарегистрироваться
+								</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="SignUPmodalPart3" role="tabpanel">
+						<div class="modal-header text-center" style="border-bottom: none;">
+							<h3 class="modal-title my-2" id="ModalLongTitle" style="margin-left: 3.75rem; max-width: 300px;">
+								К вам на почту пришло письмо,
+								подтвердите вашу почту,
+								чтобы активировать аккаунт
+							</h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</div>
+						
+
+				</div>
+
 			</div>
-			<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-				<form id='form_register_one' class="text-center" style="color: #757575;" action="#!">
 
-
-					<!-- E-mail -->
-					<div class="md-form mt-0">
-						<input type="email" id="materialRegisterFormEmail" class="form-control" required>
-						<label for="materialRegisterFormEmail">Э-почта</label>
-					</div>
-
-					<!-- Password -->
-					<div class="md-form">
-						<input type="password" id="materialRegisterFormPassword" class="form-control" required
-							aria-describedby="materialRegisterFormPasswordHelpBlock">
-						<label for="materialRegisterFormPassword">Пароль</label>
-						<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-							Не менее 8 символов и 1 цифры
-						</small>
-					</div>
-
-					<!-- Sign up button -->
-					<button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-						type="submit" data-target="#SignUPmodalPart2" data-toggle="modal">
-						Продолжить
-					</button>
-
-					<hr>
-
-					<!-- Terms of service -->
-					<p>При нажатии
-						<em>Продолжить</em> вы соглашаетесь на
-						<a href="" target="_blank">обработку персональных данных</a>
-
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="SignUPmodalPart2" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
-	aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header text-center" style="border-bottom: none;">
-				<h3 class="modal-title" id="ModalLongTitle" style="margin-left: 3.75rem; max-width: 300px;">Дополнить информацию о вас</h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-				<form id='form_register_two' class="text-center" style="color: #757575;" action="#!">
-					<!-- First name -->
-					<div class="md-form mt-2">
-						<input type="text" id="materialRegisterFormFirstName" class="form-control">
-						<label for="materialRegisterFormFirstName">Имя</label>
-					</div>
-					
-					<!-- Middle name -->
-					<div class="md-form">
-						<input type="text" id="materialRegisterFormMiddleName" class="form-control">
-						<label for="materialRegisterFormMiddleName">Отчество</label>
-					</div>
-					
-					<!-- Last name -->
-					<div class="md-form">
-						<input type="text" id="materialRegisterFormLastName" class="form-control">
-						<label for="materialRegisterFormLastName">Фамилия</label>
-					</div>
-					
-					<!-- Phone number -->
-					<div class="md-form">
-						<input type="text" id="materialRegisterFormPhone" class="form-control"
-							aria-describedby="materialRegisterFormPhoneHelpBlock">
-						<label for="materialRegisterFormPhone">Номер телефона</label>
-						<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-							Вы сможете получать уведомление о рейсе
-						</small>
-					</div>
-					
-					<!-- Passport -->
-					<div class="md-form">
-						<input type="text" id="materialRegisterFormPassport" class="form-control"
-							aria-describedby="materialRegisterFormPassportHelpBlock">
-						<label for="materialRegisterFormPassport">Номер пасспорта</label>
-						<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
-							Для потверждения личности
-						</small>
-					</div>
-
-					<!-- Sign up button -->
-					<button class="btn btn-outline-info btn-rounded btn-block my-4 
-						waves-effect z-depth-0" type="submit" data-toggle="modal" data-target="#SignUPmodalPart3">
-							Зарегистрироваться
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="SignUPmodalPart3" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
-	aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header text-center" style="border-bottom: none;">
-				<h3 class="modal-title my-2" id="ModalLongTitle" style="margin-left: 3.75rem; max-width: 300px;">
-					К вам на почту пришло письмо,
-					подтвердите вашу почту,
-					чтобы активировать аккаунт
-				</h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
 		</div>
 	</div>
 </div>
