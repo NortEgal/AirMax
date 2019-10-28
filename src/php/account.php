@@ -27,7 +27,7 @@
 		if(password_verify($array[0], $hash)) {
 			$query = "SELECT * FROM user WHERE id='$id'";
 			$result = mysqli_query($connection, $query);
-			$array = mysqli_array($result);
+			$array = mysqli_fetch_array($result);
 			$array['password'] = 'sosi jepy';
 			echo json_encode($array);
 		}else {

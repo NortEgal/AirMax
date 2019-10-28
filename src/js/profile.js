@@ -8,14 +8,15 @@ function UpdateInfo() {
 			id: account_id,
 			hash: account_hash,
 		},
-		dataType: 'json',
 		success: function (info) {
-			if (info[9] == '') info[9] = 'https://icon-library.net/images/steam-question-mark-icon/steam-question-mark-icon-6.jpg';
-			$('#profile_image').attr('src', info[9]);
-			$('#profile_name').html(info[1] + ' ' + info[2] + ' ' + info[3]);
-			$('#profile_mail').html(info[4]);
-			$('#profile_phone').html('+' + info[6]);
-			$('#profile_money').html(info[8] + ' гривен');
+			info = JSON.parse(info);
+			console.log(info);
+			if (info.image == '') info.image = 'https://icon-library.net/images/steam-question-mark-icon/steam-question-mark-icon-6.jpg';
+			$('#profile_image').attr('src', info.image);
+			$('#profile_name').html(info.firstname + ' ' + info.middlename + ' ' + info.surname);
+			$('#profile_mail').html(info.mail);
+			$('#profile_phone').html('+' + info.phone);
+			$('#profile_money').html(info.money + ' гривен');
 		}
 	});
 }
@@ -30,7 +31,7 @@ formProfilePassport
 formProfileName
 formProfilePatronymic
 formProfileLastname
-formProfileCity
+formProfileImage
 
 profile_button
 */

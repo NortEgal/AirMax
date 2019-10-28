@@ -81,12 +81,11 @@ if (account_id != null) {
 						passport: $('#materialRegisterFormPassport').val()
 					},
 					success: function (info) {
-						console.log(info);
 						if(isNaN(info)) {
 							info = JSON.parse(info);
 							localStorage.setItem("gag_account_id", info.id);
 							localStorage.setItem("gag_account_hash", info.password);
-							//window.location.reload();
+							window.location.reload();
 						} 
 						if(info == 0){
 							alert('Эта почта уже зарегистрирована');
