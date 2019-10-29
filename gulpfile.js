@@ -10,7 +10,7 @@ gulp.task('sass', function () {
 					'node_modules/mdbootstrap/css/mdb.min.css',
 					'node_modules/daterangepicker/daterangepicker.css',
 					'src/scss/*.scss'])
-		.pipe(sass())
+		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(gulp.dest("src/css"))
 		.pipe(browserSync.stream());
 });
