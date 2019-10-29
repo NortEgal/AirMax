@@ -35,6 +35,12 @@ if (account_id != null) {
 		success: function (data) 
 		{ 
 			$('body').append(data); 
+			
+			$("#register-btn").click(function () {
+				//alert('nazhal');
+				$("#SignINmodal").modal('hide');
+			}
+			);
 
 			$('#form_login').on('submit',function (e) {
 				$.ajax({
