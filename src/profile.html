@@ -29,81 +29,84 @@
       <div class="clouds cl-easy"></div>
       <div class="clouds cl-big"></div>
       <div class="clouds cl-one"></div>
-      <div class="row main-information justify-content-between">
+      <div class="row main-information justify-content-between px-5">
         
-        <div class="col-4 status">
-          <h2>Баланс </h2>
-          <button class="btn btn-info" type="button" href="pay.html"> пополнить </button>
-          <a id='profile_money' href="pay.html" title="Пополнить">0 гривен</a>
+        <div class="col-7 status">
+          <h1>Баланс </h1>
+          <button class="btn btn-sm blue-gradient" type="button" href="pay.html"> + пополнить </button>
+          <span class="h4 vertical">
+            <a id='profile_money' class="text-dark" href="pay.html" title="Пополнить">0 гривен</a>
+          </span>
+          <hr>
         </div>
       </div>
       <div class="contact-data px-5">
-        
-        <div class="col-6">
-          <h2>
-            Контактные данные
-          </h2>
-          <form id='form_profile'>
-            <div class="form-row">
-              
+        <div class="row justify-content-around">
+          <div class="col-5">
+            <h1>
+              Контактные данные
+            </h1>
+            <form id='form_profile'>
+          
               <div class="md-form form-group">
                 <label id="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
                 <input type="text" id="formProfileLastname" class="form-control">
               </div>
-
+          
               <div class="md-form form-group">
                 <label id="formProfileName" class="grey-text font-weight-light">Имя</label>
                 <input type="text" id="formProfileName" value="Иван" class="form-control">
               </div>
-
+          
               <div class="md-form form-group">
                 <label id="formProfileMiddleName" class="grey-text font-weight-light">Отчество</label>
                 <input type="text" id="formProfilePatronymic" value="Владимирович" class="form-control">
               </div>
-
+          
               <div class="md-form form-group">
                 <label id="formProfileCity" class="grey-text font-weight-light">Город</label>
                 <input type="text" id="formProfileCity" value="Пермь, Россия" class="form-control">
               </div>
-
+          
               <div class="md-form form-group">
                 <input type="text" id="formProfilePassport" value="5453136789" class="form-control">
                 <label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
               </div>
-
-            </div>
-          </form>
-        </div>
-
-        <div class="col-6">
-          <form id='form_profile'>
-            <div class="form-row">
-
+          
+            </form>
+          </div>
+          
+          <div class="col-5">
+            <h1>Аккаунт</h1>
+            <form id='form_profile'>
+          
               <div class="md-form form-group">
                 <input type="text" id="formProfileEmail" value="ukrposhta@mans.club" class="form-control">
                 <label for="formProfileEmail" class="grey-text font-weight-light">Почта</label>
               </div>
-
+          
               <div class="md-form form-group">
                 <input type="password" id="formProfilePasswordOld" placeholder="Старый пароль" class="form-control">
                 <input type="password" id="formProfilePasswordNew" placeholder="Новый пароль" class="form-control mt-2">
                 <label for="formProfilePassword" class="grey-text font-weight-light">Пароль</label>
               </div>
-
+          
               <div class="md-form form-group">
                 <input type="text" id="formProfileTelephone" value="79545353556" class="form-control">
                 <label for="formProfileTelephone" class="grey-text font-weight-light">Номер телефона</label>
               </div>
+          
+            </form>
 
-            </div>
-          </form>
-        </div>
+            <button id='profile_button' type="button" class="btn btn-outline-secondary waves-effect mx-0 my-2"> Изменить </button>
+
+          </div>        
         
-        <button id='profile_button' type="button" class="btn btn-info"> Изменить </button>
+        </div>
         
       </div>
       <div class="MyTrip container p-5">
-        <h2>Мои поездки</h2>
+        <h1>Мои поездки</h1>
         <div class="list-group list-group-flush">
           <div class="trip row list-group-item list-group-item-action">
             <div class="photo-trip col-3">
