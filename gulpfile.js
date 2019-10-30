@@ -28,6 +28,12 @@ gulp.task('js', function () {
 		.pipe(browserSync.stream());
 });
 
+// Moment locale ru
+gulp.task('locale', function () {
+	return gulp.src(['node_modules/moment/locale/ru.js',])
+		.pipe(gulp.dest("src/js/libs/moment"));
+});
+
 // Static Server + watching scss/html files
 gulp.task('serve', gulp.series('sass', function () {
 
@@ -40,4 +46,4 @@ gulp.task('serve', gulp.series('sass', function () {
 	gulp.watch("src/*.html").on('change', browserSync.reload);
 }));
 
-gulp.task('default', gulp.parallel('js', 'serve'));
+gulp.task('default', gulp.parallel('js', 'locale', 'serve'));
