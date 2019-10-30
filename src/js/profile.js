@@ -11,27 +11,58 @@ function UpdateInfo() {
 		success: function (info) {
 			info = JSON.parse(info);
 			console.log(info);
-			if (info.image == '') info.image = 'https://icon-library.net/images/steam-question-mark-icon/steam-question-mark-icon-6.jpg';
-			$('#profile_image').attr('src', info.image);
-			$('#profile_name').html(info.firstname + ' ' + info.middlename + ' ' + info.surname);
-			$('#profile_mail').html(info.mail);
-			$('#profile_phone').html('+' + info.phone);
+
 			$('#profile_money').html(info.money + ' гривен');
+
+			$('input#formProfileEmail').val(info.mail);
+			$('input#formProfileTelephone').val(info.phone);
+			$('input#formProfileName').val(info.firstname);
+			$('input#formProfileLastname').val(info.lastname);
+			$('input#formProfilePatronymic').val(info.patronymic);
+			$('input#formProfilePassport').val(info.passport);
 		}
 	});
 }
 UpdateInfo();
 
-/*
-formProfileEmail
-formProfilePasswordOld
-formProfilePasswordNew
-formProfileTelephone
-formProfilePassport
-formProfileName
-formProfilePatronymic
-formProfileLastname
-formProfileImage
+function SendInfo() {
+	$.ajax({
+		type: "POST",
+		url: 'php/account.php?t=set',
+		data: {
+			id: localStorage.getItem("gag_account_id"),
+			hash: localStorage.getItem("gag_account_hash"),
+			firstname: $('input#formProfileName').val(),
+			patronymic: $('input#formProfilePatronymic').val(),
+			lastname: $('input#formProfileLastname').val(),
+			mail: $('input#formProfileEmail').val(),
+			passwordOld: $('input#formProfilePasswordOld').val(),
+			passwordNew: $('input#formProfilePasswordNew').val(),
+			phone: $('input#formProfileTelephone').val(),
+			passport: $('input#formProfilePassport').val()
+		},
+		success: function (info) {
+			//console.log(info);
+			if(info == 'new') {
+				alert('Новый пароль совпадает со старым.');
+			}else if (info == 'old') {
+				alert('Текущий пароль введен неправильно.');
+			} else if (info == 'hash') {
+				alert('Ты кто?');
+			}else{
+				if (info != '') localStorage.setItem("gag_account_hash", info);
+				UpdateInfo();
+			}
+		}
+	});
+}
 
-profile_button
-*/
+$('#profile_button_add').on('click', function (e) {
+	e.preventDefault();
+	SendInfo();
+});
+
+$('#profile_pay').on('click', function (e) {
+	e.preventDefault();
+	window.location.href = 'pay.html?t=money';
+});

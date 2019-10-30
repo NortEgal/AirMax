@@ -33,11 +33,11 @@
         
         <div class="col-7 status">
           <h1>Баланс </h1>
-          <a href="pay.html">
+          <a id='profile_pay' href="">
             <button class="btn btn-sm blue-gradient" type="button"> + пополнить </button>
           </a>
-          <span class="h4 ml-2" style="vertical-align: middle;">
-            <a id='profile_money' class="text-dark" href="pay.html" title="Пополнить">0 гривен</a>
+          <span id='profile_money' class="h4 ml-2" style="vertical-align: middle;">
+            0 гривен
           </span>
           <hr>
         </div>
@@ -52,27 +52,27 @@
           
               <div class="md-form form-group">
                 <label id="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
-                <input type="text" id="formProfileLastname" class="form-control">
+                <input type="text" id="formProfileLastname" placeholder=" " class="form-control">
               </div>
           
               <div class="md-form form-group">
                 <label id="formProfileName" class="grey-text font-weight-light">Имя</label>
-                <input type="text" id="formProfileName" value="Иван" class="form-control">
+                <input type="text" id="formProfileName" placeholder=" " class="form-control">
               </div>
           
               <div class="md-form form-group">
                 <label id="formProfileMiddleName" class="grey-text font-weight-light">Отчество</label>
-                <input type="text" id="formProfilePatronymic" value="Владимирович" class="form-control">
+                <input type="text" id="formProfilePatronymic" placeholder=" " class="form-control">
               </div>
           
-              <div class="md-form form-group">
+              <!-- <div class="md-form form-group">
                 <label id="formProfileCity" class="grey-text font-weight-light">Город</label>
                 <input type="text" id="formProfileCity" value="Пермь, Россия" class="form-control">
-              </div>
+              </div> -->
           
               <div class="md-form form-group">
-                <input type="text" id="formProfilePassport" value="5453136789" class="form-control">
-                <label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
+				<label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
+				<input type="text" id="formProfilePassport" placeholder=" " class="form-control">
               </div>
           
             </form>
@@ -83,18 +83,18 @@
             <form id='form_profile_two'>
           
               <div class="md-form form-group">
-                <input type="text" id="formProfileEmail" value="ukrposhta@mans.club" class="form-control" readonly>
+                <input type="text" id="formProfileEmail" placeholder=" " class="form-control" readonly>
                 <label for="formProfileEmail" class="grey-text font-weight-light">Почта</label>
               </div>
           
               <div class="md-form form-group">
-                <input type="password" id="formProfilePasswordOld" placeholder="Старый пароль" class="form-control">
+                <input type="password" id="formProfilePasswordOld" placeholder="Текущий пароль" class="form-control">
                 <input type="password" id="formProfilePasswordNew" placeholder="Новый пароль" class="form-control mt-2">
                 <label for="formProfilePassword" class="grey-text font-weight-light">Пароль</label>
               </div>
           
               <div class="md-form form-group">
-                <input type="text" id="formProfileTelephone" value="79545353556" class="form-control">
+                <input type="text" id="formProfileTelephone" placeholder=" " class="form-control">
                 <label for="formProfileTelephone" class="grey-text font-weight-light">Номер телефона</label>
               </div>
           
