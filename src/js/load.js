@@ -66,7 +66,6 @@ if (account_id != null) {
 			$('body').append(data); 
 			
 			$("#register-btn").click(function () {
-				//alert('nazhal');
 				$("#SignINmodal").modal('hide');
 			}
 			);
