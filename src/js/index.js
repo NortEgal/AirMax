@@ -1,13 +1,25 @@
-let date_start = moment().format('MM DD YYYY'), 
-	date_end = moment().format('MM DD YYYY');
+let date_start, date_end;
 
 $(function () {
-	$('input[name="calendar"]').daterangepicker({}, function (start, end, label) {
-		//console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-		date_start = start.format('MM DD YYYY');
-		date_end = end.format('MM DD YYYY');
+	$('input[name="calendar1"]').daterangepicker({
+		singleDatePicker: true,
+		autoUpdateInput: false
+	}, function (start, end, label) {
+		date_start = start.format('YYYY-MM-DD');
+		$('input[name="calendar1"]').val(moment(date_start).format('DD MMM YYYY'));
 	});
 });
+
+$(function () {
+	$('input[name="calendar2"]').daterangepicker({
+		singleDatePicker: true,
+		autoUpdateInput: false
+	}, function (start, end, label) {
+		date_end = start.format('YYYY-MM-DD');
+		$('input[name="calendar2"]').val(moment(date_end).format('DD MMM YYYY'));
+	});
+});
+
 $('.dropdown-p').on('click', '.dropdown-menu', function (e) {
 	e.stopPropagation();
 });
