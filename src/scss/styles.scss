@@ -219,7 +219,19 @@ footer {
 .tickets div {
   background-color: #f8f8f8;
 }
-
+#input_time1, #input_time2 {
+  background-color: white;
+}
+#input_from, #input_to, #input_time1, #input_time2, #input_seats {
+  border: none;
+  &:active, &:focus {
+    outline: none !important;
+    outline-color: transparent!important;
+    outline-width: 0!important;
+    outline-style: none!important;
+    box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+  }
+}
 /*
 @for $i from 1 through 5 {
   .ticket-#{$i}:hover,.ticket-#{$i}:focus {
