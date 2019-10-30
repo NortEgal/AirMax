@@ -59,6 +59,7 @@ $.ajax({
 		$('.tickets').append(data);
 		ticket = $('.ticket-1');
 		$('.ticket-1').remove();
+		if (where_from || where_to || date_start || date_end || seats) RequestInfo();
 	},
 	dataType: 'html'
 });

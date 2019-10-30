@@ -27,7 +27,7 @@
 		if(password_verify($array[0], $hash)) {
 			$query = "SELECT * FROM user WHERE id='$id'";
 			$result = mysqli_query($connection, $query);
-			$array = mysqli_fetch_array($result);
+			$array = mysqli_fetch_assoc($result);
 			$array['password'] = 'sosi jepy';
 			echo json_encode($array);
 		}else {
@@ -48,7 +48,7 @@
 
 		$query = "SELECT id, password FROM user WHERE mail='$mail' and password='$password'";
 		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_array($result);
+		$array = mysqli_fetch_assoc($result);
 
 		if($array != null) {
 			$array['password'] = password_hash($array['password'], PASSWORD_DEFAULT);
