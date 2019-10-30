@@ -2,7 +2,7 @@ var theme = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*
 if (theme == 'light') {
 	document.documentElement.setAttribute('theme', 'light');
 };
-$("#switch-theme").on('click', function () {
+$(document).on('click','#switch-theme', function() {
 	if (document.documentElement.hasAttribute('theme')) {
 		if (document.documentElement.getAttribute('theme') == 'dark') {
 			document.documentElement.setAttribute('theme', 'light');
@@ -13,5 +13,4 @@ $("#switch-theme").on('click', function () {
 			document.cookie = "theme=dark; domain=localhost; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT;";
 		}
 	}
-	console.log("ya");
-});
+})
