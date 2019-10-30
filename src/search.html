@@ -41,18 +41,27 @@
 		<form class="mainform">
 		<div class="form-row mb-3">
 			<!-- Город вылета Город прибытия -->
-			<div class="col">
-				<input id='input_from' class="form-control" type="text" placeholder="Город вылета">
-				<input id='input_to' class="form-control" type="text" placeholder="Город прибытия">
+			<div class="col h-auto white rounded-left">
+				<input id='input_from' class="form-control h-100" type="text" placeholder="Город вылета">
 			</div>
-			<!-- Календарь -->
-			<div class="col">
-				<input id='input_time1' type="text" name="calendar1" class="form-control" placeholder="Дата рейса" />
-				<input id='input_time2' type="text" name="calendar2" class="form-control" placeholder="Дата обратного рейса" />
+			<div class="col h-auto white ml-1">
+				<input id='input_to' class="form-control h-100" type="text" placeholder="Город прибытия">
 			</div>
-			<!-- Пассажиры -->
-			<div class="col">
-				<input id='input_seats' class="form-control" type="number" placeholder="Количество пассажиров">
+			<!-- Даты -->
+			<div class="col h-auto white ml-1">
+				<input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Туда" />
+			</div>
+			<div class="col h-auto white ml-1">
+				<input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Обратно" />
+			</div>
+			<!-- Кол-во пассажиров -->
+			<div class="col h-auto white ml-1 rounded-right">
+				<input id='input_seats' class="form-control h-100" min="1" max="15" type="number"
+					onkeypress="this.value=this.value.substring(0,1);" onchange="var value= +this.value.replace(/\D/g,'')||0;
+														var min = +this.getAttribute('min');
+														var max = +this.getAttribute('max');
+														this.value = Math.min(max, Math.max(min, value));
+									" placeholder="Пассажиры">
 			</div>
 			<!-- Кнопка -->
 			<div class="col-auto">
