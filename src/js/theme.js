@@ -2,7 +2,7 @@ var theme = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*
 if (theme == 'light') {
 	document.documentElement.setAttribute('theme', 'light');
 };
-$("#switch-theme").click(function () {
+$("#switch-theme").on('click', function () {
 	if (document.documentElement.hasAttribute('theme')) {
 		if (document.documentElement.getAttribute('theme') == 'dark') {
 			document.documentElement.setAttribute('theme', 'light');
