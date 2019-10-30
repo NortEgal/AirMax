@@ -16,7 +16,6 @@ $('#search').click( function() {
 	let url = "search.html?",
 		from = $('#input_from').val(),
 		to = $('#input_to').val(),
-		time = $('#input_time').val(),
 		seats = Number($('#input_seats').val());
 	
 	if (from != '') url += 'from=' + from + '&';
