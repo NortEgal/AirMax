@@ -8,9 +8,7 @@ $(function () {
 		date_start = start.format('YYYY-MM-DD');
 		$('input[name="calendar1"]').val(moment(date_start).format('DD MMM YYYY'));
 	});
-});
 
-$(function () {
 	$('input[name="calendar2"]').daterangepicker({
 		singleDatePicker: true,
 		autoUpdateInput: false

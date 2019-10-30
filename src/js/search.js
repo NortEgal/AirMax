@@ -19,9 +19,7 @@ $(function () {
 		date_start = start.format('YYYY-MM-DD');
 		$('input[name="calendar1"]').val(moment(date_start).format('DD MMM YYYY'));
 	});
-});
 
-$(function () {
 	$('input[name="calendar2"]').daterangepicker({
 		singleDatePicker: true,
 		autoUpdateInput: false,
@@ -36,16 +34,72 @@ $('.dropdown-p').on('click', '.dropdown-menu', function (e) {
 	e.stopPropagation();
 });
 
+let ticket, 
+	tickets_result = 0;
+
 $.ajax({
 	url: "html/flight.html",
 	success: function (data) {
 		$('.tickets').append(data);
-		let ticket = $('.ticket-1');
-
-		ticket.find('.ticket-date .col').html(moment().format('DD MMMM'));
-		//ticket.hide();
+		ticket = $('.ticket-1');
+		$('.ticket-1').remove();
 	},
 	dataType: 'html'
+});
+
+$('.mainform').on('submit', function (e) {
+	// $.ajax({
+	// 	type: 'POST',
+	// 	url: 'php/account.php?t=login',
+	// 	data: {
+	// 		mail: $('#materialLoginFormEmail').val(),
+	// 		password: $('#materialLoginFormPassword').val()
+	// 	},
+	// 	success: function (info) {
+	// 		if (info != false) {
+	// 			info = JSON.parse(info);
+	// 			localStorage.setItem("gag_account_id", info.id);
+	// 			localStorage.setItem("gag_account_hash", info.password);
+	// 			window.location.reload();
+	// 		} else {
+	// 			alert('Неправильно введена почта/пароль');
+	// 		}
+	// 	}
+	// });
+	let ticket_date = moment().format('DD MMMM'),
+		ticket_start_time = moment(),
+		ticket_start_city = 'Пермь',
+		ticket_end_time = moment().add(Math.floor(Math.random() * 10) + 1, 'hour').add(Math.floor(Math.random() * 60), 'minute'),
+		ticket_end_city = 'Москва',
+		ticket_time = ticket_end_time.diff(ticket_start_time, 'hours') + ' ч. ' + ticket_end_time.diff(ticket_start_time, 'minutes')%60 + ' мин.',//moment().hours(2).minutes(37).format('h ч. m мин.'),		
+		ticket_id = Math.floor(Math.random() * 10000),
+		ticket_price_econom = Math.floor(Math.random() * 10000) + 5000,
+		ticket_price_optim = Math.floor(ticket_price_econom * 1.5),	
+		ticket_price_premium = Math.floor(ticket_price_econom * 3);
+
+	let ticket_new = ticket.clone();
+	$('.tickets').prepend(ticket_new);
+	ticket_new.fadeIn('slow');
+
+	ticket_new.find('.ticket-date .col').html(ticket_date);
+
+	ticket_new.find('.ticket-time-fr span').first().html(ticket_start_time.format('HH:MM'));
+	ticket_new.find('.ticket-time-fr span').next().html(ticket_start_city);
+
+	ticket_new.find('.row.ticket-time.no-gutters .col span').first().html(ticket_time);
+	ticket_new.find('.ticket-id').html(ticket_id);
+
+	ticket_new.find('.ticket-time-to span').first().html(ticket_end_time.format('HH:MM'));
+	ticket_new.find('.ticket-time-to span').next().html(ticket_end_city);
+
+	ticket_new.find('.ticket-econom span').html(ticket_price_econom + '₽');
+	ticket_new.find('.ticket-optim span').html(ticket_price_optim + '₽');
+	ticket_new.find('.ticket-premium span').html(ticket_price_premium + '₽');
+
+	tickets_result+=1;
+	$('#tickets_result').html('Найдено: ' + tickets_result + ' вариантов');
+
+	e.preventDefault();
 });
 
 function UpdateInfo() {
@@ -69,6 +123,6 @@ function UpdateInfo() {
 //UpdateInfo();
 
 /*
-	tickets-result
+	
 
 */
