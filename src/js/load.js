@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	$('body').hide().fadeIn('slow');
 	$('footer').load('html/footer.html');
 	$('header').load('html/header.html');
 });
