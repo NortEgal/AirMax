@@ -7,10 +7,18 @@ html, body {
 body {
   overflow-y: scroll;
   overflow-x: hidden;
-  background: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,
-            linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y;
+  background: var(--background);
   //background-attachment: fixed;
   width: 100vw;
+}
+
+:root[theme='light'] {
+  --background: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,
+            linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y;
+}
+
+:root[theme='dark'] {
+  --background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
 
 .lang-switch {

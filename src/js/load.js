@@ -4,6 +4,29 @@ $(document).ready(function () {
 	$('header').load('html/header.html');
 });
 
+//Switch Dark/Lignt theme
+var theme = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+if (theme == 'light') {
+	document.documentElement.setAttribute('theme', 'light');
+}
+$('#switch-theme').click(
+	function () {
+		if (document.documentElement.hasAttribute('theme')) {
+			if (document.documentElement.getAttribute('theme') == 'dark') {
+				document.documentElement.setAttribute('theme', 'light');
+				document.cookie = "theme=light; domain=localhost; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT;";
+				//$_SESSION['theme'] = 'light';
+			}
+			else if (document.documentElement.getAttribute('theme') == 'light') {
+				document.documentElement.setAttribute('theme', 'dark');
+				document.cookie = "theme=dark; domain=localhost; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT;";
+				//$_SESSION['theme'] = 'dark';
+			}
+		}
+		console.log("ya");
+	}
+);
+
 function urlGet(string) {
 	let url = new URLSearchParams(window.location.search);
 	return url.get(string)
