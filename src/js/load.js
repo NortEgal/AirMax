@@ -2,26 +2,6 @@ $.ajaxSetup({
 	cache: true
 });
 
-var theme = document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-if (theme == 'light') {
-	document.documentElement.setAttribute('theme', 'light');
-}
-$('#switch-theme').click(function () {
-	if (document.documentElement.hasAttribute('theme')) {
-		if (document.documentElement.getAttribute('theme') == 'dark') {
-			document.documentElement.setAttribute('theme', 'light');
-			document.cookie = "theme=light; domain=localhost; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT;";
-			//$_SESSION['theme'] = 'light';
-		}
-		else if (document.documentElement.getAttribute('theme') == 'light') {
-			document.documentElement.setAttribute('theme', 'dark');
-			document.cookie = "theme=dark; domain=localhost; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT;";
-			//$_SESSION['theme'] = 'dark';
-		}
-	}
-	console.log("ya");
-});
-
 function getPageName() {
 	var index = window.location.href.lastIndexOf("/") + 1,
 		filenameWithExtension = window.location.href.substr(index),
@@ -43,6 +23,7 @@ let scripts = [
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
 	"js/libs/daterangepicker.js",
+	'js/theme.js',
 	'js/' + getPageName() + '.js'
 ];
 
