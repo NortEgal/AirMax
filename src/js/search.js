@@ -1,34 +1,34 @@
-// $('input[name="datefilter"]').daterangepicker({
-// 	autoUpdateInput: false,
-// 	locale: {
-// 		cancelLabel: 'Clear'
-// 	}
-// });
+let where_from = getURL('from'),
+	where_to = getURL('to'),
+	date_start = getURL('date_start'),
+	date_end = getURL('date_end'),
+	seats = getURL('seats');
 
-// $('input[name="datefilter"]').on('apply.daterangepicker', function (ev, picker) {
-// 	$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-// });
-
-
-
-
-let date_start = moment().format('MM DD YYYY'),
-	date_end = moment().format('MM DD YYYY');
+if (where_from != null) $('#input_from').val(where_from);
+if (where_to != null) $('#input_to').val(where_to);
+if (date_start != null) $('#input_time1').val(moment(date_start).format('DD MMM YYYY')); else date_start = moment();
+if (date_end != null) $('#input_time2').val(moment(date_end).format('DD MMM YYYY')); else date_end = moment();
+if (seats != null & !isNaN(seats)) $('#input_seats').val(seats);
 
 $(function () {
-	$('input[name="calendar"]').daterangepicker({
+	$('input[name="calendar1"]').daterangepicker({
+		singleDatePicker: true,
 		autoUpdateInput: false,
-		locale: {
-			cancelLabel: 'Очистить',
-			applyLabel: 'Применить'
-		}
+		startDate: moment(date_start),
 	}, function (start, end, label) {
-		//console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-		date_start = start.format('MM DD YYYY');
-		date_end = end.format('MM DD YYYY');
+		date_start = start.format('YYYY-MM-DD');
+		$('input[name="calendar1"]').val(moment(date_start).format('DD MMM YYYY'));
 	});
-	$('input[name="calendar"]').on('cancel.daterangepicker', function (ev, picker) {
-		$(this).val('');
+});
+
+$(function () {
+	$('input[name="calendar2"]').daterangepicker({
+		singleDatePicker: true,
+		autoUpdateInput: false,
+		startDate: moment(date_end),
+	}, function (start, end, label) {
+		date_end = start.format('YYYY-MM-DD');
+		$('input[name="calendar2"]').val(moment(date_end).format('DD MMM YYYY'));
 	});
 });
 
@@ -51,27 +51,23 @@ $.ajax({
 function UpdateInfo() {
 	$.ajax({
 		type: "POST",
-		url: 'php/account.php?t=get',
+		url: 'php/search.php',
 		data: {
-			id: account_id,
-			hash: account_hash,
+			where_from: where_from,
+			where_to: where_to,
+			date_start: date_start,
+			date_end: date_end,
+			seats: seats
 		},
 		success: function (info) {
 			info = JSON.parse(info);
 			console.log(info);
-			if (info.image == '') info.image = 'https://icon-library.net/images/steam-question-mark-icon/steam-question-mark-icon-6.jpg';
-			$('#profile_image').attr('src', info.image);
-			$('#profile_name').html(info.firstname + ' ' + info.middlename + ' ' + info.surname);
-			$('#profile_mail').html(info.mail);
-			$('#profile_phone').html('+' + info.phone);
-			$('#profile_money').html(info.money + ' гривен');
+
 		}
 	});
 }
-UpdateInfo();
+//UpdateInfo();
 
-
-//console.log(ticket);
 /*
 	tickets-result
 

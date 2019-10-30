@@ -32,8 +32,8 @@ $('#search').click( function() {
 	
 	if (from != '') url += 'from=' + from + '&';
 	if (to != '') url += 'to=' + to + '&';
-	if (date_start != '' & date_start != undefined) url += 'time_start=' + date_start + '&';
-	if (date_end != '' & date_end != undefined) url += 'time_end=' + date_end + '&';
+	if (date_start != '' & date_start != undefined) url += 'date_start=' + date_start + '&';
+	if (date_end != '' & date_end != undefined) url += 'date_end=' + date_end + '&';
 	if (seats != '' & !isNaN(seats)) url += 'seats=' + seats;
 	
 	//console.log(url);
