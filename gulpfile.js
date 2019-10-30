@@ -21,7 +21,8 @@ gulp.task('js', function () {
 					'node_modules/jquery/dist/jquery.min.js', 
 					'node_modules/popper.js/dist/umd/popper.min.js',
 					'node_modules/mdbootstrap/js/mdb.min.js',
-					'node_modules/daterangepicker/moment.min.js',
+					//'node_modules/daterangepicker/moment.min.js',
+					'node_modules/moment/min/moment.min.js',
 					'node_modules/daterangepicker/daterangepicker.js'])
 		.pipe(gulp.dest("src/js/libs"))
 		.pipe(browserSync.stream());

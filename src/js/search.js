@@ -16,21 +16,15 @@ $('.dropdown-p').on('click', '.dropdown-menu', function (e) {
 $.ajax({
 	url: "html/flight.html",
 	success: function (data) {
-		let html = '';
-		for(let i=0; i<5; i++)
-		{
-			$('.tickets').append(data);
-			$(data).fadeIn('slow');
-			setTimeout(function () {
-				$(data).find('.ticket-date').html('gavno');
-				console.log($(data).find('.ticket-date').innerHTML);
-			}, 1000)
-			html += data;
-		}
+		$('.tickets').append(data);
+		let ticket = $('.ticket-1')
+		ticket.find('.ticket-date .col').html(moment().format('DD MMMM'));
+		//ticket.hide();
 	},
 	dataType: 'html'
 });
 
+//console.log(ticket);
 /*
 	tickets-result
 
