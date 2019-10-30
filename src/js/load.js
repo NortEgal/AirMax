@@ -1,7 +1,5 @@
-$(document).ready(function () {
-	$('body').hide().fadeIn('slow');
-	$('footer').load('html/footer.html');
-	$('header').load('html/header.html');
+$.ajaxSetup({
+	cache: true
 });
 
 //Switch Dark/Lignt theme
@@ -26,11 +24,42 @@ $('#switch-theme').click(
 		console.log("ya");
 	}
 );
+//end
 
 function urlGet(string) {
+function getPageName() {
+	var index = window.location.href.lastIndexOf("/") + 1,
+		filenameWithExtension = window.location.href.substr(index),
+		filename = filenameWithExtension.split(".")[0];
+
+	return filename;
+}
+
+function getURL(string) {
 	let url = new URLSearchParams(window.location.search);
 	return url.get(string)
 }
+
+let scripts = [
+	"js/libs/jquery.min.js",
+	"js/libs/popper.min.js",
+	"js/libs/bootstrap.min.js",
+	"js/libs/mdb.min.js",
+	"js/libs/moment.min.js",
+	"js/libs/moment/ru.js",
+	"js/libs/daterangepicker.js",
+	'js/' + getPageName() + '.js'
+];
+
+for (path of scripts) {
+	$.getScript(path)
+}
+
+$(document).ready(function () {
+	$('body').hide().fadeIn('slow');
+	$('footer').load('html/footer.html');
+	$('header').load('html/header.html');
+});
 
 let account_id = localStorage.getItem("gag_account_id"),
 	account_hash = localStorage.getItem("gag_account_hash");
