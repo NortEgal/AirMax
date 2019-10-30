@@ -40,22 +40,22 @@
 			<div class="clouds cl-one"></div>
 			
 			<h1 class="display-4 mt-5 pt-5 zagalovok">Поиск комфортных авиа билетов</h1>
-			<form class="mainform mt-5 pt-5 mb-5">
-				<div class="form-row align-content-center white rounded shadow" style="height: 50px;">
-					<div class="col">
-						<input id='input_from' class="form-control" type="text" placeholder="Город вылета">
+			<form class="mainform mt-4 pt-5 mb-5">
+				<div class="form-row align-content-center  shadow" style="height: 60px;">
+					<div class="col h-100 white rounded-left">
+						<input id='input_from' class="form-control h-100" type="text" placeholder="Город вылета">
 					</div>
-					<div class="col border-left">
-						<input id='input_to' class="form-control" type="text" placeholder="Город прибытия">
+					<div class="col h-auto white ml-1">
+						<input id='input_to' class="form-control h-100" type="text" placeholder="Город прибытия">
 					</div>
-					<div class="col border-left">
-						<input id='input_time1' type="text" name="calendar1" class="form-control" readonly placeholder="Туда"/>
+					<div class="col h-auto white ml-1">
+						<input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Туда"/>
 					</div>
-					<div class="col border-left">
-						<input id='input_time2' type="text" name="calendar2" class="form-control" readonly placeholder="Обратно" />
+					<div class="col h-auto white ml-1">
+						<input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Обратно" />
 					</div>
-					<div class="col border-left">
-						<input id='input_seats' class="form-control" min="1" max="15" type="number" onkeypress="this.value=this.value.substring(0,1);" 
+					<div class="col h-auto white ml-1 rounded-right">
+						<input id='input_seats' class="form-control h-100" min="1" max="15" type="number" onkeypress="this.value=this.value.substring(0,1);" 
 						onchange="var value= +this.value.replace(/\D/g,'')||0;
 											var min = +this.getAttribute('min');
 											var max = +this.getAttribute('max');
