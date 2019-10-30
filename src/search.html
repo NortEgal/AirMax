@@ -43,16 +43,25 @@
 			<!-- Город вылета Город прибытия -->
 			<div class="col">
 				<input id='input_from' class="form-control" type="text" placeholder="Город вылета">
+			</div>
+			<div class="col border-left">
 				<input id='input_to' class="form-control" type="text" placeholder="Город прибытия">
 			</div>
-			<!-- Календарь -->
-			<div class="col">
-				<input id='input_time1' type="text" name="calendar1" class="form-control" placeholder="Дата рейса" />
-				<input id='input_time2' type="text" name="calendar2" class="form-control" placeholder="Дата обратного рейса" />
+			<!-- Даты -->
+			<div class="col border-left">
+				<input id='input_time1' type="text" name="calendar1" class="form-control" readonly placeholder="Туда" />
 			</div>
-			<!-- Пассажиры -->
-			<div class="col">
-				<input id='input_seats' class="form-control" type="number" placeholder="Количество пассажиров">
+			<div class="col border-left">
+				<input id='input_time2' type="text" name="calendar2" class="form-control" readonly placeholder="Обратно" />
+			</div>
+			<!-- Кол-во пассажиров -->
+			<div class="col border-left">
+				<input id='input_seats' class="form-control" min="1" max="15" type="number"
+					onkeypress="this.value=this.value.substring(0,1);" onchange="var value= +this.value.replace(/\D/g,'')||0;
+														var min = +this.getAttribute('min');
+														var max = +this.getAttribute('max');
+														this.value = Math.min(max, Math.max(min, value));
+									" placeholder="Пассажиры">
 			</div>
 			<!-- Кнопка -->
 			<div class="col-auto">
