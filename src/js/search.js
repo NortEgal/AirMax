@@ -79,7 +79,7 @@ $('.mainform').on('submit', function (e) {
 
 	let ticket_new = ticket.clone();
 	$('.tickets').prepend(ticket_new);
-	ticket_new.hide().fadeIn('slow');
+	ticket_new.hide().slideDown();
 
 	ticket_new.find('.ticket-date .col').html(ticket_date);
 
@@ -95,6 +95,11 @@ $('.mainform').on('submit', function (e) {
 	ticket_new.find('.ticket-econom span').html(ticket_price_econom + '₽');
 	ticket_new.find('.ticket-optim span').html(ticket_price_optim + '₽');
 	ticket_new.find('.ticket-premium span').html(ticket_price_premium + '₽');
+
+	ticket_new.css('cursor', 'pointer');
+	ticket_new.mousedown(function() {
+		window.open("biletos.html?t=" + ticket_id);
+	});
 
 	tickets_result+=1;
 	$('#tickets_result').html('Найдено: ' + tickets_result + ' вариантов');
