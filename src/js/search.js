@@ -79,7 +79,7 @@ $('.mainform').on('submit', function (e) {
 
 	let ticket_new = ticket.clone();
 	$('.tickets').prepend(ticket_new);
-	ticket_new.fadeIn('slow');
+	ticket_new.hide().fadeIn('slow');
 
 	ticket_new.find('.ticket-date .col').html(ticket_date);
 
