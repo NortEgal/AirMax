@@ -145,7 +145,7 @@
 	}
 
 	if($_GET['t'] == 'register'){
-		$mail = $_POST['mail'];
+		$mail = filter_var($_POST['mail'], FILTER_SANITIZE_EMAIL);
 		$password = $_POST['password'];
 		$firstname = $_POST['firstname'];
 		$middlename = $_POST['middlename'];
@@ -153,25 +153,23 @@
 		$phone = substr($_POST['phone'], 0, 10);
 		$passport = substr($_POST['passport'], 0, 9);
 
-		if(filter_var($mail, FILTER_VALIDATE_EMAIL) && $password != ''){
-			$query = "SELECT id FROM user WHERE mail='$mail'";
-			$result = mysqli_query($connection, $query);
-			$array = mysqli_fetch_row($result);
+		if($mail == '' || $password == '') exit('empty');
+		if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) exit('wrong');
 
-			if($array == null) {
-				$query = "INSERT INTO user (firstname, middlename, surname, mail, password, phone, passport) VALUES ('$firstname', '$middlename', '$lastname', '$mail', '$password', '$phone', '$passport')";
-				$result = mysqli_query($connection, $query);
+		$query = "SELECT id FROM user WHERE mail='$mail'";
+		$result = mysqli_query($connection, $query);
+		$array = mysqli_fetch_row($result);
 
-				$info = [
-					'id' => mysqli_insert_id($connection),
-					'password' => password_hash($password, PASSWORD_DEFAULT)
-				];
-				echo json_encode($info);
-			}else{
-				echo 0;
-			}
-		}else{
-			echo 1;
-		}
+		if($array != null) exit('exist');
+
+		$query = "INSERT INTO user (lastname, firstname, patronymic, mail, password, phone, passport) 
+		VALUES ('$lastname', '$firstname', '$middlename', '$mail', '$password', '$phone', '$passport')";
+		$result = mysqli_query($connection, $query);
+
+		$info = [
+			'id' => mysqli_insert_id($connection),
+			'password' => password_hash($password, PASSWORD_DEFAULT)
+		];
+		echo json_encode($info);
 	}
 ?>

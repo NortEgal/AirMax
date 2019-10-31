@@ -34,7 +34,6 @@ $(document).ready(function () {
 	$('header').load('html/header.html');
 
 	for (path of scripts) {
-		//$.getScript(path)
 		$.ajax({
 			async: false,
 			url: path,
@@ -128,7 +127,13 @@ if (account_id != null) {
 		{ 
 			$('body').append(data);
 
-			$('#form_register').on('submit',function (e) {
+			$('#form_register_one').on('submit', function(e) {
+				e.preventDefault();
+				$('#SignUpModal .nav-link').eq(1).click();
+			});
+
+			$('#form_register_two').on('submit',function (e) {
+				e.preventDefault();
 				$.ajax({
 					type: 'POST',
 					url: 'php/account.php?t=register',
@@ -142,21 +147,21 @@ if (account_id != null) {
 						passport: $('#materialRegisterFormPassport').val()
 					},
 					success: function (info) {
-						if(isNaN(info)) {
+						if (info == 'exist') {
+							alert('Эта почта уже зарегистрирована');
+						}else if (info == 'empty') {
+							alert('Вы не указали почту/пароль');
+						}else if (info == 'wrong') {
+							alert('Вы неправильно указали почту');
+						}else {
 							info = JSON.parse(info);
 							localStorage.setItem("gag_account_id", info.id);
 							localStorage.setItem("gag_account_hash", info.password);
-							window.location.reload();
+							$('#SignUpModal .nav-link').eq(2).click();
+							setTimeout(window.location.reload(), 5000);
 						} 
-						if(info == 0){
-							alert('Эта почта уже зарегистрирована');
-						}
-						if(info == 1){
-							alert('Вы не указали почту/пароль');
-						}
 					}
 				});
-				e.preventDefault();
 			});
 		},
 		dataType: 'html'
