@@ -66,3 +66,27 @@ $('#profile_pay').on('click', function (e) {
 	e.preventDefault();
 	window.location.href = 'pay.html?t=money';
 });
+
+let ticket_template = $('.ticket');
+$('.ticket').remove();
+
+function CreateTicket(where_from, where_to, time_departure, id, model, price) {
+	let ticket = ticket_template.clone();
+	$('.tickets').append(ticket).show('fast');
+}
+
+$.ajax({
+	type: "POST",
+	url: 'php/account.php?t=flights',
+	data: {
+		id: account_id,
+		hash: account_hash,
+	},
+	success: function (info) {
+		console.log(info);
+		info = JSON.parse(info);
+		console.log(info);
+
+		CreateTicket();
+	}
+});

@@ -91,6 +91,45 @@
 		}
 	}
 
+	if($_GET['t'] == 'flights'){
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+
+		$query = "SELECT password FROM user WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+		$array = mysqli_fetch_row($result);
+
+		if(password_verify($array[0], $hash)) {
+			$query = "SELECT model FROM plane";
+			$result = mysqli_query($connection, $query);
+			$array_plane = mysqli_fetch_assoc($result);
+
+			$query = "SELECT flights FROM user WHERE id='$id'";
+			$result = mysqli_query($connection, $query);
+			$array = mysqli_fetch_row($result);
+
+			$array_flights = json_decode($array);
+			$send = [];
+
+			while ($flight = mysqli_fetch_assoc($result)) 	{
+				$query = "SELECT id, plane_id, where_from, where_to, time_departure, price FROM user WHERE id='$flight'";
+				$result = mysqli_query($connection, $query);
+				$array = mysqli_fetch_assoc($result);
+
+				array_push($send , array(
+					"id"=>$array['id'], 
+					"model"=>$array_flights[$array['plane_id']], 
+					"where_from"=>$array['where_from'], 
+					"where_to"=>$array['where_to'],
+					"time_departure"=>$array['time_departure'],
+					"price"=>$array['price']
+				));
+			}
+
+			echo json_encode($send);
+		}
+	}
+
 	if($_GET['t'] == 'register'){
 		$mail = $_POST['mail'];
 		$password = $_POST['password'];
