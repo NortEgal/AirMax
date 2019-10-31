@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  width: 100vw;
   margin: 0;
   padding: 0;
   z-index: 1;
@@ -9,7 +10,6 @@ body {
   overflow-x: hidden;
   background: var(--background);
   //background-attachment: fixed;
-  width: 100vw;
 }
 
 :root[theme='light'] {
@@ -20,10 +20,22 @@ body {
 :root[theme='dark'] {
   --background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
+.zagalovok {
+  font-style: normal;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.863);
+}
 
 .lang-switch {
+  font-size: 115%;
+}
+.navbar {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
+}
+.dropdown-item {
+  font-weight: bold !important;
 }
 .nav-icon.person {
   font-size: 28px;
@@ -37,7 +49,7 @@ body {
   position: absolute;
   z-index: -999;
   height: calc(100% - 16.6666666667rem);
-  width: 100%;
+  width: calc(100% + 50rem);
   left: 0;
   top: 0;
   bottom: 0;
@@ -47,7 +59,7 @@ body {
 }
 .cl-big {
   background: url(../img/big.png) no-repeat;
-  transform: translateX(900px) translateY(550px)
+  transform: translateX(900px) translateY(550px);
 }
 .cl-one {
   background: url(../img/one.png) no-repeat;
@@ -174,12 +186,6 @@ footer {
   width: 100%;
 }
 
-.zagalovok {
-  font-style: normal;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.863);
-}
 .nav-image {
   background: url(../img/log-df2.png) no-repeat 50% 50%;
   background-size: 100%;
