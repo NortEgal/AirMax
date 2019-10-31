@@ -107,6 +107,19 @@ body.modal-open {
   text-align: center;
   padding: 0.5rem;
 }
+
+.btn-menu {
+  background-color: var(--btn-menu);
+  color: var(--btn-menu-font);
+}
+.btn-menu:hover {
+  color: var(--btn-menu-font-hover);
+}
+
+.ticket-1 {
+  background-color: var(--ticket1-back);
+}
+
 .ticket-info, .ticket-price {
   //border: 1px black solid;
   padding: 2rem;
@@ -156,6 +169,16 @@ body.modal-open {
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
+.table {
+  color: var(--table);
+}
+
+table.table-hover tbody tr:hover {
+  background-color: var(--table-hover);
+  color: var(--table);
+}
+
 .trip {
   display: flex;
 }
@@ -181,6 +204,17 @@ footer {
   //flex-shrink: 0;
   //flex: 1 1 auto;
   width: 100%;
+}
+
+.main-pay {
+  filter: var(--main-pay) !important;
+  color: black;
+  font-weight: 700;
+}
+.md-pills a {
+  color: var(--md-pils) !important;
+  font-family: 'Rubik'; font-weight: 900;
+  font-size: 120%;
 }
 
 .nav-image {
@@ -239,6 +273,14 @@ footer {
   --back-color: white;
   --font-color: black;
   --cloud: none;
+  --ticket1-back: rgba(246, 246, 246, 0.884);
+  --btn-menu: white;
+  --btn-menu-font: black;
+  --btn-menu-font-hover: rgba(0, 0, 0, 0.5);
+  --table: #212529;
+  --table-hover: rgba(0, 0, 0, 0.075);
+  --main-pay: none;
+  --md-pils: black;
 }
 
 :root[theme='dark'] {
@@ -246,6 +288,14 @@ footer {
   --back-color: #222222;
   --font-color: white;
   --cloud: opacity(50%) brightness(20%);
+  --ticket1-back: rgb(41, 41, 41);
+  --btn-menu: #222222;
+  --btn-menu-font: rgba(255, 255, 255, 0.781);
+  --btn-menu-font-hover: rgba(255, 255, 255, 0.603);
+  --table: white;
+  --table-hover: rgba(158, 158, 158, 0.25);
+  --main-pay: invert(100%);
+  --md-pils: black;
 }
 
 /*

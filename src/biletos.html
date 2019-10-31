@@ -22,6 +22,15 @@
   <link rel="stylesheet" href="css/mdb.min.css">
   <link rel="stylesheet" href="css/daterangepicker.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    html, body {
+      min-height: 1675px;
+    }
+    input[type="radio"] {
+      zoom: 1.5;
+    }
+  </style>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -32,7 +41,7 @@
     <hr style="margin-top: 0;">
     <main class="main container-fluid rounded shadow p-5">
       <div class="row">
-        <div class="h2 px-4 pb-4">
+        <div class="h1 px-4 pb-4">
           Рейс
         </div>
       </div>
@@ -199,6 +208,28 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="row">
+        
+        <div class="h4 ml-4 mt-4 pt-3">
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="type_econom" name="inlineMaterialRadiosExample">
+            <label class="form-check-label" for="type_econom">Эконом</label>
+          </div>
+          
+          <!-- Material inline 2 -->
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="type_optima" name="inlineMaterialRadiosExample">
+            <label class="form-check-label" for="type_optima">Оптимальный</label>
+          </div>
+          
+          <!-- Material inline 3 -->
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="type_premium" name="inlineMaterialRadiosExample">
+            <label class="form-check-label" for="type_premium">Премиум</label>
+          </div>
+        </div>
+        
       </div>
       <div class="row">
         <a class="ml-4 mt-4 btn btn-white btn-lg" href="" role="button">

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru" theme="">
+
+<head>
+  <title>Панель администратора</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/load.js"></script>
+
+  <link rel="icon" href="img/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <div class="container pt-4 flex-shrink-0">
+    <header></header>
+
+    <hr style="margin-top: 0;">
+    <main class="main container-fluid rounded shadow">
+      <div class="row py-3">
+        <div class="col">
+          
+          <form>
+            <h2>
+              Добавить рейс
+            </h2>
+            <div class="md-form md-outline">
+              <input type="text" id="form-plane" class="form-control">
+              <label for="form-plane">Введите модель самолета</label>
+            </div>
+            <div class="md-form md-outline">
+              <input type="text" id="form-where_from" class="form-control">
+              <label for="form-where_from">Место отбытия</label>
+            </div>
+            <div class="md-form md-outline">
+              <input type="text" id="form-where_to" class="form-control">
+              <label for="form-where_to">Место прибытия</label>
+            </div>
+            <div class="md-form md-outline">
+              <input type="text" id="form-time_departure" class="form-control">
+              <label for="form-time_departure">Время отбытия</label>
+            </div>
+            <div class="md-form md-outline">
+              <input type="text" id="form-time_arrival" class="form-control">
+              <label for="form-time_arrival">Время прибытия</label>
+            </div>
+            <div class="md-form md-outline">
+              <input type="text" id="form-price" class="form-control">
+              <label for="form-price">Цена</label>
+            </div>
+            <button class="btn" type="button">
+              Добавить
+            </button>
+          </form>
+          
+        </div>
+        <div class="col">
+          <h2>
+            Изменить рейс
+          </h2>
+          <form>
+            <div class="md-form md-outline">
+              <input type="text" id="form-plane" class="form-control">
+              <label for="form-plane">Введите ID рейса</label>
+            </div>
+            <i>
+              Далее появляется
+            </i>
+            <div class="select-outline">
+            
+              <select class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Search here..">
+                <option value="" disabled selected>Выберите</option>
+                <option value="1">Место отбытия</option>
+                <option value="2">Место прибытия</option>
+                <option value="3">Время отбытия</option>
+                <option value="4">Время прибытия</option>
+                <option value="5">Цена</option>
+                <option value="6">Модель самолета</option>
+              </select>
+              <label class="mdb-main-label">Что изменить</label>
+              <button class="btn-save btn btn-primary btn-sm">Save</button>
+              
+              <script>
+                // Material Select Initialization
+                  $(document).ready(function () {
+                    $('.mdb-select').materialSelect();
+                  });
+              </script>
+
+            </div>
+            <button class="btn" type="button">
+              Изменить
+            </button>
+          </form>
+        </div>
+        <div class="col">
+          <h2>
+            Удалить рейс
+          </h2>
+          <div class="md-form md-outline">
+            <input type="text" id="form-del_flight" class="form-control">
+            <label for="form-del_flight">Введите ID рейса</label>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="page-footer font-small pt-4 mt-auto"></footer>
+
+</body>
+
+</html>

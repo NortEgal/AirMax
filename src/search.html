@@ -48,10 +48,10 @@
 		<div class="form-row mb-3">
 			<!-- Город вылета Город прибытия -->
 			<div class="col h-auto white rounded-left">
-				<input id='input_from' class="form-control h-100" type="text" placeholder="Город вылета">
+				<input type="search" id='input_from' class="form-control h-100" placeholder="Город вылета">
 			</div>
 			<div class="col h-auto white ml-1">
-				<input id='input_to' class="form-control h-100" type="text" placeholder="Город прибытия">
+				<input type="search" id='input_to' class="form-control h-100" placeholder="Город прибытия">
 			</div>
 			<!-- Даты -->
 			<div class="col h-auto white ml-1">
@@ -71,38 +71,38 @@
 			</div>
 			<!-- Кнопка -->
 			<div class="col-auto">
-				<button class="btn btn-primary" type="submit"
+				<button class="btn btn-primary h-100" type="submit"
 					style="font-family: 'Raleway', sans-serif;
 									font-weight: 600; color: rgba(255, 255, 255, 0.863); margin-top:0; padding: 0.56rem 2rem;">Найти</button>
 			</div>
 		</div>
 		</form>
 		<div class="row result-days">
-		<button class="col btn btn-white" type="button">
+		<button class="col btn btn-menu" type="button">
 			Пред день
 			<span>
 				11/09/2019
 			</span>
 		</button>
-		<button class="col btn btn-white active" type="button">
+		<button class="col btn btn-menu active" type="button">
 			Выбранная дата
 			<span>
 				12/09/2019
 			</span>
 		</button>
-		<button class="col btn btn-white" type="button">
+		<button class="col btn btn-menu" type="button">
 			След день
 			<span>
 			13/09/2019
 			</span>
 		</button>
-		<button class="col btn btn-white" type="button">
+		<button class="col btn btn-menu" type="button">
 			След след день
 			<span>
 				14/09/2019
 			</span>
 		</button>
-		<button class="col btn btn-white" type="button">
+		<button class="col btn btn-menu" type="button">
 			След след след день
 			<span>
 				15/09/2019
@@ -112,7 +112,7 @@
 		<!-- main block -->
 		<div class="main container mt-3">
 		<!-- Выбор дня билета -->
-		<div class="row justify-content-between">
+		<div class="row justify-content-between pt-3">
 			<div class="btn-group col-auto" role="group">
 			<button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false" title="по цене">
@@ -133,7 +133,7 @@
 		<hr>
 		<div class="tickets">
 			<div class="ticket-1 shadow rounded">
-				<div class="row ticket-date">
+				<div class="row ticket-date pt-3 pl-3">
 					<div class="col-auto">
 						Туда:
 					</div>
@@ -175,8 +175,13 @@
 								<div class="ticket-arrow">
 								</div>
 								<!-- id рейса -->
-								<div class="row ticket-id">
-									Ид рейса
+								<div class="row">
+									<span class="mt-3 ml-5">
+										id =
+									</span>
+									<span class="ticket-id">
+										Ид рейса
+									</span>
 								</div>
 							</div>
 							<div class="col-3 ticket-time-to">

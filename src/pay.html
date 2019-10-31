@@ -30,13 +30,16 @@
 	<header></header>
 	
     <hr style="margin-top: 0;">
-    <main class="main container-fluid p-5 mb-4">
-      <ul class="nav md-pills pills-secondary">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab" style="color:black !important">Банковская карта</a>
+    <main class="main container-fluid p-5 mb-4 main-pay rounded shadow" style="background-color: white;">
+      <ul class="nav md-pills pills-secondary border" style="width: 40.5%;">
+        <li class="nav-item botder-left">
+          <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab">Банковская карта</a>
+        </li>
+        <li class="nav-item border-left border-right">
+          <a class="nav-link" data-toggle="tab" href="#panel12" role="tab" >QIWI</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#panel12" role="tab" style="color: black !important;">QIWI</a>
+          <a class="nav-link" data-toggle="tab" href="#panel13" role="tab">Гривнами</a>
         </li>
       </ul>
       
@@ -135,8 +138,8 @@
 
         <div class="tab-pane fade" id="panel12" role="tabpanel">
           <br>
-          <div class="row">
-            <div class="col-4">
+          <div class="row justify-content-around">
+            <div class="col-4 pt-5 mt-4">
               <form>
                 <div class="md-form md-outline my-auto">
                   <input type="number" id="number-qiwi" onkeypress="this.value=this.value.substring(0,10);" name="number-qiwi"
@@ -146,10 +149,27 @@
               </form>
             </div>
             <div class="col-6">
-              <img src="img/qiwi.png" width="100%">
+              <img src="img/qiwi.png" width="90%">
             </div>
           </div>
-        </div>      
+        </div>
+        <div class="tab-pane fade" id="panel13" role="tabpanel">
+          <br>
+          <div class="row justify-content-around">
+            <div class="col-4 pt-5 mt-4">
+              <form>
+                <div class="md-form md-outline my-auto">
+                  <input type="number" id="count-grivn" onkeypress="this.value=this.value.substring(0,10);" name="count-grivn"
+                    class="form-control input-number">
+                  <label for="count-grivn">Кол-во гривен</label>
+                </div>
+              </form>
+            </div>
+            <div class="col-6">
+              <img src="http://hobbytrophies.com/i/t/NPWR01460_00/56.png" width="50%">
+            </div>
+          </div>
+        </div>
       </div>
       <button type="button" class="btn btn-primary"> Оплатить </button>
     </main>
