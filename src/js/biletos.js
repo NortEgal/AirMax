@@ -1,4 +1,7 @@
 let id = getURL('t');
+if (id == null) window.location.href = 'index.html';
+
+$('#type_econom').click();
 
 $.ajax({
 	type: "POST",
@@ -14,8 +17,7 @@ $.ajax({
 			date_end = moment(info.time_arrival),
 			date_diff = date_end.diff(date_start, 'hours') + ' ч. ' + date_end.diff(date_start, 'minutes') % 60 + ' мин.'
 
-		$('div.h2.px-4.pb-4').html('Рейс ' + info.id);
-
+		$('div.h1.px-4.pb-4').html('Рейс ' + info.id);
 		$('div.row.p-5.border.rounded span').eq(0).html(date_start.format('DD MMMM'));
 		$('div.row.p-5.border.rounded span').eq(1).html(date_start.format('HH:MM'));
 		$('div.row.p-5.border.rounded span').eq(2).html(info.where_from);
@@ -25,6 +27,10 @@ $.ajax({
 		$('div.row.p-5.border.rounded span').eq(4).html(date_end.format('DD MMMM'));
 		$('div.row.p-5.border.rounded span').eq(5).html(date_end.format('HH:MM'));
 		$('div.row.p-5.border.rounded span').eq(6).html(info.where_to);
+
+		$('tbody tr').eq(5).children().eq(1).html(info.price + '₽');
+		$('tbody tr').eq(5).children().eq(2).html(Math.round(info.price*1.5) + '₽');
+		$('tbody tr').eq(5).children().eq(3).html(Math.round(info.price*3) + '₽');
 
 		$('.col-3 div').last().html(info.plane_id);
 	}
@@ -39,6 +45,10 @@ if (account_id == null) {
 }else{
 	$('a.btn').on('click', function (e) {
 		e.preventDefault();
-		window.location.href = 'pay.html?t='+id;
+		let type = 0;
+		if($('#type_econom').is(':checked')) type = 0; 
+		if($('#type_optima').is(':checked')) type = 1;
+		if($('#type_premium').is(':checked')) type = 2;
+		window.location.href = 'pay.html?t='+id+'&type='+type;
 	});
 }
