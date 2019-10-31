@@ -54,11 +54,19 @@
 					<div class="col h-auto white ml-1">
 						<input id='input_to' class="form-control h-100" type="text" placeholder="Город прибытия">
 					</div>
-					<div class="col h-auto white ml-1">
+					<div class="col h-auto white ml-1 input-group">
 						<input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Туда"/>
+						<div class="input-group-append">
+							<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
+								 style="font-size: 150%;"></i>
+						</div>
 					</div>
-					<div class="col h-auto white ml-1">
+					<div class="col h-auto white ml-1 input-group">
 						<input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Обратно" />
+						<div class="input-group-append">
+							<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
+							style="font-size: 150%;"></i>
+						</div>
 					</div>
 					<div class="col h-auto white ml-1 rounded-right">
 						<input id='input_seats' class="form-control h-100" min="1" max="15" type="number" onkeypress="this.value=this.value.substring(0,1);" 
