@@ -16,14 +16,14 @@ function getURL(string) {
 }
 
 let scripts = [
-	"js/libs/jquery.min.js",
+	//"js/libs/jquery.min.js",
+	'js/theme.js',
 	"js/libs/popper.min.js",
 	"js/libs/bootstrap.min.js",
 	"js/libs/mdb.min.js",
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
-	"js/libs/daterangepicker.js",
-	'js/theme.js'
+	"js/libs/daterangepicker.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 

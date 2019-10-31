@@ -36,39 +36,26 @@ $('.dropdown-p').on('click', '.dropdown-menu', function (e) {
 	e.stopPropagation();
 });
 
-let ticket, 
+let ticket = $('.ticket-1'), 
 	ticket_sorting = 0;
+$('.ticket-1').remove();
+if (where_from || where_to || date_start || date_end || seats) RequestInfo();
 
 $('#sortTime').on('click', function () {
 	ticket_sorting = 0;
 	$(this).addClass('active');
 	$('#sortPrice').removeClass('active');
-	RequestInfo();
+	if($('.tickets').children().length != 0) RequestInfo();
 });
 
 $('#sortPrice').on('click', function () {
 	ticket_sorting = 1;
 	$(this).addClass('active');
 	$('#sortTime').removeClass('active');
-	RequestInfo();
-});
-
-$.ajax({
-	url: "html/flight.html",
-	success: function (data) {
-		$('.tickets').append(data);
-		ticket = $('.ticket-1');
-		$('.ticket-1').remove();
-		if (where_from || where_to || date_start || date_end || seats) RequestInfo();
-	},
-	dataType: 'html'
+	if($('.tickets').children().length != 0) RequestInfo();
 });
 
 $('.mainform').on('submit', function (e) {
-	$('.tickets').empty();
-	$('#tickets_result1').html('Идет обработка запроса');
-	$('#tickets_result2').html('');
-
 	where_from = $('#input_from').val();
 	where_to = $('#input_to').val();
 	seats = $('#input_seats').val();
@@ -112,6 +99,10 @@ function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, tic
 }
 
 function RequestInfo() {
+	$('.tickets').empty();
+	$('#tickets_result1').html('Идет обработка запроса');
+	$('#tickets_result2').html('');
+
 	$.ajax({
 		type: "POST",
 		url: 'php/search.php',
