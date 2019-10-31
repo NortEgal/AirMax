@@ -75,22 +75,6 @@
 		}
 	}
 
-	if($_GET['t'] == 'login'){
-		$mail = $_POST['mail'];
-		$password = $_POST['password'];
-
-		$query = "SELECT id, password FROM user WHERE mail='$mail' and password='$password'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_assoc($result);
-
-		if($array != null) {
-			$array['password'] = password_hash($array['password'], PASSWORD_DEFAULT);
-			echo json_encode($array);
-		}else{
-			echo false;
-		}
-	}
-
 	if($_GET['t'] == 'flights'){
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
@@ -127,6 +111,36 @@
 			}
 
 			echo json_encode($send);
+		}
+	}
+
+	if($_GET['t'] == 'forgot'){
+		$mail = $_POST['mail'];
+
+		$query = "SELECT password FROM user WHERE mail='$mail'";
+		$result = mysqli_query($connection, $query);
+		$array = mysqli_fetch_assoc($result);
+
+		if($array != null) {
+			echo json_encode($array['password']);
+		}else{
+			echo false;
+		}
+	}
+
+	if($_GET['t'] == 'login'){
+		$mail = $_POST['mail'];
+		$password = $_POST['password'];
+
+		$query = "SELECT id, password FROM user WHERE mail='$mail' and password='$password'";
+		$result = mysqli_query($connection, $query);
+		$array = mysqli_fetch_assoc($result);
+
+		if($array != null) {
+			$array['password'] = password_hash($array['password'], PASSWORD_DEFAULT);
+			echo json_encode($array);
+		}else{
+			echo false;
 		}
 	}
 

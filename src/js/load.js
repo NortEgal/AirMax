@@ -73,10 +73,32 @@ if (account_id != null) {
 			
 			$("#register-btn").click(function () {
 				$("#SignINmodal").modal('hide');
-			}
-			);
+			});
+
+			$('#materialLoginFormForgot').on('click', function (e) {
+				e.preventDefault();
+				if ($('#materialLoginFormEmail').val() != '') {
+					$.ajax({
+						type: 'POST',
+						url: 'php/account.php?t=forgot',
+						data: {
+							mail: $('#materialLoginFormEmail').val()
+						},
+						success: function (info) {
+							if (info) {
+								alert('Пароль:' + info);
+							} else {
+								alert('Пользователя с такой почтой не существует');
+							}
+						}
+					});
+				}else{
+					alert('Пожалуйста, укажите почту');
+				}
+			});
 
 			$('#form_login').on('submit',function (e) {
+				e.preventDefault();
 				$.ajax({
 					type: 'POST',
 					url: 'php/account.php?t=login',
@@ -95,7 +117,6 @@ if (account_id != null) {
 						}
 					}
 				});
-				e.preventDefault();
 			});
 		},
 		dataType: 'html'
