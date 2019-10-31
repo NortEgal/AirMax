@@ -23,18 +23,23 @@ let scripts = [
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
 	"js/libs/daterangepicker.js",
-	'js/theme.js',
-	'js/' + getPageName() + '.js'
+	'js/theme.js'
 ];
-
-for (path of scripts) {
-	$.getScript(path)
-}
+if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
 $(document).ready(function () {
 	$('body').hide().fadeIn('slow');
 	$('footer').load('html/footer.html');
 	$('header').load('html/header.html');
+
+	for (path of scripts) {
+		//$.getScript(path)
+		$.ajax({
+			async: false,
+			url: path,
+			dataType: "script"
+		});
+	}
 });
 
 let account_id = localStorage.getItem("gag_account_id"),
