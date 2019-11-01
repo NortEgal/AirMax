@@ -34,9 +34,13 @@
 
   <div class="container pt-4 flex-shrink-0">
 	<header></header>
-	
+
     <hr style="margin-top: 0;">
-    <main class="main container-fluid p-5 mb-4 main-pay rounded shadow" style="background-color: white;">
+	<main class="main container-fluid p-5 mb-4 main-pay rounded shadow" style="background-color: white;">
+		<div id='type_pay'></div>
+		<div id='type_a'></div>
+		<div id='type_price'></div>
+		<hr>
       <ul class="nav md-pills pills-secondary border" style="width: 40.5%;">
         <li class="nav-item botder-left">
           <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab">Банковская карта</a>
@@ -56,8 +60,7 @@
           <div class="row">
             <div class="col-6">
               <form>
-              
-                <div class="form-row">
+                <!-- <div class="form-row">
                   <div class="form-check-inline pl-2">
                     <input type="radio" class="form-check-input" id="VISA" value="VISA" name="exampleRadios">
                     <label class="form-check-label" for="VISA">VISA</label>
@@ -72,7 +75,7 @@
                     <input type="radio" class="form-check-input" id="Maestro" value="Maestro" name="exampleRadios">
                     <label class="form-check-label" for="Maestro">Maestro</label>
                   </div>
-                </div>
+                </div> -->
                 <div class="form-row">
                   <div class="col-10">
                     <div class="md-form md-outline">
@@ -165,9 +168,9 @@
             <div class="col-4 pt-5 mt-4">
               <form>
                 <div class="md-form md-outline my-auto">
-                  <input type="number" id="count-grivn" onkeypress="this.value=this.value.substring(0,10);" name="count-grivn"
+                  <!-- <input type="number" id="count-grivn" onkeypress="this.value=this.value.substring(0,10);" name="count-grivn"
                     class="form-control input-number">
-                  <label for="count-grivn">Кол-во гривен</label>
+				  <label for="count-grivn">Кол-во гривен</label> -->
                 </div>
               </form>
             </div>

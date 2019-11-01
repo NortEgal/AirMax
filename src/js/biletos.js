@@ -49,6 +49,6 @@ if (account_id == null) {
 		if($('#type_econom').is(':checked')) type = 0; 
 		if($('#type_optima').is(':checked')) type = 1;
 		if($('#type_premium').is(':checked')) type = 2;
-		window.location.href = 'pay.html?t='+id+'&type='+type;
+		window.location.href = 'pay.html?t='+id+'&a='+type;
 	});
 }
