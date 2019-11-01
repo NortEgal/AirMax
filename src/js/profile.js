@@ -72,21 +72,37 @@ $('.ticket').remove();
 
 function CreateTicket(where_from, where_to, time_departure, id, model, price) {
 	let ticket = ticket_template.clone();
-	$('.tickets').append(ticket).show('fast');
-}
-CreateTicket();
-// $.ajax({
-// 	type: "POST",
-// 	url: 'php/account.php?t=flights',
-// 	data: {
-// 		id: account_id,
-// 		hash: account_hash,
-// 	},
-// 	success: function (info) {
-// 		console.log(info);
-// 		info = JSON.parse(info);
-// 		console.log(info);
+	$('.tickets').prepend(ticket).show('slow');
 
-// 		CreateTicket();
-// 	}
-// });
+	ticket.find('#city-trip').html(where_from + ' - ' + where_to);
+	ticket.find('#date-trip').html(moment(time_departure).format('DD MMMM YYYY'));
+	ticket.find('#id-flight').html('Рейс: ' + id);
+	ticket.find('#airplane').html('Самолет: ' + model);
+	ticket.find('#price-trip').html('Цена: ' + price + ' ₽');
+
+	ticket.css('cursor', 'pointer');
+	ticket.mousedown(function () {
+		window.open("biletos.html?t=" + id);
+	});
+}
+
+$.ajax({
+	type: "POST",
+	url: 'php/account.php?t=flights',
+	data: {
+		id: account_id,
+		hash: account_hash,
+	},
+	success: function (info) {
+		console.log(info);
+		info = JSON.parse(info);
+		console.log(info);
+
+		$.each(info, function (i, row) {
+			if (row.type == 1) row.price *= 1.5;
+			if (row.type == 2) row.price *= 3;
+
+			CreateTicket(row.where_from, row.where_to, row.time_departure, row.id, row.model, Math.round(row.price));
+		});
+	}
+});

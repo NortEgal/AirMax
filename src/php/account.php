@@ -83,35 +83,38 @@
 		$result = mysqli_query($connection, $query);
 		$array = mysqli_fetch_row($result);
 
-		if(password_verify($array[0], $hash)) {
-			$query = "SELECT model FROM plane";
+		if(!password_verify($array[0], $hash)) exit();
+
+		$query = "SELECT flights FROM user WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+		$array_flights = mysqli_fetch_row($result);
+		$array_flights = json_decode($array_flights[0], true);
+
+		$send = [];
+
+		foreach ($array_flights as $row) {
+			$flight = $row["id"];
+			$query = "SELECT plane_id, where_from, where_to, time_departure, price FROM flight WHERE id='$flight'";
 			$result = mysqli_query($connection, $query);
-			$array_plane = mysqli_fetch_assoc($result);
+			$array = mysqli_fetch_assoc($result);
 
-			$query = "SELECT flights FROM user WHERE id='$id'";
+			$plane = $array['plane_id'];
+			$query = "SELECT model FROM plane WHERE id='$plane'";
 			$result = mysqli_query($connection, $query);
-			$array = mysqli_fetch_row($result);
+			$array_plane = mysqli_fetch_row($result);
 
-			$array_flights = json_decode($array);
-			$send = [];
-
-			while ($flight = mysqli_fetch_assoc($result)) 	{
-				$query = "SELECT id, plane_id, where_from, where_to, time_departure, price FROM user WHERE id='$flight'";
-				$result = mysqli_query($connection, $query);
-				$array = mysqli_fetch_assoc($result);
-
-				array_push($send , array(
-					"id"=>$array['id'], 
-					"model"=>$array_flights[$array['plane_id']], 
-					"where_from"=>$array['where_from'], 
-					"where_to"=>$array['where_to'],
-					"time_departure"=>$array['time_departure'],
-					"price"=>$array['price']
-				));
-			}
-
-			echo json_encode($send);
+			array_push($send , array(
+				"id"=>$row['id'], 
+				"time_departure"=>$array['time_departure'],
+				"where_from"=>$array['where_from'], 
+				"where_to"=>$array['where_to'],
+				"model"=>$array_plane[0], 
+				"price"=>$array['price'],
+				'type'=>$row['type']
+			));
 		}
+
+		exit(json_encode($send));
 	}
 
 	if($_GET['t'] == 'forgot'){
