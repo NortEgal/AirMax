@@ -97,7 +97,13 @@ body {
     position: relative;
     flex-wrap: nowrap;
   }
-  
+  html, body {
+    min-height: 1200px;
+  }
+  .index-btn {
+    margin-top: 13rem;
+    margin-bottom: 3rem;
+  }
 }
 
 // Средние девайсы («таблетки», >= 768px)
@@ -106,6 +112,8 @@ body {
     flex-wrap: wrap;
     display: flex;
     height: 60px;
+    margin-left: 0;
+    margin-right: 0;
   }
   .input-from-col {
     border-top-left-radius: 0.25rem !important;
@@ -127,6 +135,8 @@ body {
   }
   .index-btn {
     width: 20%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   html,
 		body {
@@ -141,6 +151,12 @@ body {
   }
   .form-row {
     flex-wrap: nowrap;
+  }
+  .input-from-col {
+    border-top-right-radius: 0rem !important;
+  }
+  .input-seats-col {
+    border-bottom-left-radius: 0rem !important;
   }
 }
 
@@ -195,7 +211,10 @@ body {
   position: absolute;
   z-index: -999;
   max-height: calc(100% - 16.6666666667rem);
-  max-width: calc(100% + 50rem);
+  max-width: 75rem;
+  background-size: contain !important;
+  object-fit: contain;
+  width: 100%;
   left: 0;
   top: 0;
   bottom: 0;
@@ -206,14 +225,29 @@ body {
 }
 .cl-big {
   background: url(../img/big.png) no-repeat;
-  transform: translateX(900px) translateY(550px);
+  //transform: translateX(900px) translateY(550px);
+  transform: translateX(60em) translateY(30em);
   filter: var(--cloud);
 }
 .cl-one {
   background: url(../img/one.png) no-repeat;
-  transform: translateY(450px) translateX(-390px);
+  //transform: translateY(450px) translateX(-390px);
+  transform: translateX(-20em) translateY(30em);
   filter: var(--cloud);
 }
+
+.nav-image {
+  display: block;
+
+  background-size: contain;
+  object-fit: contain;
+  
+  max-width: 800px;
+  max-height: 225px;
+  
+  width: auto;
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -369,18 +403,6 @@ footer {
   color: var(--md-pils) !important;
   font-family: 'Rubik'; font-weight: 900;
   font-size: 120%;
-}
-
-.nav-image {
-  display: block;
-
-  background-size: contain;
-  object-fit: contain;
-  
-  max-width: 800px;
-  max-height: 225px;
-  
-  width: auto;
 }
 
 //input number 
