@@ -226,14 +226,15 @@ body {
 .cl-big {
   background: url(../img/big.png) no-repeat;
   //transform: translateX(900px) translateY(550px);
-  transform: translateX(60em) translateY(30em);
+  transform: translateX(80%) translateY(100%);
   filter: var(--cloud);
 }
 .cl-one {
   background: url(../img/one.png) no-repeat;
   //transform: translateY(450px) translateX(-390px);
-  transform: translateX(-20em) translateY(30em);
+  transform: translateX(-20%) translateY(80%);
   filter: var(--cloud);
+  height: 60%;
 }
 
 .nav-image {
@@ -378,6 +379,10 @@ table.table-hover tbody tr:hover {
 }
 .photo-profile img {
   border: rgb(119, 119, 245) 3px solid;
+}
+.list-group-item {
+  background-color: var(--back-color);
+  color: var(--font-color);
 }
 .photo-profile, .about-profile, .status {
   padding: 2.5rem;

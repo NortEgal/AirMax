@@ -22,31 +22,35 @@
 
   <style>
     html, body {
-      min-height: 1300px;
+      min-height: 1900px;
+      height: 100%;
     }
   </style>
 </head>
 
 <body class="d-flex flex-column h-100">
 
-  <div class="container pt-4 mb-4 flex-shrink-0">
-	  <header></header>
+  <div class="clouds cl-easy"></div>
+  <div class="clouds cl-big"></div>
+  <div class="clouds cl-one"></div>
 
-    <hr class="mt-2">
-    <main class="main container-fluid shadow rounded">
-      <div class="clouds cl-easy"></div>
-      <div class="clouds cl-big"></div>
-      <div class="clouds cl-one"></div>
+  <header></header>
+
+  <main class="container mb-4 mt-3 flex-shrink-0">
+	  
+    <div class="main container-fluid shadow pb-5 rounded">
+      
       <div class="row main-information justify-content-between px-5">
         
         <div class="col-7 status" title="1 гривна = 1 рубль">
           <h1>Баланс </h1>
           <a id='profile_pay' href="">
             <button class="btn btn-sm blue-gradient" type="button"> + пополнить </button>
-          </a>
-          <span id='profile_money' class="h4 ml-2" style="vertical-align: middle;">
+          
+          <span id='profile_money' class="h4 ml-2" style="vertical-align: middle; color: var(--font-color);">
             0 гривен
           </span>
+          </a>
           <hr>
         </div>
       </div>
@@ -115,6 +119,8 @@
         </div>
         
       </div>
+    </div>
+    <div class="main container-fluid shadow mt-4 rounded">
       <div class="MyTrip container p-5">
         <h1>Мои поездки</h1>
         <div class="tickets list-group list-group-flush">
@@ -158,8 +164,8 @@
           </div>
         </div>
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
 
   	<footer class="page-footer font-small pt-4 mt-auto"></footer>
 	
