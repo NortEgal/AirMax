@@ -43,7 +43,8 @@ $(document).ready(function () {
 });
 
 let account_id = localStorage.getItem("gag_account_id"),
-	account_hash = localStorage.getItem("gag_account_hash");
+	account_hash = localStorage.getItem("gag_account_hash"),
+	accound_info;
 
 if (account_id != null) {
 	$.ajax({
@@ -54,10 +55,10 @@ if (account_id != null) {
 			hash: account_hash,
 		},
 		success: function (info) {
-			if (!isNaN(info)) {
-				$('#header_dropdown').load('html/header_options_'+info+'.html');
-			}else {
-				window.location.href = 'logout.html';
+			if (!isNaN(info)) {window.location.href = 'logout.html';}else{
+				accound_info = JSON.parse(info);
+				$('#header_dropdown').load('html/header_options_'+accound_info.rank+'.html');
+				console.log(accound_info);
 			}
 		}
 	});

@@ -5,15 +5,14 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT password, rank FROM user WHERE id='$id'";
+		$query = "SELECT * FROM user WHERE id='$id'";
 		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_row($result);
+		$array = mysqli_fetch_assoc($result);
 
-		if(password_verify($array[0], $hash)) {
-			echo $array[1];
-		}else {
-			echo 'lox';
-		}
+		if(!password_verify($array['password'], $hash)) exit(0);
+
+		$array['password'] = 'sosi jepy';
+		echo json_encode($array);
 	}
 
 	if($_GET['t'] == 'get'){
