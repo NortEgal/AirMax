@@ -121,7 +121,7 @@ function RequestInfo() {
 			let sort;
 			if(ticket_sorting == 0) sort = 'времени';
 			if (ticket_sorting == 1) sort = 'цене';
-			$('#tickets_result1').html('Найдено: ' + info.length + ' вариантов');
+			$('#tickets_result1').html('Найдено ' + info.length + ' вариантов');
 			$('#tickets_result2').html('Сортировано по ' + sort);
 
 			$.each(info, function (i, row) {

@@ -94,15 +94,16 @@ $.ajax({
 		hash: account_hash,
 	},
 	success: function (info) {
-		console.log(info);
-		info = JSON.parse(info);
-		console.log(info);
+		if(info != '') {
+			info = JSON.parse(info);
+			console.log(info);
 
-		$.each(info, function (i, row) {
-			if (row.type == 1) row.price *= 1.5;
-			if (row.type == 2) row.price *= 3;
+			$.each(info, function (i, row) {
+				if (row.type == 1) row.price *= 1.5;
+				if (row.type == 2) row.price *= 3;
 
-			CreateTicket(row.where_from, row.where_to, row.time_departure, row.id, row.model, Math.round(row.price));
-		});
+				CreateTicket(row.where_from, row.where_to, row.time_departure, row.id, row.model, Math.round(row.price));
+			});
+		}
 	}
 });
