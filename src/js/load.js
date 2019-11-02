@@ -49,16 +49,16 @@ let account_id = localStorage.getItem("gag_account_id"),
 if (account_id != null) {
 	$.ajax({
 		type: "POST",
-		url: 'php/account.php?t=check',
+		url: 'php/account.php?t=get',
 		data: {
 			id: account_id,
 			hash: account_hash,
 		},
 		success: function (info) {
 			if (!isNaN(info)) {window.location.href = 'logout.html';}else{
-				accound_info = JSON.parse(info);
-				$('#header_dropdown').load('html/header_options_'+accound_info.rank+'.html');
-				console.log(accound_info);
+				account_info = JSON.parse(info);
+				$('#header_dropdown').load('html/header_options_'+account_info.rank+'.html');
+				console.log(account_info);
 			}
 		}
 	});

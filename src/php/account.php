@@ -1,7 +1,7 @@
 <?php
 	require('bitconnect.php');
 	
-	if($_GET['t'] == 'check'){
+	if($_GET['t'] == 'get'){
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
@@ -12,26 +12,7 @@
 		if(!password_verify($array['password'], $hash)) exit(0);
 
 		$array['password'] = 'sosi jepy';
-		echo json_encode($array);
-	}
-
-	if($_GET['t'] == 'get'){
-		$id = $_POST['id'];
-		$hash = $_POST['hash'];
-
-		$query = "SELECT password FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_row($result);
-
-		if(password_verify($array[0], $hash)) {
-			$query = "SELECT * FROM user WHERE id='$id'";
-			$result = mysqli_query($connection, $query);
-			$array = mysqli_fetch_assoc($result);
-			$array['password'] = 'sosi jepy';
-			echo json_encode($array);
-		}else {
-			echo false;
-		}
+		exit(json_encode($array));
 	}
 
 	if($_GET['t'] == 'set'){
@@ -42,35 +23,35 @@
 		$result = mysqli_query($connection, $query);
 		$array = mysqli_fetch_row($result);
 
-		if(!password_verify($array[0], $hash)) {echo 'hash';}else {
-			$mail = $_POST['mail'];
-			$phone = $_POST['phone'];
-			$passport = $_POST['passport'];
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
-			$patronymic = $_POST['patronymic'];
+		if(!password_verify($array[0], $hash)) exit('hash');
 
-			$query = "UPDATE user SET 
-			firstname = '$firstname',
-			lastname = '$lastname',
-			patronymic = '$patronymic',
-			mail = '$mail',
-			phone = '$phone',
-			passport = '$passport'
-			 WHERE id='$id'";
+		$mail = $_POST['mail'];
+		$phone = substr($_POST['phone'], 0, 10);
+		$passport = substr($_POST['passport'], 0, 9);
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$patronymic = $_POST['patronymic'];
+
+		$query = "UPDATE user SET 
+		firstname = '$firstname',
+		lastname = '$lastname',
+		patronymic = '$patronymic',
+		mail = '$mail',
+		phone = '$phone',
+		passport = '$passport'
+			WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+
+		$passwordOld = $_POST['passwordOld'];
+		$passwordNew = $_POST['passwordNew'];
+
+		if($passwordOld != '' & $passwordNew != '') {
+			if($passwordOld != $array[0]) exit('old');
+			if($passwordOld == $passwordNew) exit('new');
+
+			$query = "UPDATE user SET password = '$passwordNew' WHERE id='$id'";
 			$result = mysqli_query($connection, $query);
-
-			$passwordOld = $_POST['passwordOld'];
-			$passwordNew = $_POST['passwordNew'];
-			if($passwordOld != '' & $passwordNew != '') {
-				if($passwordOld != $array[0]) {echo 'old';}else {
-					if($passwordOld == $passwordNew) {echo 'new';}else {
-						$query = "UPDATE user SET password = '$passwordNew' WHERE id='$id'";
-						$result = mysqli_query($connection, $query);
-						echo password_hash($passwordNew, PASSWORD_DEFAULT);
-					}
-				}
-			}
+			exit(password_hash($passwordNew, PASSWORD_DEFAULT));
 		}
 	}
 
@@ -78,16 +59,12 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT password FROM user WHERE id='$id'";
+		$query = "SELECT password, flights FROM user WHERE id='$id'";
 		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_row($result);
+		$array = mysqli_fetch_assoc($result);
 
-		if(!password_verify($array[0], $hash)) exit();
-
-		$query = "SELECT flights FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array_flights = mysqli_fetch_row($result);
-		$array_flights = json_decode($array_flights[0], true);
+		if(!password_verify($array['password'], $hash) || $array['flights'] == '') exit();
+		$array_flights = json_decode($array['flights'], true);
 
 		$send = [];
 
@@ -124,7 +101,7 @@
 		$array = mysqli_fetch_assoc($result);
 
 		if($array != null) {
-			echo json_encode($array['password']);
+			echo $array['password'];
 		}else{
 			echo false;
 		}
