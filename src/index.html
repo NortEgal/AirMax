@@ -26,11 +26,7 @@
 	<link rel="stylesheet" href="css/styles.css">
 
 	<style>
-		html,
-		body {
-			min-height: 1200px;
-		}
-	
+			
 		.cl-big {
 			height: 60%;
 		}
@@ -51,35 +47,27 @@
 		<div class="justify-content-center text-center">
 				
 			<h1 class="zagalovok">Поиск комфортных авиа билетов</h1>
-			<form class="mainform mt-4 pt-5 mb-5">
-				<div class="form-row align-content-center  shadow" style="height: 60px;">
-					<div class="col h-100 white rounded-left">
+			<form class="mainform mb-5">
+				<div class="form-row align-content-center  shadow">
+					<div class="col white input-from-col">
 						<input type="search" id="input_from" class="form-control h-100" placeholder="Город вылета">
 					</div>
-					<div class="col h-auto white ml-1">
+					<div class="col white input-to-col">
 						<input type="search" id='input_to' class="form-control h-100" placeholder="Город прибытия">
 					</div>
-					<div class="col h-auto white ml-1 input-group">
+					<div class="col white input-time1-col input-group">
 						<input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Туда"/>
 						<div class="input-group-append">
-							<!--
-								<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
-								 style="font-size: 150%; color: rgba(0, 0, 0, 0.65)"></i>
-							-->
 							<i class="material-icons icon-date my-auto"></i>
 						</div>
 					</div>
-					<div class="col h-auto white ml-1 input-group">
+					<div class="col white input-time2-col input-group">
 						<input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Обратно" />
 						<div class="input-group-append">
-							<!--
-								<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
-									style="font-size: 150%; color: rgba(0, 0, 0, 0.65)"></i>
-							-->
 							<i class="material-icons icon-date my-auto"></i>
 						</div>
 					</div>
-					<div class="col h-auto white ml-1 rounded-right">
+					<div class="col white input-seats-col">
 						<input id='input_seats' class="form-control h-100" min="1" max="15" type="number" onkeypress="this.value=this.value.substring(0,1);" 
 						onchange="var value= +this.value.replace(/\D/g,'')||0;
 											var min = +this.getAttribute('min');
@@ -89,8 +77,8 @@
 					</div>
 				</div>
 			</form>
-			<a id='search' class="btn btn-primary btn-lg" role="button" 
-				 style="width: 20%; font-family: 'Rubik', sans-serif; font-weight: 700; color: rgba(255, 255, 255, 0.863)">Найти</a>
+			<a id='search' class="btn btn-primary btn-lg index-btn" role="button" 
+				 style="font-family: 'Rubik', sans-serif; font-weight: 700; color: rgba(255, 255, 255, 0.863)">Найти</a>
 		</div>
 	</main>
 

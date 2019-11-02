@@ -23,8 +23,44 @@ body {
   .navigation {
     padding-right: 0 !important;
   }
+  main {
+    margin-top: 10%;
+  }
   .zagalovok {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .form-row {
+    display: block;
+    height: auto;
+    margin: 1.5rem;
+  }
+  .form-row div {
+    height: 60px;
+  }
+  .input-from-col {
+    border-top-left-radius: 0.25rem !important;
+    border-top-right-radius: 0.25rem !important;
+    margin-bottom: 0.25rem;
+  }
+  .input-to-col {
+    margin-bottom: 0.25rem;
+  }
+  .input-time1-col {
+    margin-bottom: 0.25rem;
+  }
+  .input-time2-col {
+    margin-bottom: 0.25rem;
+  }
+  .input-seats-col {
+    border-bottom-left-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+  }
+  html,
+		body {
+      min-height: 1000px;
+    }
+  footer {
+    padding-right: 1rem;
   }
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
@@ -45,17 +81,66 @@ body {
   .zagalovok {
     font-size: 3.5rem;
   }
+  .mainform {
+    height: 100%;
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .form-row {
+    height: 60px;
+    margin-top: 4.5rem;
+    display: block;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+  
 }
 
 // Средние девайсы («таблетки», >= 768px)
 @media (min-width: 768px) { 
-  
+  .form-row {
+    flex-wrap: wrap;
+    display: flex;
+    height: 60px;
+  }
+  .input-from-col {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+  }
+  .input-to-col {
+    margin-left: 0.25rem !important;
+  }
+  .input-time1-col {
+    margin-left: 0.25rem !important;
+  }
+  .input-time2-col {
+    margin-left: 0.25rem !important;
+  }
+  .input-seats-col {
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+    margin-left: 0.25rem !important;
+  }
+  .index-btn {
+    width: 20%;
+  }
+  html,
+		body {
+			min-height: 1200px;
+		}
 }
 
 // Большие девайсы (десктопы, >= 992px)
 @media (min-width: 992px) {
   .nav-image {
     min-width: 300px;
+  }
+  .form-row {
+    flex-wrap: nowrap;
   }
 }
 
