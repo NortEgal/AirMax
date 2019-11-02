@@ -30,8 +30,8 @@ function SendInfo() {
 		type: "POST",
 		url: 'php/account.php?t=set',
 		data: {
-			id: localStorage.getItem("gag_account_id"),
-			hash: localStorage.getItem("gag_account_hash"),
+			id: account_id,
+			hash: account_hash,
 			firstname: $('input#formProfileName').val(),
 			patronymic: $('input#formProfilePatronymic').val(),
 			lastname: $('input#formProfileLastname').val(),
