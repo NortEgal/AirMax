@@ -12,9 +12,13 @@
 	<link rel="icon" href="img/favicon.png" type="image/png">
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-	<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--
+		<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+		<link rel="stylesheet"
+			href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+	-->
 
 	<link rel="stylesheet" href="css/daterangepicker.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -40,8 +44,9 @@
 	<div class="clouds cl-big"></div>
 	<div class="clouds cl-one"></div>
 
+	<header></header>
+	
 	<div class="container pt-4 flex-shrink-0">
-		<header></header>
 
 		<main class="justify-content-center text-center pt-5 mt-2">
 				
@@ -57,15 +62,25 @@
 					<div class="col h-auto white ml-1 input-group">
 						<input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Туда"/>
 						<div class="input-group-append">
-							<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
+							<!--
+								<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
 								 style="font-size: 150%; color: rgba(0, 0, 0, 0.65)"></i>
+							-->
+							<i class="material-icons my-auto" style=" color: rgba(0, 0, 0, 0.65)">
+								calendar_today
+							</i>
 						</div>
 					</div>
 					<div class="col h-auto white ml-1 input-group">
 						<input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Обратно" />
 						<div class="input-group-append">
-							<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
-							style="font-size: 150%; color:rgba(0, 0, 0, 0.65)"></i>
+							<!--
+								<i class="fas fa-calendar-alt my-auto" aria-hidden="true"
+									style="font-size: 150%; color: rgba(0, 0, 0, 0.65)"></i>
+							-->
+							<i class="material-icons my-auto" style=" color: rgba(0, 0, 0, 0.65)">
+								calendar_today
+							</i>
 						</div>
 					</div>
 					<div class="col h-auto white ml-1 rounded-right">
