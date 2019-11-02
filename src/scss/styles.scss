@@ -11,6 +11,59 @@ body {
   background: var(--background);
   //background-attachment: fixed;
 }
+//Мобилки
+@media (min-width: 320px) {
+  .nav-image {
+    background: url(../img/log-df1.png) no-repeat 50% 50%;
+    min-width: 75px;
+  //min-height: 56.25px;
+    min-height: 56.25px;
+    margin-left: 1rem;
+  }
+  .navigation {
+    padding-right: 0 !important;
+  }
+  .zagalovok {
+    font-size: 2rem;
+  }
+}
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+@media (min-width: 576px) { 
+  .nav-image {
+    background: url(../img/log-df2.png) no-repeat 50% 50%;
+        min-width: 200px;
+  //min-height: 56.25px;
+    min-height: 100px;
+    margin-left: 3rem;
+  }
+  .navigation {
+    margin-right: 3rem;
+  }
+  main {
+    margin-top: 12%;
+  }
+  .zagalovok {
+    font-size: 3.5rem;
+  }
+}
+
+// Средние девайсы («таблетки», >= 768px)
+@media (min-width: 768px) { 
+  
+}
+
+// Большие девайсы (десктопы, >= 992px)
+@media (min-width: 992px) {
+  .nav-image {
+    min-width: 300px;
+  }
+}
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+@media (min-width: 1200px) { 
+
+}
+
 .main {
   background-color: var(--back-color);
   color: var(--font-color);
@@ -29,6 +82,8 @@ body {
 .navbar {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
+  max-width: 1920px;
+  width: 100%;
 }
 .dropdown-item {
   font-weight: bold !important;
@@ -37,6 +92,16 @@ body {
   font-size: 28px;
   margin-top: -0.15rem;
 }
+.icon-date:before {
+  content: "\e916";
+  font-family: 'Material Icons';
+  color: rgba(0, 0, 0, 0.55);
+}
+.icon-date {
+  font-size: 28px;
+  margin-right: 0.3rem;
+}
+
 .dropdown-toggle::after {
   vertical-align: 0.5em;
 }
@@ -44,8 +109,8 @@ body {
   display: block;
   position: absolute;
   z-index: -999;
-  height: calc(100% - 16.6666666667rem);
-  width: calc(100% + 50rem);
+  max-height: calc(100% - 16.6666666667rem);
+  max-width: calc(100% + 50rem);
   left: 0;
   top: 0;
   bottom: 0;
@@ -222,11 +287,15 @@ footer {
 }
 
 .nav-image {
-  background: url(../img/log-df2.png) no-repeat 50% 50%;
-  background-size: 100%;
-  min-width: 30rem;
-  min-height: 200px;
-  height: 100%;
+  display: block;
+
+  background-size: contain;
+  object-fit: contain;
+  
+  max-width: 800px;
+  max-height: 225px;
+  
+  width: auto;
 }
 
 //input number 
