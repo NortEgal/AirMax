@@ -32,11 +32,11 @@
   <div class="clouds cl-big" style="height: 40%;"></div>
   <div class="clouds cl-one" style="height: 40%;"></div>
 
-  <div class="container pt-4 flex-shrink-0">
-	<header></header>
+  <header></header>
 
-    <hr style="margin-top: 0;">
-	<main class="main container-fluid p-5 mb-4 main-pay rounded shadow" style="background-color: white;">
+  <main class="container mt-4 flex-shrink-0">
+	
+	<div class="main container-fluid p-5 mb-4 main-pay rounded shadow" style="background-color: white;">
 		<div id='type_pay'></div>
 		<div id='type_a'></div>
 		<div id='type_price'></div>
@@ -57,9 +57,9 @@
       
         <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
           <br>
-          <div class="row">
-            <div class="col-6">
-              <form>
+          <div class="row align-items-center">
+            <div class="col-6 py-0">
+              <form class="my-auto">
                 <!-- <div class="form-row">
                   <div class="form-check-inline pl-2">
                     <input type="radio" class="form-check-input" id="VISA" value="VISA" name="exampleRadios">
@@ -76,7 +76,7 @@
                     <label class="form-check-label" for="Maestro">Maestro</label>
                   </div>
                 </div> -->
-                <div class="form-row">
+                <div class="form-row mt-0">
                   <div class="col-10">
                     <div class="md-form md-outline">
                       <input type="number" id="number-card" onkeypress="this.value=this.value.substring(0,15);" name="number-card"
@@ -86,7 +86,7 @@
                   </div>
                 </div>
                 <label>Срок действия:</label>
-                <div class="form-row">
+                <div class="form-row my-0">
                   <div class="col-auto pl-1">
                     <select class="browser-default custom-select">
                       <option value="1" selected>01</option>
@@ -127,7 +127,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row mt-0">
                   <div class="col-10 pl-1">
                     <div class="md-form md-outline">
                       <input type="text" id="card-holder-name" class="form-control">
@@ -181,8 +181,8 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary"> Оплатить </button>
-    </main>
-  </div>
+    </div>
+  </main>
 
 	<footer class="page-footer font-small pt-4 mt-auto"></footer>
 	
