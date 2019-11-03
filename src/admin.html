@@ -73,15 +73,15 @@
           </h2>
           <form>
             <div class="md-form md-outline">
-              <input type="text" id="form-plane" class="form-control">
-              <label for="form-plane">Введите ID рейса</label>
+              <input type="text" id="form-id-flight" class="form-control">
+              <label for="form-id-flight">Введите ID рейса</label>
             </div>
             <i>
               Далее появляется
             </i>
             <div class="select-outline">
             
-              <select class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Search here..">
+              <select id="select-form" class="mdb-select colorful-select dropdown-primary md-form" multiple searchable="Search here..">
                 <option value="" disabled selected>Выберите</option>
                 <option value="1">Место отбытия</option>
                 <option value="2">Место прибытия</option>
@@ -90,7 +90,7 @@
                 <option value="5">Цена</option>
                 <option value="6">Модель самолета</option>
               </select>
-              <label class="mdb-main-label">Что изменить</label>
+              <label class="mdb-main-label" for="#select-form">Что изменить</label>
               <button class="btn-save btn btn-primary btn-sm">Save</button>
               
               <script>

@@ -48,23 +48,23 @@
 	
 	<div>
 		<form class="mainform">
-		<div class="form-row mb-3">
+		<div class="form-row form-search mb-3">
 			<!-- Город вылета Город прибытия -->
-			<div class="col h-auto white rounded-left">
+			<div class="col white input-from-col">
 				<input type="search" id='input_from' class="form-control h-100" placeholder="Город вылета">
 			</div>
-			<div class="col h-auto white ml-1">
+			<div class="col white input-to-col">
 				<input type="search" id='input_to' class="form-control h-100" placeholder="Город прибытия">
 			</div>
 			<!-- Даты -->
-			<div class="col h-auto white ml-1">
+			<div class="col white input-time1-col">
 				<input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Туда" />
 			</div>
-			<div class="col h-auto white ml-1">
+			<div class="col white input-time2-col">
 				<input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Обратно" />
 			</div>
 			<!-- Кол-во пассажиров -->
-			<div class="col h-auto white ml-1 rounded-right">
+			<div class="col white input-seats-col">
 				<input id='input_seats' class="form-control h-100" min="1" max="15" type="number"
 					onkeypress="this.value=this.value.substring(0,1);" onchange="var value= +this.value.replace(/\D/g,'')||0;
 														var min = +this.getAttribute('min');
@@ -74,9 +74,7 @@
 			</div>
 			<!-- Кнопка -->
 			<div class="col-auto">
-				<button class="btn btn-primary h-100" type="submit"
-					style="font-family: 'Raleway', sans-serif;
-									font-weight: 600; color: rgba(255, 255, 255, 0.863); margin-top:0; padding: 0.56rem 2rem;">Найти</button>
+				<button class="btn btn-primary search-btn" type="submit">Найти</button>
 			</div>
 		</div>
 		</form>

@@ -9,6 +9,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   background: var(--background);
+  position: relative;
   //background-attachment: fixed;
 }
 //Мобилки
@@ -61,6 +62,35 @@ body {
     }
   footer {
     padding-right: 1rem;
+  }
+  .search-btn {
+    font-family: 'Raleway', sans-serif;
+    height: 40px;
+    font-weight: 600; color: rgba(255, 255, 255, 0.863);
+    padding: 0.56rem 2rem;
+    margin: 1rem auto !important;
+
+  }
+  .cl-easy {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    height: 20% !important;
+  }
+  .cl-big {
+    top: auto;
+    bottom: 0;
+    left: 15%;
+    right: 0;
+    width: 0 !important;
+  }
+  .cl-one {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right:75%;
+    width: 0 !important;
   }
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
@@ -138,6 +168,40 @@ body {
     margin-top: 0;
     margin-bottom: 0;
   }
+  .form-search {
+    margin-top: 1rem;
+    height: 45px;
+    & div {
+      height: inherit;
+    }
+  }
+  .search-btn {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+  .cl-easy {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    height: 30% !important;
+  }
+  .cl-big {
+    top: auto;
+    bottom: 10%;
+    left: auto;
+    right: 0;
+    width: 60% !important;
+    height: 50% !important;
+  }
+  .cl-one {
+    top: auto;
+    bottom: 0rem;
+    left: -5rem;
+    right:auto;
+    width: 60% !important;
+    height: 60% !important;
+  }
   html,
 		body {
 			min-height: 1200px;
@@ -158,11 +222,54 @@ body {
   .input-seats-col {
     border-bottom-left-radius: 0rem !important;
   }
+  .cl-easy {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  .cl-big {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 60% !important;
+    height: 50% !important;
+  }
+  .cl-one {
+    top: auto;
+    bottom: 0rem;
+    left: -5rem;
+    right:auto;
+    width: 60% !important;
+    height: 60% !important;
+  }
 }
 
 // Экстрабольшие девайсы (большие десктопы, >= 1200px)
 @media (min-width: 1200px) { 
-
+  .cl-easy {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  .cl-big {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 50% !important;
+    height: 50% !important;
+  }
+  .cl-one {
+    top: auto;
+    bottom: 0rem;
+    left: -5rem;
+    right:auto;
+    width: 50% !important;
+    height: 60% !important;
+  }
 }
 
 .main {
@@ -210,31 +317,22 @@ body {
   display: block;
   position: absolute;
   z-index: -999;
-  max-height: calc(100% - 16.6666666667rem);
-  max-width: 75rem;
+  height: calc(100% - 16.6666666667rem);
+  width: 100%;
   background-size: contain !important;
   object-fit: contain;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
 }
 .cl-easy {
-  background: url("../img/easy.png") no-repeat;
+  background: url("../img/easy.png") center no-repeat;
   filter: var(--cloud);
 }
 .cl-big {
-  background: url(../img/big.png) no-repeat;
-  //transform: translateX(900px) translateY(550px);
-  transform: translateX(80%) translateY(100%);
+  background: url(../img/big.png) center no-repeat;
   filter: var(--cloud);
 }
 .cl-one {
-  background: url(../img/one.png) no-repeat;
-  //transform: translateY(450px) translateX(-390px);
-  transform: translateX(-20%) translateY(80%);
+  background: url(../img/one.png) center no-repeat;
   filter: var(--cloud);
-  height: 60%;
 }
 
 .nav-image {
