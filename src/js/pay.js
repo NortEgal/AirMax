@@ -1,17 +1,18 @@
-let t = getURL('t'),
-	a = getURL('a'),
+let ticket_id = getURL('t'),
+	ticket_type = getURL('a'),
+	ticket_amount = getURL('m'),
 	rt;
 
-if (account_id == null || t == null || a == null) window.location.href = 'index.html';
+if (account_id == null || ticket_id == null || ticket_type == null || ticket_amount == null) window.location.href = 'index.html';
 
-if(!isNaN(t)) {
+if(!isNaN(ticket_id)) {
 	rt = 'flight';
 	let type;
-	if (a == 0) type = 'Эконом';
-	if (a == 1) type = 'Оптимальный';
-	if (a == 2) type = 'Премиум';
+	if (ticket_type == 0) type = 'Эконом';
+	if (ticket_type == 1) type = 'Оптимальный';
+	if (ticket_type == 2) type = 'Премиум';
 
-	$('#type_pay').html('Покупка билета на рейс '+ t);
+	$('#type_pay').html('Покупка билета на рейс ' + ticket_id);
 	$('#type_a').html('Тип билета: ' + type);
 
 	$.ajax({
@@ -20,17 +21,22 @@ if(!isNaN(t)) {
 		data: {
 			id: account_id,
 			hash: account_hash,
-			flight: t
+			flight: ticket_id
 		},
 		success: function (info) {
-			if(info == 'exist') {
+			if(info == 'user'){
+				window.location.href = 'logout.html';
+			}else if(info == 'exist') {
 				alert('Такого рейса не существует');
 				window.location.href = 'index.html';
 			}else{
 				info = JSON.parse(info);
-				if (a == 1) info.price *= 1.5;
-				if (a == 2) info.price *= 3;
-				$('#type_price').html('Цена: ' + info.price + ' ₽');
+				if (ticket_type == 1) info.price *= 1.5;
+				if (ticket_type == 2) info.price *= 3;
+				
+				let html = 'Цена: ' + (info.price * ticket_amount) + ' ₽';
+				if (ticket_amount > 1) html += ' (' + info.price + ' ₽ x ' + ticket_amount + ' места)';
+				$('#type_price').html(html);
 
 				$('#panel13 .md-form.md-outline.my-auto').html('У вас на счету ' + info.money + ' гривен');
 			}
@@ -50,16 +56,19 @@ $('button.btn-primary').on('click', function() {
 		data: {
 			id: account_id,
 			hash: account_hash,
-			t: t,
-			a: a,
+			t: ticket_id,
+			a: ticket_type,
+			m: ticket_amount,
 			p: p
 		},
 		success: function (info) {
 			//console.log(info);
+			if (info == 'rank') alert('Администраторам нельзя совершать покупки');
 			if (info == 'funds') alert('Недостаточно гривен для покупки билета');
+			if (info == 'places') alert('Не достаточо свободных мест на рейсе');
 			if (info == 'already') alert('Этот рейс уже куплен');
-			if (info == 'bought') { alert('Билет успешно куплен'); window.location.href = 'profile.html'; }
-			if (info == 'grivni') { alert('Гринвы успешно приобретены'); window.location.href = 'profile.html'; }
+			if (info == 'bought') { alert('Билет успешно куплен');  }
+			if (info == 'grivni') { alert('Гринвы успешно приобретены');  }
 		}
 	});
 });

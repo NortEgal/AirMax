@@ -5,23 +5,18 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT password, money FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_row($result);
+		$array = Query("SELECT password, money FROM user WHERE id='$id'");
 
-		if(!password_verify($array[0], $hash)) exit();
+		if(!password_verify($array['password'], $hash)) exit('user');
 
 		$flight = $_POST['flight'];
-
-		$query = "SELECT price FROM flight WHERE id='$flight'";
-		$result = mysqli_query($connection, $query);
-		$array_flight = mysqli_fetch_row($result);
+		$array_flight = Query("SELECT price FROM flight WHERE id='$flight'");
 
 		if($array_flight == null) exit('exist');
 
 		$send = [
-			"price"=>$array_flight[0],
-			"money"=>$array[1]
+			"price"=>$array_flight['price'],
+			"money"=>$array['money']
 		];
 
 		echo json_encode($send);
@@ -31,56 +26,42 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT password, flights, money FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_assoc($result);
+		$array_user = Query("SELECT password, rank, money FROM user WHERE id='$id'");
 
-		$t = $_POST['t'];
-		$a = $_POST['a'];
-		$p = $_POST['p'];
+		$ticket_id = $_POST['t'];
+		$ticket_type = $_POST['a'];
+		$ticket_amount = $_POST['m'];
+		$pay = $_POST['p'];
 
-		if(!password_verify($array['password'], $hash) || !is_numeric($t) || !is_numeric($a) || !is_numeric($p)) exit();
+		if(!password_verify($array_user['password'], $hash) || !is_numeric($ticket_id) || !is_numeric($ticket_type) || !is_numeric($ticket_amount) || !is_numeric($pay)) exit();
+		if($array_user['rank'] != 0) exit('rank');
 
-		$send = [
-			'id'=>$t,
-			'type'=>$a
-		];
+		$array = Query("SELECT free_places FROM flight");
+		if($array['free_places'] == 0 || $array['free_places'] < $ticket_amount) exit('places');
+		
+		$array = Query("SELECT flight_id, type FROM ticket WHERE flight_id = '$ticket_id' and type = '$ticket_type'");
+		if($array != null) exit('already');
 
-		if($array['flights'] == '') {
-			$flights = [];
-			array_push($flights, $send);
-			$flights = json_encode($flights);
-		}else{
-			$flights = json_decode($array['flights']);
+		$array_flight = Query("SELECT price FROM flight WHERE id='$ticket_id'");
 
-			foreach ($flights as $row) {
-				if ($row->id == $t) {
-					exit('already');
-				}
-			}
-
-			array_push($flights, $send);
-			$flights = json_encode($flights);
-		}
-
-		$query = "SELECT price FROM flight WHERE id='$t'";
-		$result = mysqli_query($connection, $query);
-		$array_flight = mysqli_fetch_row($result);
-
-		$money = $array['money'];
-		$price = $array_flight[0];
-		if($a == 1) $price *= 1.5;
-		if($a == 2) $price *= 3.0;
+		$money = $array_user['money'];
+		$price = $array_flight['price'];
+		if($ticket_type == 1) $price *= 1.5;
+		if($ticket_type == 2) $price *= 3.0;
 		$price = round($price);
 
-		if($p == 0) {
+		if($pay == 0) {
 			$money+=round($price*0.3);
 		}else {
 			if($money < $price) exit('funds');
 			$money-=$price;
 		}
 
-		$query = $query = "UPDATE user SET flights = '$flights', money = '$money' WHERE id='$id'";
+		$query = "UPDATE user SET money = '$money' WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+
+		$query = "INSERT INTO ticket (flight_id, user_id, type, amount) 
+		VALUES('$ticket_id', '$id', '$ticket_type', '$ticket_amount')";
 		$result = mysqli_query($connection, $query);
 
 		exit('bought');
