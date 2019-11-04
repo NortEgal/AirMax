@@ -92,6 +92,52 @@ body {
     right:75%;
     width: 0 !important;
   }
+  .btn-menu {
+    display: none;
+  }
+  .main-information {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    .setting {
+      padding-left: 0;
+      a {
+        padding: 0.5rem 1rem;
+        margin-top: 3.3rem !important;
+      }
+    }
+  }
+  .status {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  #profile_pay{
+    button {
+      padding: 0.5rem;
+    }
+    #profile_money {
+      font-size: 1.1rem;
+      margin-left: 0.375rem;
+      text-align: right;
+    }
+  }
+  .contact-data {
+    padding-left: 1rem !important;
+    .row {
+      display: block;
+      .col-5 {
+        max-width: 100%;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .MyTrip {
+    padding-left: 1rem !important;
+    h1 {
+      font-size: 2rem;
+    }
+  }
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
 @media (min-width: 576px) { 
@@ -133,6 +179,9 @@ body {
   .index-btn {
     margin-top: 13rem;
     margin-bottom: 3rem;
+  }
+  .informer {
+    margin-top: 20rem !important;
   }
 }
 
@@ -205,7 +254,13 @@ body {
   html,
 		body {
 			min-height: 1200px;
-		}
+    }
+  .btn-menu {
+    display: block;
+  }
+  .informer {
+    margin-top: 1rem !important;
+  }
 }
 
 // Большие девайсы (десктопы, >= 992px)
@@ -243,6 +298,56 @@ body {
     right:auto;
     width: 60% !important;
     height: 60% !important;
+  }
+  #profile_pay {
+    button {
+      padding: 0.5rem 1.6rem;
+    }
+  }
+  .main-information {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    .setting {
+      padding-left: 0;
+      padding-top: 2.8rem;
+      padding-right: 0;
+      a {
+        padding: 0.5rem 1rem;
+        margin-top: 3.3rem !important;
+        margin-right: 3rem;
+        float: right;
+      }
+    }
+    .status {
+      hr {
+        max-width: 80%;
+        align-items: left;
+        margin-left: 0;
+      }
+      padding-left: 3rem !important;
+    }
+  }
+  .contact-data {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    .row {
+      display: flex;
+      .col-5 {
+        max-width: 50%;
+        h1 {
+          font-size: 2.5rem;
+        }
+        form {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+  .MyTrip {
+    padding-left: 3rem !important;
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 }
 

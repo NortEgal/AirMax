@@ -23,10 +23,18 @@
 	<link rel="stylesheet" href="css/styles.css">
 
 	<style>
-		html,
-		body {
-			min-height: 1450px;
+		@media (min-width: 320px) {
+			html, body {
+				width: 100vw !important;
+			}
 		}
+		@media (min-width: 992px) {
+			html,
+			body {
+				min-height: 1450px;
+			}
+		}
+		
 		body {
 			max-height: 100%;
 		}
@@ -109,7 +117,7 @@
 		</button>
 		</div>
 		<!-- main block -->
-		<div class="main container mt-3">
+		<div class="main container mt-3 informer">
 		<!-- Выбор дня билета -->
 		<div class="row justify-content-between pt-3">
 			<div class="btn-group col-auto" role="group">
