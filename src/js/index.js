@@ -58,11 +58,20 @@ function ButtonCheck(fields) {
 	else $('#search').removeClass('disabled');
 }
 
+$.ajax({
+	//async: false,
+	type: "GET",
+	url: 'php/search.php?t=cities',
+	success: function (info) {
+		//console.log(info);
+		info = JSON.parse(info);
+		console.log(info);
 
-
-$('#input_from').mdbAutocomplete({
-	data: city
-});
-$('#input_to').mdbAutocomplete({
-	data: city
+		$('#input_from').mdbAutocomplete({
+			data: info
+		});
+		$('#input_to').mdbAutocomplete({
+			data: info
+		});
+	}
 });

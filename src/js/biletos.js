@@ -5,13 +5,14 @@ $('#type_econom').click();
 
 $.ajax({
 	type: "POST",
-	url: 'php/biletos.php',
+	url: 'php/biletos.php?t=get',
 	data: {
 		id: id,
 	},
 	success: function (info) {
+		console.log(info);
 		info = JSON.parse(info);
-		//console.log(info);
+		console.log(info);
 
 		let date_start = moment(info.time_departure),
 			date_end = moment(info.time_arrival),

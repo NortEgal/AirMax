@@ -1,4 +1,5 @@
 moment.locale('ru');
+$('.result-days').hide();
 
 let where_from = getURL('from'),
 	where_to = getURL('to'),
@@ -110,7 +111,7 @@ function RequestInfo() {
 
 	$.ajax({
 		type: "POST",
-		url: 'php/search.php',
+		url: 'php/search.php?t=flights',
 		data: {
 			where_from: where_from,
 			where_to: where_to,
@@ -120,7 +121,7 @@ function RequestInfo() {
 			sort: ticket_sorting
 		},
 		success: function (info) {
-			console.log(info);
+			//console.log(info);
 			info = JSON.parse(info);
 			console.log(info);
 
@@ -136,3 +137,20 @@ function RequestInfo() {
 		}
 	});
 }
+
+$.ajax({
+	type: "GET",
+	url: 'php/search.php?t=cities',
+	success: function (info) {
+		//console.log(info);
+		info = JSON.parse(info);
+		console.log(info);
+
+		$('#input_from').mdbAutocomplete({
+			data: info
+		});
+		$('#input_to').mdbAutocomplete({
+			data: info
+		});
+	}
+});
