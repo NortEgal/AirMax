@@ -18,11 +18,7 @@ $(function () {
 	});
 });
 
-$('.dropdown-p').on('click', '.dropdown-menu', function (e) {
-	e.stopPropagation();
-});
-
-$('#search').click( function() {
+$('#search').on('click', function() {
 	let url = "search.html?",
 		from = $('#input_from').val(),
 		to = $('#input_to').val(),
@@ -36,4 +32,37 @@ $('#search').click( function() {
 	
 	//console.log(url);
 	window.location.href = url;
+});
+
+let fields = [
+	"input_from",
+	"input_to",
+	"input_time1",
+	"input_time2",
+	"input_seats"
+	],
+	enable_search = 0;
+
+for(field of fields) {
+	$('#'+field).on('input', function (e) {
+		ButtonCheck(fields);
+	});
+};
+
+function ButtonCheck(fields) {
+	let val = '';
+	for (field of fields) {
+		val += $('#' + field).val();
+	};	
+	if(val == '') $('#search').addClass('disabled'); 
+	else $('#search').removeClass('disabled');
+}
+
+
+
+$('#input_from').mdbAutocomplete({
+	data: city
+});
+$('#input_to').mdbAutocomplete({
+	data: city
 });

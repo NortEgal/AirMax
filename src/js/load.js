@@ -23,8 +23,7 @@ let scripts = [
 	"js/libs/mdb.min.js",
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
-	"js/libs/daterangepicker.js",
-	"js/auto-city.js"
+	"js/libs/daterangepicker.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
