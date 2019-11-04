@@ -80,6 +80,7 @@ function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, tic
 		ticket_new.find('.ticket-date .col-auto').last().remove();
 		ticket_new.find('.ticket-date .col').last().remove();
 	}else {
+		ticket_back_time = moment(ticket_back_time);
 		ticket_new.find('.ticket-date .col').last().html(ticket_back_time.format('DD MMMM'));
 	}
 

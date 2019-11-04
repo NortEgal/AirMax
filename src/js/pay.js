@@ -67,8 +67,7 @@ $('button.btn-primary').on('click', function() {
 			if (info == 'funds') alert('Недостаточно гривен для покупки билета');
 			if (info == 'places') alert('Не достаточо свободных мест на рейсе');
 			if (info == 'already') alert('Этот рейс уже куплен');
-			if (info == 'bought') { alert('Билет успешно куплен');  }
-			if (info == 'grivni') { alert('Гринвы успешно приобретены');  }
+			if (info == 'bought') { alert('Билет успешно куплен'); window.location.href = 'profile.html'}
 		}
 	});
 });

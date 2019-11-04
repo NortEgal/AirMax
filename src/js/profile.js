@@ -20,6 +20,12 @@ function UpdateInfo() {
 			$('input#formProfileLastname').val(info.lastname);
 			$('input#formProfilePatronymic').val(info.patronymic);
 			$('input#formProfilePassport').val(info.passport);
+
+			if (info.rank != 0) {
+				$('#delete_profile').hide();
+				$('#delete_tickets').hide();
+				$('.MyTrip').hide();		
+			} 
 		}
 	});
 }
@@ -62,15 +68,49 @@ $('#profile_button_add').on('click', function (e) {
 	SendInfo();
 });
 
-$('#profile_pay').on('click', function (e) {
-	e.preventDefault();
-	window.location.href = 'pay.html?t=money';
+// $('#profile_pay').on('click', function (e) {
+// 	e.preventDefault();
+// 	window.location.href = 'pay.html?t=money';
+// });
+
+$('#delete_profile').on('click', function() {
+	$.ajax({
+		type: "POST",
+		url: 'php/account.php?t=delete_profile',
+		data: {
+			id: account_id,
+			hash: account_hash,
+		},
+		success: function (info) {
+			if(info == 'hash') {
+
+			}else{
+				alert('Ваш аккаунт успешно удален');
+				window.location.href = 'logout.html'
+			}
+		}
+	});
+});
+
+$('#delete_tickets').on('click', function () {
+	$.ajax({
+		type: "POST",
+		url: 'php/account.php?t=delete_tickets',
+		data: {
+			id: account_id,
+			hash: account_hash,
+		},
+		success: function (info) {
+			alert('Ваши покупки успешно удалены');
+			window.location.reload();
+		}
+	});
 });
 
 let ticket_template = $('.ticket');
 $('.ticket').remove();
 
-function CreateTicket(where_from, where_to, time_departure, id, model, price) {
+function CreateTicket(where_from, where_to, time_departure, id, model, price, type, amount, img) {
 	let ticket = ticket_template.clone();
 	$('.tickets').prepend(ticket).show('slow');
 
@@ -79,6 +119,13 @@ function CreateTicket(where_from, where_to, time_departure, id, model, price) {
 	ticket.find('#id-flight').html('Рейс: ' + id);
 	ticket.find('#airplane').html('Самолет: ' + model);
 	ticket.find('#price-trip').html('Цена: ' + price + ' ₽');
+
+	if (type == 0) type = 'Эконом';
+	if (type == 1) type = 'Оптимальный';
+	if (type == 2) type = 'Премиум';
+	ticket.find('#type').html('Тип билета: ' + type);
+	ticket.find('#seats').html('Куплено мест: ' + amount);
+	ticket.find('.photo-trip img').attr('src', img);
 
 	ticket.css('cursor', 'pointer');
 	ticket.mousedown(function () {
@@ -102,7 +149,7 @@ $.ajax({
 				if (row.type == 1) row.price *= 1.5;
 				if (row.type == 2) row.price *= 3;
 
-				CreateTicket(row.where_from, row.where_to, row.time_departure, row.id, row.model, Math.round(row.price));
+				CreateTicket(row.from_city + ' (' + row.from_airport + ')', row.to_city + ' (' + row.to_airport + ')', row.time_departure, row.id, row.model, Math.round(row.price), row.type, row.amount, row.to_city_img);
 			});
 		}
 	}

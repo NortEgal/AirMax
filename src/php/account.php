@@ -51,36 +51,76 @@
 		}
 	}
 
+	if($_GET['t'] == 'delete_tickets'){
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+
+		$array = Query("SELECT password FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash)) exit('hash');
+
+		$query = "DELETE FROM ticket WHERE user_id = '$id'";
+		$result = mysqli_query($connection, $query);
+	}
+
+	if($_GET['t'] == 'delete_profile'){
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+
+		$array = Query("SELECT password FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash)) exit('hash');
+
+		$query = "DELETE FROM ticket WHERE user_id = '$id'";
+		$result = mysqli_query($connection, $query);
+
+		$query = "DELETE FROM user WHERE id = '$id'";
+		$result = mysqli_query($connection, $query);
+	}
+
 	if($_GET['t'] == 'flights'){
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$array = Query("SELECT password, flights FROM user WHERE id='$id'");
+		$array = Query("SELECT password FROM user WHERE id='$id'");
 
-		if(!password_verify($array['password'], $hash) || $array['flights'] == '') exit();
-		$array_flights = json_decode($array['flights'], true);
+		if(!password_verify($array['password'], $hash)) exit();
 
+		$query = "SELECT * FROM city";
+		$result = mysqli_query($connection, $query);
+		$city = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$city[$row['id']]['name'] = $row['name'];
+			$city[$row['id']]['img'] = $row['img'];
+		}
+
+		$query = "SELECT id, name FROM airport";
+		$result = mysqli_query($connection, $query);
+		$airport = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$airport[$row['id']] = $row['name'];
+		}
+
+		$query = "SELECT * FROM ticket WHERE user_id='$id'";
+		$result = mysqli_query($connection, $query);
 		$send = [];
-
-		foreach ($array_flights as $row) {
-			$flight = $row["id"];
-			$query = "SELECT plane_id, where_from, where_to, time_departure, price FROM flight WHERE id='$flight'";
-			$result = mysqli_query($connection, $query);
-			$array = mysqli_fetch_assoc($result);
-
-			$plane = $array['plane_id'];
-			$query = "SELECT model FROM plane WHERE id='$plane'";
-			$result = mysqli_query($connection, $query);
-			$array_plane = mysqli_fetch_row($result);
+		while ($row = mysqli_fetch_assoc($result)) {
+			$flight_id = $row['flight_id'];
+			$array_flight = Query("SELECT * FROM flight WHERE id = '$flight_id'");
+			$plane_id = $array_flight['plane_id'];
+			$array_plane = Query("SELECT model FROM plane WHERE id = '$plane_id'");
 
 			array_push($send , array(
-				"id"=>$row['id'], 
-				"time_departure"=>$array['time_departure'],
-				"where_from"=>$array['where_from'], 
-				"where_to"=>$array['where_to'],
-				"model"=>$array_plane[0], 
-				"price"=>$array['price'],
-				'type'=>$row['type']
+				"id"=>$row['flight_id'], 
+				"from_city"=>$city[$array_flight['from_city_id']]['name'],
+				"from_airport"=>$airport[$array_flight['from_airport_id']], 
+				"to_city"=>$city[$array_flight['to_city_id']]['name'],
+				"to_city_img"=>$city[$array_flight['to_city_id']]['img'],			
+				"to_airport"=>$airport[$array_flight['to_airport_id']],
+				"time_departure"=>$array_flight['time_departure'],
+				"time_back"=>$array_flight['time_back'],
+				"type"=>$row['type'],
+				"amount"=>$row['amount'],
+				"price"=>$array_flight['price'],
+				"model"=>$array_plane['model']
 			));
 		}
 

@@ -45,7 +45,7 @@
         <div class="col-6 status" title="1 гривна = 1 рубль">
           <h1>Баланс </h1>
           <a id='profile_pay' href="">
-            <button class="btn btn-sm blue-gradient" type="button"> + пополнить </button>
+            <!-- <button class="btn btn-sm blue-gradient" type="button"> + пополнить </button> -->
           
           <span id='profile_money' class="h4" style="vertical-align: middle; color: var(--font-color);">
             0 гривен
@@ -54,7 +54,8 @@
           <hr>
         </div>
         <div class="col-6 setting">
-          <a class="btn btn-sm juicy-peach-gradient mt-5" role="button" href="setting.html">Настройки</a>
+			<a id='delete_profile' class="btn btn-primary" role="button">Удалить аккаунт</a>
+			<a id='delete_tickets' class="btn btn-secondary" role="button">Удалить историю покупок</a>
         </div>
       </div>
       <div class="contact-data">
@@ -151,10 +152,15 @@
                   <span id="id-flight">
                     Номер рейса: ид
                   </span>
+				</p>
+                <p>
+                  <span id="type">
+                    Тип билета: тип
+                  </span>
                 </p>
                 <p>
-                  <span id="id-seats">
-                    Место: ид
+                  <span id="seats">
+                    Куплено мест: цифра
                   </span>
                 </p>
                 <p>

@@ -85,7 +85,7 @@ if (account_id != null) {
 						},
 						success: function (info) {
 							if (info) {
-								alert('Пароль:' + info);
+								alert('Пароль: ' + info);
 							} else {
 								alert('Пользователя с такой почтой не существует');
 							}
