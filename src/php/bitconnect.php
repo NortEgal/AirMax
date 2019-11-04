@@ -16,5 +16,9 @@
 	} 
 	mysqli_set_charset($connection, 'utf8');
 
-	//echo "Connected successfully";
+	function Query($query) {
+		global $connection;
+		$result = mysqli_query($connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
 ?>

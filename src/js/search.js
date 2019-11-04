@@ -32,13 +32,9 @@ $(function () {
 	});
 });
 
-$('.dropdown-p').on('click', '.dropdown-menu', function (e) {
-	e.stopPropagation();
-});
-
 let ticket = $('.ticket-1'), 
 	ticket_sorting = 0;
-$('.ticket-1').remove();
+//$('.ticket-1').remove();
 if (where_from || where_to || date_start || date_end || seats) RequestInfo();
 
 $('#sortTime').on('click', function () {
@@ -64,7 +60,7 @@ $('.mainform').on('submit', function (e) {
 	e.preventDefault();
 });
 
-function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, ticket_end_city, ticket_id, ticket_price_econom) {
+function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, ticket_end_city, ticket_back_time, ticket_id, ticket_price_econom) {
 	ticket_start_time = moment(ticket_start_time);
 	ticket_end_time = moment(ticket_end_time);
 
@@ -78,6 +74,13 @@ function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, tic
 	ticket_new.hide().show('slow');
 
 	ticket_new.find('.ticket-date .col').html(ticket_start_time.format('DD MMMM'));
+
+	if (ticket_back_time == null) {
+		ticket_new.find('.ticket-date .col-auto').last().remove();
+		ticket_new.find('.ticket-date .col').last().remove();
+	}else {
+		ticket_new.find('.ticket-date .col').last().html(ticket_back_time.format('DD MMMM'));
+	}
 
 	ticket_new.find('.ticket-time-fr span').first().html(ticket_start_time.format('HH:MM'));
 	ticket_new.find('.ticket-time-fr span').next().html(ticket_start_city);
@@ -93,8 +96,10 @@ function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, tic
 	ticket_new.find('.ticket-premium span').html(ticket_price_premium + '₽');
 
 	ticket_new.css('cursor', 'pointer');
-	ticket_new.mousedown(function () {
-		window.open("biletos.html?t=" + ticket_id);
+	ticket_new.mousedown(function (e) {
+		if(e.which != 3) {
+			window.open("biletos.html?t=" + ticket_id);
+		}
 	});
 }
 
@@ -115,6 +120,7 @@ function RequestInfo() {
 			sort: ticket_sorting
 		},
 		success: function (info) {
+			console.log(info);
 			info = JSON.parse(info);
 			console.log(info);
 
@@ -125,7 +131,7 @@ function RequestInfo() {
 			$('#tickets_result2').html('Сортировано по ' + sort);
 
 			$.each(info, function (i, row) {
-				CreateTicket(row.time_departure, row.where_from, row.time_arrival, row.where_to, row.id, row.price);
+				CreateTicket(row.time_departure, row.from_city + '<br>' + row.from_airport, row.time_arrival, row.to_city + '<br>' + row.to_airport, row.time_back, row.id, row.price);
 			});
 		}
 	});

@@ -5,9 +5,7 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT * FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_assoc($result);
+		$array = Query("SELECT * FROM user WHERE id='$id'");
 
 		if(!password_verify($array['password'], $hash)) exit(0);
 
@@ -19,11 +17,9 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT password FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_row($result);
+		$array = Query("SELECT password FROM user WHERE id='$id'");
 
-		if(!password_verify($array[0], $hash)) exit('hash');
+		if(!password_verify($array['password'], $hash)) exit('hash');
 
 		$mail = $_POST['mail'];
 		$phone = substr($_POST['phone'], 0, 10);
@@ -59,9 +55,7 @@
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
 
-		$query = "SELECT password, flights FROM user WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_assoc($result);
+		$array = Query("SELECT password, flights FROM user WHERE id='$id'");
 
 		if(!password_verify($array['password'], $hash) || $array['flights'] == '') exit();
 		$array_flights = json_decode($array['flights'], true);
@@ -96,9 +90,7 @@
 	if($_GET['t'] == 'forgot'){
 		$mail = $_POST['mail'];
 
-		$query = "SELECT password FROM user WHERE mail='$mail'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_assoc($result);
+		$array = Query("SELECT password FROM user WHERE mail='$mail'");
 
 		if($array != null) {
 			echo $array['password'];
@@ -111,9 +103,7 @@
 		$mail = $_POST['mail'];
 		$password = $_POST['password'];
 
-		$query = "SELECT id, password FROM user WHERE mail='$mail' and password='$password'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_assoc($result);
+		$array = Query("SELECT id, password FROM user WHERE mail='$mail' and password='$password'");
 
 		if($array != null) {
 			$array['password'] = password_hash($array['password'], PASSWORD_DEFAULT);
@@ -135,9 +125,7 @@
 		if($mail == '' || $password == '') exit('empty');
 		if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) exit('wrong');
 
-		$query = "SELECT id FROM user WHERE mail='$mail'";
-		$result = mysqli_query($connection, $query);
-		$array = mysqli_fetch_row($result);
+		$array = Query("SELECT id FROM user WHERE mail='$mail'");
 
 		if($array != null) exit('exist');
 
