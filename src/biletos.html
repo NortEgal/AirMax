@@ -226,22 +226,32 @@
         
       </div>
       <div class="row">
-						<input id='input_seats' class='col-2' min="1" max="15" value="1" type="number"
-							onkeypress="this.value=this.value.substring(0,1);" onchange="var value= +this.value.replace(/\D/g,'')||0;
-																	var min = +this.getAttribute('min');
-																	var max = +this.getAttribute('max');
-																	this.value = Math.min(max, Math.max(min, value));
-												" placeholder="Кол-во мест">
-
-        <a id='buy' class="ml-4 mt-4 btn btn-white btn-lg" href="" role="button">
-          Купить
-		</a>
-		<a id='edit' class="ml-4 mt-4 btn btn-yellow btn-lg" href="" role="button">
-			Изменить данные
-		</a>
-		<a id='delete' class="ml-4 mt-4 btn btn-red btn-lg" href="" role="button">
-			Удалить рейс
-		</a>
+        <div class="col-4">
+          <div class="md-form md-outline">
+            <input id='input_seats' class='form-control mx-2' min="1" max="15" value="1" type="number"
+              onkeypress="this.value=this.value.substring(0,1);" onchange="var value= +this.value.replace(/\D/g,'')||0;
+                    																	var min = +this.getAttribute('min');
+                    																	var max = +this.getAttribute('max');
+                    																	this.value = Math.min(max, Math.max(min, value));
+                                            " placeholder="Кол-во мест"
+              style="border: 1px solid #dadce0; width: 5rem; padding: 1rem; margin-left: 25px">
+            <label for="input_seats">Введите количество мест</label>
+          
+          </div>
+        </div>
+        <div class="col-8">
+          <a id='buy' class="ml-4 mt-4 btn btn-white btn-lg" href="" role="button">
+            Купить
+          </a>
+          <a id='edit' class="ml-4 mt-4 btn btn-yellow btn-lg" href="" role="button">
+            Изменить данные
+          </a>
+          <a id='delete' class="ml-4 mt-4 btn btn-red btn-lg" href="" role="button">
+            Удалить рейс
+          </a>
+        </div>
+        
+	
       </div>
     </div>
   </main>
