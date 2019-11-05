@@ -90,8 +90,8 @@
 						
 								<!-- Phone number -->
 								<div class="md-form">
-									<input type="text" id="materialRegisterFormPhone" class="form-control"
-										aria-describedby="materialRegisterFormPhoneHelpBlock">
+									<input type="number" id="materialRegisterFormPhone" class="form-control input-number"
+										aria-describedby="materialRegisterFormPhoneHelpBlock" onkeypress="this.value=this.value.substring(0,10);">
 									<label for="materialRegisterFormPhone">Номер телефона</label>
 									<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 										Вы сможете получать уведомление о рейсе
@@ -100,7 +100,7 @@
 						
 								<!-- Passport -->
 								<div class="md-form">
-									<input type="text" id="materialRegisterFormPassport" class="form-control"
+									<input type="number" id="materialRegisterFormPassport" class="form-control input-number"
 										aria-describedby="materialRegisterFormPassportHelpBlock">
 									<label for="materialRegisterFormPassport">Номер пасспорта</label>
 									<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
