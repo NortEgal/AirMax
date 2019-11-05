@@ -123,17 +123,23 @@
 		<!-- Выбор дня билета -->
 		<div class="row justify-content-between pt-3">
 			<div class="btn-group col-auto" role="group">
-			<button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" title="по цене">
-				<i class="material-icons">
-				sort
-				</i>
-			</button>
-			<div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
-				<a id='sortTime' class="dropdown-item active">По времени</a>
-				<a id='sortPrice' class="dropdown-item">По цене</a>
+				<button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false" title="по цене">
+					<i class="material-icons">
+					sort
+					</i>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
+					<a id='sortTime' class="dropdown-item active">По времени</a>
+					<a id='sortPrice' class="dropdown-item">По цене</a>
+				</div>
 			</div>
-			</div>
+			<select class="mdb-select md-form">
+				<option value="" disabled selected>Видимых билетов</option>
+				<option value="1">10</option>
+				<option value="2">25</option>
+				<option value="3">50</option>
+			</select>
 			<div class="col-auto ticket-result">
 				<span id='tickets_result1' class="ticket-result"></span>
 				<span id='tickets_result2' class="ticket-result"></span>
@@ -254,6 +260,21 @@
 					</div>
 				</div>
 			</div>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination pg-blue">
+					<li class="page-item disabled">
+						<a class="page-link" tabindex="-1">Previous</a>
+					</li>
+					<li class="page-item"><a class="page-link">1</a></li>
+					<li class="page-item active">
+						<a class="page-link">2 <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="page-item"><a class="page-link">3</a></li>
+					<li class="page-item">
+						<a class="page-link">Next</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 
 		</div>
