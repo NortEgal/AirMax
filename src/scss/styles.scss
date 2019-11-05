@@ -138,6 +138,25 @@ body {
       font-size: 2rem;
     }
   }
+  .block-ticket {
+    display: block;
+    .col-5 {
+      max-width: 100%;
+      .row {
+        .col-3 {
+          padding: 0;
+          max-width: 100%;
+          flex: none;
+        }
+      }
+      .aeroports {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .ticket-date {
+    display: block;
+  }
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
 @media (min-width: 576px) { 
@@ -261,6 +280,12 @@ body {
   .informer {
     margin-top: 1rem !important;
   }
+  .ticket-date {
+    display: flex;
+  }
+  .block-ticket {
+    display: flex;
+  }
 }
 
 // Большие девайсы (десктопы, >= 992px)
@@ -349,6 +374,32 @@ body {
       font-size: 2.5rem;
     }
   }
+  .block-ticket {
+    width: 100%;
+    .col-5 {
+      max-width: 50%;
+      flex: 0 0 50%;
+      .row {
+        .col-3 {
+          padding: 1rem;
+          max-width: 25%;
+          flex: 0 0 25%;
+        }
+      }
+      .aeroports {
+        margin-top: 1rem;
+      }
+    }
+    .col-7 {
+      max-width: 50%;
+    }
+  }
+  .ticket-econom, .ticket-optim, .ticket-premium {
+    padding: 0.5rem !important;
+  }
+  .ticket-info {
+    padding: 2rem !important;
+  }
 }
 
 // Экстрабольшие девайсы (большие десктопы, >= 1200px)
@@ -374,6 +425,19 @@ body {
     right:auto;
     width: 50% !important;
     height: 60% !important;
+  }
+  .block-ticket {
+    width: none;
+    .ticket-info {
+      max-width: 41.666667%;
+      flex: 0 0 41.666667%;
+    }
+    .col-7 {
+      max-width: 58.333333%;
+    }
+  }
+  .ticket-econom, .ticket-optim, .ticket-premium {
+    padding: 1rem 3rem;
   }
 }
 
@@ -612,7 +676,9 @@ footer {
   font-family: 'Rubik'; font-weight: 900;
   font-size: 120%;
 }
-
+#input_from:focus, #input_to {
+    border: 0 !important;
+}
 //input number 
 .button-number-passengers {
   background: transparent; 
@@ -654,6 +720,16 @@ footer {
     outline-style: none!important;
     box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
   }
+}
+.mdb-autocomplete-wrap {
+  background-color: var(--back-color);
+  width: 104.25%;
+  margin-left: -5px;
+  padding-left: 0;
+  text-align: left;
+  li {
+    list-style-type: none;
+   }
 }
 
 :root[theme='light'] {
