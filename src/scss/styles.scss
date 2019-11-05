@@ -158,7 +158,7 @@ body {
     }
   }
   .ticket-date {
-    display: block;
+    display: block;     
   }
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
@@ -285,6 +285,9 @@ body {
   }
   .ticket-date {
     display: flex;
+    .col {
+      max-width: 10rem;
+    }
   }
   .block-ticket {
     display: flex;
@@ -432,11 +435,11 @@ body {
   .block-ticket {
     width: none;
     .ticket-info {
-      max-width: 41.666667%;
-      flex: 0 0 41.666667%;
+      max-width: 50%;
+      flex: 0 0 50%;
     }
     .col-7 {
-      max-width: 58.333333%;
+      max-width: 50%;
     }
   }
   .ticket-econom, .ticket-optim, .ticket-premium {
