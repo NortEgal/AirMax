@@ -60,7 +60,7 @@
           role="button" aria-expanded="false" aria-controls="CollapseSetting">
             Настройки
           </a>
-          <div class="collapse" id="CollapseSetting">
+          <div class="collapse animated fade fast" id="CollapseSetting">
             <a id='delete_profile' class="btn btn-primary" role="button">Удалить аккаунт</a>
             <a id='delete_tickets' class="btn btn-secondary" role="button">Удалить историю покупок</a>
           </div>
@@ -96,7 +96,7 @@
           
               <div class="md-form form-group">
 				<label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
-				<input type="text" pattern="" id="formProfilePassport" placeholder=" " class="form-control">
+				<input type="text" pattern="[0-9]{0,10}" id="formProfilePassport" placeholder=" " class="form-control">
               </div>
           
             </form>
@@ -139,7 +139,7 @@
           <div class="ticket trip row list-group-item py-4 list-group-item-action">
             <div class="photo-trip col-3">
               <span id="photo-trip shadow">
-                <img src="https://32.img.avito.st/avatar/social/256x256/4419904532.jpg" style="max-width: 200px;" class="hoverable">
+                <img src="https://32.img.avito.st/avatar/social/256x256/4419904532.jpg" style="max-width: 200px; width: 200px;" class="hoverable">
               </span>
             </div>
             <div class="about-trip col-auto">
