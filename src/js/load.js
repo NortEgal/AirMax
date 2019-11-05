@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 let account_id = localStorage.getItem("gag_account_id"),
 	account_hash = localStorage.getItem("gag_account_hash"),
-	accound_info;
+	accound_info = JSON.parse(localStorage.getItem("gag_account_info"));
 
 if (account_id != null) {
 	$.ajax({
@@ -55,6 +55,7 @@ if (account_id != null) {
 		},
 		success: function (info) {
 			if (!isNaN(info)) {window.location.href = 'logout.html';}else{
+				localStorage.setItem("gag_account_info", info);
 				account_info = JSON.parse(info);
 				$('#header_dropdown').load('html/header_options_'+account_info.rank+'.html');
 				console.log(account_info);

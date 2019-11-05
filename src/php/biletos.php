@@ -28,4 +28,20 @@
 
 		echo json_encode($array_flight);
 	}
+
+	if($_GET['t'] == 'delete') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$flight = $_POST['flight'];
+
+		$array_user = Query("SELECT password, rank FROM user WHERE id='$id'");
+
+		if(!password_verify($array_user['password'], $hash) || $array_user['rank'] == 0 || $flight == null) exit();
+
+		$query = "DELETE FROM ticket WHERE flight_id = '$flight'";
+		$result = mysqli_query($connection, $query);
+
+		$query = "DELETE FROM flight WHERE id = '$flight'";
+		$result = mysqli_query($connection, $query);
+	}
 ?>

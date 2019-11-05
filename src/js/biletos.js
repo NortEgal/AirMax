@@ -45,18 +45,45 @@ $.ajax({
 });
 
 if (account_id == null) {
-	$('a.btn').attr('data-target', '#SignINmodal');
-	$('a.btn').attr('data-toggle', 'modal');
-	$('a.btn').on('click', function (e) {
+	$('#buy').attr('data-target', '#SignINmodal');
+	$('#buy').attr('data-toggle', 'modal');
+	$('#buy').on('click', function (e) {
 		e.preventDefault();
 	});
-}else{
-	$('a.btn').on('click', function (e) {
-		e.preventDefault();
-		let type = 0;
-		if($('#type_econom').is(':checked')) type = 0; 
-		if($('#type_optima').is(':checked')) type = 1;
-		if($('#type_premium').is(':checked')) type = 2;
-		window.location.href = 'pay.html?t=' + id + '&a=' + type + '&m=' + $('#input_seats').val();
-	});
+} else {
+	if(accound_info.rank == 0) {
+		$('#edit').hide();
+		$('#delete').hide();
+
+		$('#buy').on('click', function (e) {
+			e.preventDefault();
+			let type = 0;
+			if ($('#type_econom').is(':checked')) type = 0;
+			if ($('#type_optima').is(':checked')) type = 1;
+			if ($('#type_premium').is(':checked')) type = 2;
+			window.location.href = 'pay.html?t=' + id + '&a=' + type + '&m=' + $('#input_seats').val();
+		});
+	}else{
+		$('#buy').hide();
+		$('#input_seats').hide();
+		$('.h4.ml-4.mt-4.pt-3').hide();
+
+		$('#delete').on('click', function (e) {
+			e.preventDefault();
+
+			$.ajax({
+				type: "POST",
+				url: 'php/biletos.php?t=delete',
+				data: {
+					id: account_id,
+					hash: account_hash,
+					flight: id
+				},
+				success: function (info) {
+
+				}
+			});
+		});
+	}
+
 }
