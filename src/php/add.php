@@ -2,7 +2,7 @@
     require('bitconnect.php');
     
     
-    if ($_GET(['t']) == "add_account")
+    if (isset( $_POST["add_account"]))
     {
         $formplane = $_POST["form-plane"]
         $formwhere_from = $_POST["formwhere_from"]
