@@ -23,7 +23,7 @@
   <style>
     @media (min-width: 1200px){
       html, body {
-        min-height: 1700px;
+        min-height: 1400px;
         height: 100%;
       }
     }
@@ -118,7 +118,7 @@
               </div>
           
               <div class="md-form form-group">
-                <input type="text" id="formProfileTelephone" placeholder=" " class="form-control">
+                <input type="number" id="formProfileTelephone input-number" placeholder=" " class="form-control" onkeypress="this.value=this.value.substring(0,10);">
                 <label for="formProfileTelephone" class="grey-text font-weight-light">Номер телефона</label>
               </div>
           
