@@ -56,9 +56,8 @@
           <hr>
         </div>
         <div class="col-6 setting">
-          <a class="btn btn-sm blue-gradient shadow-none" data-toggle="collapse" href="#CollapseSetting" 
-          role="button" aria-expanded="false" aria-controls="CollapseSetting">
-            Настройки
+          <a class="btn btn-sm blue-gradient shadow-none setting-btn" data-toggle="collapse" href="#CollapseSetting" 
+          role="button" aria-expanded="false" aria-controls="CollapseSetting" title="Настройки">
           </a>
           <div class="collapse animated fade fast" id="CollapseSetting">
             <a id='delete_profile' class="btn btn-primary" role="button">Удалить аккаунт</a>
@@ -124,7 +123,9 @@
           
             </form>
 
-            <button id='profile_button_add' type="button" class="btn btn-outline-secondary waves-effect mx-0 my-2"> Изменить </button>
+            <button id='profile_button_add' type="submit" class="btn btn-outline-secondary waves-effect mx-0 my-2"> Изменить </button>
+            <!--Появляется если затронты строки-->
+            <button id='profile_button_add' type="reset" class="btn btn-outline-teal waves-effect my-2">Отмена</button>
 
           </div>        
         
@@ -139,7 +140,7 @@
           <div class="ticket trip row list-group-item py-4 list-group-item-action">
             <div class="photo-trip col-3">
               <span id="photo-trip shadow">
-                <img src="https://32.img.avito.st/avatar/social/256x256/4419904532.jpg" style="max-width: 200px; width: 200px;" class="hoverable">
+                <img src="https://32.img.avito.st/avatar/social/256x256/4419904532.jpg" class="hoverable">
               </span>
             </div>
             <div class="about-trip col-auto">

@@ -243,7 +243,7 @@
           <a id='buy' class="ml-4 mt-4 btn btn-white btn-lg" href="" role="button">
             Купить
           </a>
-          <a id='edit' class="ml-4 mt-4 btn btn-yellow btn-lg" href="" role="button">
+          <a id='edit' class="ml-4 mt-4 btn btn-yellow btn-lg" href="#ModalChangeBiletos" data-target="#ModalChangeBiletos" data-toggle="modal">
             Изменить данные
           </a>
           <a id='delete' class="ml-4 mt-4 btn btn-red btn-lg" href="" role="button">
@@ -255,6 +255,124 @@
       </div>
     </div>
   </main>
+
+  <div class="modal fade" id="changeBiletos" role="dialog"
+    aria-labelledby="ModalChangeBiletos" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!-- Самолет -->
+      <select class="mdb-select md-form">
+        <option value="" disabled selected>Выберете модель самолета</option>
+        <option value="1">Airbus A320neo</option>
+        <option value="3">Airbus A321</option>
+        <option value="4">Boeing 737-500</option>
+        <option value="8">Boeing 737 MAX 8</option>
+        <option value="9">Boeing 737 MAX 9</option>
+        <option value="10">Boeing 737 MAX 10</option>
+        <option value="11">Boeing 777-8</option>
+        <option value="12">Boeing 777-9</option>
+        <option value="13">Boeing 777-10</option>
+      </select>
+      
+      
+      <!-- Откуда -->
+      <select class="mdb-select md-form">
+        <option value="" disabled selected>Выберете город</option>
+        <option value="1">Пермь</option>
+        <option value="2">Москва</option>
+        <option value="3">Казань</option>
+        <option value="4">Валенсия</option>
+        <option value="5">Варшава</option>
+        <option value="6">Вашингтон</option>
+        <option value="7">Виенна</option>
+        <option value="8">Гамбург</option>
+        <option value="9">Дельфи</option>
+        <option value="25">Красноярск</option>
+        <option value="26">Санкт-Петербург</option>
+        <option value="27">Париж</option>
+        <option value="29">Дубай</option>
+        <option value="30">Сан-Франциско</option>
+        <option value="32">Лондон</option>
+        <option value="37">Токио</option>
+        <option value="40">Гонконг</option>
+      </select>
+      
+      <!-- Откуда аэропорт -->
+      <div class="md-form">
+        <input placeholder="Домодедово" type="text" id="formAirportFrom" class="form-control">
+        <label for="formAirportFrom">Аэропорт</label>
+      </div> <!-- Изменяют вручную -->
+      
+      <!-- Куда -->
+      <select class="mdb-select md-form">
+        <option value="" disabled selected>Выберете город</option>
+        <option value="1">Пермь</option>
+        <option value="2">Москва</option>
+        <option value="3">Казань</option>
+        <option value="4">Валенсия</option>
+        <option value="5">Варшава</option>
+        <option value="6">Вашингтон</option>
+        <option value="7">Виенна</option>
+        <option value="8">Гамбург</option>
+        <option value="9">Дельфи</option>
+        <option value="25">Красноярск</option>
+        <option value="26">Санкт-Петербург</option>
+        <option value="27">Париж</option>
+        <option value="29">Дубай</option>
+        <option value="30">Сан-Франциско</option>
+        <option value="32">Лондон</option>
+        <option value="37">Токио</option>
+        <option value="40">Гонконг</option>
+      </select>
+
+      <!-- Куда аэропорт -->
+      <div class="md-form">
+        <input placeholder="Домодедово" type="text" id="formAirportTo" class="form-control">
+        <label for="formAirportTo">Аэропорт</label>
+      </div> <!-- Изменяют вручную -->
+      
+      <!-- Время отлета -->
+      <div class="input-group">
+        <input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Отлет"
+          title="Дата вылета" />
+        <div class="input-group-append">
+          <i class="material-icons icon-date my-auto"></i>
+        </div>
+      </div>
+      
+
+      <!-- Время прилета -->
+      <div class="input-group">
+        <input id='input_time2' type="date" name="calendar2" class="form-control h-100" placeholder="Прилет"
+          title="Дата вылета" />
+        <div class="input-group-append">
+          <i class="material-icons icon-date my-auto"></i>
+        </div>
+      </div>
+      
+      <!-- Время возращения -->
+      <div class="input-group">
+        <input id='input_time3' type="date" name="calendar3" class="form-control h-100" placeholder="Обратно"
+          title="Дата возращения" />
+        <div class="input-group-append">
+          <i class="material-icons icon-date my-auto"></i>
+        </div>
+      </div>
+      
+      <!-- Свободных мест -->
+      <div class="md-form">
+        <input placeholder="125" type="number" id="formFreePlaces" min="1" max="450" class="form-control">
+        <label for="formFreePlaces">Свободных мест</label>
+      </div>
+
+      <!-- Цена -->
+      <div class="md-form">
+        <input placeholder="1337" type="number" id="formPrices" min="1" max="100000" class="form-control">
+        <label for="formPrices">Пароль</label>
+      </div>
+    </div>
+  </div>
+  </div>
 
   <footer class="page-footer font-small pt-4 mt-auto"></footer>
   

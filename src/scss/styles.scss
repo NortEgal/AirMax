@@ -340,7 +340,7 @@ body {
     padding-right: 3rem !important;
     .setting {
       padding-left: 0;
-      padding-top: 2.8rem;
+      //padding-top: 2.8rem;
       padding-right: 0;
       a {
         padding: 0.5rem 1rem;
@@ -521,7 +521,27 @@ body {
   
   width: auto;
 }
-
+.setting {
+  margin-top: 0;
+  padding-top: 0;
+}
+.setting-btn {
+  padding: 0 !important;
+  float: right;
+  //height: 100%;
+  &:before {
+    content: '\e8b9';
+  font-family: 'Material Icons';
+  color: white;
+  font-size: 3em !important;
+  height: 100%;
+  }
+}
+.photo-trip {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}
 body.modal-open {
   overflow: hidden;
 }
