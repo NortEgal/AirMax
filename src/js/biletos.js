@@ -66,6 +66,7 @@ if (account_id == null) {
 	}else{
 		$('#buy').hide();
 		$('#input_seats').hide();
+		$('.md-form.md-outline label').remove();
 		$('.h4.ml-4.mt-4.pt-3').hide();
 
 		$('#delete').on('click', function (e) {
