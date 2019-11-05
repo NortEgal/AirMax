@@ -43,8 +43,8 @@ $(document).ready(function () {
 
 let account_id = localStorage.getItem("gag_account_id"),
 	account_hash = localStorage.getItem("gag_account_hash"),
-	accound_info = localStorage.getItem("gag_account_info");
-if (!accound_info) accound_info = JSON.parse(localStorage.getItem("gag_account_info"));
+	account_info = localStorage.getItem("gag_account_info");
+if (!account_info != null) account_info = JSON.parse(localStorage.getItem("gag_account_info"));
 
 if (account_id != null) {
 	$.ajax({

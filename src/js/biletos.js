@@ -51,7 +51,7 @@ if (account_id == null) {
 		e.preventDefault();
 	});
 } else {
-	if(accound_info.rank == 0) {
+	if(account_info.rank == 0) {
 		$('#edit').hide();
 		$('#delete').hide();
 
@@ -81,7 +81,8 @@ if (account_id == null) {
 					flight: id
 				},
 				success: function (info) {
-
+					alert('Рейс успешно удален');
+					window.location.href = 'search.html';
 				}
 			});
 		});
