@@ -61,7 +61,7 @@ $('.mainform').on('submit', function (e) {
 	e.preventDefault();
 });
 
-function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, ticket_end_city, ticket_back_time, ticket_id, ticket_price_econom) {
+function CreateTicket(ticket_start_time, ticket_start_city, ticket_start_airport, ticket_end_time, ticket_end_city, ticket_end_airport, ticket_back_time, ticket_id, ticket_price_econom) {
 	ticket_start_time = moment(ticket_start_time);
 	ticket_end_time = moment(ticket_end_time);
 
@@ -85,12 +85,14 @@ function CreateTicket(ticket_start_time, ticket_start_city, ticket_end_time, tic
 
 	ticket_new.find('.ticket-time-fr span').first().html(ticket_start_time.format('HH:MM'));
 	ticket_new.find('.ticket-time-fr span').next().html(ticket_start_city);
+	ticket_new.find('.ticket-port-from').html(ticket_start_airport);
 
 	ticket_new.find('.row.ticket-time.no-gutters .col span').first().html(ticket_time);
 	ticket_new.find('.ticket-id').html(ticket_id);
 
 	ticket_new.find('.ticket-time-to span').first().html(ticket_end_time.format('HH:MM'));
 	ticket_new.find('.ticket-time-to span').next().html(ticket_end_city);
+	ticket_new.find('.ticket-port-to').html(ticket_end_airport);
 
 	ticket_new.find('.ticket-econom span').html(ticket_price_econom + '₽');
 	ticket_new.find('.ticket-optim span').html(ticket_price_optim + '₽');
@@ -132,7 +134,7 @@ function RequestInfo() {
 			$('#tickets_result2').html('Сортировано по ' + sort);
 
 			$.each(info, function (i, row) {
-				CreateTicket(row.time_departure, row.from_city + '<br>' + row.from_airport, row.time_arrival, row.to_city + '<br>' + row.to_airport, row.time_back, row.id, row.price);
+				CreateTicket(row.time_departure, row.from_city, row.from_airport, row.time_arrival, row.to_city, row.to_airport, row.time_back, row.id, row.price);
 			});
 		}
 	});
