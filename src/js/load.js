@@ -142,7 +142,11 @@ if (account_id != null) {
 				$(document).ready(function () {
 					$('.stepper').mdbStepper();
 				})
-
+			$('.tel').on('keydown', function (e) {
+				if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
+					return false;
+				};
+			})
 			//BOOMER CODE ALERT
 			window.addEventListener("DOMContentLoaded", function () {
 				[].forEach.call(document.querySelectorAll('.tel'), function (input) {
