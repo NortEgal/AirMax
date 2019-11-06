@@ -6,20 +6,19 @@
 				
 					<ul class="stepper horizontal" id="horizontal-stepper">
 						<li class="step active">
-							<div class="step-title waves-effect waves-dark">Шаг 1</div>
+							<div data-step-label="Создание аккаунта" class="step-title waves-effect waves-dark">Шаг 1</div>
 							<div class="step-new-content">
-								<div class="row">
-									<form id='form_register_one' class="text-center" style="color: #757575;" action="#!">
-				
+								<div class="col">
+								
 										<!-- E-mail -->
 										<div class="md-form mt-0">
-											<input type="email" id="materialRegisterFormEmail" class="form-control" required>
+											<input type="email" id="RegisterFormEmail email-validation" class="form-control validate" required>
 											<label for="materialRegisterFormEmail">Э-почта</label>
 										</div>
 				
 										<!-- Password -->
 										<div class="md-form">
-											<input type="password" id="materialRegisterFormPassword" class="form-control" required
+											<input type="password" id="RegisterFormPassword password-validation" class="form-control validate" required
 												aria-describedby="materialRegisterFormPasswordHelpBlock">
 											<label for="materialRegisterFormPassword">Пароль</label>
 											<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
@@ -27,11 +26,10 @@
 											</small>
 										</div>
 				
-									</form>
 								</div>
 								<div class="step-actions">
 									<button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-										data-feedback="someFunction21">Продолжить</button>
+										data-feedback="validationFunction">Продолжить</button>
 									<!-- Terms of service -->
 									<p>При нажатии
 										<em>Продолжить</em> вы соглашаетесь на
@@ -40,54 +38,50 @@
 							</div>
 						</li>
 						<li class="step">
-							<div class="step-title waves-effect waves-dark">Шаг 2</div>
+							<div data-step-label="Контактная информация" class="step-title waves-effect waves-dark">Шаг 2</div>
 							<div class="step-new-content">
-								<div class="row">
-									<form id='form_register_two' class="text-center" style="color: #757575;" action="#!">
-										<!-- First name -->
-										<div class="md-form mt-2">
-											<input type="text" id="materialRegisterFormFirstName" class="form-control">
-											<label for="materialRegisterFormFirstName">Имя</label>
-										</div>
-				
-										<!-- Middle name -->
-										<div class="md-form">
-											<input type="text" id="materialRegisterFormMiddleName" class="form-control">
-											<label for="materialRegisterFormMiddleName">Отчество</label>
-										</div>
-				
-										<!-- Last name -->
-										<div class="md-form">
-											<input type="text" id="materialRegisterFormLastName" class="form-control">
-											<label for="materialRegisterFormLastName">Фамилия</label>
-										</div>
-				
-										<!-- Phone number -->
-										<div class="md-form">
-											<input сlass="tel" type="tel" id="materialRegisterFormPhone" value="" class="form-control tel"
-												aria-describedby="materialRegisterFormPhoneHelpBlock" maxlength="18" minlength="7"
-												placeholder="7(900)800-35-35">
-											<label for="materialRegisterFormPhone">Номер телефона</label>
-											<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-												Вы сможете получать уведомление о рейсе
-											</small>
-										</div>
-				
-										<!-- Passport -->
-										<div class="md-form">
-											<input type="number" id="materialRegisterFormPassport" class="form-control input-number"
-												aria-describedby="materialRegisterFormPassportHelpBlock"
-												onkeypress="this.value=this.value.substring(0,9);">
-											<label for="materialRegisterFormPassport">Номер пасспорта</label>
-											<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
-												Для потверждения личности
-											</small>
-										</div>
-									</form>
+								<div class="col">
+									<!-- First name -->
+									<div class="md-form mt-2">
+										<input type="text" id="RegisterFormFirstName" class="form-control">
+										<label for="RegisterFormFirstName">Имя</label>
+									</div>
+									
+									<!-- Middle name -->
+									<div class="md-form">
+										<input type="text" id=RegisterFormMiddleName" class="form-control">
+										<label for="RegisterFormMiddleName">Отчество</label>
+									</div>
+									
+									<!-- Last name -->
+									<div class="md-form">
+										<input type="text" id="RegisterFormLastName" class="form-control">
+										<label for="RegisterFormLastName">Фамилия</label>
+									</div>
+									
+									<!-- Phone number -->
+									<div class="md-form">
+										<input сlass="tel" type="tel" id="RegisterFormPhone" value="" class="form-control tel"
+											aria-describedby="RegisterFormPhoneHelpBlock" maxlength="18" minlength="7" placeholder="7(900)800-35-35">
+										<label for="RegisterFormPhone">Номер телефона</label>
+										<small id="lRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+											Вы сможете получать уведомление о рейсе
+										</small>
+									</div>
+									
+									<!-- Passport -->
+									<div class="md-form">
+										<input type="number" id="RegisterFormPassport" class="form-control input-number"
+											aria-describedby="RegisterFormPassportHelpBlock" onkeypress="this.value=this.value.substring(0,9);">
+										<label for="RegisterFormPassport">Номер пасспорта</label>
+										<small id="RegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
+											Для потверждения личности
+										</small>
+									</div>
 								</div>
 								<div class="step-actions">
 									<button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-										data-feedback="someFunction21">Зарегистрироваться</button>
+										data-feedback="validationFunction">Зарегистрироваться</button>
 									<button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">Вернуться обратно</button>
 								</div>
 							</div>

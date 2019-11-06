@@ -131,15 +131,17 @@ if (account_id != null) {
 		{ 
 			$('body').append(data);
 			//Horizontal Stepper
-			$(document).ready(function () {
-				$('.stepper').mdbStepper();
-			})
-
-			function someFunction21() {
-				setTimeout(function () {
-					$('#horizontal-stepper').nextStep();
-				}, 2000);
-			}
+				function validationFunction() {
+					setTimeout(function () {
+						$('#horizontal-stepper').nextStep();
+					}, 1600);
+				}
+				function someTrueFunction() {
+					return true;
+				}
+				$(document).ready(function () {
+					$('.stepper').mdbStepper();
+				})
 
 			//BOOMER CODE ALERT
 			window.addEventListener("DOMContentLoaded", function () {
