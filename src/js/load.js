@@ -1,5 +1,5 @@
 $.ajaxSetup({
-	cache: false
+	cache: true
 });
 
 function getPageName() {
@@ -196,13 +196,13 @@ if (account_id != null) {
 					type: 'POST',
 					url: 'php/account.php?t=register',
 					data: {
-						mail: $('#materialRegisterFormEmail').val(),
-						password: $('#materialRegisterFormPassword').val(),
-						firstname: $('#materialRegisterFormFirstName').val(),
-						middlename: $('#materialRegisterFormMiddleName').val(),
-						lastname: $('#materialRegisterFormLastName').val(),
-						phone: $('#materialRegisterFormPhone').val().replace(/\D/g, ""),
-						passport: $('#materialRegisterFormPassport').val()
+						mail: $('#RegisterFormEmail').val(),
+						password: $('#RegisterFormPassword').val(),
+						firstname: $('#RegisterFormFirstName').val(),
+						middlename: $('#RegisterFormMiddleName').val(),
+						lastname: $('#RegisterFormLastName').val(),
+						phone: $('#RegisterFormPhone').val().replace(/\D/g, ""),
+						passport: $('#RegisterFormPassport').val()
 					},
 					success: function (info) {
 						if (info == 'exist') {
@@ -225,3 +225,6 @@ if (account_id != null) {
 		dataType: 'html'
 	});
 }
+$(document).ready(function () {
+	$('.mdb-select').materialSelect();
+});

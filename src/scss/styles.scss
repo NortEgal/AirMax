@@ -753,10 +753,10 @@ footer {
 .input-number:focus {
   -moz-appearance: number-input;
 }
-#input_time1, #input_time2 {
+#input_time1, #input_time2, #input_time3 {
   background-color: white;
 }
-#input_from, #input_to, #input_time1, #input_time2, #input_seats {
+#input_from, #input_to, #input_time1, #input_time2, #input_time3, #input_seats {
   border: none;
   &:active, &:focus {
     outline: none !important;
@@ -776,7 +776,9 @@ footer {
     list-style-type: none;
    }
 }
-
+#changeBiletos .modal-dialog .modal-content {
+  padding: 2rem;
+}
 :root[theme='light'] {
   --background: 
      linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,

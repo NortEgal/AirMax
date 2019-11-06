@@ -244,7 +244,7 @@
           <a id='buy' class="ml-4 mt-4 btn btn-white btn-lg" href="" role="button">
             Купить
           </a>
-          <a id='edit' class="ml-4 mt-4 btn btn-yellow btn-lg" href="#ModalChangeBiletos" data-target="#ModalChangeBiletos" data-toggle="modal">
+          <a id='edit' class="ml-4 mt-4 btn btn-yellow btn-lg" href="#changeBiletos" data-target="#changeBiletos" data-toggle="modal">
             Изменить данные
           </a>
           <a id='delete' class="ml-4 mt-4 btn btn-red btn-lg" href="" role="button">
@@ -344,7 +344,7 @@
 
       <!-- Время прилета -->
       <div class="input-group">
-        <input id='input_time2' type="date" name="calendar2" class="form-control h-100" placeholder="Прилет"
+        <input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Прилет"
           title="Дата вылета" />
         <div class="input-group-append">
           <i class="material-icons icon-date my-auto"></i>
@@ -353,7 +353,7 @@
       
       <!-- Время возращения -->
       <div class="input-group">
-        <input id='input_time3' type="date" name="calendar3" class="form-control h-100" placeholder="Обратно"
+        <input id='input_time3' type="text" name="calendar3" class="form-control h-100" readonly placeholder="Обратно"
           title="Дата возращения" />
         <div class="input-group-append">
           <i class="material-icons icon-date my-auto"></i>
@@ -371,6 +371,33 @@
         <input placeholder="1337" type="number" id="formPrices" min="1" max="100000" class="form-control">
         <label for="formPrices">Пароль</label>
       </div>
+      <script>
+        $(function () {
+            $('input[name="calendar1"]').daterangepicker({
+              singleDatePicker: true,
+              autoUpdateInput: false
+            }, function (start, end, label) {
+              date_start = start.format('YYYY-MM-DD');
+              $('input[name="calendar1"]').val(moment(date_start).format('DD MMM YYYY'));
+            });
+
+            $('input[name="calendar2"]').daterangepicker({
+              singleDatePicker: true,
+              autoUpdateInput: false
+            }, function (start, end, label) {
+              date_end = start.format('YYYY-MM-DD');
+              $('input[name="calendar2"]').val(moment(date_end).format('DD MMM YYYY'));
+            });
+
+            $('input[name="calendar3"]').daterangepicker({
+              singleDatePicker: true,
+              autoUpdateInput: false
+            }, function (start, end, label) {
+              date_end = start.format('YYYY-MM-DD');
+              $('input[name="calendar3"]').val(moment(date_end).format('DD MMM YYYY'));
+            });
+          });
+      </script>
     </div>
   </div>
   </div>
