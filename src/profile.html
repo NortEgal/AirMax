@@ -94,8 +94,9 @@
               </div> -->
           
               <div class="md-form form-group">
-				<label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
-				<input type="text" pattern="[0-9]{0,10}" id="formProfilePassport" placeholder=" " class="form-control">
+                <input type="number" pattern="[0-9]{10}" id="formProfilePassport" min="999999" max="9999999999" placeholder=" "
+                  class="form-control" onkeypress="this.value=this.value.substring(0,9);">
+                <label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
               </div>
           
             </form>
@@ -117,10 +118,16 @@
               </div>
           
               <div class="md-form form-group">
-                <input type="tel" id="formProfileTelephone" placeholder=" " class="form-control" onkeypress="this.value=this.value.substring(0,10);" pattern="7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                <input type="tel" id="formProfileTelephone" placeholder=" " class="form-control" onkeypress="this.value=this.value.substring(0,10);">
                 <label for="formProfileTelephone" class="grey-text font-weight-light">Номер телефона</label>
               </div>
-          
+              <script>
+                $('#formProfileTelephone').on('keydown', function (e) {
+                    if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
+                      return false;
+                    };
+                  })
+              </script>
             </form>
 
             <button id='profile_button_add' type="submit" class="btn btn-outline-secondary waves-effect mx-0 my-2"> Изменить </button>
