@@ -1,5 +1,5 @@
 $.ajaxSetup({
-	cache: true
+	cache: false
 });
 
 function getPageName() {
@@ -23,7 +23,8 @@ let scripts = [
 	"js/libs/mdb.min.js",
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
-	"js/libs/daterangepicker.js"
+	"js/libs/daterangepicker.js",
+	"js/libs/addons/stepper.min.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
@@ -129,6 +130,16 @@ if (account_id != null) {
 		success: function (data) 
 		{ 
 			$('body').append(data);
+			//Horizontal Stepper
+			$(document).ready(function () {
+				$('.stepper').mdbStepper();
+			})
+
+			function someFunction21() {
+				setTimeout(function () {
+					$('#horizontal-stepper').nextStep();
+				}, 2000);
+			}
 
 			//BOOMER CODE ALERT
 			window.addEventListener("DOMContentLoaded", function () {

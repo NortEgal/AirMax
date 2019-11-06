@@ -1,143 +1,113 @@
 <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="SignUpLabel" aria-hidden="true">
 	<div class="modal-dialog cascading-modal" role="document">
-
 		<div class="modal-content">
 			
-			<div class="modal-c-tabs">
+				<div class="modal-body" style="height: 100%;">
 				
-				<ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#SignUPmodalPart1">
-							<i class="fas fa-user mr-1">
-								Аккаунт
-							</i>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#SignUPmodalPart2">
-							<i class="fas fa-address-card mr-1">
-								Контактная информация Максим иди нахуй, заебал
-							</i>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#SignUPmodalPart3">
-							<i class="fas fa-flag-checkered mr-1">
-								Готово
-							</i>
-						</a>
-					</li>
-				</ul>
-
-				<div class="tab-content">
-
-					<div class="tab-pane fade in show active" id="SignUPmodalPart1" role="tabpanel">
-						<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-							<form id='form_register_one' class="text-center" style="color: #757575;" action="#!">
-
-								<!-- E-mail -->
-								<div class="md-form mt-0">
-									<input type="email" id="materialRegisterFormEmail" class="form-control" required>
-									<label for="materialRegisterFormEmail">Э-почта</label>
+					<ul class="stepper horizontal" id="horizontal-stepper">
+						<li class="step active">
+							<div class="step-title waves-effect waves-dark">Шаг 1</div>
+							<div class="step-new-content">
+								<div class="row">
+									<form id='form_register_one' class="text-center" style="color: #757575;" action="#!">
+				
+										<!-- E-mail -->
+										<div class="md-form mt-0">
+											<input type="email" id="materialRegisterFormEmail" class="form-control" required>
+											<label for="materialRegisterFormEmail">Э-почта</label>
+										</div>
+				
+										<!-- Password -->
+										<div class="md-form">
+											<input type="password" id="materialRegisterFormPassword" class="form-control" required
+												aria-describedby="materialRegisterFormPasswordHelpBlock">
+											<label for="materialRegisterFormPassword">Пароль</label>
+											<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+												Не менее 8 символов и 1 цифры
+											</small>
+										</div>
+				
+									</form>
 								</div>
-						
-								<!-- Password -->
-								<div class="md-form">
-									<input type="password" id="materialRegisterFormPassword" class="form-control" required
-										aria-describedby="materialRegisterFormPasswordHelpBlock">
-									<label for="materialRegisterFormPassword">Пароль</label>
-									<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-										Не менее 8 символов и 1 цифры
-									</small>
+								<div class="step-actions">
+									<button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
+										data-feedback="someFunction21">Продолжить</button>
+									<!-- Terms of service -->
+									<p>При нажатии
+										<em>Продолжить</em> вы соглашаетесь на
+										<a href="" target="_blank">обработку персональных данных</a>
 								</div>
-						
-								<!-- Sign up button -->
-								<button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">
-									Продолжить
-								</button>
-						
-								<hr>
-						
-								<!-- Terms of service -->
-								<p>При нажатии
-									<em>Продолжить</em> вы соглашаетесь на
-									<a href="" target="_blank">обработку персональных данных</a>
-						
-							</form>
-						</div>
-					</div>
-
-					<div class="tab-pane fade" id="SignUPmodalPart2" role="tabpanel">
-						<div class="modal-body" style="padding: 0rem 5rem 1rem 5rem">
-							<form id='form_register_two' class="text-center" style="color: #757575;" action="#!">
-								<!-- First name -->
-								<div class="md-form mt-2">
-									<input type="text" id="materialRegisterFormFirstName" class="form-control">
-									<label for="materialRegisterFormFirstName">Имя</label>
+							</div>
+						</li>
+						<li class="step">
+							<div class="step-title waves-effect waves-dark">Шаг 2</div>
+							<div class="step-new-content">
+								<div class="row">
+									<form id='form_register_two' class="text-center" style="color: #757575;" action="#!">
+										<!-- First name -->
+										<div class="md-form mt-2">
+											<input type="text" id="materialRegisterFormFirstName" class="form-control">
+											<label for="materialRegisterFormFirstName">Имя</label>
+										</div>
+				
+										<!-- Middle name -->
+										<div class="md-form">
+											<input type="text" id="materialRegisterFormMiddleName" class="form-control">
+											<label for="materialRegisterFormMiddleName">Отчество</label>
+										</div>
+				
+										<!-- Last name -->
+										<div class="md-form">
+											<input type="text" id="materialRegisterFormLastName" class="form-control">
+											<label for="materialRegisterFormLastName">Фамилия</label>
+										</div>
+				
+										<!-- Phone number -->
+										<div class="md-form">
+											<input сlass="tel" type="tel" id="materialRegisterFormPhone" value="" class="form-control tel"
+												aria-describedby="materialRegisterFormPhoneHelpBlock" maxlength="18" minlength="7"
+												placeholder="7(900)800-35-35">
+											<label for="materialRegisterFormPhone">Номер телефона</label>
+											<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+												Вы сможете получать уведомление о рейсе
+											</small>
+										</div>
+				
+										<!-- Passport -->
+										<div class="md-form">
+											<input type="number" id="materialRegisterFormPassport" class="form-control input-number"
+												aria-describedby="materialRegisterFormPassportHelpBlock"
+												onkeypress="this.value=this.value.substring(0,9);">
+											<label for="materialRegisterFormPassport">Номер пасспорта</label>
+											<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
+												Для потверждения личности
+											</small>
+										</div>
+									</form>
 								</div>
-						
-								<!-- Middle name -->
-								<div class="md-form">
-									<input type="text" id="materialRegisterFormMiddleName" class="form-control">
-									<label for="materialRegisterFormMiddleName">Отчество</label>
+								<div class="step-actions">
+									<button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
+										data-feedback="someFunction21">Зарегистрироваться</button>
+									<button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">Вернуться обратно</button>
 								</div>
-						
-								<!-- Last name -->
-								<div class="md-form">
-									<input type="text" id="materialRegisterFormLastName" class="form-control">
-									<label for="materialRegisterFormLastName">Фамилия</label>
+							</div>
+						</li>
+						<li class="step">
+							<div class="step-title waves-effect waves-dark">Шаг 3</div>
+							<div class="step-new-content">
+								<h3 class="modal-title my-2" id="ModalLongTitle" style="margin-left: 3.75rem; max-width: 300px;">
+									К вам на почту пришло письмо,
+									подтвердите вашу почту,
+									чтобы активировать аккаунт
+								</h3>
+								<div class="step-actions">
+									<button class="waves-effect waves-dark btn-sm btn btn-primary m-0 mt-4" type="button">Готово</button>
 								</div>
-						
-								<!-- Phone number -->
-								<div class="md-form">
-									<input сlass="tel" type="tel" id="materialRegisterFormPhone" value="" class="form-control tel"
-										aria-describedby="materialRegisterFormPhoneHelpBlock" maxlength="18" minlength="7" placeholder="7(900)800-35-35">
-									<label for="materialRegisterFormPhone">Номер телефона</label>
-									<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-										Вы сможете получать уведомление о рейсе
-									</small>
-								</div>
-						
-								<!-- Passport -->
-								<div class="md-form">
-									<input type="number" id="materialRegisterFormPassport" class="form-control input-number"
-										aria-describedby="materialRegisterFormPassportHelpBlock" onkeypress="this.value=this.value.substring(0,9);">
-									<label for="materialRegisterFormPassport">Номер пасспорта</label>
-									<small id="materialRegisterFormPassportHelpBlock" class="form-text text-muted mb-4">
-										Для потверждения личности
-									</small>
-								</div>
-						
-								<!-- Sign up button -->
-								<button class="btn btn-outline-info btn-rounded btn-block my-4 
-												waves-effect z-depth-0" type="submit">
-									Зарегистрироваться
-								</button>
-							</form>
-						</div>
-					</div>
-
-					<div class="tab-pane fade" id="SignUPmodalPart3" role="tabpanel">
-						<div class="modal-body text-center" style="border-bottom: none;">
-							<h3 class="modal-title my-2" id="ModalLongTitle" style="margin-left: 3.75rem; max-width: 300px;">
-								К вам на почту пришло письмо,
-								подтвердите вашу почту,
-								чтобы активировать аккаунт
-							</h3>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-					</div>
-						
-
+							</div>
+						</li>
+					</ul>
 				</div>
-
-			</div>
 
 		</div>
 	</div>
 </div>
-<script>
-
-</script>
