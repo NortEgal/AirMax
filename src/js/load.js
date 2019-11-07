@@ -23,7 +23,8 @@ let scripts = [
 	"js/libs/mdb.min.js",
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
-	"js/libs/daterangepicker.js"
+	"js/libs/daterangepicker.js",
+	"js/libs/addons/stepper.min.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
@@ -129,7 +130,23 @@ if (account_id != null) {
 		success: function (data) 
 		{ 
 			$('body').append(data);
-
+			//Horizontal Stepper
+				function validationFunction() {
+					setTimeout(function () {
+						$('#horizontal-stepper').nextStep();
+					}, 1600);
+				}
+				function someTrueFunction() {
+					return true;
+				}
+				$(document).ready(function () {
+					$('.stepper').mdbStepper();
+				})
+			$('.tel').on('keydown', function (e) {
+				if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
+					return false;
+				};
+			})
 			//BOOMER CODE ALERT
 			window.addEventListener("DOMContentLoaded", function () {
 				[].forEach.call(document.querySelectorAll('.tel'), function (input) {
@@ -179,13 +196,13 @@ if (account_id != null) {
 					type: 'POST',
 					url: 'php/account.php?t=register',
 					data: {
-						mail: $('#materialRegisterFormEmail').val(),
-						password: $('#materialRegisterFormPassword').val(),
-						firstname: $('#materialRegisterFormFirstName').val(),
-						middlename: $('#materialRegisterFormMiddleName').val(),
-						lastname: $('#materialRegisterFormLastName').val(),
-						phone: $('#materialRegisterFormPhone').val().replace(/\D/g, ""),
-						passport: $('#materialRegisterFormPassport').val()
+						mail: $('#RegisterFormEmail').val(),
+						password: $('#RegisterFormPassword').val(),
+						firstname: $('#RegisterFormFirstName').val(),
+						middlename: $('#RegisterFormMiddleName').val(),
+						lastname: $('#RegisterFormLastName').val(),
+						phone: $('#RegisterFormPhone').val().replace(/\D/g, ""),
+						passport: $('#RegisterFormPassport').val()
 					},
 					success: function (info) {
 						if (info == 'exist') {
@@ -208,3 +225,11 @@ if (account_id != null) {
 		dataType: 'html'
 	});
 }
+$(document).ready(function () {
+	$('.mdb-select').materialSelect();
+});
+$('#dt-more-columns').mdbEditor({
+	modalEditor: true,
+	headerLength: 7,
+});
+$('.dataTables_length').addClass('bs-select');
