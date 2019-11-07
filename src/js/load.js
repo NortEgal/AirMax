@@ -168,12 +168,12 @@ if (account_id != null) {
 
 			});
 
-			$('#form_register_one').on('submit', function(e) {
+			$('form').on('submit', function(e) {
 				e.preventDefault();
 				$('#SignUpModal .nav-link').eq(1).click();
 			});
 
-			$('#form_register_two').on('submit',function (e) {
+			$('form').on('submit',function (e) {
 				e.preventDefault();
 				$.ajax({
 					type: 'POST',
