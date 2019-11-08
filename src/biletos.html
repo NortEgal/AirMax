@@ -300,79 +300,56 @@
           <option value="37">Токио</option>
           <option value="40">Гонконг</option>
         </select>
-        
+
         <!-- Откуда аэропорт -->
         <div class="md-form">
           <input placeholder="Домодедово" type="text" id="formAirportFrom" class="form-control">
-          <label for="formAirportFrom">Аэропорт</label>
+          <label for="formAirportFrom">Откуда</label>
         </div> <!-- Изменяют вручную -->
-        
-        <!-- Куда -->
-        <select class="mdb-select md-form">
-          <option value="" disabled selected>Выберете город</option>
-          <option value="1">Пермь</option>
-          <option value="2">Москва</option>
-          <option value="3">Казань</option>
-          <option value="4">Валенсия</option>
-          <option value="5">Варшава</option>
-          <option value="6">Вашингтон</option>
-          <option value="7">Виенна</option>
-          <option value="8">Гамбург</option>
-          <option value="9">Дельфи</option>
-          <option value="25">Красноярск</option>
-          <option value="26">Санкт-Петербург</option>
-          <option value="27">Париж</option>
-          <option value="29">Дубай</option>
-          <option value="30">Сан-Франциско</option>
-          <option value="32">Лондон</option>
-          <option value="37">Токио</option>
-          <option value="40">Гонконг</option>
-        </select>
-        
+
         <!-- Куда аэропорт -->
         <div class="md-form">
           <input placeholder="Домодедово" type="text" id="formAirportTo" class="form-control">
-          <label for="formAirportTo">Аэропорт</label>
+          <label for="formAirportTo">Куда</label>
         </div> <!-- Изменяют вручную -->
-        
+
         <!-- Время отлета -->
         <div class="input-group border-bottom">
-          <input id='input_time1' type="text" name="calendar1" class="form-control h-100" readonly placeholder="Отлет"
+          <input id='input_time1' type="text" name="calendar1" class="form-control h-100" placeholder="Отлет"
             title="Дата вылета" />
           <div class="input-group-append">
             <i class="material-icons icon-date my-auto"></i>
           </div>
         </div>
-        
-        
+
         <!-- Время прилета -->
         <div class="input-group border-bottom">
-          <input id='input_time2' type="text" name="calendar2" class="form-control h-100" readonly placeholder="Прилет"
+          <input id='input_time2' type="text" name="calendar2" class="form-control h-100" placeholder="Прилет"
             title="Дата вылета" />
           <div class="input-group-append">
             <i class="material-icons icon-date my-auto"></i>
           </div>
         </div>
-        
+
         <!-- Время возращения -->
         <div class="input-group border-bottom">
-          <input id='input_time3' type="text" name="calendar3" class="form-control h-100" readonly placeholder="Обратно"
+          <input id='input_time3' type="text" name="calendar3" class="form-control h-100" placeholder="Обратно"
             title="Дата возращения" />
           <div class="input-group-append">
             <i class="material-icons icon-date my-auto"></i>
           </div>
         </div>
-        
+
         <!-- Свободных мест -->
         <div class="md-form">
           <input placeholder="125" type="number" id="formFreePlaces" min="1" max="450" class="form-control">
           <label for="formFreePlaces">Свободных мест</label>
         </div>
-        
+
         <!-- Цена -->
         <div class="md-form">
           <input placeholder="1337" type="number" id="formPrices" min="1" max="100000" class="form-control">
-          <label for="formPrices">Пароль</label>
+          <label for="formPrices">Цена</label>
         </div>
 
         <button type="submit" class="btn btn-primary">Изменить</button>
@@ -381,34 +358,6 @@
         </button>
 
       </form>
-      
-      <script>
-        $(function () {
-            $('input[name="calendar1"]').daterangepicker({
-              singleDatePicker: true,
-              autoUpdateInput: false
-            }, function (start, end, label) {
-              date_start = start.format('YYYY-MM-DD');
-              $('input[name="calendar1"]').val(moment(date_start).format('DD MMM YYYY'));
-            });
-
-            $('input[name="calendar2"]').daterangepicker({
-              singleDatePicker: true,
-              autoUpdateInput: false
-            }, function (start, end, label) {
-              date_end = start.format('YYYY-MM-DD');
-              $('input[name="calendar2"]').val(moment(date_end).format('DD MMM YYYY'));
-            });
-
-            $('input[name="calendar3"]').daterangepicker({
-              singleDatePicker: true,
-              autoUpdateInput: false
-            }, function (start, end, label) {
-              date_end = start.format('YYYY-MM-DD');
-              $('input[name="calendar3"]').val(moment(date_end).format('DD MMM YYYY'));
-            });
-          });
-      </script>
     </div>
   </div>
   </div>

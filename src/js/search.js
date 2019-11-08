@@ -35,7 +35,7 @@ $(function () {
 
 let ticket = $('.ticket-1'), 
 	ticket_sorting = 0;
-//$('.ticket-1').remove();
+$('.ticket-1').remove();
 if (where_from || where_to || date_start || date_end || seats) RequestInfo();
 
 $('#sortTime').on('click', function () {
