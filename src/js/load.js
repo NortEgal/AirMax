@@ -188,12 +188,12 @@ if (account_id != null) {
 
 			});
 
-			$('form').on('submit', function(e) {
+			$('#SignUP-form-1').on('click', function(e) {
 				e.preventDefault();
-				$('#SignUpModal .nav-link').eq(1).click();
+				$('#SignUpModal .step-title').eq(1).click();
 			});
 
-			$('form').on('submit',function (e) {
+			$('#SignUP-form-2').on('click', function (e) {
 				e.preventDefault();
 				$.ajax({
 					type: 'POST',
@@ -218,7 +218,7 @@ if (account_id != null) {
 							info = JSON.parse(info);
 							localStorage.setItem("gag_account_id", info.id);
 							localStorage.setItem("gag_account_hash", info.password);
-							$('#SignUpModal .nav-link').eq(2).click();
+							$('#SignUpModal .step-title').eq(2).click();
 							setTimeout(window.location.reload(), 5000);
 						} 
 					}
