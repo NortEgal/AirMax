@@ -14,7 +14,7 @@ $.ajax({
 			alert('Такого рейса не существует');
 			window.location.href = 'index.html';
 		}else{
-			console.log(info);
+			//console.log(info);
 			info = JSON.parse(info);
 			console.log(info);
 
@@ -45,6 +45,12 @@ $.ajax({
 });
 
 if (account_id == null) {
+	$('#edit').hide();
+	$('#delete').hide();
+	$('#input_seats').hide();
+	$('.md-form.md-outline label').remove();
+	$('.h4.ml-4.mt-4.pt-3').hide();
+
 	$('#buy').attr('data-target', '#SignINmodal');
 	$('#buy').attr('data-toggle', 'modal');
 	$('#buy').on('click', function (e) {
