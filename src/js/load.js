@@ -25,7 +25,9 @@ let scripts = [
 	"js/libs/moment/ru.js",
 	"js/libs/daterangepicker.js",
 	"js/libs/addons/steppers.js",
-	"js/libs/addons/steppers.min.js"
+	"js/libs/addons/steppers.min.js",
+	"js/libs/addons/datatables.js",
+	"js/libs/addons/datatables.min.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
