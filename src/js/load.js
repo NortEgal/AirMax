@@ -229,8 +229,7 @@ if (account_id != null) {
 $(document).ready(function () {
 	$('.mdb-select').materialSelect();
 });
-$('#dt-more-columns').mdbEditor({
-	modalEditor: true,
-	headerLength: 7,
+$('#dtBasicExample-1').mdbEditor({
+	rowEditor: true
 });
 $('.dataTables_length').addClass('bs-select');
