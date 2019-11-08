@@ -551,14 +551,16 @@ body {
 #formProfilePassport::-webkit-inner-spin-button {
   display: none !important;
 }
-ul.stepper.horizontal {
-  min-height: 35rem;
-}
+/*
 .step-actions {
   display: block !important;
 }
-.step-new-content {
-  height: 100%;
+/*
+#horizontal-stepper {
+  min-height: 36rem;
+}*/
+ul.horizontal-fix li a {
+padding: .84rem 2.14rem;
 }
 body.modal-open {
   overflow: hidden;

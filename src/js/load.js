@@ -24,7 +24,8 @@ let scripts = [
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
 	"js/libs/daterangepicker.js",
-	"js/libs/addons/stepper.min.js"
+	"js/libs/addons/steppers.js",
+	"js/libs/addons/steppers.min.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
@@ -131,25 +132,27 @@ if (account_id != null) {
 		{ 
 			$('body').append(data);
 			//Horizontal Stepper
+				$(document).ready(function () {
+					$('.stepper').mdbStepper();
+				})
 				function validationFunction() {
 					setTimeout(function () {
-						$('#horizontal-stepper').nextStep();
-					}, 1600);
+						$('#horizontal-stepper-fix').nextStep();
+					}, 2000);
 				}
 				function someTrueFunction() {
 					return true;
 				}
-				$(document).ready(function () {
-					$('.stepper').mdbStepper();
-				})
-			$('.tel').on('keydown', function (e) {
+			//end
+
+			$('.only-numbers').on('keydown', function (e) {
 				if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
 					return false;
 				};
 			})
 			//BOOMER CODE ALERT
 			window.addEventListener("DOMContentLoaded", function () {
-				[].forEach.call(document.querySelectorAll('.tel'), function (input) {
+				[].forEach.call(document.querySelectorAll('.telephone'), function (input) {
 					var keyCode;
 					function mask(event) {
 						event.keyCode && (keyCode = event.keyCode);
