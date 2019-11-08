@@ -70,7 +70,7 @@ function CreateTicket(ticket_start_time, ticket_start_city, ticket_start_airport
 		ticket_price_premium = Math.floor(ticket_price_econom * 3);
 
 	let ticket_new = ticket.clone();
-	$('.tickets').append('<hr>');
+	//$('.tickets').append('<hr>');
 	$('.tickets').append(ticket_new);
 	ticket_new.hide().show('slow');
 

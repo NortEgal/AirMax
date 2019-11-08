@@ -10,7 +10,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-	<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
 
 	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/load.js"></script>
@@ -120,22 +119,19 @@
 		</button>
 		</div>
 		<!-- main block -->
-		<div class="main container mt-3 informer">
+		<div class="main-search container mt-3 informer">
 		<!-- Выбор дня билета -->
-		<div class="row justify-content-between pt-3">
+		<div class="row justify-content-between pt-3 managment rounded">
 			<div class="btn-group col-auto" role="group">
-				<button id="btnGroupDropSort" type="button" class="btn btn-indigo btn-sm dropdown-toggle" data-toggle="dropdown"
+				<button id="btnGroupDropSort" type="button" class="btn dropdown-toggle shadow-none" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false" title="по цене">
-					<i class="material-icons">
-					sort
-					</i>
 				</button>
 				<div class="dropdown-menu" aria-labelledby="btnGroupDropSort" style="width: auto;">
 					<a id='sortTime' class="dropdown-item active">По времени</a>
 					<a id='sortPrice' class="dropdown-item">По цене</a>
 				</div>
 			</div>
-			<select class="mdb-select md-form">
+			<select class="mdb-select md-form mt-3 select-search">
 				<option value="" disabled selected>Видимых билетов</option>
 				<option value="1">10</option>
 				<option value="2">25</option>
@@ -147,8 +143,8 @@
 			</div>
 		</div>
 		<div class="tickets">
-			<div class="ticket-1 shadow rounded">
-				<div class="row ticket-date py-3 pl-3 mx-0 justify-content-start border">
+			<div class="ticket-1 shadow rounded animated bounceInLeft">
+				<div class="row ticket-date rounded-top py-3 pl-3 mx-0 justify-content-start border">
 					<div class="col-auto">
 						Туда:
 						<span class="col">
@@ -232,7 +228,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-7 border mx-0">
+					<div class="col-7 block-ticket-price border mx-0">
 						<!-- Цена рейса -->
 						<div class="row ticket-price">
 							<!-- Эконом -->

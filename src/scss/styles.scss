@@ -167,6 +167,73 @@ body {
   .ticket-date {
     display: block;     
   }
+  .select-search {
+    width: 10rem;
+    margin-right: 1rem;
+    .form-control {
+      color: var(--font-color) !important;
+    }
+    .filtrable {
+      color: var(--font-color);
+    }
+    .dropdown-form-control {
+      color: var(--font-color);
+    }
+    .dropdown-content {
+      background-color: var(--back-color);
+    }
+  }
+  .block-ticket {
+    .col-7 {
+      max-width: 100%;
+      .ticket-price {
+        width: 100%;
+      }
+    }
+  }
+  .block-ticket-price {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+  .nav-pay {
+    width: 100%;
+    margin-left: 0;
+    /*
+          border-left: 1px solid #dee2e6 !important;
+    */
+  }
+  .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .pay-content {
+    display: block;
+    #number-card, #card-holder-name, #number-qiwi {
+      width: 100%;
+      max-width: 15rem;
+    }
+    .col-4 {
+      max-width: 100%;
+    }
+    .col-6 {
+      max-width: 100%;
+      .form-pay {
+        margin-left: 0;
+        margin-right: 0;
+        .col-auto {
+          max-width: 10rem;
+          padding-left: 0;
+        }
+        .col-5 {
+          max-width: 10rem;
+          padding-left: 0;
+        }
+      }
+    }
+    .form-qiwi {
+      width: 100%;
+    }
+  }
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
 @media (min-width: 576px) { 
@@ -211,6 +278,37 @@ body {
   }
   .informer {
     margin-top: 20rem !important;
+  }
+  .pay-content {
+    display: block;
+    #number-card, #card-holder-name, #number-qiwi {
+      width: 100%;
+      max-width: 18rem;
+    }
+    .col-10 {
+      margin-top: 7.5rem;
+    }
+    .col-4 {
+      max-width: 100%;
+    }
+    .col-6 {
+      max-width: 100%;
+      .form-pay {
+        margin-left: 0;
+        margin-right: 0;
+        .col-auto {
+          max-width: 10rem;
+          padding-left: 0;
+        }
+        .col-5 {
+          max-width: 10rem;
+          padding-left: 0;
+        }
+      }
+    }
+    .form-qiwi {
+      width: 100%;
+    }
   }
 }
 
@@ -298,6 +396,44 @@ body {
   }
   .block-ticket {
     display: flex;
+  }
+  .ticket-info {
+    border-bottom-left-radius: 0.25rem;
+  }
+  .block-ticket-price {
+    border-bottom-left-radius: 0;
+  }
+  .pay-content {
+    display: block;
+    #number-card, #card-holder-name, #number-qiwi {
+      width: 100%;
+      max-width: 18rem;
+    }
+    .col-10 {
+      margin-top: -1rem;
+      margin-left: 0.8rem;
+    }
+    .col-4 {
+      max-width: 100%;
+    }
+    .col-6 {
+      max-width: 100%;
+      .form-pay {
+        margin-left: 0;
+        margin-right: 0;
+        .col-auto {
+          max-width: 10rem;
+          padding-left: 1rem;
+        }
+        .col-5 {
+          max-width: 10rem;
+          padding-left: 1rem;
+        }
+      }
+    }
+    .form-qiwi {
+      width: 100%;
+    }
   }
 }
 
@@ -412,6 +548,49 @@ body {
   }
   .ticket-info {
     padding: 2rem !important;
+    border-bottom-left-radius: 0.25rem;
+  }
+  .block-ticket-price {
+    border-bottom-right-radius: 0.25rem;
+  }
+  .ticket-price {
+    width: auto !important;
+  }
+  .nav-pay {
+    width: 44%; //40.5
+    margin-left: 1rem;
+  }
+  .pay-content {
+    display: flex;
+    #number-card, #card-holder-name, #number-qiwi {
+      width: 100%;
+      max-width: 18rem;
+    }
+    .col-10 {
+      margin-top: -1rem;
+      margin-left: 0.8rem;
+    }
+    .col-4 {
+      max-width: 100%;
+    }
+    .col-6 {
+      max-width: 100%;
+      .form-pay {
+        margin-left: 0;
+        margin-right: 0;
+        .col-auto {
+          max-width: 10rem;
+          padding-left: 1rem;
+        }
+        .col-5 {
+          max-width: 10rem;
+          padding-left: 1rem;
+        }
+      }
+    }
+    .form-qiwi {
+      width: 100%;
+    }
   }
 }
 
@@ -454,9 +633,9 @@ body {
   }
 }
 
-.main {
+
+.managment {
   background-color: var(--back-color);
-  color: var(--font-color);
 }
 
 .zagalovok {
@@ -516,7 +695,13 @@ body {
   background: url(../img/one.png) center no-repeat;
   filter: var(--cloud);
 }
-
+.main {
+  color: var(--font-color);
+  background-color: var(--back-color);
+}
+.main-search {
+  color: var(--font-color);
+}
 .nav-image {
   display: block;
 
@@ -544,7 +729,18 @@ body {
   height: 100%;
   }
 }
-
+#btnGroupDropSort {
+  padding: 0 !important;
+  margin: 0 1rem !important;
+  height: 70%;
+  &:before {
+    content: '\e164';
+    font-family: 'Material Icons';
+    color: var(--font-color);
+    font-size: 2rem;
+    
+  }
+}
 #input-seats::-webkit-inner-spin-button {
   opacity: 1;
 }
@@ -738,6 +934,9 @@ footer {
 .dropdown-menu {
   min-width: 280px;
 }
+.tickets {
+  margin-top: 2rem;
+}
 .nav-item .dropdown-menu {
   padding: 1rem;
   min-width: 200px;
@@ -794,7 +993,7 @@ footer {
   --back-color: white;
   --font-color: black;
   --cloud: none;
-  --ticket1-back: rgba(246, 246, 246, 0.884);
+  --ticket1-back: rgb(250, 250, 250);
   --btn-menu: white;
   --btn-menu-font: black;
   --btn-menu-font-hover: rgba(0, 0, 0, 0.5);
@@ -810,7 +1009,7 @@ footer {
   --background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat;
   --background-search: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat, #24243e;
   --back-color: #222222;
-  --font-color: white;
+  --font-color: rgba(255, 255, 255, 0.794);
   --cloud: opacity(50%) brightness(20%);
   --ticket1-back: rgb(41, 41, 41);
   --btn-menu: #222222;

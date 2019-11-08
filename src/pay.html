@@ -41,11 +41,11 @@
 		<div id='type_a'></div>
 		<div id='type_price'></div>
 		<hr>
-      <ul class="nav nav-tabs md-tabs indigo" style="width: 40.5%;">
-        <li class="nav-item botder-left">
-          <a class="nav-link" data-toggle="tab" href="#panel11" role="tab" aria-controls="panel11" aria-selected="true">Банковская карта</a>
+      <ul class="nav nav-tabs md-tabs indigo nav-pay">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab" aria-controls="panel11" aria-selected="true">Банковская карта</a>
         </li>
-        <li class="nav-item border-left border-right">
+        <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#panel12" role="tab" aria-controls="panel12">QIWI</a>
         </li>
         <li class="nav-item">
@@ -57,7 +57,7 @@
       
         <div class="tab-pane fade show active" id="panel11" role="tabpanel" aria-labelledby="panel11">
           <br>
-          <div class="row align-items-center">
+          <div class="row align-items-center pay-content">
             <div class="col-6 py-0">
               <form class="my-auto">
                 <!-- <div class="form-row">
@@ -76,7 +76,7 @@
                     <label class="form-check-label" for="Maestro">Maestro</label>
                   </div>
                 </div> -->
-                <div class="form-row mt-0">
+                <div class="form-row mt-0 form-pay">
                   <div class="col-10">
                     <div class="md-form md-outline">
                       <input type="number" id="number-card" onkeypress="this.value=this.value.substring(0,15);" name="number-card"
@@ -86,8 +86,8 @@
                   </div>
                 </div>
                 <label>Срок действия:</label>
-                <div class="form-row my-0">
-                  <div class="col-auto pl-1">
+                <div class="form-row my-0 form-pay">
+                  <div class="col-auto">
                     <select class="browser-default custom-select">
                       <option value="1" selected>01</option>
                       <option value="2">02</option>
@@ -127,7 +127,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-row mt-0">
+                <div class="form-row mt-0 form-pay">
                   <div class="col-10 pl-1">
                     <div class="md-form md-outline">
                       <input type="text" id="card-holder-name" class="form-control">
@@ -147,10 +147,10 @@
 
         <div class="tab-pane fade" id="panel12" role="tabpanel" aria-labelledby="panel12">
           <br>
-          <div class="row justify-content-around">
+          <div class="row justify-content-around pay-content">
             <div class="col-4 pt-5 mt-4">
               <form>
-                <div class="md-form md-outline my-auto">
+                <div class="md-form md-outline my-auto form-qiwi">
                   <input type="number" id="number-qiwi" onkeypress="this.value=this.value.substring(0,10);" name="number-qiwi"
                     class="form-control input-number">
                   <label for="number-qiwi">Номер телефона</label>
@@ -164,7 +164,7 @@
         </div>
         <div class="tab-pane fade" id="panel13" role="tabpanel" aria-labelledby="panel13">
           <br>
-          <div class="row justify-content-around">
+          <div class="row justify-content-around pay-content">
             <div class="col-4 pt-5 mt-4">
               <form>
                 <div class="md-form md-outline my-auto">
