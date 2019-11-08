@@ -9,8 +9,8 @@
 			<div class="modal-body">
 
 				<ul class="stepper horizontal horizontal-fix" id="horizontal-stepper-fix">
-					<li class="step active">
-						<div data-step-label="Создание аккаунта" class="step-title waves-effect waves-dark">Шаг 1</div>
+					<li class="step">
+						<div data-step-label="Аккаунт" class="step-title waves-effect waves-dark">Шаг 1</div>
 						<div class="step-new-content">
 							<div class="col">
 				
@@ -36,13 +36,13 @@
 								<p>При нажатии
 									<em>Продолжить</em> вы соглашаетесь на
 									<a href="" target="_blank">обработку персональных данных</a>
-								<button type="submit" id="SignUP-form-1" class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-									data-feedback="validationFunction">Продолжить</button>
+								<button id="SignUP-form-1" class="waves-effect waves-dark btn btn-sm btn-primary next-step"
+									data-feedback="someFunction21">Продолжить</button>
 							</div>
 						</div>
 					</li>
-					<li class="step">
-						<div data-step-label="Контактная информация" class="step-title waves-effect waves-dark">Шаг 2</div>
+					<li class="step disabled">
+						<div data-step-label="Контакты" class="step-title waves-effect waves-dark">Шаг 2</div>
 						<div class="step-new-content">
 							<div class="col">
 								<!-- First name -->
@@ -84,13 +84,13 @@
 								</div>
 							</div>
 							<div class="step-actions">
-								<button type="submit" id="#SignUP-form-2" class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-									data-feedback="validationFunction">Зарегистрироваться</button>
+								<button id="#SignUP-form-2" class="waves-effect waves-dark btn btn-sm btn-primary next-step"
+									data-feedback="someFunction21">Зарегистрироваться</button>
 								<button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">Вернуться обратно</button>
 							</div>
 						</div>
 					</li>
-					<li class="step">
+					<li class="step disabled">
 						<div class="step-title waves-effect waves-dark">Шаг 3</div>
 						<div class="step-new-content">
 							<h3 class="modal-title my-2" id="ModalLongTitle" style="margin-left: 3.75rem; max-width: 300px;">
@@ -99,7 +99,7 @@
 								чтобы активировать аккаунт
 							</h3>
 							<div class="step-actions">
-								<button type="submit" class="waves-effect waves-dark btn-sm btn btn-primary m-0 mt-4" type="button">Готово</button>
+								<button type="button" class="waves-effect waves-dark btn-sm btn btn-primary m-0 mt-4" type="button">Готово</button>
 							</div>
 						</div>
 					</li>

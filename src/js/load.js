@@ -135,16 +135,12 @@ if (account_id != null) {
 				$(document).ready(function () {
 					$('.stepper').mdbStepper();
 				})
-				function validationFunction() {
+			function someFunction21() {
 					setTimeout(function () {
 						$('#horizontal-stepper-fix').nextStep();
 					}, 2000);
 				}
-				function someTrueFunction() {
-					return true;
-				}
 			//end
-
 			$('.only-numbers').on('keydown', function (e) {
 				if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
 					return false;
@@ -187,7 +183,7 @@ if (account_id != null) {
 				});
 
 			});
-
+			
 			$('#SignUP-form-1').on('click', function(e) {
 				e.preventDefault();
 				$('#SignUpModal .step-title').eq(1).click();
