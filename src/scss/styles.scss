@@ -100,7 +100,7 @@ body {
     padding-right: 0 !important;
     .setting {
       padding-left: 0;
-      a {
+      .setting-btn {
         padding: 0.5rem 1rem;
         margin-top: 3.3rem !important;
       }
@@ -140,6 +140,13 @@ body {
   }
   .photo-trip {
     padding-left: 0;
+    padding-top: 0.3rem;
+    img {
+      max-width: 250px;
+      //width: 200px;
+      max-height: 250px;
+    }
+    object-fit: cover;
   }
   .block-ticket {
     display: block;
@@ -342,7 +349,7 @@ body {
       padding-left: 0;
       //padding-top: 2.8rem;
       padding-right: 0;
-      a {
+      .setting-btn {
         padding: 0.5rem 1rem;
         margin-top: 3.3rem !important;
         margin-right: 3rem;
@@ -401,7 +408,7 @@ body {
     }
   }
   .ticket-econom, .ticket-optim, .ticket-premium {
-    padding: 0.5rem !important;
+    padding: 1rem !important;
   }
   .ticket-info {
     padding: 2rem !important;
@@ -532,20 +539,12 @@ body {
   &:before {
     content: '\e8b9';
   font-family: 'Material Icons';
-  color: white;
+  color: var(--font-color);
   font-size: 3em !important;
   height: 100%;
   }
 }
-.photo-trip {
-  img {
-    max-width: 200px;
-  width: 200px;
-  max-height: 200px;
-  width: 200px;
-  }
-  object-fit: cover;
-}
+
 #input-seats::-webkit-inner-spin-button {
   opacity: 1;
 }
@@ -679,12 +678,17 @@ table.table-hover tbody tr:hover {
 
 .trip {
   display: flex;
+  &:hover {
+    background-color: var(--background-trip) !important;
+    color: var(--trip-color) !important;
+  }
 }
 .info-trip {
   display: block;
 }
 .info-trip p {
-  line-height: 2;
+  //line-height: 2;
+  margin-bottom: 0;
 }
 .city-trip h3 {
   font-weight: 550;
@@ -700,7 +704,7 @@ table.table-hover tbody tr:hover {
   padding: 2.5rem;
 }
 .page-footer {
-  background: #002715;
+  background: /*#002715*/ black;
 }
 footer {
   //flex-shrink: 0;
@@ -796,6 +800,8 @@ footer {
   --table-hover: rgba(0, 0, 0, 0.075);
   --main-pay: none;
   --md-pils: black;
+  --background-trip: #f8f8f8;
+  --trip-color: #424242;
 }
 
 :root[theme='dark'] {
@@ -812,6 +818,8 @@ footer {
   --table-hover: rgba(158, 158, 158, 0.25);
   --main-pay: invert(100%);
   --md-pils: black;
+  --background-trip: #2e2e2e;
+  --trip-color: rgb(223, 222, 222);
 }
 
 /*

@@ -23,8 +23,10 @@
   <style>
     @media (min-width: 1200px){
       html, body {
-        min-height: 1400px;
-        height: 100%;
+        height: auto;
+      }
+      main {
+        min-height: 100%;
       }
     }
   </style>
@@ -56,12 +58,12 @@
           <hr>
         </div>
         <div class="col-6 setting">
-          <a class="btn btn-sm blue-gradient shadow-none setting-btn" data-toggle="collapse" href="#CollapseSetting" 
+          <a class="btn shadow-none setting-btn" data-toggle="collapse" href="#CollapseSetting" 
           role="button" aria-expanded="false" aria-controls="CollapseSetting" title="Настройки">
           </a>
-          <div class="collapse animated fade fast" id="CollapseSetting">
-            <a id='delete_profile' class="btn btn-primary" role="button">Удалить аккаунт</a>
-            <a id='delete_tickets' class="btn btn-secondary" role="button">Удалить историю покупок</a>
+          <div class="collapse animated fade fast list-group" id="CollapseSetting">
+            <a id='delete_profile' class="btn btn-outline-danger mt-4" role="button">Удалить аккаунт</a>
+            <a id='delete_tickets' class="btn btn-outline-info mt-0" role="button">Удалить историю покупок</a>
           </div>
         </div>
       </div>
@@ -145,12 +147,12 @@
         <h1>Мои поездки</h1>
         <div class="tickets list-group list-group-flush mt-4">
           <div class="ticket trip row list-group-item py-4 list-group-item-action">
-            <div class="photo-trip col-3">
+            <div class="photo-trip col-4">
               <span id="photo-trip shadow">
                 <img src="https://32.img.avito.st/avatar/social/256x256/4419904532.jpg" class="hoverable">
               </span>
             </div>
-            <div class="about-trip col-auto">
+            <div class="about-trip col-8">
               <div class="row city-trip">
                 <h3>
                   <span id="city-trip">

@@ -127,8 +127,8 @@ function CreateTicket(where_from, where_to, time_departure, id, model, price, ty
 	ticket.find('#seats').html('Куплено мест: ' + amount);
 	ticket.find('.photo-trip img').attr('src', img);
 
-	ticket.css('cursor', 'pointer');
-	ticket.mousedown(function () {
+	ticket.find('#city-trip').css('cursor', 'pointer');
+	ticket.find('#city-trip').mousedown(function () {
 		window.open("biletos.html?t=" + id);
 	});
 }
