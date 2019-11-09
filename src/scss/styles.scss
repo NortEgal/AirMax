@@ -1,3 +1,43 @@
+//Светлая тема
+:root[theme='light'] {
+  --background: 
+     linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,
+     linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y ;
+  --background-search: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 80%, #3c8bf4 90%, #065bc6 100%) no-repeat,
+                      #065bc6 ;
+  --back-color: white ;
+  --font-color: black ;
+  --cloud: none ;
+  --ticket1-back: white ; //#f7f6f0
+  --btn-menu: white ;
+  --btn-menu-font: black ;
+  --btn-menu-font-hover: rgba(0, 0, 0, 0.5) ;
+  --table: #212529 ;
+  --table-hover: rgba(0, 0, 0, 0.075) ;
+  --main-pay: none ;
+  --md-pils: black ;
+  --background-trip: #f8f8f8 ;
+  --trip-color: #424242 ;
+}
+//Темная тема
+:root[theme='dark'] {
+  --background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat ;
+  --background-search: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat, #24243e ;
+  --back-color: #222222 ;
+  --font-color: rgba(255, 255, 255, 0.794) ;
+  --cloud: opacity(50%) brightness(20%) ;
+  --ticket1-back: rgb(41, 41, 41) ;
+  --btn-menu: #222222 ;
+  --btn-menu-font: rgba(255, 255, 255, 0.781) ;
+  --btn-menu-font-hover: rgba(255, 255, 255, 0.603) ;
+  --table: white ;
+  --table-hover: rgba(158, 158, 158, 0.25) ;
+  --main-pay: invert(100%) ;
+  --md-pils: black ;
+  --background-trip: #2e2e2e ;
+  --trip-color: rgb(223, 222, 222) ;
+}
+
 //Основа
 html, body {
   height: 100%;
@@ -9,29 +49,50 @@ html, body {
 body {
   overflow-y: scroll;
   overflow-x: hidden;
-  background: $background;
+  background: var(--background);
   position: relative;
 }
+footer {
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+}
+//Конец основы
 
 //Адаптивность
 //Мобилки
 @media (min-width: 320px) {
+  //основа
+  html,
+		body {
+      min-height: 1000px;
+    }
+  main {
+    margin-top: 10%;
+  }
+  footer {
+    padding-right: 1rem;
+  }
+  //конец основы
+
+  //header.html
   .nav-image {
     background: url(../img/log-df1.png) no-repeat 50% 50%;
     min-width: 75px;
-  //min-height: 56.25px;
     min-height: 56.25px;
     margin-left: 1rem;
   }
   .navigation {
     padding-right: 0 !important;
   }
-  main {
-    margin-top: 10%;
-  }
+  //конец header.html
+
+  //index.html
   .zagalovok {
     font-size: 1.5rem;
   }
+  //поиск
   .form-row {
     display: block;
     height: auto;
@@ -58,17 +119,13 @@ body {
     border-bottom-left-radius: 0.25rem !important;
     border-bottom-right-radius: 0.25rem !important;
   }
-  html,
-		body {
-      min-height: 1000px;
-    }
-  footer {
-    padding-right: 1rem;
-  }
+  //конец поиска
+  //конец index.html
+  
   .search-btn {
-    font-family: 'Raleway', sans-serif;
+    font: 600, 'Raleway', sans-serif;
     height: 40px;
-    font-weight: 600; color: rgba(255, 255, 255, 0.863);
+    color: rgba(255, 255, 255, 0.863);
     padding: 0.56rem 2rem;
     margin: 1rem auto !important;
 
@@ -173,16 +230,16 @@ body {
     width: 10rem;
     margin-right: 1rem;
     .form-control {
-      color: $font-color !important;
+      color: var(--font-color) !important;
     }
     .filtrable {
-      color: $font-color;
+      color: var(--font-color);
     }
     .dropdown-form-control {
-      color: $font-color;
+      color: var(--font-color);
     }
     .dropdown-content {
-      background-color: $back-color;
+      background-color: var(--back-color);
     }
   }
   .block-ticket {
@@ -200,9 +257,6 @@ body {
   .nav-pay {
     width: 100%;
     margin-left: 0;
-    /*
-          border-left: 1px solid #dee2e6 !important;
-    */
   }
   .tab-content {
     padding-left: 0 !important;
@@ -239,22 +293,27 @@ body {
 }
 // Малые девайсы («ландшафтные телефоны», >= 576px)
 @media (min-width: 576px) { 
-  .nav-image {
-    background: url(../img/log-df2.png) no-repeat 50% 50%;
-        min-width: 200px;
-  //min-height: 56.25px;
-    min-height: 100px;
-    margin-left: 3rem;
-  }
-  .navigation {
-    margin-right: 3rem;
+  //Основа
+  html, body {
+    min-height: 1200px;
   }
   main {
     margin-top: 12%;
   }
-  .zagalovok {
-    font-size: 3.5rem;
+  //Конец основы
+  
+  //header.html
+  .navigation {
+    margin-right: 3rem;
   }
+  .nav-image {
+    background: url(../img/log-df2.png) no-repeat 50% 50%;
+    min-width: 200px;
+    min-height: 100px;
+    margin-left: 3rem;
+  }
+  //Конец header.html
+  
   .mainform {
     height: 100%;
     position: relative;
@@ -271,13 +330,16 @@ body {
     position: relative;
     flex-wrap: nowrap;
   }
-  html, body {
-    min-height: 1200px;
+  
+  //index.html
+  .zagalovok {
+    font-size: 3.5rem;
   }
   .index-btn {
     margin-top: 13rem;
     margin-bottom: 3rem;
   }
+  //Конец index.html
   .informer {
     margin-top: 20rem !important;
   }
@@ -316,6 +378,11 @@ body {
 
 // Средние девайсы («таблетки», >= 768px)
 @media (min-width: 768px) { 
+  html,
+		body {
+			min-height: 1200px;
+    }
+
   .form-row {
     flex-wrap: wrap;
     display: flex;
@@ -341,11 +408,13 @@ body {
     border-bottom-right-radius: 0.25rem !important;
     margin-left: 0.25rem !important;
   }
+  //index.html
   .index-btn {
     width: 20%;
     margin-top: 0;
     margin-bottom: 0;
   }
+  //конец index.html
   .form-search {
     margin-top: 1rem;
     height: 45px;
@@ -380,10 +449,7 @@ body {
     width: 60% !important;
     height: 60% !important;
   }
-  html,
-		body {
-			min-height: 1200px;
-    }
+  
   .btn-menu {
     display: block;
   }
@@ -485,7 +551,6 @@ body {
     padding-right: 3rem !important;
     .setting {
       padding-left: 0;
-      //padding-top: 2.8rem;
       padding-right: 0;
       .setting-btn {
         padding: 0.5rem 1rem;
@@ -637,38 +702,61 @@ body {
 //Конец адаптивности
 
 //header.html
-.lang-switch {
+.navbar {
+  font-family: 'Rubik', sans-serif;
+  max-width: 1920px;
+  width: 100%;
   font-size: 115%;
 }
+.nav-image {
+  display: block;
+
+  background-size: contain;
+  object-fit: contain;
+  
+  max-width: 800px;
+  max-height: 225px;
+  
+  width: auto;
+}
+.lang-switch {
+  font-size: 120%;
+  font-weight: bold;
+}
+.theme-switch, .profile-open {
+  font-family: 'Material Icons';
+}
+.theme-switch:before {
+  content: '\ea46';
+  font-size: 1.4em;
+}
+.profile-open:before {
+  content: '\e7fd';
+  font-size: 1.6em;
+}
+.nav-item .dropdown-menu {
+  padding: 1rem;
+  min-width: 200px;
+}
+//конец header.html
 
 //Index.html
 .zagalovok {
   font-style: normal;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: 600 !important;
   color: rgba(255, 255, 255, 0.863);
 }
 
+//конец Index.html
 .managment {
-  background-color: $back-color;
+  background-color: var(--back-color);
 }
 
-
-
-
-.navbar {
-  font-family: 'Rubik', sans-serif;
-  font-weight: bold;
-  max-width: 1920px;
-  width: 100%;
-}
 .dropdown-item {
   font-weight: bold !important;
 }
-.nav-icon.person {
-  font-size: 28px;
-  margin-top: -0.15rem;
-}
+
 .icon-date:before {
   content: "\e916";
   font-family: 'Material Icons';
@@ -693,34 +781,24 @@ body {
 }
 .cl-easy {
   background: url("../img/easy.png") center no-repeat;
-  filter: $cloud;
+  filter: var(--cloud);
 }
 .cl-big {
   background: url(../img/big.png) center no-repeat;
-  filter: $cloud;
+  filter: var(--cloud);
 }
 .cl-one {
   background: url(../img/one.png) center no-repeat;
-  filter: $cloud;
+  filter: var(--cloud);
 }
 .main {
-  color: $font-color;
-  background-color: $back-color;
+  color: var(--font-color);
+  background-color: var(--back-color);
 }
 .main-search {
-  color: $font-color;
+  color: var(--font-color);
 }
-.nav-image {
-  display: block;
 
-  background-size: contain;
-  object-fit: contain;
-  
-  max-width: 800px;
-  max-height: 225px;
-  
-  width: auto;
-}
 .setting {
   margin-top: 0;
   padding-top: 0;
@@ -732,7 +810,7 @@ body {
   &:before {
     content: '\e8b9';
   font-family: 'Material Icons';
-  color: $font-color;
+  color: var(--font-color);
   font-size: 3em !important;
   height: 100%;
   }
@@ -744,7 +822,7 @@ body {
   &:before {
     content: '\e164';
     font-family: 'Material Icons';
-    color: $font-color;
+    color: var(--font-color);
     font-size: 2rem;
     
   }
@@ -755,14 +833,6 @@ body {
 #formProfilePassport::-webkit-inner-spin-button {
   display: none !important;
 }
-/*
-.step-actions {
-  display: block !important;
-}
-/*
-#horizontal-stepper {
-  min-height: 36rem;
-}*/
 ul.horizontal-fix li a {
 padding: .84rem 2.14rem;
 }
@@ -772,9 +842,6 @@ body.modal-open {
 .dropdown-menu {
   width: 100%;
 }
-/*.form-check {
-  padding: 0.25rem 2.5rem 0.25rem 2.5rem;
-}*/
 .nav-link {
   color: rgba(255, 255, 255, 0.5) !important;
 }
@@ -811,15 +878,15 @@ body.modal-open {
 }
 
 .btn-menu {
-  background-color: $btn-menu;
-  color: $btn-menu-font;
+  background-color: var(--btn-menu);
+  color: var(--btn-menu-font);
 }
 .btn-menu:hover {
-  color: $btn-menu-font-hover;
+  color: var(--btn-menu-font-hover);
 }
 
 .ticket-1 {
-  background-color: $ticket1-back;
+  background-color: var(--ticket1-back);
   margin-bottom: 2rem;
 }
 
@@ -874,19 +941,19 @@ body.modal-open {
 }
 
 .table {
-  color: $table;
+  color: var(--table);
 }
 
 table.table-hover tbody tr:hover {
-  background-color: $table-hover;
-  color: $table;
+  background-color: var(--table-hover);
+  color: var(--table);
 }
 
 .trip {
   display: flex;
   &:hover {
-    background-color: $background-trip !important;
-    color: $trip-color !important;
+    background-color: var(--background-trip) !important;
+    color: var(--trip-color) !important;
   }
 }
 .info-trip {
@@ -903,8 +970,8 @@ table.table-hover tbody tr:hover {
   border: rgb(119, 119, 245) 3px solid;
 }
 .list-group-item {
-  background-color: $back-color;
-  color: $font-color;
+  background-color: var(--back-color);
+  color: var(--font-color);
 }
 .photo-profile, .about-profile, .status {
   padding: 2.5rem;
@@ -912,24 +979,17 @@ table.table-hover tbody tr:hover {
 .page-footer {
   background: /*#002715*/ #1e1a27;
 }
-footer {
-  //flex-shrink: 0;
-  //flex: 1 1 auto;
-  width: 100%;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 600 !important;
-  letter-spacing: 1px;
-}
+
 .admin-tabs {
   color: black !important;
 }
 .main-pay {
-  filter: $main-pay;
+  filter: var(--main-pay);
   color: black;
   font-weight: 700;
 }
 .md-pills a {
-  color: $md-pils !important;
+  color: var(--md-pils) !important;
   font-family: 'Rubik'; font-weight: 900;
   font-size: 120%;
 }
@@ -947,10 +1007,7 @@ footer {
 .tickets {
   margin: 2rem -15px;
 }
-.nav-item .dropdown-menu {
-  padding: 1rem;
-  min-width: 200px;
-}
+
 .input-number {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -982,7 +1039,7 @@ footer {
   }
 }
 .mdb-autocomplete-wrap {
-  background-color: $back-color;
+  background-color: var(--back-color);
   width: 104.25%;
   margin-left: -5px;
   padding-left: 0;
@@ -994,44 +1051,7 @@ footer {
 #changeBiletos .modal-dialog .modal-content {
   padding: 2rem;
 }
-:root[theme='light'] {
-  $background: 
-     linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,
-     linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y;
-  $background-search: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 80%, #3c8bf4 90%, #065bc6 100%) no-repeat,
-                      #065bc6;
-  $back-color: white;
-  $font-color: black;
-  $cloud: none;
-  $ticket1-back: white; //#f7f6f0
-  $btn-menu: white;
-  $btn-menu-font: black;
-  $btn-menu-font-hover: rgba(0, 0, 0, 0.5);
-  $table: #212529;
-  $table-hover: rgba(0, 0, 0, 0.075);
-  $main-pay: none;
-  $md-pils: black;
-  $background-trip: #f8f8f8;
-  $trip-color: #424242;
-}
 
-:root[theme='dark'] {
-  $background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat;
-  $background-search: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat, #24243e;
-  $back-color: #222222;
-  $font-color: rgba(255, 255, 255, 0.794);
-  $cloud: opacity(50%) brightness(20%);
-  $ticket1-back: rgb(41, 41, 41);
-  $btn-menu: #222222;
-  $btn-menu-font: rgba(255, 255, 255, 0.781);
-  $btn-menu-font-hover: rgba(255, 255, 255, 0.603);
-  $table: white;
-  $table-hover: rgba(158, 158, 158, 0.25);
-  $main-pay: invert(100%);
-  $md-pils: black;
-  $background-trip: #2e2e2e;
-  $trip-color: rgb(223, 222, 222);
-}
 
 /*
 @for $i from 1 through 5 {
