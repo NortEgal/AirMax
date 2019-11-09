@@ -24,7 +24,7 @@ let scripts = [
 	"js/libs/moment.min.js",
 	"js/libs/moment/ru.js",
 	"js/libs/daterangepicker.js",
-	"js/libs/addons/steppers.min.js",
+	"js/libs/addons/stepper.min.js",
 	"js/libs/addons/datatables.min.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
@@ -224,10 +224,3 @@ if (account_id != null) {
 		dataType: 'html'
 	});
 }
-$(document).ready(function () {
-	$('.mdb-select').materialSelect();
-});
-$('#dtBasicExample-1').mdbEditor({
-	rowEditor: true
-});
-$('.dataTables_length').addClass('bs-select');

@@ -3,6 +3,8 @@ if (id == null) window.location.href = 'index.html';
 
 $('#type_econom').click();
 
+let date_start, date_end, date_back;
+
 $.ajax({
 	type: "POST",
 	url: 'php/biletos.php?t=get',
@@ -14,13 +16,14 @@ $.ajax({
 			alert('Такого рейса не существует');
 			window.location.href = 'index.html';
 		}else{
-			console.log(info);
+			//console.log(info);
 			info = JSON.parse(info);
 			console.log(info);
 
-			let date_start = moment(info.time_departure),
-				date_end = moment(info.time_arrival),
-				date_diff = date_end.diff(date_start, 'hours') + ' ч. ' + date_end.diff(date_start, 'minutes') % 60 + ' мин.'
+			date_start = moment(info.time_departure);
+			date_end = moment(info.time_arrival);
+			date_back = moment(info.time_back);
+			let date_diff = date_end.diff(date_start, 'hours') + ' ч. ' + date_end.diff(date_start, 'minutes') % 60 + ' мин.';
 
 			$('div.h1.px-4.pb-4').html('Рейс ' + info.id);
 			$('div.row.p-5.border.rounded span').eq(0).html(date_start.format('DD MMMM'));
@@ -40,11 +43,24 @@ $.ajax({
 			$('.col-3 div').last().html(info.plane_id);
 
 			$('#input_seats').attr('max', info.free_places)
+
+
+			$('#input_time1').val(moment(date_start).format('YYYY-MM-DD HH:MM'));
+			$('#input_time2').val(moment(date_end).format('YYYY-MM-DD HH:MM'));
+			if (date_back != 'Invalid date') $('#input_time3').val(moment(date_back).format('YYYY-MM-DD HH:MM'));
+			$('#formFreePlaces').val(info.free_places);
+			$('#formPrices').val(info.price);
 		}
 	}
 });
 
 if (account_id == null) {
+	$('#edit').hide();
+	$('#delete').hide();
+	$('#input_seats').hide();
+	$('.md-form.md-outline label').remove();
+	$('.h4.ml-4.mt-4.pt-3').hide();
+
 	$('#buy').attr('data-target', '#SignINmodal');
 	$('#buy').attr('data-toggle', 'modal');
 	$('#buy').on('click', function (e) {
@@ -89,3 +105,52 @@ if (account_id == null) {
 	}
 
 }
+
+// $(function () {
+// 	$('input[name="calendar1"]').daterangepicker({
+// 		singleDatePicker: true,
+// 		startDate: date_start,
+// 		timePicker: true,
+// 		timePicker24Hour: true,
+// 		autoUpdateInput: false
+// 	}, function (start, end, label) {
+// 		date_start = start.format('YYYY-MM-DD');
+// 		$('input[name="calendar1"]').val(moment(start).format('DD MMM YYYY'));
+// 	});
+
+// 	$('input[name="calendar2"]').daterangepicker({
+// 		singleDatePicker: true,
+// 		autoUpdateInput: false
+// 	}, function (start, end, label) {
+// 		date_end = start.format('YYYY-MM-DD');
+// 		$('input[name="calendar2"]').val(moment(date_end).format('DD MMM YYYY'));
+// 	});
+
+// 	$('input[name="calendar3"]').daterangepicker({
+// 		singleDatePicker: true,
+// 		autoUpdateInput: false
+// 	}, function (start, end, label) {
+// 		date_end = start.format('YYYY-MM-DD');
+// 		$('input[name="calendar3"]').val(moment(date_end).format('DD MMM YYYY'));
+// 	});
+// });
+
+$('#edit').on('click', function () {
+	// $('#input_time1').val(moment(date_start).format('YYYY-MM-DD HH:MM'));
+	// $('#input_time2').val(moment(date_end).format('YYYY-MM-DD HH:MM'));
+	// if (date_back != 'Invalid date') $('#input_time3').val(moment(date_back).format('YYYY-MM-DD HH:MM'));
+});
+
+$('input[name="calendar1"]').on('change', function() {
+	var value = moment(this.value).format('YYYY-MM-DD HH:MM');
+	if (value != 'Invalid date') this.value = value; else this.value = moment(date_start).format('YYYY-MM-DD HH:MM');
+});
+$('input[name="calendar2"]').on('change', function () {
+	var value = moment(this.value).format('YYYY-MM-DD HH:MM');
+	if (value != 'Invalid date') this.value = value; else this.value = moment(date_end).format('YYYY-MM-DD HH:MM');
+});
+$('input[name="calendar3"]').on('change', function () {
+	var value = moment(this.value).format('YYYY-MM-DD HH:MM');
+	if (value != 'Invalid date') this.value = value; else this.value = moment(date_back).format('YYYY-MM-DD HH:MM');
+});
+

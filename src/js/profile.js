@@ -22,8 +22,7 @@ function UpdateInfo() {
 			$('input#formProfilePassport').val(info.passport);
 
 			if (info.rank != 0) {
-				$('#delete_profile').hide();
-				$('#delete_tickets').hide();
+				$('.setting a').hide();
 				$('.MyTrip').hide();		
 			} 
 		}
