@@ -902,7 +902,7 @@ table.table-hover tbody tr:hover {
   padding: 2.5rem;
 }
 .page-footer {
-  background: /*#002715*/ black;
+  background: /*#002715*/ #1e1a27;
 }
 footer {
   //flex-shrink: 0;
@@ -935,7 +935,7 @@ footer {
   min-width: 280px;
 }
 .tickets {
-  margin-top: 2rem;
+  margin: 2rem -15px;
 }
 .nav-item .dropdown-menu {
   padding: 1rem;
@@ -993,7 +993,7 @@ footer {
   --back-color: white;
   --font-color: black;
   --cloud: none;
-  --ticket1-back: rgb(250, 250, 250);
+  --ticket1-back: white; //#f7f6f0
   --btn-menu: white;
   --btn-menu-font: black;
   --btn-menu-font-hover: rgba(0, 0, 0, 0.5);
