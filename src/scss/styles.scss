@@ -1,3 +1,4 @@
+//Основа
 html, body {
   height: 100%;
   width: 100vw;
@@ -8,10 +9,11 @@ html, body {
 body {
   overflow-y: scroll;
   overflow-x: hidden;
-  background: var(--background);
+  background: $background;
   position: relative;
-  //background-attachment: fixed;
 }
+
+//Адаптивность
 //Мобилки
 @media (min-width: 320px) {
   .nav-image {
@@ -171,16 +173,16 @@ body {
     width: 10rem;
     margin-right: 1rem;
     .form-control {
-      color: var(--font-color) !important;
+      color: $font-color !important;
     }
     .filtrable {
-      color: var(--font-color);
+      color: $font-color;
     }
     .dropdown-form-control {
-      color: var(--font-color);
+      color: $font-color;
     }
     .dropdown-content {
-      background-color: var(--back-color);
+      background-color: $back-color;
     }
   }
   .block-ticket {
@@ -632,12 +634,14 @@ body {
     padding: 1rem 3rem;
   }
 }
+//Конец адаптивности
 
-
-.managment {
-  background-color: var(--back-color);
+//header.html
+.lang-switch {
+  font-size: 115%;
 }
 
+//Index.html
 .zagalovok {
   font-style: normal;
   font-family: 'Montserrat', sans-serif !important;
@@ -645,9 +649,13 @@ body {
   color: rgba(255, 255, 255, 0.863);
 }
 
-.lang-switch {
-  font-size: 115%;
+.managment {
+  background-color: $back-color;
 }
+
+
+
+
 .navbar {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
@@ -685,22 +693,22 @@ body {
 }
 .cl-easy {
   background: url("../img/easy.png") center no-repeat;
-  filter: var(--cloud);
+  filter: $cloud;
 }
 .cl-big {
   background: url(../img/big.png) center no-repeat;
-  filter: var(--cloud);
+  filter: $cloud;
 }
 .cl-one {
   background: url(../img/one.png) center no-repeat;
-  filter: var(--cloud);
+  filter: $cloud;
 }
 .main {
-  color: var(--font-color);
-  background-color: var(--back-color);
+  color: $font-color;
+  background-color: $back-color;
 }
 .main-search {
-  color: var(--font-color);
+  color: $font-color;
 }
 .nav-image {
   display: block;
@@ -724,7 +732,7 @@ body {
   &:before {
     content: '\e8b9';
   font-family: 'Material Icons';
-  color: var(--font-color);
+  color: $font-color;
   font-size: 3em !important;
   height: 100%;
   }
@@ -736,7 +744,7 @@ body {
   &:before {
     content: '\e164';
     font-family: 'Material Icons';
-    color: var(--font-color);
+    color: $font-color;
     font-size: 2rem;
     
   }
@@ -803,15 +811,15 @@ body.modal-open {
 }
 
 .btn-menu {
-  background-color: var(--btn-menu);
-  color: var(--btn-menu-font);
+  background-color: $btn-menu;
+  color: $btn-menu-font;
 }
 .btn-menu:hover {
-  color: var(--btn-menu-font-hover);
+  color: $btn-menu-font-hover;
 }
 
 .ticket-1 {
-  background-color: var(--ticket1-back);
+  background-color: $ticket1-back;
   margin-bottom: 2rem;
 }
 
@@ -866,19 +874,19 @@ body.modal-open {
 }
 
 .table {
-  color: var(--table);
+  color: $table;
 }
 
 table.table-hover tbody tr:hover {
-  background-color: var(--table-hover);
-  color: var(--table);
+  background-color: $table-hover;
+  color: $table;
 }
 
 .trip {
   display: flex;
   &:hover {
-    background-color: var(--background-trip) !important;
-    color: var(--trip-color) !important;
+    background-color: $background-trip !important;
+    color: $trip-color !important;
   }
 }
 .info-trip {
@@ -895,8 +903,8 @@ table.table-hover tbody tr:hover {
   border: rgb(119, 119, 245) 3px solid;
 }
 .list-group-item {
-  background-color: var(--back-color);
-  color: var(--font-color);
+  background-color: $back-color;
+  color: $font-color;
 }
 .photo-profile, .about-profile, .status {
   padding: 2.5rem;
@@ -916,12 +924,12 @@ footer {
   color: black !important;
 }
 .main-pay {
-  filter: var(--main-pay);
+  filter: $main-pay;
   color: black;
   font-weight: 700;
 }
 .md-pills a {
-  color: var(--md-pils) !important;
+  color: $md-pils !important;
   font-family: 'Rubik'; font-weight: 900;
   font-size: 120%;
 }
@@ -974,7 +982,7 @@ footer {
   }
 }
 .mdb-autocomplete-wrap {
-  background-color: var(--back-color);
+  background-color: $back-color;
   width: 104.25%;
   margin-left: -5px;
   padding-left: 0;
@@ -987,42 +995,42 @@ footer {
   padding: 2rem;
 }
 :root[theme='light'] {
-  --background: 
+  $background: 
      linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 100%) no-repeat,
      linear-gradient(to bottom, #c7def6 0%, #d2dbeb 25%, #7fb0fd 50%, #3c8bf4 75%, #065bc6 100%) repeat-y;
-  --background-search: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 80%, #3c8bf4 90%, #065bc6 100%) no-repeat,
+  $background-search: linear-gradient(to bottom, #065bc6 0%, #3c8bf4 25%, #7fb0fd 50%, #d2dbeb 75%, #c7def6 80%, #3c8bf4 90%, #065bc6 100%) no-repeat,
                       #065bc6;
-  --back-color: white;
-  --font-color: black;
-  --cloud: none;
-  --ticket1-back: white; //#f7f6f0
-  --btn-menu: white;
-  --btn-menu-font: black;
-  --btn-menu-font-hover: rgba(0, 0, 0, 0.5);
-  --table: #212529;
-  --table-hover: rgba(0, 0, 0, 0.075);
-  --main-pay: none;
-  --md-pils: black;
-  --background-trip: #f8f8f8;
-  --trip-color: #424242;
+  $back-color: white;
+  $font-color: black;
+  $cloud: none;
+  $ticket1-back: white; //#f7f6f0
+  $btn-menu: white;
+  $btn-menu-font: black;
+  $btn-menu-font-hover: rgba(0, 0, 0, 0.5);
+  $table: #212529;
+  $table-hover: rgba(0, 0, 0, 0.075);
+  $main-pay: none;
+  $md-pils: black;
+  $background-trip: #f8f8f8;
+  $trip-color: #424242;
 }
 
 :root[theme='dark'] {
-  --background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat;
-  --background-search: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat, #24243e;
-  --back-color: #222222;
-  --font-color: rgba(255, 255, 255, 0.794);
-  --cloud: opacity(50%) brightness(20%);
-  --ticket1-back: rgb(41, 41, 41);
-  --btn-menu: #222222;
-  --btn-menu-font: rgba(255, 255, 255, 0.781);
-  --btn-menu-font-hover: rgba(255, 255, 255, 0.603);
-  --table: white;
-  --table-hover: rgba(158, 158, 158, 0.25);
-  --main-pay: invert(100%);
-  --md-pils: black;
-  --background-trip: #2e2e2e;
-  --trip-color: rgb(223, 222, 222);
+  $background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat;
+  $background-search: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) no-repeat, #24243e;
+  $back-color: #222222;
+  $font-color: rgba(255, 255, 255, 0.794);
+  $cloud: opacity(50%) brightness(20%);
+  $ticket1-back: rgb(41, 41, 41);
+  $btn-menu: #222222;
+  $btn-menu-font: rgba(255, 255, 255, 0.781);
+  $btn-menu-font-hover: rgba(255, 255, 255, 0.603);
+  $table: white;
+  $table-hover: rgba(158, 158, 158, 0.25);
+  $main-pay: invert(100%);
+  $md-pils: black;
+  $background-trip: #2e2e2e;
+  $trip-color: rgb(223, 222, 222);
 }
 
 /*

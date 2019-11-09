@@ -3,8 +3,8 @@
 
 <head>
   <title>Ваш профиль</title>
-  <meta http-equiv="x-ua-compatible" content="ie=edge" charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" charset="UTF-8">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -76,27 +76,22 @@
             <form id='form_profile_one'>
           
               <div class="md-form form-group">
-                <label id="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
+                <label for="formProfileLastname" class="grey-text font-weight-light">Фамилия</label>
                 <input type="text" id="formProfileLastname" placeholder=" " class="form-control">
               </div>
           
               <div class="md-form form-group">
-                <label id="formProfileName" class="grey-text font-weight-light">Имя</label>
+                <label for="formProfileName" class="grey-text font-weight-light">Имя</label>
                 <input type="text" id="formProfileName" placeholder=" " class="form-control">
               </div>
           
               <div class="md-form form-group">
-                <label id="formProfileMiddleName" class="grey-text font-weight-light">Отчество</label>
+                <label for="formProfilePatronymic" class="grey-text font-weight-light">Отчество</label>
                 <input type="text" id="formProfilePatronymic" placeholder=" " class="form-control">
               </div>
           
-              <!-- <div class="md-form form-group">
-                <label id="formProfileCity" class="grey-text font-weight-light">Город</label>
-                <input type="text" id="formProfileCity" value="Пермь, Россия" class="form-control">
-              </div> -->
-          
               <div class="md-form form-group">
-                <input type="number" pattern="[0-9]{10}" id="formProfilePassport" min="999999" max="9999999999" placeholder=" "
+                <input type="number" id="formProfilePassport" min="999999" max="9999999999" placeholder=" "
                   class="form-control" onkeypress="this.value=this.value.substring(0,9);">
                 <label for="formProfilePassport" class="grey-text font-weight-light">Номер паспорта</label>
               </div>
@@ -134,7 +129,7 @@
 
             <button id='profile_button_add' type="submit" class="btn btn-outline-secondary waves-effect mx-0 my-2"> Изменить </button>
             <!--Появляется если затронты строки-->
-            <button id='profile_button_add' type="reset" class="btn btn-outline-teal waves-effect my-2">Отмена</button>
+            <button id='profile_button_cancel' type="reset" class="btn btn-outline-teal waves-effect my-2">Отмена</button>
 
           </div>        
         
@@ -149,7 +144,7 @@
           <div class="ticket trip row list-group-item py-4 list-group-item-action">
             <div class="photo-trip col-4">
               <span id="photo-trip shadow">
-                <img src="https://32.img.avito.st/avatar/social/256x256/4419904532.jpg" class="hoverable">
+                <img src="//upload.wikimedia.org/wikipedia/commons/4/4c/Linecons_digital-photo.svg" alt="фото поездки" class="hoverable">
               </span>
             </div>
             <div class="about-trip col-8">
