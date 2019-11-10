@@ -28,24 +28,37 @@
     
     <div class="main container-fluid rounded shadow p-4">
       <h1> Панель администратора </h1>
+      <hr>
       <div class="row p-4">
-        <div class="col-2">
+        <div class="col-3">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link admin-tabs active" id="flight-table-tab" data-toggle="pill" href="#flight-table" role="tab"
-              aria-controls="flight-table" aria-selected="true">Рейсы</a>
-            <a class="nav-link admin-tabs" id="users-table-tab" data-toggle="pill" href="#users-table" role="tab"
-              aria-controls="users-table" aria-selected="false">Пользователи</a>
-            <a class="nav-link admin-tabs" id="ticket-table-tab" data-toggle="pill" href="#ticket-table" role="tab"
-              aria-controls="ticket-table" aria-selected="false">Купленные билеты</a>
-            <a class="nav-link admin-tabs" id="plane-table-tab" data-toggle="pill" href="#plane-table" role="tab"
-              aria-controls="plane-table" aria-selected="false">Самолеты</a>
-            <a class="nav-link admin-tabs" id="city-table-tab" data-toggle="pill" href="#city-table" role="tab"
-              aria-controls="city-table" aria-selected="false">Города</a>
-            <a class="nav-link admin-tabs" id="airport-table-tab" data-toggle="pill" href="#airport-table" role="tab"
-              aria-controls="airport-table" aria-selected="false">Аэропорты</a>
+            <a class="nav-link admin-tabs align-items-center active" id="flight-table-tab" data-toggle="pill" href="#flight-table" role="tab"
+              aria-controls="flight-table" aria-selected="true">
+              <i class="material-icons my-auto">flight_takeoff</i>
+              Рейсы</a>
+            <a class="nav-link admin-tabs align-items-center" id="users-table-tab" data-toggle="pill" href="#users-table" role="tab"
+              aria-controls="users-table" aria-selected="false">
+              <i class="material-icons my-auto">supervised_user_circle</i>
+              Пользователи</a>
+            <a class="nav-link admin-tabs align-items-center" id="ticket-table-tab" data-toggle="pill" href="#ticket-table" role="tab"
+              aria-controls="ticket-table" aria-selected="false">
+              <i class="material-icons my-auto">reorder</i>
+              Купленные билеты</a>
+            <a class="nav-link admin-tabs align-items-center" id="plane-table-tab" data-toggle="pill" href="#plane-table" role="tab"
+              aria-controls="plane-table" aria-selected="false">
+              <i class="material-icons my-auto">flight</i>
+              Самолеты</a>
+            <a class="nav-link admin-tabs align-items-center" id="city-table-tab" data-toggle="pill" href="#city-table" role="tab"
+              aria-controls="city-table" aria-selected="false">
+              <i class="material-icons my-auto">location_city</i>
+              Города</a>
+            <a class="nav-link admin-tabs align-items-center" id="airport-table-tab" data-toggle="pill" href="#airport-table" role="tab"
+              aria-controls="airport-table" aria-selected="false">
+              <i class="material-icons my-auto">outlined_flag</i>
+              Аэропорты</a>
           </div>
         </div>
-        <div class="col-10">
+        <div class="col-9">
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="flight-table" role="tabpanel" aria-labelledby="flight-table-tab">
                   

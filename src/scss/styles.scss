@@ -123,11 +123,12 @@ footer {
   //конец index.html
   
   .search-btn {
-    font: 600, 'Raleway', sans-serif;
-    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    height: 45px;
     color: rgba(255, 255, 255, 0.863);
-    padding: 0.56rem 2rem;
-    margin: 1rem auto !important;
+    padding: 0.85rem 2rem;
+    margin: 1rem 0 !important;
 
   }
   .cl-easy {
@@ -423,8 +424,7 @@ footer {
     }
   }
   .search-btn {
-    margin-top: auto !important;
-    margin-bottom: auto !important;
+    margin: auto 0 !important;
   }
   .cl-easy {
     top: 0;
@@ -706,7 +706,7 @@ footer {
   font-family: 'Rubik', sans-serif;
   max-width: 1920px;
   width: 100%;
-  font-size: 115%;
+  font-size: 110%;
 }
 .nav-image {
   display: block;
