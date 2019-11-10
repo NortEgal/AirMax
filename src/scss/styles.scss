@@ -63,20 +63,26 @@ footer {
 //Адаптивность
 //Мобилки
 @media (min-width: 320px) {
+  
   //основа
   html,
-		body {
-      min-height: 1000px;
-    }
+  body {
+    min-height: 1000px;
+  }
+
   main {
     margin-top: 10%;
   }
+
   footer {
     padding-right: 1rem;
   }
+
   //конец основы
 
+
   //header.html
+  
   .nav-image {
     background: url(../img/log-df1.png) no-repeat 50% 50%;
     min-width: 75px;
@@ -86,39 +92,50 @@ footer {
   .navigation {
     padding-right: 0 !important;
   }
+
   //конец header.html
 
+
   //index.html
+
   .zagalovok {
     font-size: 1.5rem;
   }
+
   //поиск
   .form-row {
     display: block;
     height: auto;
     margin: 1.5rem;
   }
+
   .form-row div {
     height: 60px;
   }
+
   .input-from-col {
     border-top-left-radius: 0.25rem !important;
     border-top-right-radius: 0.25rem !important;
     margin-bottom: 0.25rem;
   }
+
   .input-to-col {
     margin-bottom: 0.25rem;
   }
+
   .input-time1-col {
     margin-bottom: 0.25rem;
   }
+
   .input-time2-col {
     margin-bottom: 0.25rem;
   }
+
   .input-seats-col {
     border-bottom-left-radius: 0.25rem !important;
     border-bottom-right-radius: 0.25rem !important;
   }
+
   //конец поиска
   //конец index.html
   
@@ -129,8 +146,8 @@ footer {
     color: rgba(255, 255, 255, 0.863);
     padding: 0.85rem 2rem;
     margin: 1rem 0 !important;
-
   }
+
   .cl-easy {
     top: 0;
     bottom: auto;
@@ -138,6 +155,7 @@ footer {
     right: auto;
     height: 20% !important;
   }
+
   .cl-big {
     top: auto;
     bottom: 0;
@@ -145,6 +163,7 @@ footer {
     right: 0;
     width: 0 !important;
   }
+
   .cl-one {
     top: auto;
     bottom: 0;
@@ -152,9 +171,11 @@ footer {
     right:75%;
     width: 0 !important;
   }
+
   .btn-menu {
     display: none;
   }
+
   .main-information {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -166,10 +187,12 @@ footer {
       }
     }
   }
+
   .status {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
   }
+
   #profile_pay{
     button {
       padding: 0.5rem;
@@ -180,6 +203,7 @@ footer {
       text-align: right;
     }
   }
+
   .contact-data {
     padding-left: 1rem !important;
     .row {
@@ -192,12 +216,14 @@ footer {
       }
     }
   }
+
   .MyTrip {
     padding-left: 1rem !important;
     h1 {
       font-size: 2rem;
     }
   }
+
   .photo-trip {
     padding-left: 0;
     padding-top: 0.3rem;
@@ -208,6 +234,7 @@ footer {
     }
     object-fit: cover;
   }
+
   .block-ticket {
     display: block;
     .col-5 {
@@ -224,9 +251,11 @@ footer {
       }
     }
   }
+
   .ticket-date {
     display: block;     
   }
+
   .select-search {
     width: 10rem;
     margin-right: 1rem;
@@ -243,6 +272,7 @@ footer {
       background-color: var(--back-color);
     }
   }
+
   .block-ticket {
     .col-7 {
       max-width: 100%;
@@ -251,70 +281,99 @@ footer {
       }
     }
   }
+
   .block-ticket-price {
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
   }
+
   .nav-pay {
     width: 100%;
     margin-left: 0;
   }
+
   .tab-content {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
   .pay-content {
+
     display: block;
-    #number-card, #card-holder-name, #number-qiwi {
+
+    #number-card,
+    #card-holder-name,
+    #number-qiwi {
       width: 100%;
       max-width: 15rem;
     }
+
     .col-4 {
       max-width: 100%;
     }
+
     .col-6 {
+
       max-width: 100%;
+
       .form-pay {
+
         margin-left: 0;
         margin-right: 0;
+
         .col-auto {
+
           max-width: 10rem;
           padding-left: 0;
+
         }
         .col-5 {
+
           max-width: 10rem;
           padding-left: 0;
+
         }
       }
     }
     .form-qiwi {
+
       width: 100%;
+
     }
   }
 }
+
 // Малые девайсы («ландшафтные телефоны», >= 576px)
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
+
   //Основа
-  html, body {
+  html,
+  body {
     min-height: 1200px;
   }
+
   main {
     margin-top: 12%;
   }
+
   //Конец основы
   
+
   //header.html
   .navigation {
     margin-right: 3rem;
   }
+
   .nav-image {
     background: url(../img/log-df2.png) no-repeat 50% 50%;
     min-width: 200px;
     min-height: 100px;
     margin-left: 3rem;
   }
+
   //Конец header.html
   
+
   .mainform {
     height: 100%;
     position: relative;
@@ -324,6 +383,7 @@ footer {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+
   .form-row {
     height: 60px;
     margin-top: 4.5rem;
@@ -336,53 +396,70 @@ footer {
   .zagalovok {
     font-size: 3.5rem;
   }
+
   .index-btn {
     margin-top: 13rem;
     margin-bottom: 3rem;
   }
+
   //Конец index.html
+
   .informer {
     margin-top: 20rem !important;
   }
+
   .pay-content {
     display: block;
-    #number-card, #card-holder-name, #number-qiwi {
+
+    #number-card,
+    #card-holder-name,
+    #number-qiwi {
       width: 100%;
       max-width: 18rem;
     }
+
     .col-10 {
       margin-top: 7.5rem;
     }
+
     .col-4 {
       max-width: 100%;
     }
+
     .col-6 {
       max-width: 100%;
+
       .form-pay {
         margin-left: 0;
         margin-right: 0;
+
         .col-auto {
           max-width: 10rem;
           padding-left: 0;
         }
+
         .col-5 {
           max-width: 10rem;
           padding-left: 0;
         }
+
       }
     }
+
     .form-qiwi {
       width: 100%;
     }
+
   }
 }
 
 // Средние девайсы («таблетки», >= 768px)
 @media (min-width: 768px) { 
+  
   html,
-		body {
-			min-height: 1200px;
-    }
+  body {
+    min-height: 1200px;
+  }
 
   .form-row {
     flex-wrap: wrap;
@@ -391,31 +468,40 @@ footer {
     margin-left: 0;
     margin-right: 0;
   }
+
   .input-from-col {
     border-top-left-radius: 0.25rem !important;
     border-bottom-left-radius: 0.25rem !important;
   }
+
   .input-to-col {
     margin-left: 0.25rem !important;
   }
+
   .input-time1-col {
     margin-left: 0.25rem !important;
   }
+
   .input-time2-col {
     margin-left: 0.25rem !important;
   }
+
   .input-seats-col {
     border-top-right-radius: 0.25rem !important;
     border-bottom-right-radius: 0.25rem !important;
     margin-left: 0.25rem !important;
   }
+
   //index.html
   .index-btn {
     width: 20%;
     margin-top: 0;
     margin-bottom: 0;
   }
+
   //конец index.html
+
+
   .form-search {
     margin-top: 1rem;
     height: 45px;
@@ -423,9 +509,11 @@ footer {
       height: inherit;
     }
   }
+
   .search-btn {
     margin: auto 0 !important;
   }
+
   .cl-easy {
     top: 0;
     bottom: auto;
@@ -433,6 +521,7 @@ footer {
     right: auto;
     height: 30% !important;
   }
+
   .cl-big {
     top: auto;
     bottom: 10%;
@@ -441,6 +530,7 @@ footer {
     width: 60% !important;
     height: 50% !important;
   }
+
   .cl-one {
     top: auto;
     bottom: 0rem;
@@ -453,55 +543,74 @@ footer {
   .btn-menu {
     display: block;
   }
+
   .informer {
     margin-top: 1rem !important;
   }
+
   .ticket-date {
     display: flex;
     .col {
       max-width: 10rem;
     }
   }
+
   .block-ticket {
     display: flex;
   }
+
   .ticket-info {
     border-bottom-left-radius: 0.25rem;
   }
+
   .block-ticket-price {
     border-bottom-left-radius: 0;
   }
+
   .pay-content {
     display: block;
-    #number-card, #card-holder-name, #number-qiwi {
+
+    #number-card,
+    #card-holder-name,
+    #number-qiwi {
       width: 100%;
       max-width: 18rem;
     }
+
     .col-10 {
       margin-top: -1rem;
       margin-left: 0.8rem;
     }
+
     .col-4 {
       max-width: 100%;
     }
+
     .col-6 {
       max-width: 100%;
+
       .form-pay {
         margin-left: 0;
         margin-right: 0;
+
         .col-auto {
           max-width: 10rem;
           padding-left: 1rem;
         }
+
         .col-5 {
           max-width: 10rem;
           padding-left: 1rem;
         }
+
       }
+
     }
+
     .form-qiwi {
       width: 100%;
     }
+
   }
 }
 
@@ -510,21 +619,26 @@ footer {
   .nav-image {
     min-width: 300px;
   }
+
   .form-row {
     flex-wrap: nowrap;
   }
+
   .input-from-col {
     border-top-right-radius: 0rem !important;
   }
+
   .input-seats-col {
     border-bottom-left-radius: 0rem !important;
   }
+
   .cl-easy {
     top: 0;
     bottom: auto;
     left: auto;
     right: auto;
   }
+
   .cl-big {
     top: auto;
     bottom: 0;
@@ -533,6 +647,7 @@ footer {
     width: 60% !important;
     height: 50% !important;
   }
+
   .cl-one {
     top: auto;
     bottom: 0rem;
@@ -541,60 +656,84 @@ footer {
     width: 60% !important;
     height: 60% !important;
   }
+
   #profile_pay {
     button {
       padding: 0.5rem 1.6rem;
     }
   }
+
   .main-information {
     padding-left: 3rem !important;
     padding-right: 3rem !important;
+
     .setting {
       padding-left: 0;
       padding-right: 0;
+
       .setting-btn {
         padding: 0.5rem 1rem;
         margin-top: 3.3rem !important;
         margin-right: 3rem;
         float: right;
       }
+
     }
+
     .status {
+      
       hr {
         max-width: 80%;
         align-items: left;
         margin-left: 0;
       }
+
       padding-left: 3rem !important;
     }
+
   }
+
   .contact-data {
+
     padding-left: 3rem !important;
     padding-right: 3rem !important;
+
     .row {
       display: flex;
+
       .col-5 {
         max-width: 50%;
+
         h1 {
           font-size: 2.5rem;
         }
+
         form {
           margin-left: 0.5rem;
         }
+
       }
+
     }
+
   }
+
   .MyTrip {
     padding-left: 3rem !important;
+
     h1 {
       font-size: 2.5rem;
     }
+
   }
+
   .block-ticket {
     width: 100%;
+
     .col-5 {
       max-width: 50%;
       flex: 0 0 50%;
+
       .row {
         .col-3 {
           padding: 1rem;
@@ -602,73 +741,101 @@ footer {
           flex: 0 0 25%;
         }
       }
+
       .aeroports {
         margin-top: 1rem;
       }
+
     }
+
     .col-7 {
       max-width: 50%;
     }
+
   }
-  .ticket-econom, .ticket-optim, .ticket-premium {
+
+  .ticket-econom,
+  .ticket-optim,
+  .ticket-premium {
     padding: 1rem !important;
   }
+
   .ticket-info {
     padding: 2rem !important;
     border-bottom-left-radius: 0.25rem;
   }
+
   .block-ticket-price {
     border-bottom-right-radius: 0.25rem;
   }
+
   .ticket-price {
     width: auto !important;
   }
+
   .nav-pay {
     width: 44%; //40.5
     margin-left: 1rem;
   }
+
   .pay-content {
     display: flex;
-    #number-card, #card-holder-name, #number-qiwi {
+
+    #number-card,
+    #card-holder-name,
+    #number-qiwi {
       width: 100%;
       max-width: 18rem;
     }
+
     .col-10 {
       margin-top: -1rem;
       margin-left: 0.8rem;
     }
+
     .col-4 {
       max-width: 100%;
     }
+
     .col-6 {
       max-width: 100%;
+
       .form-pay {
         margin-left: 0;
         margin-right: 0;
+
         .col-auto {
           max-width: 10rem;
           padding-left: 1rem;
         }
+
         .col-5 {
           max-width: 10rem;
           padding-left: 1rem;
         }
+
       }
+
     }
+
     .form-qiwi {
       width: 100%;
     }
+
   }
+
 }
 
 // Экстрабольшие девайсы (большие десктопы, >= 1200px)
 @media (min-width: 1200px) { 
+  
   .cl-easy {
     top: 0;
     bottom: auto;
     left: auto;
     right: auto;
   }
+
   .cl-big {
     top: auto;
     bottom: 0;
@@ -677,6 +844,7 @@ footer {
     width: 50% !important;
     height: 50% !important;
   }
+
   .cl-one {
     top: auto;
     bottom: 0rem;
@@ -685,19 +853,27 @@ footer {
     width: 50% !important;
     height: 60% !important;
   }
+
   .block-ticket {
     width: none;
+
     .ticket-info {
       max-width: 50%;
       flex: 0 0 50%;
     }
+
     .col-7 {
       max-width: 50%;
     }
+
   }
-  .ticket-econom, .ticket-optim, .ticket-premium {
+
+  .ticket-econom,
+  .ticket-optim,
+  .ticket-premium {
     padding: 1rem 3rem;
   }
+
 }
 //Конец адаптивности
 
@@ -708,6 +884,7 @@ footer {
   width: 100%;
   font-size: 110%;
 }
+
 .nav-image {
   display: block;
 
@@ -719,26 +896,34 @@ footer {
   
   width: auto;
 }
+
 .lang-switch {
   font-size: 120%;
   font-weight: bold;
 }
-.theme-switch, .profile-open {
+
+.theme-switch,
+.profile-open {
   font-family: 'Material Icons';
 }
+
 .theme-switch:before {
   content: '\ea46';
   font-size: 1.4em;
 }
+
 .profile-open:before {
   content: '\e7fd';
   font-size: 1.6em;
 }
+
 .nav-item .dropdown-menu {
   padding: 1rem;
   min-width: 200px;
 }
+
 //конец header.html
+
 
 //Index.html
 .zagalovok {
@@ -749,6 +934,8 @@ footer {
 }
 
 //конец Index.html
+
+
 .managment {
   background-color: var(--back-color);
 }
@@ -762,6 +949,7 @@ footer {
   font-family: 'Material Icons';
   color: rgba(0, 0, 0, 0.55);
 }
+
 .icon-date {
   font-size: 28px;
   margin-right: 0.3rem;
@@ -770,6 +958,7 @@ footer {
 .dropdown-toggle::after {
   vertical-align: 0.5em;
 }
+
 .clouds {
   display: block;
   position: absolute;
@@ -779,22 +968,27 @@ footer {
   background-size: contain !important;
   object-fit: contain;
 }
+
 .cl-easy {
-  background: url("../img/easy.png") center no-repeat;
+  background: url(../img/easy.png) center no-repeat;
   filter: var(--cloud);
 }
+
 .cl-big {
   background: url(../img/big.png) center no-repeat;
   filter: var(--cloud);
 }
+
 .cl-one {
   background: url(../img/one.png) center no-repeat;
   filter: var(--cloud);
 }
+
 .main {
   color: var(--font-color);
   background-color: var(--back-color);
 }
+
 .main-search {
   color: var(--font-color);
 }
@@ -803,6 +997,7 @@ footer {
   margin-top: 0;
   padding-top: 0;
 }
+
 .setting-btn {
   padding: 0 !important;
   float: right;
@@ -815,6 +1010,7 @@ footer {
   height: 100%;
   }
 }
+
 #btnGroupDropSort {
   padding: 0 !important;
   margin: 0 1rem !important;
@@ -827,45 +1023,57 @@ footer {
     
   }
 }
+
 #input-seats::-webkit-inner-spin-button {
   opacity: 1;
 }
+
 #formProfilePassport::-webkit-inner-spin-button {
   display: none !important;
 }
+
 ul.horizontal-fix li a {
 padding: .84rem 2.14rem;
 }
+
 body.modal-open {
   overflow: hidden;
 }
+
 .dropdown-menu {
   width: 100%;
 }
+
 .nav-link {
   color: rgba(255, 255, 255, 0.5) !important;
 }
+
 .form-check label {
   width: 100%;
 }
+
 .dropdown-menu-right .row {
   width: 100%;
   margin-right: 0;
   margin-left: 0;
   margin-top: 0.7rem;
 }
+
 .row .col-auto p {
   margin-bottom: -0.5rem;
   margin-top: auto;
 }
+
 .row .col-auto {
   padding-left: 1.25rem;
   padding-right: 0rem;
 }
+
 .col-3 a i {
   vertical-align: text-bottom;
   margin-top: 0.5rem;
 }
+
 .dropdown-menu .col-3 {
   padding-right: 0.3rem;
   padding-left: 0;
@@ -881,6 +1089,7 @@ body.modal-open {
   background-color: var(--btn-menu);
   color: var(--btn-menu-font);
 }
+
 .btn-menu:hover {
   color: var(--btn-menu-font-hover);
 }
@@ -890,33 +1099,47 @@ body.modal-open {
   margin-bottom: 2rem;
 }
 
-.ticket-info, .ticket-price {
-  //border: 1px black solid;
+.ticket-info,
+.ticket-price {
   padding: 2rem;
 }
-.ticket-time-fr, .ticket-time-to, .ticket-time, .ticket-id, .ticket-result {
+
+.ticket-time-fr,
+.ticket-time-to,
+.ticket-time,
+.ticket-id,
+.ticket-result {
   padding: 1rem;
   text-align: center;
 }
-.ticket-time-fr, .ticket-time-to {
+
+.ticket-time-fr,
+.ticket-time-to {
   font-weight: 800;
   font-size: 20px; 
 }
+
 .ticket-city {
   font-weight: 500;
   font-size: 18px;
 }
+
 .ticket-time {
   font-size: 14px;
 }
+
 .ticket-id {
   font-style: italic;
 }
-.ticket-econom, .ticket-optim, .ticket-premium {
+
+.ticket-econom,
+.ticket-optim,
+.ticket-premium {
   padding: 1rem 3rem;
   font-size: 18px;
   font-weight: 700;
 }
+
 .ticket-arrow {
 	position: relative;
 	width: 100%;
@@ -933,8 +1156,8 @@ body.modal-open {
 	height: 8px;
 	border-top: 1px solid #003594;
 	border-right: 1px solid #003594;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
@@ -951,31 +1174,42 @@ table.table-hover tbody tr:hover {
 
 .trip {
   display: flex;
+
   &:hover {
     background-color: var(--background-trip) !important;
     color: var(--trip-color) !important;
   }
+
 }
+
 .info-trip {
   display: block;
 }
+
 .info-trip p {
   //line-height: 2;
   margin-bottom: 0;
 }
+
 .city-trip h3 {
   font-weight: 550;
 }
+
 .photo-profile img {
   border: rgb(119, 119, 245) 3px solid;
 }
+
 .list-group-item {
   background-color: var(--back-color);
   color: var(--font-color);
 }
-.photo-profile, .about-profile, .status {
+
+.photo-profile,
+.about-profile,
+.status {
   padding: 2.5rem;
 }
+
 .page-footer {
   background: /*#002715*/ #1e1a27;
 }
@@ -983,53 +1217,73 @@ table.table-hover tbody tr:hover {
 .admin-tabs {
   color: black !important;
 }
+
 .main-pay {
   filter: var(--main-pay);
   color: black;
   font-weight: 700;
 }
+
 .md-pills a {
   color: var(--md-pils) !important;
   font-family: 'Rubik'; font-weight: 900;
   font-size: 120%;
 }
-#input_from:focus, #input_to {
+
+#input_from:focus,
+#input_to {
     border: 0 !important;
 }
+
 //input number 
 .button-number-passengers {
   background: transparent; 
   border: none;
 }
+
 .dropdown-menu {
   min-width: 280px;
 }
+
 .tickets {
   margin: 2rem -15px;
 }
 
 .input-number {
-  -webkit-appearance: textfield;
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  
   appearance: textfield;
   text-align: center;
   border: none;
   
 }
+
 .input-number::-webkit-outer-spin-button,
 .input-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin:0;
 }
+
 .input-number:hover,
 .input-number:focus {
   -moz-appearance: number-input;
 }
-#input_time1, #input_time2, #input_time3 {
+
+#input_time1,
+#input_time2,
+#input_time3 {
   background-color: white;
 }
-#input_from, #input_to, #input_time1, #input_time2, #input_time3, #input_seats {
+
+#input_from,
+#input_to,
+#input_time1,
+#input_time2,
+#input_time3,
+#input_seats {
   border: none;
+
   &:active, &:focus {
     outline: none !important;
     outline-color: transparent!important;
@@ -1037,7 +1291,9 @@ table.table-hover tbody tr:hover {
     outline-style: none!important;
     box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
   }
+
 }
+
 .mdb-autocomplete-wrap {
   background-color: var(--back-color);
   width: 104.25%;
@@ -1048,10 +1304,10 @@ table.table-hover tbody tr:hover {
     list-style-type: none;
    }
 }
+
 #changeBiletos .modal-dialog .modal-content {
   padding: 2rem;
 }
-
 
 /*
 @for $i from 1 through 5 {
