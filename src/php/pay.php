@@ -36,7 +36,7 @@
 		if(!password_verify($array_user['password'], $hash) || !is_numeric($ticket_id) || !is_numeric($ticket_type) || !is_numeric($ticket_amount) || !is_numeric($pay)) exit();
 		if($array_user['rank'] != 0) exit('rank');
 
-		$array = Query("SELECT free_places FROM flight");
+		$array = Query("SELECT free_places FROM flight WHERE id = '$ticket_id'");
 		if($array['free_places'] == 0 || $array['free_places'] < $ticket_amount) exit('places');
 		
 		$array = Query("SELECT flight_id, type FROM ticket WHERE flight_id = '$ticket_id' and type = '$ticket_type'");
@@ -58,6 +58,11 @@
 		}
 
 		$query = "UPDATE user SET money = '$money' WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+
+		$array = Query("SELECT free_places FROM flight WHERE id = '$ticket_id'");
+		$new_places = $array['free_places'] - 1;
+		$query = "UPDATE flight SET free_places = '$new_places' WHERE id='$ticket_id'";
 		$result = mysqli_query($connection, $query);
 
 		$query = "INSERT INTO ticket (flight_id, user_id, type, amount) 

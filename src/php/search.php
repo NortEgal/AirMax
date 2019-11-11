@@ -33,11 +33,13 @@
 		}
 		if (strtotime($date_start)) {
 			$date_start = date ("Y-m-d H:i:s", strtotime($date_start));
-			$filters.= " AND time_departure >= '$date_start'";
+			$date_start_end = date ("Y-m-d H:i:s", strtotime($date_start."+ 1 days - 1 seconds"));
+			$filters.= " AND time_departure >= '$date_start' AND time_departure <= '$date_start_end'";
 		}
 		if (strtotime($date_end)) {
 			$date_end = date ("Y-m-d H:i:s", strtotime($date_end));
-			$filters.= " AND time_back <= '$date_end'";
+			$date_end_end = date ("Y-m-d H:i:s", strtotime($date_end."+ 1 days - 1 seconds"));
+			$filters.= " AND time_back >= '$date_end' AND time_back <= '$date_end_end'";
 		}
 		if (is_numeric($seats)) {
 			$filters.= " AND free_places >= '$seats'";

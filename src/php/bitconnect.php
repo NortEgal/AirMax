@@ -1,13 +1,8 @@
 <?php
-	define("DB_SERVER", "localhost");
-	define("DB_USER", "root");
-	define("DB_PASS", "");
+	define("DB_SERVER", "VH274.spaceweb.ru");
+	define("DB_USER", "sokolovma2");
+	define("DB_PASS", "2140174Qq");
 	define("DB_NAME", "sokolovma2");
-
-	// define("DB_SERVER", "VH274.spaceweb.ru");
-	// define("DB_USER", "sokolovma2");
-	// define("DB_PASS", "2140174Qq");
-	// define("DB_NAME", "sokolovma2");
 
 	// define("DB_SERVER", "localhost");
 	// define("DB_USER", "allah");
