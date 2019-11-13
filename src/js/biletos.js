@@ -28,13 +28,13 @@ $.ajax({
 			$('div.h1.px-4.pb-4').html('Рейс ' + info.id);
 			$('div.row.p-5.border.rounded span').eq(0).html(date_start.format('DD MMMM'));
 			$('div.row.p-5.border.rounded span').eq(1).html(date_start.format('HH:MM'));
-			$('div.row.p-5.border.rounded span').eq(2).html(info.from_city_id + '<br>' + info.from_airport_id);
+			$('div.row.p-5.border.rounded span').eq(2).html(info.from_city + '<br>' + info.from_airport);
 
 			$('div.row.p-5.border.rounded span').eq(3).html(date_diff);
 
 			$('div.row.p-5.border.rounded span').eq(4).html(date_end.format('DD MMMM'));
 			$('div.row.p-5.border.rounded span').eq(5).html(date_end.format('HH:MM'));
-			$('div.row.p-5.border.rounded span').eq(6).html(info.to_city_id + '<br>' + info.to_airport_id);
+			$('div.row.p-5.border.rounded span').eq(6).html(info.to_city + '<br>' + info.to_airport);
 
 			$('tbody tr').eq(5).children().eq(1).html(info.price + '₽');
 			$('tbody tr').eq(5).children().eq(2).html(Math.round(info.price*1.5) + '₽');
@@ -44,12 +44,16 @@ $.ajax({
 
 			$('#input_seats').attr('max', info.free_places)
 
-
+			$('#formAirportFrom').val(info.from_airport_id+' - '+info.from_city+' - '+info.from_airport);
+			$('#formAirportTo').val(info.to_airport_id + ' - ' + info.to_city + ' - ' + info.to_airport);
 			$('#input_time1').val(moment(date_start).format('YYYY-MM-DD HH:MM'));
 			$('#input_time2').val(moment(date_end).format('YYYY-MM-DD HH:MM'));
 			if (date_back != 'Invalid date') $('#input_time3').val(moment(date_back).format('YYYY-MM-DD HH:MM'));
+			$('#formPlaneModel').val(info.plane_id);
 			$('#formFreePlaces').val(info.free_places);
 			$('#formPrices').val(info.price);
+			$('#form_price_optimal').html('Цена оптимального (X 1.5): ' + Math.round(info.price * 1.5) + '₽');
+			$('#form_price_premium').html('Цена премиум (X 3): ' + Math.round(info.price * 3) + '₽');
 		}
 	}
 });
@@ -106,39 +110,44 @@ if (account_id == null) {
 
 }
 
-// $(function () {
-// 	$('input[name="calendar1"]').daterangepicker({
-// 		singleDatePicker: true,
-// 		startDate: date_start,
-// 		timePicker: true,
-// 		timePicker24Hour: true,
-// 		autoUpdateInput: false
-// 	}, function (start, end, label) {
-// 		date_start = start.format('YYYY-MM-DD');
-// 		$('input[name="calendar1"]').val(moment(start).format('DD MMM YYYY'));
-// 	});
-
-// 	$('input[name="calendar2"]').daterangepicker({
-// 		singleDatePicker: true,
-// 		autoUpdateInput: false
-// 	}, function (start, end, label) {
-// 		date_end = start.format('YYYY-MM-DD');
-// 		$('input[name="calendar2"]').val(moment(date_end).format('DD MMM YYYY'));
-// 	});
-
-// 	$('input[name="calendar3"]').daterangepicker({
-// 		singleDatePicker: true,
-// 		autoUpdateInput: false
-// 	}, function (start, end, label) {
-// 		date_end = start.format('YYYY-MM-DD');
-// 		$('input[name="calendar3"]').val(moment(date_end).format('DD MMM YYYY'));
-// 	});
-// });
+let edit_airports, edit_planes;
 
 $('#edit').on('click', function () {
-	// $('#input_time1').val(moment(date_start).format('YYYY-MM-DD HH:MM'));
-	// $('#input_time2').val(moment(date_end).format('YYYY-MM-DD HH:MM'));
-	// if (date_back != 'Invalid date') $('#input_time3').val(moment(date_back).format('YYYY-MM-DD HH:MM'));
+	if(edit_airports == null){
+		$.ajax({
+			//async: false,
+			type: "GET",
+			url: 'php/search.php?t=airports',
+			success: function (info) {
+				//console.log(info);
+				edit_airports = JSON.parse(info);
+				console.log(edit_airports);
+
+				$('#formAirportFrom').mdbAutocomplete({
+					data: edit_airports
+				});
+				$('#formAirportTo').mdbAutocomplete({
+					data: edit_airports
+				});
+			}
+		});
+	}
+	if (edit_planes == null) {
+		$.ajax({
+			//async: false,
+			type: "GET",
+			url: 'php/search.php?t=planes',
+			success: function (info) {
+				//console.log(info);
+				edit_planes = JSON.parse(info);
+				console.log(edit_planes);
+
+				$('#formPlaneModel').mdbAutocomplete({
+					data: edit_planes
+				});
+			}
+		});
+	}
 });
 
 $('input[name="calendar1"]').on('change', function() {
@@ -154,3 +163,41 @@ $('input[name="calendar3"]').on('change', function () {
 	if (value != 'Invalid date') this.value = value; else this.value = moment(date_back).format('YYYY-MM-DD HH:MM');
 });
 
+$('#formPrices').on('change', function () {
+	let price = this.value;
+	if(isNaN(price)) price = 0;
+	$('#form_price_optimal').html('Цена оптимального (X 1.5): ' + Math.round(price * 1.5) + '₽');
+	$('#form_price_premium').html('Цена премиум (X 3): ' + Math.round(price * 3) + '₽');
+});
+
+$('#edit_form').on('submit', function (e) {
+	e.preventDefault();
+
+	$.ajax({
+		type: "POST",
+		url: 'php/biletos.php?t=edit',
+		data: {
+			id: account_id,
+			hash: account_hash,
+			flight: id,
+			from: $('#formAirportFrom').val(),
+			to: $('#formAirportTo').val(),
+			time_departure: $('#input_time1').val(),
+			time_arrival: $('#input_time2').val(),
+			time_back: $('#input_time3').val(),
+			plane: $('#formPlaneModel').val(),
+			places: $('#formFreePlaces').val(),
+			price: $('#formPrices').val()
+		},
+		success: function (info) {
+			console.log(info);
+
+			if(info == 'nice') {
+				alert('Данные успешно обновлены');
+				window.location.reload();
+			}else{
+				alert('Введены некорректные данные');
+			}
+		}
+	});
+});

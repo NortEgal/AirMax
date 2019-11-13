@@ -25,7 +25,7 @@ let scripts = [
 	"js/libs/moment/ru.js",
 	"js/libs/daterangepicker.js",
 	"js/libs/addons/stepper.min.js",
-	"js/libs/addons/datatables.min.js"
+	//"js/libs/addons/datatables.min.js"
 ];
 if (getPageName() != '') scripts.push('js/' + getPageName() + '.js'); else scripts.push('js/index.js');
 
@@ -132,14 +132,10 @@ if (account_id != null) {
 		{ 
 			$('body').append(data);
 			//Horizontal Stepper
-				$(document).ready(function () {
-					$('.stepper').mdbStepper();
-				})
-			function someFunction21() {
-					setTimeout(function () {
-						$('#horizontal-stepper-fix').nextStep();
-					}, 2000);
-				}
+			$(document).ready(function () {
+				$('.stepper').mdbStepper();
+			})
+
 			//end
 			$('.only-numbers').on('keydown', function (e) {
 				if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
@@ -186,12 +182,6 @@ if (account_id != null) {
 				input.addEventListener("blur", mask, false);
 				input.addEventListener("keydown", mask, false)
 
-			});
-
-			
-			$('#SignUP-form-1').on('click', function(e) {
-				e.preventDefault();
-				$('#SignUpModal .step-title').eq(1).click();
 			});
 
 			$('#SignUP-form-2').on('click', function (e) {

@@ -11,6 +11,28 @@
 		echo json_encode($city);
 	}
 
+	if($_GET['t'] == 'airports') {
+		$query = "SELECT * FROM airport";
+		$result = mysqli_query($connection, $query);
+		$airport = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$city_id = $row['city_id'];
+			$array_city = Query("SELECT name FROM city WHERE id = '$city_id'");
+			array_push($airport , $row['id'].' - '.$array_city['name'].' - '.$row['name']);
+		}
+		echo json_encode($airport);
+	}
+
+	if($_GET['t'] == 'planes') {
+		$query = "SELECT model FROM plane";
+		$result = mysqli_query($connection, $query);
+		$plane = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($plane , $row['model']);
+		}
+		echo json_encode($plane);
+	}
+
 	if($_GET['t'] == 'flights') {
 		$where_from = $_POST['where_from'];
 		$where_to = $_POST['where_to'];
