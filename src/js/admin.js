@@ -13,6 +13,9 @@ $(document).ready(function () {
 	console.log(tr_temp);
 	tr_temp.remove();
 
+	/*
+		USER
+	*/
 	if (account_info.rank != 2) 
 	{
 		$("#users-table-tab").remove();
@@ -21,6 +24,9 @@ $(document).ready(function () {
 		
 	}
 
+	/*
+		FLIGHT
+	*/
 	$('#flight-table-tab').click(function () {
 		$.ajax({
 			type: "POST",
@@ -54,7 +60,7 @@ $(document).ready(function () {
 				});
 
 				$('table#flight').Tabledit({
-					url: 'php/admin.php?t=flight_edit?',
+					url: 'php/admin.php?t=flight_edit',
 					columns: {
 						identifier: [0, 'id'],
 						editable: [
@@ -71,7 +77,7 @@ $(document).ready(function () {
 						]
 					},
 					restoreButton: false,
-					//editButton: false,
+					editButton: false,
 					buttons: {
 						edit: {
 							class: 'btn btn-sm btn-blue',
@@ -92,18 +98,65 @@ $(document).ready(function () {
 							html: 'Подтвердить'
 						}
 					},
-					onAjax: function (action, serialize) {
-						console.log('onAjax(action, serialize)');
-						console.log(action);
-						console.log(serialize);
+					onFail: function (jqXHR, textStatus, errorThrown) {
+						$('#flight-table-tab').click();
 					},
 					onSuccess: function (data, textStatus, jqXHR) {
-						console.log('onSuccess(data, textStatus, jqXHR)');
-						console.log(data);
-						console.log(textStatus);
-						console.log(jqXHR);
+						$('#flight-table-tab').click();
 					},
 				});
+			}
+		});
+	});
+
+	$('#adminAddFlight input[name="calendar1"]').on('change', function () {
+		var value = moment(this.value).format('YYYY-MM-DD HH:MM');
+		if (value != 'Invalid date') this.value = value; 
+	});
+	$('#adminAddFlight input[name="calendar2"]').on('change', function () {
+		var value = moment(this.value).format('YYYY-MM-DD HH:MM');
+		if (value != 'Invalid date') this.value = value;
+	});
+	$('#adminAddFlight input[name="calendar3"]').on('change', function () {
+		var value = moment(this.value).format('YYYY-MM-DD HH:MM');
+		if (value != 'Invalid date') this.value = value;
+	});
+
+	$('#adminAddFlight #price').on('change', function () {
+		let price = this.value;
+		if (isNaN(price)) price = 0;
+		$('#adminAddFlight #price_optimal').html('Цена оптимального (X 1.5): ' + Math.round(price * 1.5) + '₽');
+		$('#adminAddFlight #price_premium').html('Цена премиум (X 3): ' + Math.round(price * 3) + '₽');
+	});
+
+	$('#adminAddFlight').on('submit', function(e) {
+		e.preventDefault();
+
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=flight_add',
+			data: {
+				id: account_id,
+				hash: account_hash,
+				plane_id: $('#adminAddFlight #plane_id').val(),
+				from_city_id: $('#adminAddFlight #from_city_id').val(),
+				from_airport_id: $('#adminAddFlight #from_airport_id').val(),
+				to_city_id: $('#adminAddFlight #to_city_id').val(),
+				to_airport_id: $('#adminAddFlight #to_airport_id').val(),
+				time_departure: $('#adminAddFlight #input_time1').val(),
+				time_arrival: $('#adminAddFlight #input_time2').val(),
+				time_back: $('#adminAddFlight #input_time3').val(),
+				free_places: $('#adminAddFlight #free_places').val(),
+				price: $('#adminAddFlight #price').val()
+			},
+			success: function (info) {
+				console.log(info);
+
+				if (!isNaN(info)) {
+					alert('Рейс ' + info + ' успешно добавлен');
+					$('#adminAddFlight').modal('hide');
+					$('#flight-table-tab').click();
+				}
 			}
 		});
 	});
