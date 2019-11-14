@@ -507,4 +507,87 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	/*
+		AIRPORT
+	*/
+	$('#airport-table-tab').click(function () {
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=airport_get',
+			data: {
+				id: account_id,
+				hash: account_hash
+			},
+			success: function (info) {
+				//console.log(info);
+				info = JSON.parse(info);
+				console.log(info);
+
+				let body = $('table#airport tbody');
+				body.empty();
+
+				$.each(info, function (i, row) {
+					new_row = tr_temp.clone();
+					td_temp.clone().appendTo(new_row).html(row.id);
+					td_temp.clone().appendTo(new_row).html(row.city_id);
+					td_temp.clone().appendTo(new_row).html(row.name);
+					body.append(new_row);
+				});
+
+				$('table#airport').Tabledit({
+					url: 'php/admin.php?t=airport_edit',
+					columns: {
+						identifier: [0, 'id'],
+						editable: [
+							[1, 'city_id'],
+							[2, 'name']
+						]
+					},
+					restoreButton: false,
+					editButton: false,
+					buttons: {
+						edit: {
+							class: 'btn btn-sm btn-blue',
+							html: '<i class="material-icons my-auto">edit</i>',
+							action: 'edit'
+						},
+						delete: {
+							class: 'btn btn-sm btn-danger',
+							html: '<i class="material-icons my-auto">delete</i>',
+							action: 'delete'
+						},
+						save: {
+							class: 'btn btn-sm btn-success',
+							html: '<i class="material-icons my-auto">done</i>'
+						},
+						confirm: {
+							class: 'btn btn-sm btn-warning',
+							html: 'Подтвердить'
+						}
+					},
+					onFail: function (jqXHR, textStatus, errorThrown) {
+						$('#airport-table-tab').click();
+					},
+					onSuccess: function (data, textStatus, jqXHR) {
+						$('#airport-table-tab').click();
+					},
+				});
+			}
+		});
+	});
+
+	$('button#add_airport').on('click', function () {
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=airport_add',
+			data: {
+				id: account_id,
+				hash: account_hash
+			},
+			success: function (info) {
+				$('#airport-table-tab').click();
+			}
+		});
+	});
 });

@@ -353,4 +353,61 @@
 		$query = "INSERT INTO city () VALUES ()";
 		$result = mysqli_query($connection, $query);
 	}
+
+	/*
+		AIRPORT
+	*/
+	if($_GET['t'] == 'airport_get') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "SELECT * FROM airport";
+		$result = mysqli_query($connection, $query);
+		$send = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($send , array(
+				"id"=>$row['id'],
+				"city_id"=>$row['city_id'], 
+				"name"=>$row['name']
+			));
+		}
+
+		exit(json_encode($send));
+	}
+
+	if($_GET['t'] == 'airport_edit') {
+		$input = filter_input_array(INPUT_POST);
+
+		if ($input['action'] == 'edit') {
+			$update_field='';
+			if(isset($input['city_id'])) {
+				$update_field.= "city_id='".$input['city_id']."'";
+			} else if(isset($input['name'])) {
+				$update_field.= "name='".$input['name']."'";
+			}
+
+			if($update_field && $input['id']) {
+				$query = "UPDATE airport SET $update_field WHERE id=" . $input['id'];
+				mysqli_query($connection, $query);
+			}
+		}
+
+		if ($input['action'] == 'delete') {
+			$query = "DELETE FROM airport WHERE id=" . $input['id'];
+			mysqli_query($connection, $query);
+		}
+	}
+
+	if($_GET['t'] == 'airport_add') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "INSERT INTO airport (city_id) VALUES (1)";
+		$result = mysqli_query($connection, $query);
+	}
 ?>
