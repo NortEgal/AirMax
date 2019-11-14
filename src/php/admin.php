@@ -27,7 +27,7 @@
 			));
 		}
 
-		echo json_encode($send);
+		exit(json_encode($send));
 	}
 
 	if($_GET['t'] == 'flight_edit') {
@@ -91,5 +91,80 @@
 	    //exit($query);
 		$result = mysqli_query($connection, $query) or die(mysqli_error($connection));
 		exit(mysqli_insert_id($connection));
+	}
+
+	if($_GET['t'] == 'user_get') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] != 2) exit();
+
+		$query = "SELECT * FROM user";
+		$result = mysqli_query($connection, $query);
+		$send = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($send , array(
+				"id"=>$row['id'],
+				"lastname"=>$row['lastname'], 
+				"firstname"=>$row['firstname'],
+				"patronymic"=>$row['patronymic'],
+				"mail"=>$row['mail'],
+				"password"=>$row['password'],
+				"phone"=>$row['phone'],
+				"passport"=>$row['passport'],
+				"money"=>$row['money'],
+				"rank"=>$row['rank']
+			));
+		}
+
+		exit(json_encode($send));
+	}
+
+	if($_GET['t'] == 'user_edit') {
+		$input = filter_input_array(INPUT_POST);
+
+		if ($input['action'] == 'edit') {
+			$update_field='';
+			if(isset($input['lastname'])) {
+				$update_field.= "lastname='".$input['lastname']."'";
+			} else if(isset($input['firstname'])) {
+				$update_field.= "firstname='".$input['firstname']."'";
+			} else if(isset($input['patronymic'])) {
+				$update_field.= "patronymic='".$input['patronymic']."'";
+			} else if(isset($input['mail'])) {
+				$update_field.= "mail='".$input['mail']."'";
+			} else if(isset($input['password'])) {
+				$update_field.= "password='".$input['password']."'";
+			} else if(isset($input['phone'])) {
+				$update_field.= "phone='".$input['phone']."'";
+			} else if(isset($input['passport'])) {
+				$update_field.= "passport='".$input['passport']."'";
+			} else if(isset($input['money'])) {
+				$update_field.= "money='".$input['money']."'";
+			} else if(isset($input['rank'])) {
+				$update_field.= "rank='".$input['rank']."'";
+			}
+
+			if($update_field && $input['id']) {
+				$query = "UPDATE user SET $update_field WHERE id=" . $input['id'];
+				mysqli_query($connection, $query);
+			}
+		}
+
+		if ($input['action'] == 'delete') {
+			$query = "DELETE FROM user WHERE id=" . $input['id'];
+			mysqli_query($connection, $query);
+		}
+	}
+
+	if($_GET['t'] == 'user_add') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] != 2) exit();
+
+		$query = "INSERT INTO user () VALUES ()";
+		$result = mysqli_query($connection, $query);
 	}
 ?>

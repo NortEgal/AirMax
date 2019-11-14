@@ -21,7 +21,99 @@ $(document).ready(function () {
 		$("#users-table-tab").remove();
 		$("#users-table").remove();
 	}else{
-		
+		$('#users-table-tab').click(function () {
+			$.ajax({
+				type: "POST",
+				url: 'php/admin.php?t=user_get',
+				data: {
+					id: account_id,
+					hash: account_hash
+				},
+				success: function (info) {
+					//console.log(info);
+					info = JSON.parse(info);
+					console.log(info);
+
+					let body = $('table#user tbody');
+					body.empty();
+
+					$.each(info, function (i, row) {
+						new_row = tr_temp.clone();
+						td_temp.clone().appendTo(new_row).html(row.id);
+						td_temp.clone().appendTo(new_row).html(row.lastname);
+						td_temp.clone().appendTo(new_row).html(row.firstname);
+						td_temp.clone().appendTo(new_row).html(row.patronymic);
+						td_temp.clone().appendTo(new_row).html(row.mail);
+						td_temp.clone().appendTo(new_row).html(row.password);
+						td_temp.clone().appendTo(new_row).html(row.phone);
+						td_temp.clone().appendTo(new_row).html(row.passport);
+						td_temp.clone().appendTo(new_row).html(row.money);
+						td_temp.clone().appendTo(new_row).html(row.rank);
+						body.append(new_row);
+					});
+
+					$('table#user').Tabledit({
+						url: 'php/admin.php?t=user_edit',
+						columns: {
+							identifier: [0, 'id'],
+							editable: [
+								[1, 'lastname'],
+								[2, 'firstname'],
+								[3, 'patronymic'],
+								[4, 'mail'],
+								[5, 'password'],
+								[6, 'phone'],
+								[7, 'passport'],
+								[8, 'money'],
+								[9, 'rank']
+							]
+						},
+						restoreButton: false,
+						editButton: false,
+						buttons: {
+							edit: {
+								class: 'btn btn-sm btn-blue',
+								html: '<i class="material-icons my-auto">edit</i>',
+								action: 'edit'
+							},
+							delete: {
+								class: 'btn btn-sm btn-danger',
+								html: '<i class="material-icons my-auto">delete</i>',
+								action: 'delete'
+							},
+							save: {
+								class: 'btn btn-sm btn-success',
+								html: '<i class="material-icons my-auto">done</i>'
+							},
+							confirm: {
+								class: 'btn btn-sm btn-warning',
+								html: 'Подтвердить'
+							}
+						},
+						onFail: function (jqXHR, textStatus, errorThrown) {
+							$('#users-table-tab').click();
+						},
+						onSuccess: function (data, textStatus, jqXHR) {
+							$('#users-table-tab').click();
+						},
+					});
+				}
+			});
+		});
+
+		$('button#add_user').on('click', function() {
+			$.ajax({
+				type: "POST",
+				url: 'php/admin.php?t=user_add',
+				data: {
+					id: account_id,
+					hash: account_hash
+				},
+				success: function (info) {
+					$('#users-table-tab').click();
+				}
+			});
+		});
 	}
 
 	/*
