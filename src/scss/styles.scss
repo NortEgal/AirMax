@@ -1224,6 +1224,10 @@ table.table-hover tbody tr:hover {
   font-weight: 700;
 }
 
+.table .th-sm {
+  min-width: 2rem;
+}
+
 .md-pills a {
   color: var(--md-pils) !important;
   font-family: 'Rubik'; font-weight: 900;
