@@ -296,4 +296,61 @@
 		$query = "INSERT INTO plane () VALUES ()";
 		$result = mysqli_query($connection, $query);
 	}
+
+	/*
+		CITY
+	*/
+	if($_GET['t'] == 'city_get') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "SELECT * FROM city";
+		$result = mysqli_query($connection, $query);
+		$send = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($send , array(
+				"id"=>$row['id'],
+				"name"=>$row['name'], 
+				"img"=>$row['img']
+			));
+		}
+
+		exit(json_encode($send));
+	}
+
+	if($_GET['t'] == 'city_edit') {
+		$input = filter_input_array(INPUT_POST);
+
+		if ($input['action'] == 'edit') {
+			$update_field='';
+			if(isset($input['name'])) {
+				$update_field.= "name='".$input['name']."'";
+			} else if(isset($input['img'])) {
+				$update_field.= "img='".$input['img']."'";
+			}
+
+			if($update_field && $input['id']) {
+				$query = "UPDATE city SET $update_field WHERE id=" . $input['id'];
+				mysqli_query($connection, $query);
+			}
+		}
+
+		if ($input['action'] == 'delete') {
+			$query = "DELETE FROM city WHERE id=" . $input['id'];
+			mysqli_query($connection, $query);
+		}
+	}
+
+	if($_GET['t'] == 'city_add') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "INSERT INTO city () VALUES ()";
+		$result = mysqli_query($connection, $query);
+	}
 ?>

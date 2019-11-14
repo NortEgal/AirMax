@@ -424,4 +424,87 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	/*
+		CITY
+	*/
+	$('#city-table-tab').click(function () {
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=city_get',
+			data: {
+				id: account_id,
+				hash: account_hash
+			},
+			success: function (info) {
+				//console.log(info);
+				info = JSON.parse(info);
+				console.log(info);
+
+				let body = $('table#city tbody');
+				body.empty();
+
+				$.each(info, function (i, row) {
+					new_row = tr_temp.clone();
+					td_temp.clone().appendTo(new_row).html(row.id);
+					td_temp.clone().appendTo(new_row).html(row.name);
+					td_temp.clone().appendTo(new_row).html(row.img);
+					body.append(new_row);
+				});
+
+				$('table#city').Tabledit({
+					url: 'php/admin.php?t=city_edit',
+					columns: {
+						identifier: [0, 'id'],
+						editable: [
+							[1, 'name'],
+							[2, 'img']
+						]
+					},
+					restoreButton: false,
+					editButton: false,
+					buttons: {
+						edit: {
+							class: 'btn btn-sm btn-blue',
+							html: '<i class="material-icons my-auto">edit</i>',
+							action: 'edit'
+						},
+						delete: {
+							class: 'btn btn-sm btn-danger',
+							html: '<i class="material-icons my-auto">delete</i>',
+							action: 'delete'
+						},
+						save: {
+							class: 'btn btn-sm btn-success',
+							html: '<i class="material-icons my-auto">done</i>'
+						},
+						confirm: {
+							class: 'btn btn-sm btn-warning',
+							html: 'Подтвердить'
+						}
+					},
+					onFail: function (jqXHR, textStatus, errorThrown) {
+						$('#city-table-tab').click();
+					},
+					onSuccess: function (data, textStatus, jqXHR) {
+						$('#city-table-tab').click();
+					},
+				});
+			}
+		});
+	});
+
+	$('button#add_city').on('click', function () {
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=city_add',
+			data: {
+				id: account_id,
+				hash: account_hash
+			},
+			success: function (info) {
+				$('#city-table-tab').click();
+			}
+		});
+	});
 });
