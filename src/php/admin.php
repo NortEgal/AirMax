@@ -1,6 +1,9 @@
 <?php
 	require('bitconnect.php');
 
+	/*
+		FLIGHT
+	*/
 	if($_GET['t'] == 'flight_get') {
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
@@ -93,6 +96,9 @@
 		exit(mysqli_insert_id($connection));
 	}
 
+	/*
+		USER
+	*/
 	if($_GET['t'] == 'user_get') {
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
@@ -168,6 +174,9 @@
 		$result = mysqli_query($connection, $query);
 	}
 
+	/*
+		TICKET
+	*/
 	if($_GET['t'] == 'ticket_get') {
 		$id = $_POST['id'];
 		$hash = $_POST['hash'];
@@ -225,6 +234,66 @@
 		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
 
 		$query = "INSERT INTO ticket (user_id) VALUES (1)";
+		$result = mysqli_query($connection, $query);
+	}
+
+	/*
+		PLANE
+	*/
+	if($_GET['t'] == 'plane_get') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "SELECT * FROM plane";
+		$result = mysqli_query($connection, $query);
+		$send = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($send , array(
+				"id"=>$row['id'],
+				"model"=>$row['model'], 
+				"seats"=>$row['seats'],
+				"sheme"=>$row['sheme']
+			));
+		}
+
+		exit(json_encode($send));
+	}
+
+	if($_GET['t'] == 'plane_edit') {
+		$input = filter_input_array(INPUT_POST);
+
+		if ($input['action'] == 'edit') {
+			$update_field='';
+			if(isset($input['model'])) {
+				$update_field.= "model='".$input['model']."'";
+			} else if(isset($input['seats'])) {
+				$update_field.= "seats='".$input['seats']."'";
+			} else if(isset($input['sheme'])) {
+				$update_field.= "sheme='".$input['sheme']."'";
+			}
+
+			if($update_field && $input['id']) {
+				$query = "UPDATE plane SET $update_field WHERE id=" . $input['id'];
+				mysqli_query($connection, $query);
+			}
+		}
+
+		if ($input['action'] == 'delete') {
+			$query = "DELETE FROM plane WHERE id=" . $input['id'];
+			mysqli_query($connection, $query);
+		}
+	}
+
+	if($_GET['t'] == 'plane_add') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "INSERT INTO plane () VALUES ()";
 		$result = mysqli_query($connection, $query);
 	}
 ?>
