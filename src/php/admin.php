@@ -167,4 +167,64 @@
 		$query = "INSERT INTO user () VALUES ()";
 		$result = mysqli_query($connection, $query);
 	}
+
+	if($_GET['t'] == 'ticket_get') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "SELECT * FROM ticket";
+		$result = mysqli_query($connection, $query);
+		$send = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($send , array(
+				"id"=>$row['id'],
+				"flight_id"=>$row['flight_id'], 
+				"user_id"=>$row['user_id'],
+				"type"=>$row['type'],
+				"amount"=>$row['amount']
+			));
+		}
+
+		exit(json_encode($send));
+	}
+
+	if($_GET['t'] == 'ticket_edit') {
+		$input = filter_input_array(INPUT_POST);
+
+		if ($input['action'] == 'edit') {
+			$update_field='';
+			if(isset($input['flight_id'])) {
+				$update_field.= "flight_id='".$input['flight_id']."'";
+			} else if(isset($input['user_id'])) {
+				$update_field.= "user_id='".$input['user_id']."'";
+			} else if(isset($input['type'])) {
+				$update_field.= "type='".$input['type']."'";
+			} else if(isset($input['amount'])) {
+				$update_field.= "amount='".$input['amount']."'";
+			}
+
+			if($update_field && $input['id']) {
+				$query = "UPDATE ticket SET $update_field WHERE id=" . $input['id'];
+				mysqli_query($connection, $query);
+			}
+		}
+
+		if ($input['action'] == 'delete') {
+			$query = "DELETE FROM ticket WHERE id=" . $input['id'];
+			mysqli_query($connection, $query);
+		}
+	}
+
+	if($_GET['t'] == 'ticket_add') {
+		$id = $_POST['id'];
+		$hash = $_POST['hash'];
+		$array = Query("SELECT password, rank FROM user WHERE id='$id'");
+		if(!password_verify($array['password'], $hash) || $array['rank'] == 0) exit();
+
+		$query = "INSERT INTO ticket (user_id) VALUES (1)";
+		$result = mysqli_query($connection, $query);
+	}
 ?>

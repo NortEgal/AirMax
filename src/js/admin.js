@@ -252,4 +252,95 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	/*
+		TICKET
+	*/
+	$('#ticket-table-tab').click(function () {
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=ticket_get',
+			data: {
+				id: account_id,
+				hash: account_hash
+			},
+			success: function (info) {
+				//console.log(info);
+				info = JSON.parse(info);
+				console.log(info);
+
+				let body = $('table#ticket tbody');
+				body.empty();
+
+				$.each(info, function (i, row) {
+					new_row = tr_temp.clone();
+					td_temp.clone().appendTo(new_row).html(row.id);
+					td_temp.clone().appendTo(new_row).html(row.flight_id);
+					td_temp.clone().appendTo(new_row).html(row.user_id);
+					td_temp.clone().appendTo(new_row).html(row.type);
+					td_temp.clone().appendTo(new_row).html(row.amount);
+					body.append(new_row);
+				});
+
+				$('table#ticket').Tabledit({
+					url: 'php/admin.php?t=ticket_edit',
+					columns: {
+						identifier: [0, 'id'],
+						editable: [
+							[1, 'flight_id'],
+							[2, 'user_id'],
+							[3, 'type'],
+							[4, 'amount']
+						]
+					},
+					restoreButton: false,
+					editButton: false,
+					buttons: {
+						edit: {
+							class: 'btn btn-sm btn-blue',
+							html: '<i class="material-icons my-auto">edit</i>',
+							action: 'edit'
+						},
+						delete: {
+							class: 'btn btn-sm btn-danger',
+							html: '<i class="material-icons my-auto">delete</i>',
+							action: 'delete'
+						},
+						save: {
+							class: 'btn btn-sm btn-success',
+							html: '<i class="material-icons my-auto">done</i>'
+						},
+						confirm: {
+							class: 'btn btn-sm btn-warning',
+							html: 'Подтвердить'
+						}
+					},
+					onFail: function (jqXHR, textStatus, errorThrown) {
+						$('#ticket-table-tab').click();
+					},
+					onSuccess: function (data, textStatus, jqXHR) {
+						$('#ticket-table-tab').click();
+					},
+				});
+			}
+		});
+	});
+
+	$('button#add_ticket').on('click', function () {
+		$.ajax({
+			type: "POST",
+			url: 'php/admin.php?t=ticket_add',
+			data: {
+				id: account_id,
+				hash: account_hash
+			},
+			success: function (info) {
+				$('#ticket-table-tab').click();
+			}
+		});
+	});
+
+	/*
+		PLANE
+	*/
 });
