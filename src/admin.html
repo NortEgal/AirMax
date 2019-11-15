@@ -25,6 +25,10 @@
     body {
       min-width: 1700px;
     }
+    .wrapper-editor {
+      max-height: 550px;
+      overflow-y: auto;
+    }
     @media(max-width: 1700px) {
       body {
         overflow-x: auto;
@@ -70,13 +74,14 @@
           </div>
         </div>
         <div class="col-10">
-          <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-content pt-0" id="v-pills-tabContent">
 
             <div class="tab-pane fade" id="flight-table" role="tabpanel" aria-labelledby="flight-table-tab">
-                  <div class="wrapper-editor">
-                    <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
-					  <button id="add_flight" class="btn btn-sm btn-blue btn-rounded" href="#adminAddFlight" data-target="#adminAddFlight" data-toggle="modal">Добавить рейс</button>
-                    </div> 
+                  <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
+                    <button id="add_flight" class="btn btn-blue mb-3" href="#adminAddFlight" data-target="#adminAddFlight"
+                      data-toggle="modal">Добавить рейс</button>
+                  </div>
+              <div class="wrapper-editor">
                     <table id="flight" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                         <tr>  <th class="th-sm table-id">id
@@ -98,38 +103,38 @@
 			</div>
 
             <div class="tab-pane fade" id="users-table" role="tabpanel" aria-labelledby="users-table-tab">
-                  <div class="wrapper-editor">
-                    <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
-						<button id="add_user" class="btn btn-sm btn-blue btn-rounded">Добавить пользователя</button>
-                    </div>
-                    <table id="user" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th class="th-sm">id
-                          <th class="th-sm">lastname
-                          <th class="th-sm">firstname
-                          <th class="th-sm">patronymic
-                          <th class="th-sm">mail
-                          <th class="th-sm">password
-                          <th class="th-sm">phone
-						  <th class="th-sm">passport
-						  <th class="th-sm">money
-						  <th class="th-sm">rank
-                      <tbody>
-                      </tbody>
-                    </table>
-                  </div>
+              <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
+                <button id="add_user" class="btn btn-blue mb-3">Добавить пользователя</button>
+              </div>
+              <div class="wrapper-editor">
+                <table id="user" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th class="th-sm">id
+                      <th class="th-sm">lastname
+                      <th class="th-sm">firstname
+                      <th class="th-sm">patronymic
+                      <th class="th-sm">mail
+                      <th class="th-sm">password
+                      <th class="th-sm">phone
+                      <th class="th-sm">passport
+                      <th class="th-sm">money
+                      <th class="th-sm">rank
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
 			</div>
 
             <div class="tab-pane fade" id="ticket-table" role="tabpanel" aria-labelledby="ticket-table-tab">
-                  <div class="wrapper-editor">
-					<div class="d-flex justify-content-center buttons-wrapper flex-wrap">
-						<button id="add_ticket" class="btn btn-sm btn-blue btn-rounded">Добавить билет</button>
-					</div>
+                  <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
+                    <button id="add_ticket" class="btn btn-blue mb-3">Добавить билет</button>
+                  </div>
+              <div class="wrapper-editor">
                     <table id="ticket" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-						  <th class="th-sm">id
+						              <th class="th-sm">id
                           <th class="th-sm">flight_id
                           <th class="th-sm">user_id
                           <th class="th-sm">type
@@ -141,10 +146,10 @@
             </div>
 
             <div class="tab-pane fade" id="plane-table" role="tabpanel" aria-labelledby="plane-table-tab">
-                  <div class="wrapper-editor">
-					<div class="d-flex justify-content-center buttons-wrapper flex-wrap">
-						<button id="add_plane" class="btn btn-sm btn-blue btn-rounded">Добавить самолет</button>
-					</div>
+                  <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
+                    <button id="add_plane" class="btn btn-blue mb-3">Добавить самолет</button>
+                  </div>
+              <div class="wrapper-editor">
                     <table id="plane" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                         <tr>
@@ -159,10 +164,10 @@
 			</div>
 
             <div class="tab-pane fade" id="city-table" role="tabpanel" aria-labelledby="city-table-tab">
-                  <div class="wrapper-editor">
-                    <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
-						<button id="add_city" class="btn btn-sm btn-blue btn-rounded">Добавить город</button>
-                    </div>
+                  <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
+                    <button id="add_city" class="btn btn-blue mb-3">Добавить город</button>
+                  </div>
+              <div class="wrapper-editor">
                     <table id="city" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                         <tr>
@@ -176,10 +181,10 @@
 			</div>
 
             <div class="tab-pane fade" id="airport-table" role="tabpanel" aria-labelledby="airport-table-tab">
-                  <div class="wrapper-editor">
-                    <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
-						<button id="add_airport" class="btn btn-sm btn-blue btn-rounded">Добавить аэропорт</button>
-                    </div>
+                  <div class="d-flex justify-content-center buttons-wrapper flex-wrap">
+                    <button id="add_airport" class="btn btn-blue mb-3">Добавить аэропорт</button>
+                  </div>
+              <div class="wrapper-editor">
                     <table id="airport" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                         <tr>
@@ -201,7 +206,7 @@
 
 	<div class="modal fade" id="adminAddFlight" role="dialog" aria-labelledby="ModalChangeBiletos" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
+			<div class="modal-content px-5 py-3">
 
 				<form id='form_add_flight'>
 					<div class="md-form">
